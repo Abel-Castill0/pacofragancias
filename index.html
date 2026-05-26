@@ -6903,7 +6903,7 @@
           },
         ];
 
-        // ==================== LÓGICA (igual que antes pero con Erba Pura corregida) ====================
+        // ==================== LÓGICA (completa, mejorada y corregida) ====================
         let cart = [];
         let activeFilters = { category: "all", gender: "all" };
         let activePromoFilter = "all";
@@ -7021,23 +7021,54 @@
 
           container.innerHTML = cart
             .map((item, i) => {
-              // Determinar si es un pack con regalo
               const hasGift = item.isPack && item.gift;
+              const isMultiPack =
+                item.isPack &&
+                item.includedProducts &&
+                item.includedProducts.length > 0 &&
+                !hasGift;
 
-              let imageHtml = `<img src="${item.image}" alt="${item.name}" onerror="this.style.display='none'" />`;
+              // Imagen principal SOLO si NO es un multi‑pack
+              let imageHtml = "";
+              if (!isMultiPack) {
+                imageHtml = `<img src="${item.image}" alt="${item.name}" onerror="this.style.display='none'" />`;
+                if (hasGift) {
+                  imageHtml = `
+          <div style="position:relative; display:inline-block;">
+            ${imageHtml}
+            <img src="${item.gift.image}" alt="${item.gift.name}" 
+                 style="position:absolute; bottom:-4px; right:-4px; width:22px; height:22px; border-radius:50%; border:2px solid white; object-fit:cover;"
+                 onerror="this.style.display='none'" />
+          </div>`;
+                }
+              }
+
               let nameHtml = `<div class="cart-item-name">${item.name}</div>`;
               let metaHtml = `<div class="cart-item-meta">${item.brand} · ${item.type === "full" ? "Frasco" : item.type === "decant" ? "Decant" : "Pack"} ${item.size}</div>`;
 
-              // Si tiene regalo, añadimos una miniatura y texto del regalo
+              // Detalle del regalo (para packs con Erba)
               if (hasGift) {
-                imageHtml = `
-        <div style="position:relative; display:inline-block;">
-          ${imageHtml}
-          <img src="${item.gift.image}" alt="${item.gift.name}" 
-               style="position:absolute; bottom:-4px; right:-4px; width:22px; height:22px; border-radius:50%; border:2px solid white; object-fit:cover;"
-               onerror="this.style.display='none'" />
-        </div>`;
                 metaHtml += `<div style="font-size:0.7rem; color:#b89b5e; margin-top:2px;">🎁 Incluye: ${item.gift.name} (${item.gift.size})</div>`;
+              }
+
+              // Miniaturas para multi‑packs (sin regalo)
+              let extraProductsHtml = "";
+              if (isMultiPack) {
+                extraProductsHtml = `
+        <div class="pack-products-list" style="display:flex; gap:6px; overflow-x:auto; padding-top:6px; margin-top:6px; border-top:1px dashed #e0d8c8;">
+          ${item.includedProducts
+            .map(
+              (p) => `
+            <div style="flex:0 0 auto; text-align:center; width:55px;">
+              <img src="${p.image}" alt="${p.name}" 
+                   style="width:36px; height:36px; border-radius:6px; object-fit:cover; display:block; margin:0 auto;"
+                   onerror="this.src='img/perfumes/placeholder.webp'" />
+              <div style="font-size:0.62rem; line-height:1.2; margin-top:2px; max-width:55px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; color:#5a5650;">${p.name}</div>
+            </div>
+          `,
+            )
+            .join("")}
+        </div>`;
               }
 
               return `
@@ -7046,6 +7077,7 @@
         <div class="cart-item-info">
           ${nameHtml}
           ${metaHtml}
+          ${extraProductsHtml}
           <div class="cart-item-price">${formatPrice(item.price * item.qty)}</div>
         </div>
         <div class="cart-item-qty">
@@ -7219,10 +7251,16 @@
 
         function createProductCard(product) {
           const decantSizes = Object.keys(product.decantSizes);
-          const minPrice = Math.min(...Object.values(product.decantSizes));
+          const minPrice =
+            decantSizes.length > 0
+              ? Math.min(...Object.values(product.decantSizes))
+              : null;
           const badgeHTML = product.badge
             ? `<span class="product-badge ${product.badge}">${product.badgeText}</span>`
             : "";
+          const priceText = minPrice
+            ? `Desde ${formatPrice(minPrice)}`
+            : "Consultar";
           return `
             <div class="product-card" data-product-id="${product.id}">
               <div class="img-wrapper">${badgeHTML}<img src="${product.cardImage}" alt="${product.name}" onerror="this.style.display='none';this.parentElement.innerHTML+='<span style=font-size:3rem;color:var(--gold)'>🧴</span>'" /></div>
@@ -7230,7 +7268,7 @@
                 <div class="product-category">${product.category === "nicho" ? "Nicho" : product.category === "arabe" ? "Árabe" : "Diseñador"} · ${product.gender}</div>
                 <div class="product-name">${product.name}</div>
                 <div class="product-brand">${product.brand}</div>
-                <div class="product-price">Desde ${formatPrice(minPrice)}</div>
+                <div class="product-price">${priceText}</div>
                 <button class="btn-add" data-add-id="${product.id}">Ver y Comprar</button>
               </div>
             </div>`;
@@ -7281,12 +7319,10 @@
           const grid = document.getElementById("promoGrid");
           let filtered = promos;
 
-          // Filtrar por categoría principal
           if (activePromoFilter !== "all") {
             filtered = filtered.filter((p) => p.category === activePromoFilter);
           }
 
-          // Si la categoría es Árabe, aplicar filtro de género
           if (activePromoFilter === "arabe" && activePromoGender !== "all") {
             filtered = filtered.filter((p) => {
               if (!p.allowedGenders) return true;
@@ -7307,7 +7343,7 @@
       <div class="promo-icon">${getCategoryIcon(promo.category)}</div>
       <h3>${promo.name}</h3>
       <p class="promo-desc">${promo.desc}</p>
-      <p style="font-size:0.8rem;color:var(--text-muted);">📦 ${promo.quantity} perfumes · ${promo.size}</p>
+      <p style="font-size:0.8rem;color:var(--text-muted);">📦 ${promo.quantity} perfume(s) · ${promo.size}</p>
       <div class="promo-price">${formatPrice(promo.price)}</div>
       <button class="btn-add" data-promo-id="${promo.id}">Seleccionar Perfumes</button>
     </div>
@@ -7316,13 +7352,7 @@
             .join("");
         }
 
-        function getCategoryIcon(cat) {
-          if (cat === "arabe") return "🕌";
-          if (cat === "disenador") return "⭐";
-          if (cat === "nicho") return "💎";
-          if (cat === "mixto" || cat === "erba") return "🧪";
-          return "🎁";
-        }
+        // IMPORTANTE: La segunda definición de getCategoryIcon ha sido eliminada.
 
         function renderCheckoutPage() {
           const emptyMsg = document.getElementById("checkout-empty-cart");
@@ -7343,25 +7373,70 @@
 
           if (summaryContainer) {
             summaryContainer.innerHTML = cart
-              .map(
-                
-                (item) => `
-                
-              <div class="checkout-summary-item">
-                <div class="checkout-item-info">
-                  <img src="${item.image || "img/perfumes/placeholder.webp"}" 
-                       alt="${item.name}" 
-                       class="checkout-item-img"
-                       onerror="this.src='img/perfumes/placeholder.webp'" />
-                  <div class="checkout-item-details">
-                    <span class="checkout-item-name">${item.name}</span>
-                    <span class="checkout-item-meta">${item.type === "full" ? "Frasco" : item.type === "decant" ? "Decant" : "Pack"} ${item.size} ×${item.qty}</span>
-                  </div>
-                </div>
-                <span class="checkout-item-price">${formatPrice(item.price * item.qty)}</span>
+              .map((item) => {
+                const isMultiPack =
+                  item.isPack &&
+                  item.includedProducts &&
+                  item.includedProducts.length > 0 &&
+                  !item.gift;
+                const hasGift = item.isPack && item.gift;
+
+                let infoHtml = "";
+                if (isMultiPack) {
+                  const miniImages = item.includedProducts
+                    .map(
+                      (p) => `
+          <img src="${p.image}" alt="${p.name}" 
+               style="width:32px; height:32px; border-radius:6px; object-fit:cover; margin-right:4px;"
+               onerror="this.src='img/perfumes/placeholder.webp'" />
+        `,
+                    )
+                    .join("");
+                  infoHtml = `
+          <div style="display:flex; align-items:center; gap:0.5rem; flex-wrap:wrap;">
+            <div style="display:flex;">${miniImages}</div>
+            <div>
+              <div style="font-weight:600; font-size:0.85rem;">${item.name}</div>
+              <div style="font-size:0.75rem; color:var(--text-secondary);">
+                ${item.includedProducts.length} × ${item.size}
               </div>
-            `,
-              )
+            </div>
+          </div>`;
+                } else if (hasGift) {
+                  infoHtml = `
+          <div style="display:flex; align-items:center; gap:0.5rem;">
+            <div style="position:relative;">
+              <img src="${item.image}" style="width:32px; height:32px; border-radius:6px; object-fit:cover;" />
+              <img src="${item.gift.image}" alt="${item.gift.name}" 
+                   style="position:absolute; bottom:-4px; right:-4px; width:20px; height:20px; border-radius:50%; border:2px solid white; object-fit:cover;" />
+            </div>
+            <div>
+              <div style="font-weight:600; font-size:0.85rem;">${item.name}</div>
+              <div style="font-size:0.75rem; color:var(--text-secondary);">
+                ${item.size} (incluye ${item.gift.name})
+              </div>
+            </div>
+          </div>`;
+                } else {
+                  const typeLabel = item.type === "full" ? "Frasco" : "Decant";
+                  infoHtml = `
+          <div style="display:flex; align-items:center; gap:0.5rem;">
+            <img src="${item.image}" style="width:32px; height:32px; border-radius:6px; object-fit:cover;" />
+            <div>
+              <div style="font-weight:600; font-size:0.85rem;">${item.name}</div>
+              <div style="font-size:0.75rem; color:var(--text-secondary);">
+                ${typeLabel} ${item.size} × ${item.qty}
+              </div>
+            </div>
+          </div>`;
+                }
+
+                return `
+        <div class="checkout-summary-item" style="display:flex; justify-content:space-between; align-items:center; padding:0.5rem 0; border-bottom:1px solid var(--border-light);">
+          ${infoHtml}
+          <span style="font-weight:700; color:var(--gold-hover); white-space:nowrap; margin-left:1rem;">${formatPrice(item.price * item.qty)}</span>
+        </div>`;
+              })
               .join("");
           }
 
@@ -7405,7 +7480,6 @@
               promo.allowedGenders.includes(p.gender),
             );
           }
-          // Solo mostrar productos que tengan cardImage para evitar iconos rotos
           eligible = eligible.filter(
             (p) => p.cardImage && p.cardImage.trim() !== "",
           );
@@ -7422,7 +7496,6 @@
               '<p style="text-align:center;color:var(--text-muted);">No hay perfumes disponibles para esta promoción.</p>';
             return;
           }
-          // Mostrar máximo 30 productos para no sobrecargar el modal
           const displayProducts = eligible.slice(0, 30);
           grid.innerHTML = displayProducts
             .map((prod) => {
@@ -7472,11 +7545,18 @@
             return;
           }
 
-          // Obtener el primer (y único) producto seleccionado para usarlo como imagen principal
           const mainProduct = getProductById(selectedPackProducts[0]);
           const mainImage = mainProduct ? mainProduct.cardImage : "";
 
-          // Construir el objeto del pack (sin regalo separado)
+          const includedProducts = selectedPackProducts
+            .map((pid) => {
+              const prod = getProductById(pid);
+              return prod
+                ? { id: pid, name: prod.name, image: prod.cardImage }
+                : null;
+            })
+            .filter(Boolean);
+
           const packItem = {
             productId: "pack-" + promo.id + "-" + Date.now(),
             type: "pack",
@@ -7488,12 +7568,11 @@
             qty: 1,
             isPack: true,
             includedProductIds: [...selectedPackProducts],
+            includedProducts: includedProducts,
           };
 
-          // Si la promo incluye regalo, lo anexamos al mismo objeto
           if (promo.gift) {
-            // Buscar la info del perfume de regalo (Erba Pura)
-            const giftProduct = getProductById(160); // ID fijo de Erba Pura
+            const giftProduct = getProductById(160);
             packItem.gift = {
               name:
                 promo.giftName || (giftProduct ? giftProduct.name : "Regalo"),
@@ -7509,7 +7588,7 @@
           updateCartUI();
 
           const mensaje = promo.gift
-            ? "🎁 ¡Pack añadido! (incluye " + packItem.gift.name + " de regalo)"
+            ? `🎁 ¡Pack añadido! (incluye ${packItem.gift.name} de regalo)`
             : "✅ ¡Pack añadido al carrito!";
           showToast(mensaje);
           pulseCartCount();
@@ -7650,7 +7729,7 @@
             const btn = e.target.closest(".filter-btn");
             if (!btn) return;
             activePromoFilter = btn.dataset.promoFilter;
-            activePromoGender = "all"; // resetear género
+            activePromoGender = "all";
             updatePromoFilterButtons();
             renderPromos();
           });
@@ -7675,6 +7754,7 @@
             .getElementById("chReferencia")
             .value.trim();
           const dni = document.getElementById("chDNI").value.trim();
+
           if (!nombre || !apellido || !telefono || !direccion || !distrito) {
             showToast("⚠️ Completa todos los campos obligatorios");
             return;
@@ -7683,17 +7763,40 @@
             showToast("⚠️ El carrito está vacío");
             return;
           }
-          let mensaje = `🛍️ *NUEVO PEDIDO - PACO Fragancias* 🛍️\n\n👤 *Cliente:* ${nombre} ${apellido}\n📞 *Teléfono:* ${telefono}\n`;
+
+          let mensaje = `🛍️ *NUEVO PEDIDO – PACO Fragancias* 🛍️\n\n`;
+          mensaje += `👤 *Cliente:* ${nombre} ${apellido}\n`;
+          mensaje += `📞 *Teléfono:* ${telefono}\n`;
           if (dni) mensaje += `🪪 *DNI:* ${dni}\n`;
           mensaje += `📍 *Dirección:* ${direccion}\n🏙️ *Distrito:* ${distrito}\n`;
           if (referencia) mensaje += `📝 *Referencia:* ${referencia}\n`;
           mensaje += `\n📦 *PRODUCTOS:*\n`;
+
           cart.forEach((item) => {
-            mensaje += `  ${item.name} (${item.type === "full" ? "Frasco" : "Decant"} ${item.size}) ×${item.qty} — ${formatPrice(item.price * item.qty)}\n`;
+            mensaje += `\n  ✦ ${item.name}\n`;
+            if (
+              item.isPack &&
+              item.includedProducts &&
+              item.includedProducts.length > 0
+            ) {
+              const lista = item.includedProducts
+                .map((p) => `      • ${p.name}`)
+                .join("\n");
+              mensaje += `${lista}\n`;
+              if (item.gift) {
+                mensaje += `      🎁 *Regalo:* ${item.gift.name} (${item.gift.size})\n`;
+              }
+            } else if (item.gift) {
+              mensaje += `      🎁 *Regalo:* ${item.gift.name}\n`;
+            }
+            mensaje += `  Cantidad: ${item.qty} | Precio: ${formatPrice(item.price * item.qty)}\n`;
           });
-          mensaje += `\n💰 *TOTAL: ${formatPrice(getCartTotal())}*\n✅ ¡Gracias por tu pedido! Quedo atento para coordinar el envío. 🙌`;
+
+          mensaje += `\n💰 *TOTAL: ${formatPrice(getCartTotal())}*\n`;
+          mensaje += `✅ ¡Gracias por tu pedido! Quedo atento para coordinar el envío. 🙌`;
+
           window.open(
-            `https://wa.me/51989225148?text=${encodeURIComponent(mensaje)}`,
+            `https://wa.me/51903283353?text=${encodeURIComponent(mensaje)}`,
             "_blank",
           );
           showToast("📲 Redirigiendo a WhatsApp...");
@@ -7743,7 +7846,7 @@
                 p.brand.toLowerCase().includes(term) ||
                 p.notes.toLowerCase().includes(term),
             )
-            .slice(0, 8); // máximo 8 sugerencias
+            .slice(0, 8);
 
           if (filtered.length === 0) {
             suggestionsContainer.innerHTML =
@@ -7762,10 +7865,9 @@
               .join("");
           }
           suggestionsContainer.style.display = "block";
-          renderCatalog(); // actualiza la grilla mientras escribes
+          renderCatalog();
         }
 
-        // Cerrar sugerencias al hacer clic fuera
         document.addEventListener("click", function (e) {
           const suggestions = document.getElementById("searchSuggestions");
           const input = document.getElementById("searchInput");
@@ -7801,7 +7903,6 @@
             });
         }
 
-        // Sobrescribir funciones de renderizado para activar el reveal
         const originalRenderFeatured = renderFeatured;
         renderFeatured = function () {
           originalRenderFeatured();
