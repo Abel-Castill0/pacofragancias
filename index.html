@@ -591,16 +591,44 @@
         box-shadow: 0 6px 18px rgba(184, 155, 94, 0.2);
       }
 
-      /* ============ FILTROS ============ */
-      .filters {
+      /* ============ FILTROS MEJORADOS ============ */
+      .filters-wrapper {
         display: flex;
-        flex-wrap: wrap;
-        gap: 0.7rem;
-        justify-content: center;
+        flex-direction: column;
+        gap: 1.5rem;
         margin-bottom: 2.5rem;
       }
+      .filters-row {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 2rem;
+      }
+      .filter-group {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.6rem;
+        position: relative;
+      }
+      .filter-group-label {
+        font-family: var(--font-sans);
+        font-size: 0.7rem;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--text-muted);
+        margin-bottom: 0.2rem;
+      }
+      .filter-chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        justify-content: center;
+      }
       .filter-btn {
-        padding: 0.6rem 1.5rem;
+        padding: 0.6rem 1.4rem;
         border-radius: 50px;
         border: 1.8px solid var(--border);
         background: var(--surface);
@@ -612,9 +640,9 @@
         transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1.2);
         font-family: var(--font-sans);
         white-space: nowrap;
+        box-shadow: var(--shadow-sm);
         position: relative;
         overflow: hidden;
-        box-shadow: var(--shadow-sm);
       }
       .filter-btn::before {
         content: "";
@@ -653,48 +681,22 @@
         box-shadow: 0 6px 16px rgba(184, 155, 94, 0.3);
         transform: translateY(-2px);
       }
-      /* Contenedor de filtros mejorado */
-      .filters-container {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 2rem;
-        justify-content: center;
-        margin-bottom: 2.5rem;
-      }
-      .filter-group {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 0.6rem;
-      }
-      .filter-group-label {
-        font-family: var(--font-sans);
-        font-size: 0.7rem;
-        font-weight: 600;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        color: var(--text-muted);
-      }
-      /* Ajuste para que los filtros dentro del grupo se alineen */
-      .filter-group .filters {
-        margin-bottom: 0;
-      }
-      /* Línea divisoria sutil entre grupos */
-      @media (min-width: 600px) {
+
+      /* Separador sutil entre grupos en desktop */
+      @media (min-width: 768px) {
         .filter-group:not(:last-child)::after {
           content: "";
-          width: 1px;
-          height: 100%;
-          background: var(--border);
-          display: block;
           position: absolute;
-          right: -1rem;
-          top: 0;
-        }
-        .filter-group {
-          position: relative;
+          right: -1.1rem;
+          top: 10%;
+          height: 80%;
+          width: 1px;
+          background: var(--border);
+          opacity: 0.7;
         }
       }
+
+      /* ============ BÚSQUEDA ============ */
       .search-box {
         display: flex;
         justify-content: center;
@@ -867,7 +869,6 @@
         transform: rotate(90deg);
       }
 
-      /* Imagen más compacta y centrada */
       .modal .modal-image {
         width: 100%;
         max-width: 280px;
@@ -912,7 +913,6 @@
         padding: 0 0.5rem;
       }
 
-      /* Tabs estilo segment */
       .tab-switch {
         display: flex;
         gap: 0;
@@ -1262,7 +1262,6 @@
       }
 
       /* ============ CHECKOUT ============ */
-      /* ============ CHECKOUT MEJORADO ============ */
       .checkout-container {
         max-width: 700px;
         margin: 3rem auto;
@@ -1313,7 +1312,6 @@
         grid-template-columns: 1fr 1fr;
         gap: 1rem;
       }
-
       .checkout-summary {
         background: var(--surface-alt);
         border-radius: var(--radius);
@@ -1393,12 +1391,12 @@
         box-shadow: 0 12px 30px rgba(37, 211, 102, 0.4);
         transform: translateY(-2px);
       }
+
       /* ============ CONFIANZA ============ */
       .trust-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
         gap: 1.8rem;
-        perspective: 800px;
       }
       .trust-card {
         text-align: center;
@@ -1427,14 +1425,12 @@
       .trust-card:nth-child(4) {
         animation-delay: 0.55s;
       }
-
       @keyframes trustFadeIn {
         to {
           opacity: 1;
           transform: translateY(0);
         }
       }
-
       .trust-card:hover {
         transform: translateY(-8px);
         box-shadow: var(--shadow-gold);
@@ -1461,6 +1457,7 @@
         font-size: 0.85rem;
         line-height: 1.6;
       }
+
       /* ============ TIKTOK ============ */
       .content-section {
         background: transparent;
@@ -1671,18 +1668,6 @@
         max-width: 1300px;
         margin: 0 auto;
       }
-      .social-links a:nth-child(1):hover {
-        color: #e1306c;
-      } /* Instagram */
-      .social-links a:nth-child(2):hover {
-        color: #000000;
-      } /* TikTok */
-      .social-links a:nth-child(3):hover {
-        color: #1877f2;
-      } /* Facebook */
-      .social-links a:nth-child(4):hover {
-        color: #25d366;
-      } /* WhatsApp */
       .social-links {
         display: flex;
         gap: 0.8rem;
@@ -1695,24 +1680,16 @@
         display: flex;
         align-items: center;
         justify-content: center;
-
         color: #333;
         background: #ffffff;
-
         border: 1px solid rgba(0, 0, 0, 0.08);
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-
         transition: all 0.3s ease;
-      }
-      .social-links i {
-        opacity: 1;
       }
       .social-links a:hover {
         transform: translateY(-3px);
-
         color: #fff;
         background: var(--gold);
-
         box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
       }
       .footer-signature {
@@ -1813,6 +1790,17 @@
         .tiktok-grid {
           grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
         }
+        .filters-row {
+          flex-direction: column;
+          gap: 1rem;
+          align-items: center;
+        }
+        .filter-group:not(:last-child)::after {
+          display: none;
+        }
+        .filter-chips {
+          justify-content: center;
+        }
       }
       @media (max-width: 480px) {
         .product-grid {
@@ -1845,6 +1833,10 @@
         .tiktok-card {
           max-width: 100%;
         }
+        .filter-btn {
+          padding: 0.5rem 1rem;
+          font-size: 0.72rem;
+        }
       }
     </style>
   </head>
@@ -1876,6 +1868,7 @@
     </header>
 
     <div class="page active" id="page-home">
+      <!-- Hero igual -->
       <section class="hero">
         <video class="hero-video" autoplay muted loop playsinline>
           <source src="hero_video.mp4" type="video/mp4" />
@@ -1919,13 +1912,13 @@
             segura, rápida y con la calidad que mereces.
           </p>
         </div>
-        <div class="trust-grid" id="trustGrid">
+        <div class="trust-grid">
           <div class="trust-card">
             <div class="trust-icon">🤝</div>
             <h4>Confianza y Experiencia</h4>
             <p>
               Más de 1000 clientes satisfechos avalan nuestra calidad y
-              compromiso. Compra con la seguridad de estar en manos confiables.
+              compromiso.
             </p>
           </div>
           <div class="trust-card">
@@ -1933,7 +1926,7 @@
             <h4>Entrega Rápida</h4>
             <p>
               Procesamos tu pedido de inmediato para que recibas tu fragancia en
-              el menor tiempo posible, sin demoras innecesarias.
+              el menor tiempo posible.
             </p>
           </div>
           <div class="trust-card">
@@ -2006,8 +1999,8 @@
       </section>
     </div>
 
+    <!-- Catálogo y Promos con los nuevos filtros -->
     <div class="page" id="page-catalogo">
-      <!-- Hero del catálogo -->
       <section class="catalog-hero">
         <img src="inicio.webp" alt="Colección" class="catalog-hero-img" />
         <div class="catalog-hero-overlay"></div>
@@ -2017,7 +2010,6 @@
           <p class="section-subtitle" style="color: rgba(255, 255, 255, 0.85)">
             Explora por tipo, género o busca tu fragancia favorita.
           </p>
-          <!-- Buscador inteligente -->
           <div
             class="search-box"
             style="position: relative; margin-top: 1.5rem"
@@ -2038,31 +2030,36 @@
           </div>
         </div>
       </section>
-
-      <!-- Filtros y grid -->
       <section class="section" style="padding-top: 2rem">
-        <div class="filters-container" id="filtersContainer">
-          <div class="filter-group">
-            <span class="filter-group-label">Categoría</span>
-            <div class="filters" id="filtersCategory">
-              <button class="filter-btn active" data-filter="all">Todos</button>
-              <button class="filter-btn" data-filter="nicho">✨ Nicho</button>
-              <button class="filter-btn" data-filter="arabe">🕌 Árabe</button>
-              <button class="filter-btn" data-filter="disenador">
-                ⭐ Diseñador
-              </button>
+        <!-- FILTROS MEJORADOS -->
+        <div class="filters-wrapper">
+          <div class="filters-row">
+            <div class="filter-group">
+              <span class="filter-group-label">Categoría</span>
+              <div class="filter-chips" id="filtersCategory">
+                <button class="filter-btn active" data-filter="all">
+                  Todos
+                </button>
+                <button class="filter-btn" data-filter="nicho">✨ Nicho</button>
+                <button class="filter-btn" data-filter="arabe">🕌 Árabe</button>
+                <button class="filter-btn" data-filter="disenador">
+                  ⭐ Diseñador
+                </button>
+              </div>
             </div>
-          </div>
-          <div class="filter-group">
-            <span class="filter-group-label">Género</span>
-            <div class="filters" id="filtersGender">
-              <button class="filter-btn" data-filter="masculino">
-                👨 Masculino
-              </button>
-              <button class="filter-btn" data-filter="femenino">
-                👩 Femenino
-              </button>
-              <button class="filter-btn" data-filter="unisex">🧑 Unisex</button>
+            <div class="filter-group">
+              <span class="filter-group-label">Género</span>
+              <div class="filter-chips" id="filtersGender">
+                <button class="filter-btn" data-filter="masculino">
+                  👨 Masculino
+                </button>
+                <button class="filter-btn" data-filter="femenino">
+                  👩 Femenino
+                </button>
+                <button class="filter-btn" data-filter="unisex">
+                  🧑 Unisex
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -2071,7 +2068,6 @@
     </div>
 
     <div class="page" id="page-promos">
-      <!-- Hero de promociones -->
       <section class="promo-hero">
         <img src="fondo_promos.webp" alt="Promociones" class="promo-hero-img" />
         <div class="promo-hero-overlay"></div>
@@ -2083,42 +2079,47 @@
           </p>
         </div>
       </section>
-
-      <!-- Filtros y grid -->
       <section class="section" style="padding-top: 2rem">
-        <div class="filters-container" id="promoFiltersContainer">
-          <div class="filter-group">
-            <span class="filter-group-label">Tipo de Promoción</span>
-            <div class="filters" id="promoFilters">
-              <button class="filter-btn active" data-promo-filter="all">
-                Todas
-              </button>
-              <button class="filter-btn" data-promo-filter="disenador">
-                ⭐ Diseñador
-              </button>
-              <button class="filter-btn" data-promo-filter="erba">
-                🧪 Diseñador + Erba Pura
-              </button>
-              <button class="filter-btn" data-promo-filter="arabe">
-                🕌 Árabes
-              </button>
-              <button class="filter-btn" data-promo-filter="nicho">
-                💎 King / Spades
-              </button>
+        <!-- FILTROS DE PROMOS MEJORADOS -->
+        <div class="filters-wrapper">
+          <div class="filters-row">
+            <div class="filter-group">
+              <span class="filter-group-label">Tipo de Promoción</span>
+              <div class="filter-chips" id="promoFilters">
+                <button class="filter-btn active" data-promo-filter="all">
+                  🔥 Lo Más Solicitado
+                </button>
+                <button class="filter-btn" data-promo-filter="disenador">
+                  ⭐ Diseñador
+                </button>
+                <button class="filter-btn" data-promo-filter="erba">
+                  🧪 Diseñador + Erba Pura
+                </button>
+                <button class="filter-btn" data-promo-filter="arabe">
+                  🕌 Árabes
+                </button>
+                <button class="filter-btn" data-promo-filter="nicho">
+                  💎 Árabes Deluxe
+                </button>
+              </div>
             </div>
-          </div>
-          <div class="filter-group" id="promoGenderGroup" style="display: none">
-            <span class="filter-group-label">Género</span>
-            <div class="filters" id="promoGenderFilters">
-              <button class="filter-btn active" data-promo-gender="all">
-                Todos
-              </button>
-              <button class="filter-btn" data-promo-gender="femenino">
-                👩 Mujer
-              </button>
-              <button class="filter-btn" data-promo-gender="masculino">
-                👨 Hombre
-              </button>
+            <div
+              class="filter-group"
+              id="promoGenderGroup"
+              style="display: none"
+            >
+              <span class="filter-group-label">Género</span>
+              <div class="filter-chips" id="promoGenderFilters">
+                <button class="filter-btn active" data-promo-gender="all">
+                  Todos
+                </button>
+                <button class="filter-btn" data-promo-gender="femenino">
+                  👩 Mujer
+                </button>
+                <button class="filter-btn" data-promo-gender="masculino">
+                  👨 Hombre
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -2126,6 +2127,7 @@
       </section>
     </div>
 
+    <!-- Checkout (igual) -->
     <div class="page" id="page-checkout">
       <div class="checkout-container">
         <h2>📋 Finalizar Pedido</h2>
@@ -2227,7 +2229,6 @@
               💬 Confirmar por WhatsApp
             </button>
             <p
-              class="form-note"
               style="
                 font-size: 0.73rem;
                 color: var(--text-muted);
@@ -2243,6 +2244,7 @@
       </div>
     </div>
 
+    <!-- Modales (igual) -->
     <div class="modal-overlay" id="modalOverlay">
       <div class="modal" id="modal">
         <button class="modal-close" onclick="closeModal()">✕</button>
@@ -2264,7 +2266,6 @@
       </div>
     </div>
 
-    <!-- MODAL DE SELECCIÓN DE PACK PROMOCIONAL -->
     <div class="modal-overlay" id="packModalOverlay">
       <div class="modal pack-modal" id="packModal">
         <button class="modal-close" onclick="closePackModal()">✕</button>
@@ -2320,6 +2321,7 @@
 
     <div class="toast" id="toast"></div>
 
+    <!-- FOOTER CON DATOS ACTUALIZADOS -->
     <footer class="footer">
       <div class="footer-inner">
         <div class="footer-col">
@@ -2327,23 +2329,21 @@
           <p>Decants premium de las mejores fragancias del mundo.</p>
           <div class="social-links">
             <a
-              href="https://www.instagram.com/pacofragancias.pe?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+              href="https://www.instagram.com/pacofragancias.pe/"
               title="Instagram"
               ><i class="fab fa-instagram"></i
             ></a>
-            <a
-              href="https://www.tiktok.com/@pacofragancias.pe?is_from_webapp=1&sender_device=pc"
-              title="TikTok"
+            <a href="https://www.tiktok.com/@pacofragancias.pe" title="TikTok"
               ><i class="fab fa-tiktok"></i
             ></a>
-            <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
             <a
-              href="https://wa.me/51989225148"
-              target="_blank"
-              title="WhatsApp"
-            >
-              <i class="fab fa-whatsapp"></i>
-            </a>
+              href="https://www.tiktok.com/@pacofraganciasdecants.pe"
+              title="TikTok Decants"
+              ><i class="fab fa-tiktok"></i
+            ></a>
+            <a href="https://wa.me/51903283353" target="_blank" title="WhatsApp"
+              ><i class="fab fa-whatsapp"></i
+            ></a>
           </div>
         </div>
         <div class="footer-col">
@@ -2358,8 +2358,8 @@
         </div>
         <div class="footer-col">
           <h4>Contacto</h4>
-          <p>📧 hola@pacofragancias.com</p>
-          <p>📞 +51 989 225 148</p>
+          <p>📧 pacofragancias14@gmail.com</p>
+          <p>📞 +51 903 283 353</p>
           <p>📍 Lima, Perú</p>
         </div>
       </div>
@@ -2380,7 +2380,6 @@
     <script>
       (function () {
         const products = [
-          // 1-5
           {
             id: 1,
             name: "Tropical Vibe",
@@ -2506,7 +2505,6 @@
             badge: null,
             badgeText: "",
           },
-          // 6-10
           {
             id: 6,
             name: "Mast Rome Extradose",
@@ -2632,7 +2630,6 @@
             badge: null,
             badgeText: "",
           },
-          // 11-15
           {
             id: 11,
             name: "Mango Ice",
@@ -2758,7 +2755,6 @@
             badge: "top",
             badgeText: "Top",
           },
-          // 16-20
           {
             id: 16,
             name: "Hawas Thunder",
@@ -2884,7 +2880,6 @@
             badge: null,
             badgeText: "",
           },
-          // 21-25
           {
             id: 21,
             name: "Hawas Tropical",
@@ -3010,7 +3005,6 @@
             badge: null,
             badgeText: "",
           },
-          // 26-30
           {
             id: 26,
             name: "Hawas Fire",
@@ -3136,7 +3130,6 @@
             badge: null,
             badgeText: "",
           },
-          // 31-35
           {
             id: 31,
             name: "Khamrah",
@@ -3262,7 +3255,6 @@
             badge: null,
             badgeText: "",
           },
-          // 36-40
           {
             id: 36,
             name: "Vintage Radio",
@@ -3387,7 +3379,6 @@
             badge: null,
             badgeText: "",
           },
-          // 41-45
           {
             id: 41,
             name: "Vulcan Feu",
@@ -3513,7 +3504,6 @@
             badge: null,
             badgeText: "",
           },
-          // 46-50
           {
             id: 46,
             name: "9 PM Elixir",
@@ -3639,7 +3629,6 @@
             badge: null,
             badgeText: "",
           },
-          // 51-55
           {
             id: 51,
             name: "Odyssey Mandarin Sky Vintage",
@@ -3765,7 +3754,6 @@
             badge: null,
             badgeText: "",
           },
-          // 56-60
           {
             id: 56,
             name: "Odyssey Aqua Edition",
@@ -3891,7 +3879,6 @@
             badge: null,
             badgeText: "",
           },
-          // 61-65
           {
             id: 61,
             name: "Asad Bourbon",
@@ -4017,7 +4004,6 @@
             badge: null,
             badgeText: "",
           },
-          // 66-70
           {
             id: 66,
             name: "Nitro Red Intensely",
@@ -4143,7 +4129,6 @@
             badge: null,
             badgeText: "",
           },
-          // 71-75
           {
             id: 71,
             name: "Club de Nuit Urban Elixir",
@@ -4268,7 +4253,6 @@
             badge: null,
             badgeText: "",
           },
-          // 76-80
           {
             id: 76,
             name: "Bade'e Al Oud Amethyst",
@@ -4393,7 +4377,6 @@
             badge: null,
             badgeText: "",
           },
-          // 81-85
           {
             id: 81,
             name: "Amber Oud Gold Edition Extreme",
@@ -4519,7 +4502,6 @@
             badge: null,
             badgeText: "",
           },
-          // 86-90
           {
             id: 86,
             name: "Salvo",
@@ -4645,7 +4627,6 @@
             badge: null,
             badgeText: "",
           },
-          // 91-95
           {
             id: 91,
             name: "Nautica Voyage",
@@ -4769,7 +4750,6 @@
             badge: null,
             badgeText: "",
           },
-          // 96-100
           {
             id: 96,
             name: "Chapter II King of Kings",
@@ -4894,7 +4874,6 @@
             badge: null,
             badgeText: "",
           },
-          // 101-108
           {
             id: 101,
             name: "Game of Spades Win",
@@ -5224,14 +5203,8 @@
             notes: "Variadas (Yara, Yara Candy, Yara Tous)",
             description:
               "Pack especial con las tres Yara originales en presentación 20ml cada una.",
-            fullSizes: { "3x20ml": 200 },
-            decantSizes: {
-              "2ml": 10,
-              "3ml": 15,
-              "5ml": 20,
-              "10ml": 30,
-              "30ml": 85,
-            },
+            fullSizes: { "Full set": 225 },
+            decantSizes: { "U. 25ml": 65 },
             fullImage: "img/perfumes/yara_pack.webp",
             decantImage: "img/perfumes/yara_pack2.webp",
             cardImage: "img/perfumes/yara_pack.webp",
@@ -5878,8 +5851,8 @@
             id: 141,
             name: "The Most Wanted Parfum",
             brand: "Azzaro",
-            category: "designer",
-            gender: "male",
+            category: "disenador",
+            gender: "masculino",
             notes: "Jengibre, Vainilla Bourbon, Maderas",
             description: "Intenso y seductor con dulzura especiada.",
             fullSizes: { "100ml": 345 },
@@ -5901,8 +5874,8 @@
             id: 142,
             name: "The Most Wanted Intense",
             brand: "Azzaro",
-            category: "designer",
-            gender: "male",
+            category: "disenador",
+            gender: "masculino",
             notes: "Toffee, Cardamomo, Ámbar",
             description: "Dulce, potente y nocturno.",
             fullSizes: { "100ml": 345 },
@@ -5924,8 +5897,8 @@
             id: 143,
             name: "Stronger With You Intensely",
             brand: "Armani",
-            category: "designer",
-            gender: "male",
+            category: "disenador",
+            gender: "masculino",
             notes: "Vainilla, Canela, Caramelo",
             description: "Muy dulce, cálido y envolvente.",
             fullSizes: { "100ml": 445 },
@@ -5947,8 +5920,8 @@
             id: 144,
             name: "Stronger With You Powerfully",
             brand: "Armani",
-            category: "designer",
-            gender: "male",
+            category: "disenador",
+            gender: "masculino",
             notes: "Ron, Vainilla, Madera",
             description: "Más profundo y licoroso.",
             fullSizes: { "100ml": 495 },
@@ -5970,8 +5943,8 @@
             id: 145,
             name: "Born In Roma Purple",
             brand: "Valentino",
-            category: "designer",
-            gender: "male",
+            category: "disenador",
+            gender: "masculino",
             notes: "Lavanda, Vainilla, Madera",
             description: "Elegante con toque moderno.",
             fullSizes: { "100ml": 550 },
@@ -5993,8 +5966,8 @@
             id: 146,
             name: "Born In Roma Intense",
             brand: "Valentino",
-            category: "designer",
-            gender: "male",
+            category: "disenador",
+            gender: "masculino",
             notes: "Vainilla, Lavanda",
             description: "Más oscuro y sensual.",
             fullSizes: { "100ml": 525 },
@@ -6016,8 +5989,8 @@
             id: 147,
             name: "Born In Roma Coral Fantasy",
             brand: "Valentino",
-            category: "designer",
-            gender: "male",
+            category: "disenador",
+            gender: "masculino",
             notes: "Manzana, Tabaco",
             description: "Fresco con fondo dulce.",
             fullSizes: { "100ml": 495 },
@@ -6039,8 +6012,8 @@
             id: 148,
             name: "MYSLF EDP",
             brand: "Yves Saint Laurent",
-            category: "designer",
-            gender: "male",
+            category: "disenador",
+            gender: "masculino",
             notes: "Bergamota, Azahar, Madera",
             description: "Moderno, limpio y elegante.",
             fullSizes: { "100ml": 495 },
@@ -6062,8 +6035,8 @@
             id: 149,
             name: "Scandal Le Parfum",
             brand: "Jean Paul Gaultier",
-            category: "designer",
-            gender: "male",
+            category: "disenador",
+            gender: "masculino",
             notes: "Caramelo, Tonka",
             description: "Dulce extremo y nocturno.",
             fullSizes: { "100ml": 450, "150ml": 545 },
@@ -6085,8 +6058,8 @@
             id: 150,
             name: "Eros Flame",
             brand: "Versace",
-            category: "designer",
-            gender: "male",
+            category: "disenador",
+            gender: "masculino",
             notes: "Cítricos, Pimienta, Vainilla",
             description: "Fresco con toque picante.",
             fullSizes: { "100ml": 350, "200ml": 450 },
@@ -6108,8 +6081,8 @@
             id: 151,
             name: "Acqua Di Giò Profondo Parfum",
             brand: "Giorgio Armani",
-            category: "designer",
-            gender: "male",
+            category: "disenador",
+            gender: "masculino",
             notes: "Marino, Aromático",
             description: "Fresco profundo y elegante.",
             fullSizes: { "100ml": 445 },
@@ -6131,8 +6104,8 @@
             id: 152,
             name: "Eros EDP",
             brand: "Versace",
-            category: "designer",
-            gender: "male",
+            category: "disenador",
+            gender: "masculino",
             notes: "Vainilla, Menta",
             description: "Más intenso que el EDT.",
             fullSizes: { "100ml": 350 },
@@ -6154,8 +6127,8 @@
             id: 153,
             name: "Invictus Victory Elixir",
             brand: "Rabanne",
-            category: "designer",
-            gender: "male",
+            category: "disenador",
+            gender: "masculino",
             notes: "Ámbar, Vainilla",
             description: "Muy potente y dulce.",
             fullSizes: { "100ml": 450, "200ml": 600 },
@@ -6177,8 +6150,8 @@
             id: 154,
             name: "Invictus Parfum",
             brand: "Rabanne",
-            category: "designer",
-            gender: "male",
+            category: "disenador",
+            gender: "masculino",
             notes: "Marino, Lavanda",
             description: "Fresco moderno.",
             fullSizes: { "100ml": 385 },
@@ -6200,8 +6173,8 @@
             id: 155,
             name: "Le Beau Paradise Garden",
             brand: "Jean Paul Gaultier",
-            category: "designer",
-            gender: "male",
+            category: "disenador",
+            gender: "masculino",
             notes: "Coco, Verde",
             description: "Exótico tropical.",
             fullSizes: { "125ml": 475 },
@@ -6223,8 +6196,8 @@
             id: 156,
             name: "Le Beau De Toilette",
             brand: "Jean Paul Gaultier",
-            category: "designer",
-            gender: "male",
+            category: "disenador",
+            gender: "masculino",
             notes: "Coco, Tonka",
             description: "Dulce tropical.",
             fullSizes: { "125ml": 450 },
@@ -6235,9 +6208,9 @@
               "10ml": 75,
               "30ml": 185,
             },
-            fullImage: "img/perfumes/le_beau.webp",
-            decantImage: "img/perfumes/le_beau2.webp",
-            cardImage: "img/perfumes/le_beau.webp",
+            fullImage: "img/perfumes/le_beau_de_toilette.webp",
+            decantImage: "img/perfumes/le_beau_de_toilette2.webp",
+            cardImage: "img/perfumes/le_beau_de_toilette.webp",
             featured: false,
             badge: null,
             badgeText: "",
@@ -6246,8 +6219,8 @@
             id: 167,
             name: "Le Beau Le Parfum",
             brand: "Jean Paul Gaultier",
-            category: "designer",
-            gender: "male",
+            category: "disenador",
+            gender: "masculino",
             notes: "Piña, Coco, Haba Tonka, Ámbar, Maderas",
             description:
               "Fragancia tropical intensa y seductora. Dulce, cremosa y cálida, con un fondo ambarado y masculino.",
@@ -6263,15 +6236,15 @@
             decantImage: "img/perfumes/le_beau_parfum2.webp",
             cardImage: "img/perfumes/le_beau_parfum.webp",
             featured: false,
-            badge: "null",
+            badge: null,
             badgeText: "",
           },
           {
             id: 157,
             name: "Le Male Le Parfum",
             brand: "Jean Paul Gaultier",
-            category: "designer",
-            gender: "male",
+            category: "disenador",
+            gender: "masculino",
             notes: "Vainilla, Cardamomo",
             description: "Elegante y dulce.",
             fullSizes: { "125ml": 475, "200ml": 585 },
@@ -6293,8 +6266,8 @@
             id: 158,
             name: "Le Male Elixir",
             brand: "Jean Paul Gaultier",
-            category: "designer",
-            gender: "male",
+            category: "disenador",
+            gender: "masculino",
             notes: "Miel, Tabaco",
             description: "Extremadamente dulce y fuerte.",
             fullSizes: { "125ml": 485, "200ml": 595 },
@@ -6316,8 +6289,8 @@
             id: 159,
             name: "Y Eau de Parfum",
             brand: "Yves Saint Laurent",
-            category: "designer",
-            gender: "male",
+            category: "disenador",
+            gender: "masculino",
             notes: "Manzana, Jengibre",
             description: "Fresco, limpio y versátil.",
             fullSizes: { "100ml": 485, "200ml": 645 },
@@ -6339,7 +6312,7 @@
             id: 160,
             name: "Erba Pura",
             brand: "Xerjoff",
-            category: "niche",
+            category: "nicho",
             gender: "unisex",
             notes: "Frutas, Almizcle, Vainilla",
             description: "Explosión frutal dulce con gran proyección.",
@@ -6362,7 +6335,7 @@
             id: 161,
             name: "French Riviera",
             brand: "Mancera",
-            category: "niche",
+            category: "nicho",
             gender: "unisex",
             notes: "Cítricos, Marino, Floral",
             description: "Fresco, elegante y veraniego.",
@@ -6385,8 +6358,8 @@
             id: 162,
             name: "Born In Roma Extradose",
             brand: "Valentino",
-            category: "designer",
-            gender: "male",
+            category: "disenador",
+            gender: "masculino",
             notes: "Vainilla, Ámbar, Lavanda",
             description: "Versión más intensa y concentrada.",
             fullSizes: { "100ml": 190 },
@@ -6408,8 +6381,8 @@
             id: 163,
             name: "Stronger With You Parfum",
             brand: "Armani",
-            category: "designer",
-            gender: "male",
+            category: "disenador",
+            gender: "masculino",
             notes: "Vainilla, Ámbar, Madera",
             description: "Más refinado y potente que la línea clásica.",
             fullSizes: { "100ml": 405 },
@@ -6431,8 +6404,8 @@
             id: 164,
             name: "Luna Rossa Ocean EDT",
             brand: "Prada",
-            category: "designer",
-            gender: "male",
+            category: "disenador",
+            gender: "masculino",
             notes: "Bergamota, Lavanda, Iris",
             description: "Fresco, limpio y tecnológico.",
             fullSizes: { "100ml": 375 },
@@ -6454,8 +6427,8 @@
             id: 165,
             name: "Luna Rossa Ocean Le Parfum",
             brand: "Prada",
-            category: "designer",
-            gender: "male",
+            category: "disenador",
+            gender: "masculino",
             notes: "Ámbar, Vainilla, Madera",
             description: "Más profundo y elegante que el EDT.",
             fullSizes: { "100ml": 395 },
@@ -6477,8 +6450,8 @@
             id: 166,
             name: "Versace Pour Homme",
             brand: "Versace",
-            category: "designer",
-            gender: "male",
+            category: "disenador",
+            gender: "masculino",
             notes: "Cítricos, Neroli, Almizcle",
             description: "Clásico fresco, limpio y versátil.",
             fullSizes: { "100ml": 285 },
@@ -6497,7 +6470,7 @@
             badgeText: "",
           },
         ];
-
+        // ==================== PROMOCIONES (con etiquetas actualizadas) ====================
         const promos = [
           // Diseñador
           {
@@ -6588,15 +6561,15 @@
             price: 165,
             badge: null,
           },
-          // Diseñador + Erba Pura (simulamos Erba como categoría "erba")
+          // Diseñador + Erba Pura (CORREGIDO: 1 diseñador + 1 Erba Pura regalo)
           {
-            id: "promo-erba-2ml-2",
-            name: "2 Diseñador + Erba Pura (2ml)",
-            desc: "Elige 2 perfumes de diseñador + 1 Erba Pura de regalo en decants de 2ml.",
+            id: "promo-erba-2ml-1",
+            name: "1 Diseñador + Erba Pura (2ml)",
+            desc: "Elige 1 perfume de diseñador + 1 Erba Pura de regalo en decants de 2ml.",
             category: "erba",
             allowedCategories: ["disenador"],
             size: "2ml",
-            quantity: 2,
+            quantity: 1,
             price: 55,
             badge: "🎁 Regalo",
             gift: true,
@@ -6604,13 +6577,13 @@
             giftImage: "img/perfumes/erba_pura.webp",
           },
           {
-            id: "promo-erba-3ml-2",
-            name: "2 Diseñador + Erba Pura (3ml)",
-            desc: "Elige 2 perfumes de diseñador + 1 Erba Pura de regalo en decants de 3ml.",
+            id: "promo-erba-3ml-1",
+            name: "1 Diseñador + Erba Pura (3ml)",
+            desc: "Elige 1 perfume de diseñador + 1 Erba Pura de regalo en decants de 3ml.",
             category: "erba",
             allowedCategories: ["disenador"],
             size: "3ml",
-            quantity: 2,
+            quantity: 1,
             price: 75,
             badge: "🎁 Regalo",
             gift: true,
@@ -6618,13 +6591,13 @@
             giftImage: "img/perfumes/erba_pura.webp",
           },
           {
-            id: "promo-erba-5ml-2",
-            name: "2 Diseñador + Erba Pura (5ml)",
-            desc: "Elige 2 perfumes de diseñador + 1 Erba Pura de regalo en decants de 5ml.",
+            id: "promo-erba-5ml-1",
+            name: "1 Diseñador + Erba Pura (5ml)",
+            desc: "Elige 1 perfume de diseñador + 1 Erba Pura de regalo en decants de 5ml.",
             category: "erba",
             allowedCategories: ["disenador"],
             size: "5ml",
-            quantity: 2,
+            quantity: 1,
             price: 105,
             badge: "🎁 Regalo",
             gift: true,
@@ -6632,13 +6605,13 @@
             giftImage: "img/perfumes/erba_pura.webp",
           },
           {
-            id: "promo-erba-10ml-2",
-            name: "2 Diseñador + Erba Pura (10ml)",
-            desc: "Elige 2 perfumes de diseñador + 1 Erba Pura de regalo en decants de 10ml.",
+            id: "promo-erba-10ml-1",
+            name: "1 Diseñador + Erba Pura (10ml)",
+            desc: "Elige 1 perfume de diseñador + 1 Erba Pura de regalo en decants de 10ml.",
             category: "erba",
             allowedCategories: ["disenador"],
             size: "10ml",
-            quantity: 2,
+            quantity: 1,
             price: 155,
             badge: "🎁 Regalo",
             gift: true,
@@ -6839,11 +6812,11 @@
             price: 115,
             badge: null,
           },
-          // King of Kings / Game of Spades (nicho)
+          // Árabes Deluxe (antes King/Spades)
           {
             id: "promo-kings-2ml-5",
-            name: "5 Decants King/Spades (2ml)",
-            desc: "Elige 5 perfumes de la colección King of Kings o Game of Spades.",
+            name: "5 Decants Árabes Deluxe (2ml)",
+            desc: "Elige 5 perfumes de la colección Árabes Deluxe (Game of Spades, King of Kings).",
             category: "nicho",
             allowedCategories: ["nicho"],
             size: "2ml",
@@ -6853,8 +6826,8 @@
           },
           {
             id: "promo-kings-2ml-10",
-            name: "10 Decants King/Spades (2ml)",
-            desc: "Elige 10 perfumes de la colección King of Kings o Game of Spades.",
+            name: "10 Decants Árabes Deluxe (2ml)",
+            desc: "Elige 10 perfumes de la colección Árabes Deluxe (Game of Spades, King of Kings).",
             category: "nicho",
             allowedCategories: ["nicho"],
             size: "2ml",
@@ -6864,8 +6837,8 @@
           },
           {
             id: "promo-kings-3ml-5",
-            name: "5 Decants King/Spades (3ml)",
-            desc: "Elige 5 perfumes de la colección King of Kings o Game of Spades.",
+            name: "5 Decants Árabes Deluxe (3ml)",
+            desc: "Elige 5 perfumes de la colección Árabes Deluxe (Game of Spades, King of Kings).",
             category: "nicho",
             allowedCategories: ["nicho"],
             size: "3ml",
@@ -6875,8 +6848,8 @@
           },
           {
             id: "promo-kings-3ml-10",
-            name: "10 Decants King/Spades (3ml)",
-            desc: "Elige 10 perfumes de la colección King of Kings o Game of Spades.",
+            name: "10 Decants Árabes Deluxe (3ml)",
+            desc: "Elige 10 perfumes de la colección Árabes Deluxe (Game of Spades, King of Kings).",
             category: "nicho",
             allowedCategories: ["nicho"],
             size: "3ml",
@@ -6886,8 +6859,8 @@
           },
           {
             id: "promo-kings-5ml-5",
-            name: "5 Decants King/Spades (5ml)",
-            desc: "Elige 5 perfumes de la colección King of Kings o Game of Spades.",
+            name: "5 Decants Árabes Deluxe (5ml)",
+            desc: "Elige 5 perfumes de la colección Árabes Deluxe (Game of Spades, King of Kings).",
             category: "nicho",
             allowedCategories: ["nicho"],
             size: "5ml",
@@ -6897,8 +6870,8 @@
           },
           {
             id: "promo-kings-5ml-10",
-            name: "10 Decants King/Spades (5ml)",
-            desc: "Elige 10 perfumes de la colección King of Kings o Game of Spades.",
+            name: "10 Decants Árabes Deluxe (5ml)",
+            desc: "Elige 10 perfumes de la colección Árabes Deluxe (Game of Spades, King of Kings).",
             category: "nicho",
             allowedCategories: ["nicho"],
             size: "5ml",
@@ -6908,8 +6881,8 @@
           },
           {
             id: "promo-kings-10ml-3",
-            name: "3 Decants King/Spades (10ml)",
-            desc: "Elige 3 perfumes de la colección King of Kings o Game of Spades.",
+            name: "3 Decants Árabes Deluxe (10ml)",
+            desc: "Elige 3 perfumes de la colección Árabes Deluxe (Game of Spades, King of Kings).",
             category: "nicho",
             allowedCategories: ["nicho"],
             size: "10ml",
@@ -6919,8 +6892,8 @@
           },
           {
             id: "promo-kings-10ml-4",
-            name: "4 Decants King/Spades (10ml)",
-            desc: "Elige 4 perfumes de la colección King of Kings o Game of Spades.",
+            name: "4 Decants Árabes Deluxe (10ml)",
+            desc: "Elige 4 perfumes de la colección Árabes Deluxe (Game of Spades, King of Kings).",
             category: "nicho",
             allowedCategories: ["nicho"],
             size: "10ml",
@@ -6930,6 +6903,7 @@
           },
         ];
 
+        // ==================== LÓGICA (igual que antes pero con Erba Pura corregida) ====================
         let cart = [];
         let activeFilters = { category: "all", gender: "all" };
         let activePromoFilter = "all";
@@ -6947,7 +6921,6 @@
         } catch (e) {
           cart = [];
         }
-
         function saveCart() {
           try {
             localStorage.setItem("paco_cart_v4", JSON.stringify(cart));
@@ -6985,6 +6958,12 @@
           if (!product) return;
           const sizes =
             type === "full" ? product.fullSizes : product.decantSizes;
+          if (!sizes || Object.keys(sizes).length === 0) {
+            showToast(
+              "⚠️ Este producto solo está disponible en presentación completa",
+            );
+            return;
+          }
           const price = sizes[size];
           if (!price) return;
           const existing = cart.find(
@@ -7037,27 +7016,47 @@
           if (cart.length === 0) {
             container.innerHTML =
               '<div class="cart-empty">Tu carrito está vacío.<br>¡Explora nuestra colección!</div>';
-          } else {
-            container.innerHTML = cart
-              .map(
-                (item, i) => `
-              <div class="cart-item">
-                <img src="${item.image}" alt="${item.name}" onerror="this.style.display='none'" />
-                <div class="cart-item-info">
-                  <div class="cart-item-name">${item.name}</div>
-                  <div class="cart-item-meta">${item.brand} · ${item.type === "full" ? "Frasco" : "Decant"} ${item.size}</div>
-                  <div class="cart-item-price">${formatPrice(item.price * item.qty)}</div>
-                </div>
-                <div class="cart-item-qty">
-                  <button data-action="qty" data-index="${i}" data-delta="-1">−</button>
-                  <span>${item.qty}</span>
-                  <button data-action="qty" data-index="${i}" data-delta="1">+</button>
-                </div>
-                <button class="cart-item-remove" data-action="remove" data-index="${i}">🗑</button>
-              </div>`,
-              )
-              .join("");
+            return;
           }
+
+          container.innerHTML = cart
+            .map((item, i) => {
+              // Determinar si es un pack con regalo
+              const hasGift = item.isPack && item.gift;
+
+              let imageHtml = `<img src="${item.image}" alt="${item.name}" onerror="this.style.display='none'" />`;
+              let nameHtml = `<div class="cart-item-name">${item.name}</div>`;
+              let metaHtml = `<div class="cart-item-meta">${item.brand} · ${item.type === "full" ? "Frasco" : item.type === "decant" ? "Decant" : "Pack"} ${item.size}</div>`;
+
+              // Si tiene regalo, añadimos una miniatura y texto del regalo
+              if (hasGift) {
+                imageHtml = `
+        <div style="position:relative; display:inline-block;">
+          ${imageHtml}
+          <img src="${item.gift.image}" alt="${item.gift.name}" 
+               style="position:absolute; bottom:-4px; right:-4px; width:22px; height:22px; border-radius:50%; border:2px solid white; object-fit:cover;"
+               onerror="this.style.display='none'" />
+        </div>`;
+                metaHtml += `<div style="font-size:0.7rem; color:#b89b5e; margin-top:2px;">🎁 Incluye: ${item.gift.name} (${item.gift.size})</div>`;
+              }
+
+              return `
+      <div class="cart-item">
+        ${imageHtml}
+        <div class="cart-item-info">
+          ${nameHtml}
+          ${metaHtml}
+          <div class="cart-item-price">${formatPrice(item.price * item.qty)}</div>
+        </div>
+        <div class="cart-item-qty">
+          <button data-action="qty" data-index="${i}" data-delta="-1">−</button>
+          <span>${item.qty}</span>
+          <button data-action="qty" data-index="${i}" data-delta="1">+</button>
+        </div>
+        <button class="cart-item-remove" data-action="remove" data-index="${i}">🗑</button>
+      </div>`;
+            })
+            .join("");
         }
 
         function updateCartFooter() {
@@ -7345,7 +7344,9 @@
           if (summaryContainer) {
             summaryContainer.innerHTML = cart
               .map(
+                
                 (item) => `
+                
               <div class="checkout-summary-item">
                 <div class="checkout-item-info">
                   <img src="${item.image || "img/perfumes/placeholder.webp"}" 
@@ -7467,46 +7468,50 @@
           const promo = currentPackPromo;
           if (!promo) return;
           if (selectedPackProducts.length < promo.quantity) {
-            showToast(`⚠️ Selecciona exactamente ${promo.quantity} perfumes`);
+            showToast(`⚠️ Selecciona exactamente ${promo.quantity} perfume(s)`);
             return;
           }
+
+          // Obtener el primer (y único) producto seleccionado para usarlo como imagen principal
+          const mainProduct = getProductById(selectedPackProducts[0]);
+          const mainImage = mainProduct ? mainProduct.cardImage : "";
+
+          // Construir el objeto del pack (sin regalo separado)
           const packItem = {
             productId: "pack-" + promo.id + "-" + Date.now(),
             type: "pack",
             name: promo.name,
             brand: "Pack Personalizado",
-            image:
-              selectedPackProducts.length > 0
-                ? getProductById(selectedPackProducts[0])?.cardImage
-                : "",
+            image: mainImage,
             size: `${promo.quantity} × ${promo.size}`,
             price: promo.price,
             qty: 1,
             isPack: true,
             includedProductIds: [...selectedPackProducts],
           };
-          cart.push(packItem);
+
+          // Si la promo incluye regalo, lo anexamos al mismo objeto
           if (promo.gift) {
-            const giftProduct = getProductById(999); // Erba Pura
-            if (giftProduct) {
-              cart.push({
-                productId: 999,
-                type: "decant",
-                name: giftProduct.name,
-                brand: giftProduct.brand,
-                image: promo.giftImage || giftProduct.cardImage,
-                size: promo.size,
-                price: 0,
-                qty: 1,
-                isGift: true,
-              });
-            }
+            // Buscar la info del perfume de regalo (Erba Pura)
+            const giftProduct = getProductById(160); // ID fijo de Erba Pura
+            packItem.gift = {
+              name:
+                promo.giftName || (giftProduct ? giftProduct.name : "Regalo"),
+              image:
+                promo.giftImage || (giftProduct ? giftProduct.cardImage : ""),
+              size: promo.size,
+              price: 0,
+            };
           }
+
+          cart.push(packItem);
           saveCart();
           updateCartUI();
-          showToast(
-            "🎁 ¡Pack añadido al carrito! (incluye Erba Pura de regalo)",
-          );
+
+          const mensaje = promo.gift
+            ? "🎁 ¡Pack añadido! (incluye " + packItem.gift.name + " de regalo)"
+            : "✅ ¡Pack añadido al carrito!";
+          showToast(mensaje);
           pulseCartCount();
           closePackModal();
           openCart();
