@@ -4220,437 +4220,178 @@
   ];
 
   /* ══════════════════════════════════════════════════════════════
-     DATA — PROMOCIONES
-  ══════════════════════════════════════════════════════════════ */
+      DATA — PROMOCIONES
+   ══════════════════════════════════════════════════════════════ */
   const promos = [
-    // Diseñador
+    // ── PROMOS DE REGALO (Erba Pura) – tarjetas individuales ──
     {
-      id: "promo-disenador-2ml-5",
-      name: "5 Decants Diseñador (2ml)",
-      desc: "Elige 5 perfumes de diseñador en decants de 2ml.",
-      category: "disenador",
+      id: "group-erba",
+      type: "group",
+      category: "erba",
+      name: "1 Diseñador + Erba Pura",
+      desc: "Elige el tamaño y 1 perfume de diseñador, y recibe Erba Pura de regalo.",
+      icon: "🧪",
+      badge: "🎁 Regalo",
+      gift: true,
+      giftName: "Erba Pura Xerjoff",
+      giftImage: "img/perfumes/erba_pura.webp",
       allowedCategories: ["disenador"],
-      size: "2ml",
-      quantity: 5,
-      price: 95,
-      badge: null,
+      quantity: 1,
+      options: [
+        { size: "2ml", price: 55 },
+        { size: "3ml", price: 75 },
+        { size: "5ml", price: 105 },
+        { size: "10ml", price: 155 }
+      ],
+      image: "img/promos/erba_pura.webp"
     },
+
+    // ── DISEÑADOR: 2 y 3 unidades (grupos) ──
     {
-      id: "promo-disenador-2ml-10",
-      name: "10 Decants Diseñador (2ml)",
-      desc: "Elige 10 perfumes de diseñador en decants de 2ml.",
+      id: "group-disenador-2u",
+      type: "group",
       category: "disenador",
+      name: "2 Decants Diseñador",
+      desc: "Elige el tamaño y 2 perfumes de diseñador.",
+      icon: "⭐",
+      image: "img/promos/diseñador2.webp",
       allowedCategories: ["disenador"],
-      size: "2ml",
-      quantity: 10,
-      price: 155,
-      badge: null,
-    },
-    {
-      id: "promo-disenador-3ml-5",
-      name: "5 Decants Diseñador (3ml)",
-      desc: "Elige 5 perfumes de diseñador en decants de 3ml.",
-      category: "disenador",
-      allowedCategories: ["disenador"],
-      size: "3ml",
-      quantity: 5,
-      price: 115,
-      badge: null,
-    },
-    {
-      id: "promo-disenador-3ml-10",
-      name: "10 Decants Diseñador (3ml)",
-      desc: "Elige 10 perfumes de diseñador en decants de 3ml.",
-      category: "disenador",
-      allowedCategories: ["disenador"],
-      size: "3ml",
-      quantity: 10,
-      price: 195,
-      badge: null,
-    },
-    {
-      id: "promo-disenador-5ml-5",
-      name: "5 Decants Diseñador (5ml)",
-      desc: "Elige 5 perfumes de diseñador en decants de 5ml.",
-      category: "disenador",
-      allowedCategories: ["disenador"],
-      size: "5ml",
-      quantity: 5,
-      price: 160,
-      badge: null,
-    },
-    {
-      id: "promo-disenador-5ml-10",
-      name: "10 Decants Diseñador (5ml)",
-      desc: "Elige 10 perfumes de diseñador en decants de 5ml.",
-      category: "disenador",
-      allowedCategories: ["disenador"],
-      size: "5ml",
-      quantity: 10,
-      price: 295,
-      badge: null,
-    },
-    {
-      id: "promo-disenador-10ml-2",
-      name: "2 Decants Diseñador (10ml)",
-      desc: "Elige 2 perfumes de diseñador en decants de 10ml.",
-      category: "disenador",
-      allowedCategories: ["disenador"],
-      size: "10ml",
       quantity: 2,
-      price: 120,
-      badge: null,
+      options: [
+        { size: "2ml", price: 40 },
+        { size: "3ml", price: 55 },
+        { size: "5ml", price: 90 },
+        { size: "10ml", price: 120 }
+      ]
     },
     {
-      id: "promo-disenador-10ml-3",
-      name: "3 Decants Diseñador (10ml)",
-      desc: "Elige 3 perfumes de diseñador en decants de 10ml.",
+      id: "group-disenador-3u",
+      type: "group",
       category: "disenador",
+      name: "3 Decants Diseñador",
+      desc: "Elige el tamaño y 3 perfumes de diseñador.",
+      icon: "⭐",
+      image: "img/promos/diseñador3.webp",
       allowedCategories: ["disenador"],
-      size: "10ml",
       quantity: 3,
-      price: 165,
-      badge: null,
+      options: [
+        { size: "2ml", price: 55 },
+        { size: "3ml", price: 75 },
+        { size: "5ml", price: 120 },
+        { size: "10ml", price: 165 }
+      ]
     },
-    // Diseñador + Erba Pura
+
+    // ── ÁRABES MUJER (3 y 5 unidades) ──
     {
-      id: "promo-erba-2ml-1",
-      name: "1 Diseñador + Erba Pura (2ml)",
-      desc: "Elige 1 perfume de diseñador + 1 Erba Pura de regalo en decants de 2ml.",
-      category: "erba",
-      allowedCategories: ["disenador"],
-      size: "2ml",
-      quantity: 1,
-      price: 55,
-      badge: "🎁 Regalo",
-      gift: true,
-      giftName: "Erba Pura Xerjoff",
-      giftImage: "img/perfumes/erba_pura.webp",
-    },
-    {
-      id: "promo-erba-3ml-1",
-      name: "1 Diseñador + Erba Pura (3ml)",
-      desc: "Elige 1 perfume de diseñador + 1 Erba Pura de regalo en decants de 3ml.",
-      category: "erba",
-      allowedCategories: ["disenador"],
-      size: "3ml",
-      quantity: 1,
-      price: 75,
-      badge: "🎁 Regalo",
-      gift: true,
-      giftName: "Erba Pura Xerjoff",
-      giftImage: "img/perfumes/erba_pura.webp",
-    },
-    {
-      id: "promo-erba-5ml-1",
-      name: "1 Diseñador + Erba Pura (5ml)",
-      desc: "Elige 1 perfume de diseñador + 1 Erba Pura de regalo en decants de 5ml.",
-      category: "erba",
-      allowedCategories: ["disenador"],
-      size: "5ml",
-      quantity: 1,
-      price: 105,
-      badge: "🎁 Regalo",
-      gift: true,
-      giftName: "Erba Pura Xerjoff",
-      giftImage: "img/perfumes/erba_pura.webp",
-    },
-    {
-      id: "promo-erba-10ml-1",
-      name: "1 Diseñador + Erba Pura (10ml)",
-      desc: "Elige 1 perfume de diseñador + 1 Erba Pura de regalo en decants de 10ml.",
-      category: "erba",
-      allowedCategories: ["disenador"],
-      size: "10ml",
-      quantity: 1,
-      price: 155,
-      badge: "🎁 Regalo",
-      gift: true,
-      giftName: "Erba Pura Xerjoff",
-      giftImage: "img/perfumes/erba_pura.webp",
-    },
-    // Árabes mujer
-    {
-      id: "promo-arabe-fem-2ml-5",
-      name: "5 Decants Árabes Mujer (2ml)",
-      desc: "Elige 5 perfumes árabes femeninos en 2ml.",
+      id: "group-arabe-fem-3u",
+      type: "group",
       category: "arabe",
+      name: "3 Decants Árabes Mujer",
+      desc: "Elige el tamaño y 3 perfumes árabes femeninos.",
+      icon: "🕌",
+      image: "img/promos/arabes_fem_3u.webp",
       allowedCategories: ["arabe"],
       allowedGenders: ["femenino"],
-      size: "2ml",
-      quantity: 5,
-      price: 55,
-      badge: null,
-    },
-    {
-      id: "promo-arabe-fem-2ml-10",
-      name: "10 Decants Árabes Mujer (2ml)",
-      desc: "Elige 10 perfumes árabes femeninos en 2ml.",
-      category: "arabe",
-      allowedCategories: ["arabe"],
-      allowedGenders: ["femenino"],
-      size: "2ml",
-      quantity: 10,
-      price: 95,
-      badge: null,
-    },
-    {
-      id: "promo-arabe-fem-3ml-5",
-      name: "5 Decants Árabes Mujer (3ml)",
-      desc: "Elige 5 perfumes árabes femeninos en 3ml.",
-      category: "arabe",
-      allowedCategories: ["arabe"],
-      allowedGenders: ["femenino"],
-      size: "3ml",
-      quantity: 5,
-      price: 65,
-      badge: null,
-    },
-    {
-      id: "promo-arabe-fem-3ml-10",
-      name: "10 Decants Árabes Mujer (3ml)",
-      desc: "Elige 10 perfumes árabes femeninos en 3ml.",
-      category: "arabe",
-      allowedCategories: ["arabe"],
-      allowedGenders: ["femenino"],
-      size: "3ml",
-      quantity: 10,
-      price: 115,
-      badge: null,
-    },
-    {
-      id: "promo-arabe-fem-5ml-5",
-      name: "5 Decants Árabes Mujer (5ml)",
-      desc: "Elige 5 perfumes árabes femeninos en 5ml.",
-      category: "arabe",
-      allowedCategories: ["arabe"],
-      allowedGenders: ["femenino"],
-      size: "5ml",
-      quantity: 5,
-      price: 75,
-      badge: null,
-    },
-    {
-      id: "promo-arabe-fem-5ml-10",
-      name: "10 Decants Árabes Mujer (5ml)",
-      desc: "Elige 10 perfumes árabes femeninos en 5ml.",
-      category: "arabe",
-      allowedCategories: ["arabe"],
-      allowedGenders: ["femenino"],
-      size: "5ml",
-      quantity: 10,
-      price: 135,
-      badge: null,
-    },
-    {
-      id: "promo-arabe-fem-10ml-3",
-      name: "3 Decants Árabes Mujer (10ml)",
-      desc: "Elige 3 perfumes árabes femeninos en 10ml.",
-      category: "arabe",
-      allowedCategories: ["arabe"],
-      allowedGenders: ["femenino"],
-      size: "10ml",
       quantity: 3,
-      price: 85,
-      badge: null,
+      options: [
+        { size: "2ml", price: 35 },
+        { size: "3ml", price: 45 },
+        { size: "5ml", price: 65 },
+        { size: "10ml", price: 85 }
+      ]
     },
     {
-      id: "promo-arabe-fem-10ml-5",
-      name: "5 Decants Árabes Mujer (10ml)",
-      desc: "Elige 5 perfumes árabes femeninos en 10ml.",
+      id: "group-arabe-fem-5u",
+      type: "group",
       category: "arabe",
+      name: "5 Decants Árabes Mujer",
+      desc: "Elige el tamaño y 5 perfumes árabes femeninos.",
+      icon: "🕌",
+      image: "img/promos/arabes_fem_5u.webp",
       allowedCategories: ["arabe"],
       allowedGenders: ["femenino"],
-      size: "10ml",
       quantity: 5,
-      price: 125,
-      badge: null,
+      options: [
+        { size: "2ml", price: 55 },
+        { size: "3ml", price: 65 },
+        { size: "5ml", price: 75 },
+        { size: "10ml", price: 125 }
+      ]
     },
-    // Árabes hombre
+
+    // ── ÁRABES HOMBRE (3 y 5 unidades) ──
     {
-      id: "promo-arabe-mas-2ml-5",
-      name: "5 Decants Árabes Hombre (2ml)",
-      desc: "Elige 5 perfumes árabes masculinos en 2ml.",
+      id: "group-arabe-mas-3u",
+      type: "group",
       category: "arabe",
+      name: "3 Decants Árabes Hombre",
+      desc: "Elige el tamaño y 3 perfumes árabes masculinos.",
+      icon: "🕌",
+      image: "img/promos/arabes_mas_3u.webp",
       allowedCategories: ["arabe"],
       allowedGenders: ["masculino"],
-      size: "2ml",
-      quantity: 5,
-      price: 45,
-      badge: null,
-    },
-    {
-      id: "promo-arabe-mas-2ml-10",
-      name: "10 Decants Árabes Hombre (2ml)",
-      desc: "Elige 10 perfumes árabes masculinos en 2ml.",
-      category: "arabe",
-      allowedCategories: ["arabe"],
-      allowedGenders: ["masculino"],
-      size: "2ml",
-      quantity: 10,
-      price: 85,
-      badge: null,
-    },
-    {
-      id: "promo-arabe-mas-3ml-5",
-      name: "5 Decants Árabes Hombre (3ml)",
-      desc: "Elige 5 perfumes árabes masculinos en 3ml.",
-      category: "arabe",
-      allowedCategories: ["arabe"],
-      allowedGenders: ["masculino"],
-      size: "3ml",
-      quantity: 5,
-      price: 55,
-      badge: null,
-    },
-    {
-      id: "promo-arabe-mas-3ml-10",
-      name: "10 Decants Árabes Hombre (3ml)",
-      desc: "Elige 10 perfumes árabes masculinos en 3ml.",
-      category: "arabe",
-      allowedCategories: ["arabe"],
-      allowedGenders: ["masculino"],
-      size: "3ml",
-      quantity: 10,
-      price: 105,
-      badge: null,
-    },
-    {
-      id: "promo-arabe-mas-5ml-5",
-      name: "5 Decants Árabes Hombre (5ml)",
-      desc: "Elige 5 perfumes árabes masculinos en 5ml.",
-      category: "arabe",
-      allowedCategories: ["arabe"],
-      allowedGenders: ["masculino"],
-      size: "5ml",
-      quantity: 5,
-      price: 65,
-      badge: null,
-    },
-    {
-      id: "promo-arabe-mas-5ml-10",
-      name: "10 Decants Árabes Hombre (5ml)",
-      desc: "Elige 10 perfumes árabes masculinos en 5ml.",
-      category: "arabe",
-      allowedCategories: ["arabe"],
-      allowedGenders: ["masculino"],
-      size: "5ml",
-      quantity: 10,
-      price: 120,
-      badge: null,
-    },
-    {
-      id: "promo-arabe-mas-10ml-3",
-      name: "3 Decants Árabes Hombre (10ml)",
-      desc: "Elige 3 perfumes árabes masculinos en 10ml.",
-      category: "arabe",
-      allowedCategories: ["arabe"],
-      allowedGenders: ["masculino"],
-      size: "10ml",
       quantity: 3,
-      price: 75,
-      badge: null,
+      options: [
+        { size: "2ml", price: 35 },
+        { size: "3ml", price: 45 },
+        { size: "5ml", price: 65 },
+        { size: "10ml", price: 85 }
+      ]
     },
     {
-      id: "promo-arabe-mas-10ml-5",
-      name: "5 Decants Árabes Hombre (10ml)",
-      desc: "Elige 5 perfumes árabes masculinos en 10ml.",
+      id: "group-arabe-mas-5u",
+      type: "group",
       category: "arabe",
+      name: "5 Decants Árabes Hombre",
+      desc: "Elige el tamaño y 5 perfumes árabes masculinos.",
+      icon: "🕌",
+      image: "img/promos/arabes_mas_5u.webp",
       allowedCategories: ["arabe"],
       allowedGenders: ["masculino"],
-      size: "10ml",
       quantity: 5,
-      price: 115,
-      badge: null,
+      options: [
+        { size: "2ml", price: 45 },
+        { size: "3ml", price: 55 },
+        { size: "5ml", price: 65 },
+        { size: "10ml", price: 115 }
+      ]
     },
-    // Árabes Deluxe
+
+    // ── ÁRABES DELUXE (3 y 4 unidades) ──
     {
-      id: "promo-kings-2ml-5",
-      name: "5 Decants Árabes Deluxe (2ml)",
-      desc: "Elige 5 perfumes de la colección Árabes Deluxe (Game of Spades, King of Kings).",
+      id: "group-nicho-3u",
+      type: "group",
       category: "nicho",
+      name: "3 Decants Árabes Deluxe",
+      desc: "Elige el tamaño y 3 perfumes de la colección Deluxe.",
+      icon: "💎",
+      image: "img/promos/deluxe_3u.webp",
       allowedCategories: ["nicho"],
-      size: "2ml",
-      quantity: 5,
-      price: 55,
-      badge: null,
-    },
-    {
-      id: "promo-kings-2ml-10",
-      name: "10 Decants Árabes Deluxe (2ml)",
-      desc: "Elige 10 perfumes de la colección Árabes Deluxe (Game of Spades, King of Kings).",
-      category: "nicho",
-      allowedCategories: ["nicho"],
-      size: "2ml",
-      quantity: 10,
-      price: 95,
-      badge: null,
-    },
-    {
-      id: "promo-kings-3ml-5",
-      name: "5 Decants Árabes Deluxe (3ml)",
-      desc: "Elige 5 perfumes de la colección Árabes Deluxe (Game of Spades, King of Kings).",
-      category: "nicho",
-      allowedCategories: ["nicho"],
-      size: "3ml",
-      quantity: 5,
-      price: 65,
-      badge: null,
-    },
-    {
-      id: "promo-kings-3ml-10",
-      name: "10 Decants Árabes Deluxe (3ml)",
-      desc: "Elige 10 perfumes de la colección Árabes Deluxe (Game of Spades, King of Kings).",
-      category: "nicho",
-      allowedCategories: ["nicho"],
-      size: "3ml",
-      quantity: 10,
-      price: 115,
-      badge: null,
-    },
-    {
-      id: "promo-kings-5ml-5",
-      name: "5 Decants Árabes Deluxe (5ml)",
-      desc: "Elige 5 perfumes de la colección Árabes Deluxe (Game of Spades, King of Kings).",
-      category: "nicho",
-      allowedCategories: ["nicho"],
-      size: "5ml",
-      quantity: 5,
-      price: 105,
-      badge: null,
-    },
-    {
-      id: "promo-kings-5ml-10",
-      name: "10 Decants Árabes Deluxe (5ml)",
-      desc: "Elige 10 perfumes de la colección Árabes Deluxe (Game of Spades, King of Kings).",
-      category: "nicho",
-      allowedCategories: ["nicho"],
-      size: "5ml",
-      quantity: 10,
-      price: 195,
-      badge: null,
-    },
-    {
-      id: "promo-kings-10ml-3",
-      name: "3 Decants Árabes Deluxe (10ml)",
-      desc: "Elige 3 perfumes de la colección Árabes Deluxe (Game of Spades, King of Kings).",
-      category: "nicho",
-      allowedCategories: ["nicho"],
-      size: "10ml",
       quantity: 3,
-      price: 115,
-      badge: null,
+      options: [
+        { size: "2ml", price: 45 },
+        { size: "3ml", price: 55 },
+        { size: "5ml", price: 95 },
+        { size: "10ml", price: 115 }
+      ]
     },
     {
-      id: "promo-kings-10ml-4",
-      name: "4 Decants Árabes Deluxe (10ml)",
-      desc: "Elige 4 perfumes de la colección Árabes Deluxe (Game of Spades, King of Kings).",
+      id: "group-nicho-4u",
+      type: "group",
       category: "nicho",
+      name: "4 Decants Árabes Deluxe",
+      desc: "Elige el tamaño y 4 perfumes de la colección Deluxe.",
+      icon: "💎",
+      image: "img/promos/deluxe_4u.webp",
       allowedCategories: ["nicho"],
-      size: "10ml",
       quantity: 4,
-      price: 145,
-      badge: null,
+      options: [
+        { size: "2ml", price: 55 },
+        { size: "3ml", price: 65 },
+        { size: "5ml", price: 105 },
+        { size: "10ml", price: 145 }
+      ]
     },
   ];
 
@@ -4667,9 +4408,12 @@
   let currentPage = "home";
   let currentPackPromo = null;
   let selectedPackProducts = [];
+  let currentPackIsGroup = false;
+  let currentPackGroupSize = null;
+  let currentPackGroupQty = null;
+  let packGroupPrice = 0;
   let currentSearchTerm = "";
 
-  // Restore cart from localStorage
   try {
     const saved = localStorage.getItem("paco_cart_v4");
     if (saved) cart = JSON.parse(saved);
@@ -4681,11 +4425,7 @@
      UTILITIES
   ══════════════════════════════════════════════════════════════ */
   function saveCart() {
-    try {
-      localStorage.setItem("paco_cart_v4", JSON.stringify(cart));
-    } catch (e) {
-      /* storage unavailable */
-    }
+    try { localStorage.setItem("paco_cart_v4", JSON.stringify(cart)); } catch (e) { }
   }
 
   function getCartTotal() {
@@ -4728,7 +4468,7 @@
   }
 
   /* ══════════════════════════════════════════════════════════════
-     CART — CORE LOGIC (unchanged)
+     CART — CORE LOGIC
   ══════════════════════════════════════════════════════════════ */
   function addToCart(productId, type, size, qty = 1) {
     const product = getProductById(productId);
@@ -4736,9 +4476,7 @@
 
     const sizes = type === "full" ? product.fullSizes : product.decantSizes;
     if (!sizes || Object.keys(sizes).length === 0) {
-      showToast(
-        "⚠️ Este producto solo está disponible en presentación completa",
-      );
+      showToast("⚠️ Este producto solo está disponible en presentación completa");
       return;
     }
 
@@ -4794,7 +4532,7 @@
   }
 
   /* ══════════════════════════════════════════════════════════════
-     CART — RENDER (unchanged logic, improved HTML)
+     CART — RENDER
   ══════════════════════════════════════════════════════════════ */
   function renderCartItems() {
     const container = document.getElementById("cartItems");
@@ -4844,16 +4582,16 @@
           extraProductsHtml = `
             <div style="display:flex;gap:6px;overflow-x:auto;padding-top:6px;margin-top:6px;border-top:1px dashed var(--border-light);">
               ${item.includedProducts
-                .map(
-                  (p) => `
+              .map(
+                (p) => `
                 <div style="flex:0 0 auto;text-align:center;width:55px;">
                   <img src="${p.image}" alt="${p.name}"
                        style="width:36px;height:36px;border-radius:6px;object-fit:cover;display:block;margin:0 auto;"
                        onerror="this.src='img/perfumes/placeholder.webp'" />
                   <div style="font-size:.62rem;line-height:1.2;margin-top:2px;max-width:55px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--text-muted);">${p.name}</div>
                 </div>`,
-                )
-                .join("")}
+              )
+              .join("")}
             </div>`;
         }
 
@@ -4888,7 +4626,6 @@
     }
   }
 
-  // Cart item interactions (delegated)
   document.getElementById("cartItems").addEventListener("click", function (e) {
     const btn = e.target.closest("button");
     if (!btn) return;
@@ -4979,7 +4716,6 @@
       : "Selecciona tamaño";
   }
 
-  // Tab events
   document.getElementById("tabFull").addEventListener("click", function () {
     currentModalView = "full";
     updateModalContent();
@@ -4989,7 +4725,6 @@
     updateModalContent();
   });
 
-  // Size selection
   document.getElementById("modalSizes").addEventListener("click", function (e) {
     const btn = e.target.closest(".size-option");
     if (!btn) return;
@@ -4997,7 +4732,6 @@
     updateModalContent();
   });
 
-  // Add to cart from modal
   document.getElementById("modalAddBtn").addEventListener("click", function () {
     if (!currentModalProduct || !currentModalSize) {
       showToast("⚠️ Selecciona un tamaño");
@@ -5008,25 +4742,58 @@
     openCart();
   });
 
-  // Close on backdrop click
-  document
-    .getElementById("modalOverlay")
-    .addEventListener("click", function (e) {
-      if (e.target === this) closeModal();
-    });
+  document.getElementById("modalOverlay").addEventListener("click", function (e) {
+    if (e.target === this) closeModal();
+  });
 
   /* ══════════════════════════════════════════════════════════════
-     MODAL — PACK (unchanged logic)
+     MODAL — PACK
   ══════════════════════════════════════════════════════════════ */
   function openPackModal(promoId) {
     const promo = promos.find((p) => p.id === promoId);
     if (!promo) return;
+
     currentPackPromo = promo;
+    currentPackIsGroup = (promo.type === "group");
     selectedPackProducts = [];
+    currentPackGroupSize = null;
+    currentPackGroupQty = promo.quantity || null;
+    packGroupPrice = 0;
+
     document.getElementById("packModalTitle").textContent = promo.name;
     document.getElementById("packModalDesc").textContent = promo.desc;
-    renderPackGrid();
-    updatePackCounter();
+
+    const groupOptions = document.getElementById("packGroupOptions");
+    const productGrid = document.getElementById("packProductGrid");
+    const counterEl = document.getElementById("packCounter");
+    const confirmBtn = document.getElementById("packConfirmBtn");
+    const qtyGrid = document.getElementById("packQtyGrid");
+    const qtyTitle = qtyGrid.previousElementSibling;
+
+    if (currentPackIsGroup) {
+      // Limpiar residuos
+      currentPackPromo.size = undefined;
+      currentPackPromo.price = undefined;
+
+      groupOptions.style.display = "block";
+      productGrid.style.display = "none";
+      counterEl.style.display = "none";
+      confirmBtn.style.display = "none";
+
+      // Ocultar cantidad (viene fija en la promo)
+      qtyGrid.style.display = "none";
+      if (qtyTitle) qtyTitle.style.display = "none";
+
+      renderPackSizeOptions();
+    } else {
+      groupOptions.style.display = "none";
+      productGrid.style.display = "grid";
+      counterEl.style.display = "block";
+      confirmBtn.style.display = "flex";
+      renderPackGrid();
+      updatePackCounter();
+    }
+
     document.getElementById("packModalOverlay").classList.add("active");
     document.body.style.overflow = "hidden";
   }
@@ -5035,24 +4802,20 @@
     document.getElementById("packModalOverlay").classList.remove("active");
     document.body.style.overflow = "";
     currentPackPromo = null;
+    currentPackIsGroup = false;
+    currentPackGroupSize = null;
+    currentPackGroupQty = null;
     selectedPackProducts = [];
+    document.getElementById("packGroupOptions").style.display = "none";
   }
 
   function getEligibleProducts(promo) {
-    let eligible = products;
-
-    // Excluir testers de cualquier promoción
-    eligible = eligible.filter((p) => !p.tester);
-
+    let eligible = products.filter((p) => !p.tester);
     if (promo.allowedCategories) {
-      eligible = eligible.filter((p) =>
-        promo.allowedCategories.includes(p.category),
-      );
+      eligible = eligible.filter((p) => promo.allowedCategories.includes(p.category));
     }
     if (promo.allowedGenders) {
-      eligible = eligible.filter((p) =>
-        promo.allowedGenders.includes(p.gender),
-      );
+      eligible = eligible.filter((p) => promo.allowedGenders.includes(p.gender));
     }
     return eligible.filter((p) => p.cardImage && p.cardImage.trim() !== "");
   }
@@ -5065,8 +4828,7 @@
     const grid = document.getElementById("packProductGrid");
 
     if (eligible.length === 0) {
-      grid.innerHTML =
-        '<p style="text-align:center;color:var(--text-muted);">No hay perfumes disponibles para esta promoción.</p>';
+      grid.innerHTML = '<p style="text-align:center;color:var(--text-muted);">No hay perfumes disponibles para esta promoción.</p>';
       return;
     }
 
@@ -5106,16 +4868,93 @@
     const promo = currentPackPromo;
     const counter = document.getElementById("packCounter");
     if (promo) {
-      counter.textContent = `Seleccionados: ${selectedPackProducts.length} de ${promo.quantity}`;
+      const qty = promo.quantity;
+      counter.textContent = `Seleccionados: ${selectedPackProducts.length} de ${qty}`;
     }
   }
+
+  function renderPackSizeOptions() {
+    if (!currentPackIsGroup || !currentPackPromo) return;
+    const sizes = currentPackPromo.options.map((opt) => opt.size);
+    const container = document.getElementById("packSizeGrid");
+    container.innerHTML = sizes
+      .map(
+        (size) =>
+          `<button class="size-option${size === currentPackGroupSize ? " selected" : ""}" data-size="${size}">${size}</button>`,
+      )
+      .join("");
+
+    // Siempre ocultamos cantidad (ya está definida en la promo)
+    const qtyGrid = document.getElementById("packQtyGrid");
+    const qtyTitle = qtyGrid.previousElementSibling;
+    qtyGrid.innerHTML = "";
+    qtyGrid.style.display = "none";
+    if (qtyTitle) qtyTitle.style.display = "none";
+
+    document.getElementById("packGroupPrice").textContent = "";
+  }
+
+  function selectPackSize(size) {
+    currentPackGroupSize = size;
+    currentPackGroupQty = currentPackPromo.quantity;
+    packGroupPrice = 0;
+
+    document.querySelectorAll("#packSizeGrid .size-option").forEach((btn) => {
+      btn.classList.toggle("selected", btn.dataset.size === size);
+    });
+
+    const qtyGrid = document.getElementById("packQtyGrid");
+    const qtyTitle = qtyGrid.previousElementSibling;
+    qtyGrid.innerHTML = "";
+    qtyGrid.style.display = "none";
+    if (qtyTitle) qtyTitle.style.display = "none";
+
+    const option = currentPackPromo.options.find((o) => o.size === size);
+    if (option) {
+      packGroupPrice = option.price;
+      document.getElementById("packGroupPrice").textContent =
+        `Precio: ${formatPrice(packGroupPrice)}`;
+    } else {
+      document.getElementById("packGroupPrice").textContent = "";
+    }
+  }
+
+  // Listener para los botones de tamaño
+  document.getElementById("packSizeGrid").addEventListener("click", function (e) {
+    const btn = e.target.closest(".size-option");
+    if (!btn) return;
+    selectPackSize(btn.dataset.size);
+  });
+
+  // Botón "Seleccionar Perfumes" dentro del grupo
+  document.getElementById("packGroupContinue").addEventListener("click", function () {
+    if (!currentPackGroupSize) {
+      showToast("⚠️ Selecciona un tamaño primero");
+      return;
+    }
+    document.getElementById("packGroupOptions").style.display = "none";
+    document.getElementById("packProductGrid").style.display = "grid";
+    document.getElementById("packCounter").style.display = "block";
+    document.getElementById("packConfirmBtn").style.display = "flex";
+
+    // Asignamos los valores escogidos
+    currentPackPromo.size = currentPackGroupSize;
+    currentPackPromo.price = packGroupPrice;
+    selectedPackProducts = [];
+    renderPackGrid();
+    updatePackCounter();
+  });
 
   window.confirmPack = function () {
     const promo = currentPackPromo;
     if (!promo) return;
 
-    if (selectedPackProducts.length < promo.quantity) {
-      showToast(`⚠️ Selecciona exactamente ${promo.quantity} perfume(s)`);
+    const qty = promo.quantity;
+    const sz = currentPackIsGroup ? currentPackGroupSize : promo.size;
+    const prc = currentPackIsGroup ? packGroupPrice : promo.price;
+
+    if (selectedPackProducts.length < qty) {
+      showToast(`⚠️ Selecciona exactamente ${qty} perfume(s)`);
       return;
     }
 
@@ -5125,9 +4964,7 @@
     const includedProducts = selectedPackProducts
       .map((pid) => {
         const prod = getProductById(pid);
-        return prod
-          ? { id: pid, name: prod.name, image: prod.cardImage }
-          : null;
+        return prod ? { id: pid, name: prod.name, image: prod.cardImage } : null;
       })
       .filter(Boolean);
 
@@ -5137,8 +4974,8 @@
       name: promo.name,
       brand: "Pack Personalizado",
       image: mainImage,
-      size: `${promo.quantity} × ${promo.size}`,
-      price: promo.price,
+      size: `${qty} × ${sz}`,
+      price: prc,
       qty: 1,
       isPack: true,
       includedProductIds: [...selectedPackProducts],
@@ -5150,7 +4987,7 @@
       packItem.gift = {
         name: promo.giftName || (giftProduct ? giftProduct.name : "Regalo"),
         image: promo.giftImage || (giftProduct ? giftProduct.cardImage : ""),
-        size: promo.size,
+        size: sz,
         price: 0,
       };
     }
@@ -5169,11 +5006,9 @@
     openCart();
   };
 
-  document
-    .getElementById("packModalOverlay")
-    .addEventListener("click", function (e) {
-      if (e.target === this) closePackModal();
-    });
+  document.getElementById("packModalOverlay").addEventListener("click", function (e) {
+    if (e.target === this) closePackModal();
+  });
 
   /* ══════════════════════════════════════════════════════════════
      NAVIGATION
@@ -5181,15 +5016,11 @@
   function navigateTo(page) {
     currentPage = page;
 
-    document
-      .querySelectorAll(".page")
-      .forEach((p) => p.classList.remove("active"));
+    document.querySelectorAll(".page").forEach((p) => p.classList.remove("active"));
     const target = document.getElementById("page-" + page);
     if (target) target.classList.add("active");
 
-    document
-      .querySelectorAll(".nav a")
-      .forEach((a) => a.classList.remove("active"));
+    document.querySelectorAll(".nav a").forEach((a) => a.classList.remove("active"));
     const navLink = document.querySelector(`.nav a[data-page="${page}"]`);
     if (navLink) navLink.classList.add("active");
 
@@ -5208,28 +5039,20 @@
   ══════════════════════════════════════════════════════════════ */
   function createProductCard(product) {
     const decantSizes = Object.keys(product.decantSizes);
-    const minPrice =
-      decantSizes.length > 0
-        ? Math.min(...Object.values(product.decantSizes))
-        : null;
+    const minPrice = decantSizes.length > 0 ? Math.min(...Object.values(product.decantSizes)) : null;
 
     const badgeHTML = product.badge
       ? `<span class="product-badge ${product.badge}">${product.badgeText}</span>`
       : "";
     const priceText = minPrice ? `Desde ${formatPrice(minPrice)}` : "Consultar";
     const catLabel =
-      product.category === "nicho"
-        ? "Nicho"
-        : product.category === "arabe"
-          ? "Árabe"
-          : "Diseñador";
+      product.category === "nicho" ? "Nicho" : product.category === "arabe" ? "Árabe" : "Diseñador";
 
     return `
       <div class="product-card reveal-item" data-product-id="${product.id}">
         <div class="img-wrapper">
           ${badgeHTML}
-          <img src="${product.cardImage}" alt="${product.name}"
-               onerror="this.style.display='none';" />
+          <img src="${product.cardImage}" alt="${product.name}" onerror="this.style.display='none';" />
         </div>
         <div class="product-info">
           <div class="product-category">${catLabel} · ${product.gender}</div>
@@ -5259,17 +5082,12 @@
     const grid = document.getElementById("catalogGrid");
     let filtered = products;
 
-    // ── Lógica del filtro Tester ──────────────
     if (activeFilters.category === "tester") {
-      // Mostrar SOLO productos con tester: true
       filtered = filtered.filter((p) => p.tester === true);
     } else {
-      // Ocultar los testers y aplicar filtros normales
       filtered = filtered.filter((p) => !p.tester);
       if (activeFilters.category !== "all") {
-        filtered = filtered.filter(
-          (p) => p.category === activeFilters.category,
-        );
+        filtered = filtered.filter((p) => p.category === activeFilters.category);
       }
     }
 
@@ -5312,31 +5130,48 @@
     }
 
     if (filtered.length === 0) {
-      grid.innerHTML =
-        '<p style="text-align:center;color:var(--text-muted);padding:2rem;">No hay promociones en esta categoría.</p>';
+      grid.innerHTML = '<p style="text-align:center;color:var(--text-muted);padding:2rem;">No hay promociones en esta categoría.</p>';
       return;
     }
 
     grid.innerHTML = filtered
-      .map(
-        (promo) => `
+      .map((promo) => {
+        let priceHtml = "";
+        let imageUrl = promo.image || "";
+
+        if (promo.type === "group" && promo.options && promo.options.length) {
+          const allPrices = promo.options.map(opt => opt.price);
+          const minPrice = Math.min(...allPrices);
+          const maxPrice = Math.max(...allPrices);
+          priceHtml = minPrice === maxPrice ? formatPrice(minPrice) : `Desde ${formatPrice(minPrice)}`;
+        } else if (promo.price) {
+          priceHtml = formatPrice(promo.price);
+        } else {
+          priceHtml = "Consultar";
+        }
+
+        const infoLine = promo.type === "group"
+          ? `📦 ${promo.quantity} perfume(s) · Elige tamaño`
+          : `📦 ${promo.quantity} perfume(s) · ${promo.size}`;
+
+        return `
       <div class="promo-card reveal-item">
         ${promo.badge ? `<div class="promo-badge">${promo.badge}</div>` : ""}
-        <div class="promo-icon">${getCategoryIcon(promo.category)}</div>
+        ${imageUrl ? `<img src="${imageUrl}" alt="${promo.name}" class="promo-img" loading="lazy" onerror="this.style.display='none'" />` : `<div class="promo-icon">${getCategoryIcon(promo.category)}</div>`}
         <h3>${promo.name}</h3>
         <p class="promo-desc">${promo.desc}</p>
-        <p style="font-size:.78rem;color:var(--text-muted);margin-bottom:.3rem;">📦 ${promo.quantity} perfume(s) · ${promo.size}</p>
-        <div class="promo-price">${formatPrice(promo.price)}</div>
+        <p style="font-size:.78rem;color:var(--text-muted);margin-bottom:.3rem;">${infoLine}</p>
+        <div class="promo-price">${priceHtml}</div>
         <button class="btn-add" data-promo-id="${promo.id}">Seleccionar Perfumes</button>
-      </div>`,
-      )
+      </div>`;
+      })
       .join("");
 
     observeRevealElements();
   }
 
   /* ══════════════════════════════════════════════════════════════
-     RENDER — CHECKOUT (unchanged)
+     RENDER — CHECKOUT
   ══════════════════════════════════════════════════════════════ */
   function renderCheckoutPage() {
     const emptyMsg = document.getElementById("checkout-empty-cart");
@@ -5356,11 +5191,7 @@
     if (summaryItems) {
       summaryItems.innerHTML = cart
         .map((item) => {
-          const isMultiPack =
-            item.isPack &&
-            item.includedProducts &&
-            item.includedProducts.length > 0 &&
-            !item.gift;
+          const isMultiPack = item.isPack && item.includedProducts && item.includedProducts.length > 0 && !item.gift;
           const hasGift = item.isPack && item.gift;
           let infoHtml = "";
 
@@ -5423,50 +5254,37 @@
   ══════════════════════════════════════════════════════════════ */
   function updateCatalogFilterButtons() {
     document.querySelectorAll("#filtersCategory .filter-btn").forEach((btn) => {
-      btn.classList.toggle(
-        "active",
-        activeFilters.category === btn.dataset.filter,
-      );
+      btn.classList.toggle("active", activeFilters.category === btn.dataset.filter);
     });
     document.querySelectorAll("#filtersGender .filter-btn").forEach((btn) => {
-      btn.classList.toggle(
-        "active",
-        activeFilters.gender === btn.dataset.filter,
-      );
+      btn.classList.toggle("active", activeFilters.gender === btn.dataset.filter);
     });
   }
 
-  document
-    .getElementById("filtersCategory")
-    .addEventListener("click", function (e) {
-      const btn = e.target.closest(".filter-btn");
-      if (!btn) return;
-      const val = btn.dataset.filter;
-      activeFilters.category = activeFilters.category === val ? "all" : val;
-      updateCatalogFilterButtons();
-      renderCatalog();
-    });
+  document.getElementById("filtersCategory").addEventListener("click", function (e) {
+    const btn = e.target.closest(".filter-btn");
+    if (!btn) return;
+    const val = btn.dataset.filter;
+    activeFilters.category = activeFilters.category === val ? "all" : val;
+    updateCatalogFilterButtons();
+    renderCatalog();
+  });
 
-  document
-    .getElementById("filtersGender")
-    .addEventListener("click", function (e) {
-      const btn = e.target.closest(".filter-btn");
-      if (!btn) return;
-      const val = btn.dataset.filter;
-      activeFilters.gender = activeFilters.gender === val ? "all" : val;
-      updateCatalogFilterButtons();
-      renderCatalog();
-    });
+  document.getElementById("filtersGender").addEventListener("click", function (e) {
+    const btn = e.target.closest(".filter-btn");
+    if (!btn) return;
+    const val = btn.dataset.filter;
+    activeFilters.gender = activeFilters.gender === val ? "all" : val;
+    updateCatalogFilterButtons();
+    renderCatalog();
+  });
 
   /* ══════════════════════════════════════════════════════════════
      FILTERS — PROMOS
   ══════════════════════════════════════════════════════════════ */
   function updatePromoFilterButtons() {
     document.querySelectorAll("#promoFilters .filter-btn").forEach((btn) => {
-      btn.classList.toggle(
-        "active",
-        btn.dataset.promoFilter === activePromoFilter,
-      );
+      btn.classList.toggle("active", btn.dataset.promoFilter === activePromoFilter);
     });
 
     const genderGroup = document.getElementById("promoGenderGroup");
@@ -5481,36 +5299,27 @@
       activePromoGender = "all";
     }
 
-    document
-      .querySelectorAll("#promoGenderFilters .filter-btn")
-      .forEach((btn) => {
-        btn.classList.toggle(
-          "active",
-          btn.dataset.promoGender === activePromoGender,
-        );
-      });
+    document.querySelectorAll("#promoGenderFilters .filter-btn").forEach((btn) => {
+      btn.classList.toggle("active", btn.dataset.promoGender === activePromoGender);
+    });
   }
 
-  document
-    .getElementById("promoFilters")
-    .addEventListener("click", function (e) {
-      const btn = e.target.closest(".filter-btn");
-      if (!btn) return;
-      activePromoFilter = btn.dataset.promoFilter;
-      activePromoGender = "all";
-      updatePromoFilterButtons();
-      renderPromos();
-    });
+  document.getElementById("promoFilters").addEventListener("click", function (e) {
+    const btn = e.target.closest(".filter-btn");
+    if (!btn) return;
+    activePromoFilter = btn.dataset.promoFilter;
+    activePromoGender = "all";
+    updatePromoFilterButtons();
+    renderPromos();
+  });
 
-  document
-    .getElementById("promoGenderFilters")
-    .addEventListener("click", function (e) {
-      const btn = e.target.closest(".filter-btn");
-      if (!btn) return;
-      activePromoGender = btn.dataset.promoGender;
-      updatePromoFilterButtons();
-      renderPromos();
-    });
+  document.getElementById("promoGenderFilters").addEventListener("click", function (e) {
+    const btn = e.target.closest(".filter-btn");
+    if (!btn) return;
+    activePromoGender = btn.dataset.promoGender;
+    updatePromoFilterButtons();
+    renderPromos();
+  });
 
   /* ══════════════════════════════════════════════════════════════
      SEARCH
@@ -5537,8 +5346,7 @@
       .slice(0, 8);
 
     if (filtered.length === 0) {
-      suggestionsContainer.innerHTML =
-        '<div class="search-no-results">No se encontraron perfumes.</div>';
+      suggestionsContainer.innerHTML = '<div class="search-no-results">No se encontraron perfumes.</div>';
     } else {
       suggestionsContainer.innerHTML = filtered
         .map(
@@ -5558,7 +5366,6 @@
   }
   window.handleSearchInput = handleSearchInput;
 
-  // Close suggestions on outside click
   document.addEventListener("click", function (e) {
     const suggestions = document.getElementById("searchSuggestions");
     const input = document.getElementById("searchInput");
@@ -5569,10 +5376,9 @@
   });
 
   /* ══════════════════════════════════════════════════════════════
-     GLOBAL CLICK DELEGATION (cards, add buttons, promo buttons)
+     GLOBAL CLICK DELEGATION
   ══════════════════════════════════════════════════════════════ */
   document.addEventListener("click", function (e) {
-    // Product card body (not a button)
     const card = e.target.closest(".product-card");
     if (card && !e.target.closest("button")) {
       const id = parseInt(card.dataset.productId);
@@ -5580,7 +5386,6 @@
       return;
     }
 
-    // "Ver y Comprar" button on product card
     const addBtn = e.target.closest(".btn-add[data-add-id]");
     if (addBtn) {
       e.stopPropagation();
@@ -5589,7 +5394,6 @@
       return;
     }
 
-    // "Seleccionar Perfumes" button on promo card
     const promoBtn = e.target.closest(".btn-add[data-promo-id]");
     if (promoBtn) {
       e.stopPropagation();
@@ -5599,7 +5403,7 @@
   });
 
   /* ══════════════════════════════════════════════════════════════
-     WHATSAPP CHECKOUT (unchanged)
+     WHATSAPP CHECKOUT
   ══════════════════════════════════════════════════════════════ */
   window.confirmarWhatsApp = function () {
     const nombre = document.getElementById("chNombre").value.trim();
@@ -5629,14 +5433,8 @@
 
     cart.forEach((item) => {
       mensaje += `\n  ✦ ${item.name}\n`;
-      if (
-        item.isPack &&
-        item.includedProducts &&
-        item.includedProducts.length > 0
-      ) {
-        const lista = item.includedProducts
-          .map((p) => `      • ${p.name}`)
-          .join("\n");
+      if (item.isPack && item.includedProducts && item.includedProducts.length > 0) {
+        const lista = item.includedProducts.map((p) => `      • ${p.name}`).join("\n");
         mensaje += `${lista}\n`;
         if (item.gift) {
           mensaje += `      🎁 *Regalo:* ${item.gift.name} (${item.gift.size})\n`;
@@ -5650,10 +5448,7 @@
     mensaje += `\n💰 *TOTAL: ${formatPrice(getCartTotal())}*\n`;
     mensaje += `✅ ¡Gracias por tu pedido! Quedo atento para coordinar el envío. 🙌`;
 
-    window.open(
-      `https://wa.me/51903283353?text=${encodeURIComponent(mensaje)}`,
-      "_blank",
-    );
+    window.open(`https://wa.me/51903283353?text=${encodeURIComponent(mensaje)}`, "_blank");
     showToast("📲 Redirigiendo a WhatsApp...");
   };
 
@@ -5679,7 +5474,7 @@
   }
 
   /* ══════════════════════════════════════════════════════════════
-     GLOBAL EXPOSE (for HTML onclick attributes)
+     GLOBAL EXPOSE
   ══════════════════════════════════════════════════════════════ */
   window.closeCart = closeCart;
   window.closeModal = closeModal;
@@ -5699,9 +5494,7 @@
   });
 
   window.addEventListener("scroll", () => {
-    document
-      .getElementById("header")
-      .classList.toggle("scrolled", window.scrollY > 50);
+    document.getElementById("header").classList.toggle("scrolled", window.scrollY > 50);
   });
 
   document.addEventListener("keydown", (e) => {
@@ -5723,8 +5516,6 @@
     updateCatalogFilterButtons();
     updatePromoFilterButtons();
     navigateTo("home");
-
-    // Trust cards reveal (they're static, not rendered dynamically)
     setTimeout(() => observeRevealElements(), 100);
   }
 

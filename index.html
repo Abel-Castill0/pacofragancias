@@ -1,481 +1,509 @@
 <!doctype html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Paco Fragancias · Decants premium de fragancias árabes, de diseñador y nicho. Lima, Perú." />
-    <title>Paco Fragancias · Decants de Lujo</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
 
-    <!-- ============ HEADER ============ -->
-    <header class="header" id="header">
-      <div class="header-inner">
-        <a class="logo" onclick="navigateTo('home')">
-          <img src="logo.webp" alt="Paco Fragancias" class="logo-img" />
-          <div class="logo-text">
-            <span class="logo-name">PACO <span>FRAGANCIAS</span></span>
-            <span class="logo-slogan">deja que la fragancia hable por ti</span>
-          </div>
-        </a>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Paco Fragancias · Decants premium de fragancias árabes, de diseñador y nicho. Lima, Perú." />
+  <title>Paco Fragancias · Decants de Lujo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
 
-        <nav class="nav" id="nav">
-          <a onclick="navigateTo('home')" class="active" data-page="home">Inicio</a>
-          <a onclick="navigateTo('catalogo')" data-page="catalogo">Catálogo</a>
-          <a onclick="navigateTo('promos')" data-page="promos">Promos</a>
-        </nav>
+<body>
 
-        <div class="header-actions">
-          <button class="btn-icon btn-cart" id="btnCart" title="Carrito" aria-label="Abrir carrito">
-            <i class="fa-solid fa-bag-shopping"></i>
-            <span class="cart-count" id="cartCount">0</span>
-          </button>
-          <button class="hamburger" id="hamburger" aria-label="Menú">
-            <span></span><span></span><span></span>
-          </button>
+  <!-- ============ HEADER ============ -->
+  <header class="header" id="header">
+    <div class="header-inner">
+      <a class="logo" onclick="navigateTo('home')">
+        <img src="logo.webp" alt="Paco Fragancias" class="logo-img" />
+        <div class="logo-text">
+          <span class="logo-name">PACO <span>FRAGANCIAS</span></span>
+          <span class="logo-slogan">deja que la fragancia hable por ti</span>
         </div>
-      </div>
-    </header>
+      </a>
 
-    <!-- ============ PÁGINA HOME ============ -->
-    <div class="page active" id="page-home">
+      <nav class="nav" id="nav">
+        <a onclick="navigateTo('home')" class="active" data-page="home">Inicio</a>
+        <a onclick="navigateTo('catalogo')" data-page="catalogo">Catálogo</a>
+        <a onclick="navigateTo('promos')" data-page="promos">Promos</a>
+      </nav>
 
-      <!-- HERO -->
-      <section class="hero">
-        <video class="hero-video" autoplay muted loop playsinline>
-          <source src="hero_video.mp4" type="video/mp4" />
-        </video>
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-          <div class="hero-eyebrow">
-            <span class="hero-line"></span>
-            <span>Decants Premium · Lima, Perú</span>
-            <span class="hero-line"></span>
-          </div>
-          <h1>Descubre <em>Fragancias</em><br>Árabes, Diseñador y Nicho</h1>
-          <p>Cada perfume seleccionado será una experiencia por descubrir y de no olvidar.</p>
-          <div class="hero-cta-group">
-            <button class="btn btn-gold" onclick="navigateTo('catalogo')">
-              <span>Explorar Catálogo</span>
-              <i class="fa-solid fa-arrow-right"></i>
-            </button>
-            <button class="btn btn-ghost" onclick="navigateTo('promos')">
-              <span>Ver Promociones</span>
-            </button>
-          </div>
-        </div>
-        <div class="hero-scroll-indicator">
-          <span>Scroll</span>
-          <div class="hero-scroll-line"></div>
-        </div>
-      </section>
-
-      <!-- STATS BAR -->
-      <div class="stats-bar">
-        <div class="stats-inner">
-          <div class="stat-item">
-            <span class="stat-number">1,000+</span>
-            <span class="stat-label">Clientes Satisfechos</span>
-          </div>
-          <div class="stat-divider"></div>
-          <div class="stat-item">
-            <span class="stat-number">200+</span>
-            <span class="stat-label">Fragancias Disponibles</span>
-          </div>
-          <div class="stat-divider"></div>
-          <div class="stat-item">
-            <span class="stat-number">100%</span>
-            <span class="stat-label">Envíos Seguros</span>
-          </div>
-          <div class="stat-divider"></div>
-          <div class="stat-item">
-            <span class="stat-number">⭐ 4.9</span>
-            <span class="stat-label">Calificación Promedio</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- FEATURED PRODUCTS -->
-      <section class="section" id="destacados">
-        <div class="section-header">
-          <div class="section-eyebrow">Lo más vendido</div>
-          <h2 class="section-title">Fragancias Destacadas</h2>
-          <p class="section-subtitle">Selecciones premium que definen el carácter de nuestra colección.</p>
-        </div>
-        <div class="product-grid" id="featuredGrid"></div>
-        <div class="section-cta">
-          <button class="btn btn-outline-dark" onclick="navigateTo('catalogo')">
-            Ver Catálogo Completo <i class="fa-solid fa-arrow-right"></i>
-          </button>
-        </div>
-      </section>
-
-      <!-- TRUST SECTION -->
-      <section class="section section-trust" id="confianza">
-        <div class="trust-bg-pattern"></div>
-        <div class="section-header">
-          <div class="section-eyebrow">¿Por qué elegirnos?</div>
-          <h2 class="section-title">Paco Fragancias es sinónimo de confianza</h2>
-          <p class="section-subtitle">Cada detalle está pensado para que vivas una experiencia de compra segura, rápida y con la calidad que mereces.</p>
-        </div>
-        <div class="trust-grid">
-          <div class="trust-card">
-            <div class="trust-icon-wrap"><span class="trust-icon">🤝</span></div>
-            <h4>Confianza y Experiencia</h4>
-            <p>Más de 1000 clientes satisfechos avalan nuestra calidad y compromiso.</p>
-          </div>
-          <div class="trust-card">
-            <div class="trust-icon-wrap"><span class="trust-icon">⚡</span></div>
-            <h4>Entrega Rápida</h4>
-            <p>Procesamos tu pedido de inmediato para que recibas tu fragancia en el menor tiempo posible.</p>
-          </div>
-          <div class="trust-card">
-            <div class="trust-icon-wrap"><span class="trust-icon">🔐</span></div>
-            <h4>Envíos 100% Seguros</h4>
-            <p>Cada envío está protegido y garantizado. Tu compra llega segura, a cualquier parte del país.</p>
-          </div>
-          <div class="trust-card">
-            <div class="trust-icon-wrap"><span class="trust-icon">💎</span></div>
-            <h4>Ahorra sin perder calidad</h4>
-            <p>Accede a perfumes de alto nivel sin pagar de más. Lujo inteligente al alcance de tu bolsillo.</p>
-          </div>
-        </div>
-      </section>
-
-      <!-- TIKTOK SECTION -->
-      <section class="section" id="contenido">
-        <div class="section-header">
-          <div class="section-eyebrow">Contenido</div>
-          <h2 class="section-title">Descubre en Video</h2>
-          <p class="section-subtitle">Mira nuestros últimos videos de TikTok y adéntrate en el mundo de las fragancias.</p>
-        </div>
-        <div class="tiktok-grid">
-          <div class="tiktok-card">
-            <iframe src="https://www.tiktok.com/embed/v2/7536339020603788549" allowfullscreen scrolling="no" frameborder="0" allow="autoplay; encrypted-media"></iframe>
-          </div>
-          <div class="tiktok-card">
-            <iframe src="https://www.tiktok.com/embed/v2/7520732002643971333" allowfullscreen scrolling="no" frameborder="0" allow="autoplay; encrypted-media"></iframe>
-          </div>
-          <div class="tiktok-card">
-            <iframe src="https://www.tiktok.com/embed/v2/7554748921386372359" allowfullscreen scrolling="no" frameborder="0" allow="autoplay; encrypted-media"></iframe>
-          </div>
-          <div class="tiktok-card">
-            <iframe src="https://www.tiktok.com/embed/v2/7603741534445489416" allowfullscreen scrolling="no" frameborder="0" allow="autoplay; encrypted-media"></iframe>
-          </div>
-        </div>
-      </section>
-    </div>
-
-    <!-- ============ CATÁLOGO ============ -->
-    <div class="page" id="page-catalogo">
-      <section class="page-hero catalog-hero">
-        <img src="inicio.webp" alt="Colección" class="page-hero-img" />
-        <div class="page-hero-overlay"></div>
-        <div class="page-hero-content">
-          <div class="section-eyebrow" style="color: var(--gold-light);">Catálogo</div>
-          <h2 class="section-title" style="color: #fff;">Toda Nuestra Colección</h2>
-          <p class="section-subtitle" style="color: rgba(255,255,255,0.8);">Explora por tipo, género o busca tu fragancia favorita.</p>
-          <div class="search-box-wrapper">
-            <div class="search-box" style="position:relative;">
-              <i class="fa-solid fa-magnifying-glass search-icon"></i>
-              <input
-                type="text"
-                id="searchInput"
-                placeholder="Buscar perfume, marca, notas..."
-                autocomplete="off"
-                oninput="handleSearchInput()"
-                onfocus="handleSearchInput()"
-              />
-              <div class="search-suggestions" id="searchSuggestions" style="display:none;"></div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" style="padding-top: 2.5rem;">
-        <div class="filters-wrapper">
-          <div class="filters-row">
-            <div class="filter-group">
-              <span class="filter-group-label">Categoría</span>
-              <div class="filter-chips" id="filtersCategory">
-                <button class="filter-btn active" data-filter="all">Todos</button>
-                <button class="filter-btn" data-filter="nicho">✨ Nicho</button>
-                <button class="filter-btn" data-filter="arabe">🕌 Árabe</button>
-                <button class="filter-btn" data-filter="disenador">⭐ Diseñador</button>
-                <button class="filter-btn" data-filter="tester">🧪 Tester</button>
-              </div>
-            </div>
-            <div class="filter-separator"></div>
-            <div class="filter-group">
-              <span class="filter-group-label">Género</span>
-              <div class="filter-chips" id="filtersGender">
-                <button class="filter-btn" data-filter="masculino">👨 Masculino</button>
-                <button class="filter-btn" data-filter="femenino">👩 Femenino</button>
-                <button class="filter-btn" data-filter="unisex">🧑 Unisex</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="product-grid" id="catalogGrid"></div>
-      </section>
-    </div>
-
-    <!-- ============ PROMOS ============ -->
-    <div class="page" id="page-promos">
-      <section class="page-hero promo-hero">
-        <img src="fondo_promos.webp" alt="Promociones" class="page-hero-img" />
-        <div class="page-hero-overlay"></div>
-        <div class="page-hero-content">
-          <div class="section-eyebrow" style="color: var(--gold-light);">Ofertas Especiales</div>
-          <h2 class="section-title" style="color: #fff;">Packs &amp; Promociones</h2>
-          <p class="section-subtitle" style="color: rgba(255,255,255,0.8);">La mejor forma de descubrir nuevas fragancias a un precio especial.</p>
-        </div>
-      </section>
-
-      <section class="section" style="padding-top: 2.5rem;">
-        <div class="filters-wrapper">
-          <div class="filters-row">
-            <div class="filter-group">
-              <span class="filter-group-label">Tipo de Promoción</span>
-              <div class="filter-chips" id="promoFilters">
-                <button class="filter-btn active" data-promo-filter="all">🔥 Lo Más Solicitado</button>
-                <button class="filter-btn" data-promo-filter="disenador">⭐ Diseñador</button>
-                <button class="filter-btn" data-promo-filter="erba">🧪 Diseñador + Erba Pura</button>
-                <button class="filter-btn" data-promo-filter="arabe">🕌 Árabes</button>
-                <button class="filter-btn" data-promo-filter="nicho">💎 Árabes Deluxe</button>
-              </div>
-            </div>
-            <div class="filter-separator" id="promoGenderSep" style="display:none;"></div>
-            <div class="filter-group" id="promoGenderGroup" style="display:none;">
-              <span class="filter-group-label">Género</span>
-              <div class="filter-chips" id="promoGenderFilters">
-                <button class="filter-btn active" data-promo-gender="all">Todos</button>
-                <button class="filter-btn" data-promo-gender="femenino">👩 Mujer</button>
-                <button class="filter-btn" data-promo-gender="masculino">👨 Hombre</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="promo-grid" id="promoGrid"></div>
-      </section>
-    </div>
-
-    <!-- ============ CHECKOUT ============ -->
-    <div class="page" id="page-checkout">
-      <div class="checkout-wrapper">
-        <div class="checkout-container">
-          <div class="checkout-header">
-            <div class="section-eyebrow">Paso final</div>
-            <h2 class="checkout-title">Finalizar Pedido</h2>
-          </div>
-
-          <div id="checkout-empty-cart" style="text-align:center; padding:3rem 1rem; color: var(--text-muted);">
-            <div style="font-size:3rem; margin-bottom:1rem;">🛒</div>
-            <p style="font-size:1rem; margin-bottom:0.5rem; color: var(--text-secondary);">Tu carrito está vacío.</p>
-            <a href="#" onclick="navigateTo('catalogo')" style="color:var(--gold); font-weight:600;">Explorar el catálogo</a>
-          </div>
-
-          <div id="checkout-form-wrapper" style="display:none;">
-            <form id="checkoutForm" onsubmit="return false;" autocomplete="on">
-              <div class="form-section-title">Datos de entrega</div>
-              <div class="form-row">
-                <div class="form-group">
-                  <label for="chNombre">Nombre *</label>
-                  <input type="text" id="chNombre" placeholder="Tu nombre" required autocomplete="given-name"/>
-                </div>
-                <div class="form-group">
-                  <label for="chApellido">Apellido *</label>
-                  <input type="text" id="chApellido" placeholder="Tu apellido" required autocomplete="family-name"/>
-                </div>
-              </div>
-              <div class="form-row">
-                <div class="form-group">
-                  <label for="chTelefono">Teléfono *</label>
-                  <input type="tel" id="chTelefono" placeholder="+51 900 000 000" required autocomplete="tel"/>
-                </div>
-                <div class="form-group">
-                  <label for="chDNI">DNI *</label>
-                  <input type="text" id="chDNI" placeholder="12345678" required />
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="chDireccion">Dirección *</label>
-                <input type="text" id="chDireccion" placeholder="Av. Principal 123" required autocomplete="street-address"/>
-              </div>
-              <div class="form-row">
-                <div class="form-group">
-                  <label for="chDistrito">Distrito *</label>
-                  <input type="text" id="chDistrito" placeholder="Miraflores" required autocomplete="address-level2"/>
-                </div>
-                <div class="form-group">
-                  <label for="chReferencia">Referencia</label>
-                  <input type="text" id="chReferencia" placeholder="Al costado del banco"/>
-                </div>
-              </div>
-
-              <div class="checkout-summary">
-                <div class="form-section-title">Resumen del Pedido</div>
-                <div id="checkoutSummaryItems"></div>
-                <div class="checkout-summary-total">
-                  <span>Total a Pagar</span>
-                  <span id="checkoutTotal">S/ 0.00</span>
-                </div>
-              </div>
-
-              <button type="button" class="btn-whatsapp" onclick="confirmarWhatsApp()">
-                <i class="fab fa-whatsapp"></i>
-                <span>Confirmar por WhatsApp</span>
-              </button>
-              <p class="checkout-note">Al confirmar, serás redirigido a WhatsApp para coordinar el pago y envío.</p>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ============ MODAL PRODUCTO ============ -->
-    <div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalName">
-      <div class="modal" id="modal">
-        <button class="modal-close" onclick="closeModal()" aria-label="Cerrar">
-          <i class="fa-solid fa-xmark"></i>
+      <div class="header-actions">
+        <button class="btn-icon btn-cart" id="btnCart" title="Carrito" aria-label="Abrir carrito">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span class="cart-count" id="cartCount">0</span>
         </button>
-        <div class="modal-image" id="modalImage">
-          <img src="" alt="Perfume" />
-        </div>
-        <div class="modal-body">
-          <h2 id="modalName"></h2>
-          <div class="modal-brand" id="modalBrand"></div>
-          <div class="modal-notes" id="modalNotes"></div>
-          <div class="tab-switch" id="tabSwitch">
-            <button id="tabFull" class="active">Frasco Completo</button>
-            <button id="tabDecant">Decant</button>
-          </div>
-          <div class="size-options" id="modalSizes"></div>
-          <div class="modal-price-display" id="modalPrice"></div>
-          <button class="btn-add-large" id="modalAddBtn">
-            <i class="fa-solid fa-bag-shopping"></i>
-            <span>Añadir al Carrito</span>
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <!-- ============ MODAL PACK ============ -->
-    <div class="modal-overlay" id="packModalOverlay" role="dialog" aria-modal="true" aria-labelledby="packModalTitle">
-      <div class="modal pack-modal" id="packModal">
-        <button class="modal-close" onclick="closePackModal()" aria-label="Cerrar">
-          <i class="fa-solid fa-xmark"></i>
-        </button>
-        <div class="modal-body">
-          <h2 id="packModalTitle"></h2>
-          <p id="packModalDesc" class="pack-modal-desc"></p>
-          <div class="pack-product-grid" id="packProductGrid"></div>
-          <div class="pack-counter-wrap">
-            <p id="packCounter" class="pack-counter"></p>
-          </div>
-          <button class="btn-add-large" id="packConfirmBtn" onclick="confirmPack()">
-            <i class="fa-solid fa-bag-shopping"></i>
-            <span>Añadir Pack al Carrito</span>
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <!-- ============ CARRITO ============ -->
-    <div class="cart-overlay" id="cartOverlay"></div>
-    <aside class="cart-sidebar" id="cartSidebar" role="complementary" aria-label="Carrito de compras">
-      <div class="cart-header">
-        <div class="cart-header-left">
-          <i class="fa-solid fa-bag-shopping cart-header-icon"></i>
-          <h3>Tu Carrito</h3>
-        </div>
-        <button class="cart-close" onclick="closeCart()" aria-label="Cerrar carrito">
-          <i class="fa-solid fa-xmark"></i>
+        <button class="hamburger" id="hamburger" aria-label="Menú">
+          <span></span><span></span><span></span>
         </button>
       </div>
-      <div class="cart-items" id="cartItems">
-        <div class="cart-empty">
-          <div class="cart-empty-icon">🛍️</div>
-          <p>Tu carrito está vacío.</p>
-          <span>¡Explora nuestra colección!</span>
+    </div>
+  </header>
+
+  <!-- ============ PÁGINA HOME ============ -->
+  <div class="page active" id="page-home">
+
+    <!-- HERO -->
+    <section class="hero">
+      <video class="hero-video" autoplay muted loop playsinline>
+        <source src="hero_video.mp4" type="video/mp4" />
+      </video>
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <div class="hero-eyebrow">
+          <span class="hero-line"></span>
+          <span>Decants Premium · Lima, Perú</span>
+          <span class="hero-line"></span>
+        </div>
+        <h1>Descubre <em>Fragancias</em><br>Árabes, Diseñador y Nicho</h1>
+        <p>Cada perfume seleccionado será una experiencia por descubrir y de no olvidar.</p>
+        <div class="hero-cta-group">
+          <button class="btn btn-gold" onclick="navigateTo('catalogo')">
+            <span>Explorar Catálogo</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+          <button class="btn btn-ghost" onclick="navigateTo('promos')">
+            <span>Ver Promociones</span>
+          </button>
         </div>
       </div>
-      <div class="cart-footer" id="cartFooter" style="display:none;">
-        <div class="cart-total">
-          <span>Total</span>
-          <span id="cartTotal">S/ 0.00</span>
+      <div class="hero-scroll-indicator">
+        <span>Scroll</span>
+        <div class="hero-scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- STATS BAR -->
+    <div class="stats-bar">
+      <div class="stats-inner">
+        <div class="stat-item">
+          <span class="stat-number">1,000+</span>
+          <span class="stat-label">Clientes Satisfechos</span>
         </div>
-        <button class="btn-checkout" onclick="goToCheckout()">
-          <span>Ir al Checkout</span>
-          <i class="fa-solid fa-arrow-right"></i>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number">200+</span>
+          <span class="stat-label">Fragancias Disponibles</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number">100%</span>
+          <span class="stat-label">Envíos Seguros</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number">⭐ 4.9</span>
+          <span class="stat-label">Calificación Promedio</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- FEATURED PRODUCTS -->
+    <section class="section" id="destacados">
+      <div class="section-header">
+        <div class="section-eyebrow">Lo más vendido</div>
+        <h2 class="section-title">Fragancias Destacadas</h2>
+        <p class="section-subtitle">Selecciones premium que definen el carácter de nuestra colección.</p>
+      </div>
+      <div class="product-grid" id="featuredGrid"></div>
+      <div class="section-cta">
+        <button class="btn btn-outline-dark" onclick="navigateTo('catalogo')">
+          Ver Catálogo Completo <i class="fa-solid fa-arrow-right"></i>
         </button>
       </div>
-    </aside>
+    </section>
 
-    <!-- ============ TOAST ============ -->
-    <div class="toast" id="toast" role="status" aria-live="polite"></div>
-
-    <!-- ============ FOOTER ============ -->
-    <footer class="footer">
-      <div class="footer-inner">
-        <div class="footer-brand">
-          <div class="footer-logo">
-            <img src="logo.webp" alt="Paco Fragancias" class="footer-logo-img" />
-            <span class="footer-logo-name">PACO FRAGANCIAS</span>
-          </div>
-          <p class="footer-tagline">Decants premium de las mejores fragancias del mundo.</p>
-          <div class="social-links">
-            <a href="https://www.instagram.com/pacofragancias.pe/" target="_blank" rel="noopener noreferrer" title="Instagram" aria-label="Instagram">
-              <i class="fab fa-instagram"></i>
-            </a>
-            <a href="https://www.tiktok.com/@pacofragancias.pe" target="_blank" rel="noopener noreferrer" title="TikTok" aria-label="TikTok">
-              <i class="fab fa-tiktok"></i>
-            </a>
-            <a href="https://www.tiktok.com/@pacofraganciasdecants.pe" target="_blank" rel="noopener noreferrer" title="TikTok Decants" aria-label="TikTok Decants">
-              <i class="fab fa-tiktok"></i>
-            </a>
-            <a href="https://wa.me/51903283353" target="_blank" rel="noopener noreferrer" title="WhatsApp" aria-label="WhatsApp">
-              <i class="fab fa-whatsapp"></i>
-            </a>
-          </div>
+    <!-- TRUST SECTION -->
+    <section class="section section-trust" id="confianza">
+      <div class="trust-bg-pattern"></div>
+      <div class="section-header">
+        <div class="section-eyebrow">¿Por qué elegirnos?</div>
+        <h2 class="section-title">Paco Fragancias es sinónimo de confianza</h2>
+        <p class="section-subtitle">Cada detalle está pensado para que vivas una experiencia de compra segura, rápida y
+          con la calidad que mereces.</p>
+      </div>
+      <div class="trust-grid">
+        <div class="trust-card">
+          <div class="trust-icon-wrap"><span class="trust-icon">🤝</span></div>
+          <h4>Confianza y Experiencia</h4>
+          <p>Más de 1000 clientes satisfechos avalan nuestra calidad y compromiso.</p>
         </div>
-
-        <div class="footer-col">
-          <h4>Navegar</h4>
-          <a onclick="navigateTo('home')">Inicio</a>
-          <a onclick="navigateTo('catalogo')">Catálogo</a>
-          <a onclick="navigateTo('promos')">Promos</a>
+        <div class="trust-card">
+          <div class="trust-icon-wrap"><span class="trust-icon">⚡</span></div>
+          <h4>Entrega Rápida</h4>
+          <p>Procesamos tu pedido de inmediato para que recibas tu fragancia en el menor tiempo posible.</p>
         </div>
-
-        <div class="footer-col">
-          <h4>Ayuda</h4>
-          <a href="#">FAQ</a>
-          <a href="#">Envíos</a>
-          <a href="#">Devoluciones</a>
+        <div class="trust-card">
+          <div class="trust-icon-wrap"><span class="trust-icon">🔐</span></div>
+          <h4>Envíos 100% Seguros</h4>
+          <p>Cada envío está protegido y garantizado. Tu compra llega segura, a cualquier parte del país.</p>
         </div>
-
-        <div class="footer-col">
-          <h4>Contacto</h4>
-          <p><i class="fa-regular fa-envelope" style="margin-right:0.4rem; color:var(--gold);"></i>pacofragancias14@gmail.com</p>
-          <p><i class="fa-solid fa-phone" style="margin-right:0.4rem; color:var(--gold);"></i>+51 903 283 353</p>
-          <p><i class="fa-solid fa-location-dot" style="margin-right:0.4rem; color:var(--gold);"></i>Lima, Perú</p>
+        <div class="trust-card">
+          <div class="trust-icon-wrap"><span class="trust-icon">💎</span></div>
+          <h4>Ahorra sin perder calidad</h4>
+          <p>Accede a perfumes de alto nivel sin pagar de más. Lujo inteligente al alcance de tu bolsillo.</p>
         </div>
       </div>
+    </section>
 
-      <div class="footer-bottom">
-        <p>&copy; 2026 PACO Fragancias · Hecho con ❤️ en Perú</p>
-        <p class="footer-signature">
-          Diseñado y desarrollado por
-          <a href="https://abel-castill0.github.io/Portafolio/" target="_blank" rel="noopener noreferrer">Abel Castillo</a>
+    <!-- TIKTOK SECTION -->
+    <section class="section" id="contenido">
+      <div class="section-header">
+        <div class="section-eyebrow">Contenido</div>
+        <h2 class="section-title">Descubre en Video</h2>
+        <p class="section-subtitle">Mira nuestros últimos videos de TikTok y adéntrate en el mundo de las fragancias.
         </p>
       </div>
-    </footer>
+      <div class="tiktok-grid">
+        <div class="tiktok-card">
+          <iframe src="https://www.tiktok.com/embed/v2/7536339020603788549" allowfullscreen scrolling="no"
+            frameborder="0" allow="autoplay; encrypted-media"></iframe>
+        </div>
+        <div class="tiktok-card">
+          <iframe src="https://www.tiktok.com/embed/v2/7520732002643971333" allowfullscreen scrolling="no"
+            frameborder="0" allow="autoplay; encrypted-media"></iframe>
+        </div>
+        <div class="tiktok-card">
+          <iframe src="https://www.tiktok.com/embed/v2/7554748921386372359" allowfullscreen scrolling="no"
+            frameborder="0" allow="autoplay; encrypted-media"></iframe>
+        </div>
+        <div class="tiktok-card">
+          <iframe src="https://www.tiktok.com/embed/v2/7603741534445489416" allowfullscreen scrolling="no"
+            frameborder="0" allow="autoplay; encrypted-media"></iframe>
+        </div>
+      </div>
+    </section>
+  </div>
 
-    <script src="script.js"></script>
-  </body>
+  <!-- ============ CATÁLOGO ============ -->
+  <div class="page" id="page-catalogo">
+    <section class="page-hero catalog-hero">
+      <img src="inicio.webp" alt="Colección" class="page-hero-img" />
+      <div class="page-hero-overlay"></div>
+      <div class="page-hero-content">
+        <div class="section-eyebrow" style="color: var(--gold-light);">Catálogo</div>
+        <h2 class="section-title" style="color: #fff;">Toda Nuestra Colección</h2>
+        <p class="section-subtitle" style="color: rgba(255,255,255,0.8);">Explora por tipo, género o busca tu fragancia
+          favorita.</p>
+        <div class="search-box-wrapper">
+          <div class="search-box" style="position:relative;">
+            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            <input type="text" id="searchInput" placeholder="Buscar perfume, marca, notas..." autocomplete="off"
+              oninput="handleSearchInput()" onfocus="handleSearchInput()" />
+            <div class="search-suggestions" id="searchSuggestions" style="display:none;"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top: 2.5rem;">
+      <div class="filters-wrapper">
+        <div class="filters-row">
+          <div class="filter-group">
+            <span class="filter-group-label">Categoría</span>
+            <div class="filter-chips" id="filtersCategory">
+              <button class="filter-btn active" data-filter="all">Todos</button>
+              <button class="filter-btn" data-filter="nicho">✨ Nicho</button>
+              <button class="filter-btn" data-filter="arabe">🕌 Árabe</button>
+              <button class="filter-btn" data-filter="disenador">⭐ Diseñador</button>
+              <button class="filter-btn" data-filter="tester">🧪 Tester</button>
+            </div>
+          </div>
+          <div class="filter-separator"></div>
+          <div class="filter-group">
+            <span class="filter-group-label">Género</span>
+            <div class="filter-chips" id="filtersGender">
+              <button class="filter-btn" data-filter="masculino">👨 Masculino</button>
+              <button class="filter-btn" data-filter="femenino">👩 Femenino</button>
+              <button class="filter-btn" data-filter="unisex">🧑 Unisex</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="product-grid" id="catalogGrid"></div>
+    </section>
+  </div>
+
+  <!-- ============ PROMOS ============ -->
+  <div class="page" id="page-promos">
+    <section class="page-hero promo-hero">
+      <img src="fondo_promos.webp" alt="Promociones" class="page-hero-img" />
+      <div class="page-hero-overlay"></div>
+      <div class="page-hero-content">
+        <div class="section-eyebrow" style="color: var(--gold-light);">Ofertas Especiales</div>
+        <h2 class="section-title" style="color: #fff;">Packs &amp; Promociones</h2>
+        <p class="section-subtitle" style="color: rgba(255,255,255,0.8);">La mejor forma de descubrir nuevas fragancias
+          a un precio especial.</p>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top: 2.5rem;">
+      <div class="filters-wrapper">
+        <div class="filters-row">
+          <div class="filter-group">
+            <span class="filter-group-label">Tipo de Promoción</span>
+            <div class="filter-chips" id="promoFilters">
+              <button class="filter-btn active" data-promo-filter="all">🔥 Lo Más Solicitado</button>
+              <button class="filter-btn" data-promo-filter="disenador">⭐ Diseñador</button>
+              <button class="filter-btn" data-promo-filter="erba">🧪 Diseñador + Erba Pura</button>
+              <button class="filter-btn" data-promo-filter="arabe">🕌 Árabes</button>
+              <button class="filter-btn" data-promo-filter="nicho">💎 Árabes Deluxe</button>
+            </div>
+          </div>
+          <div class="filter-separator" id="promoGenderSep" style="display:none;"></div>
+          <div class="filter-group" id="promoGenderGroup" style="display:none;">
+            <span class="filter-group-label">Género</span>
+            <div class="filter-chips" id="promoGenderFilters">
+              <button class="filter-btn active" data-promo-gender="all">Todos</button>
+              <button class="filter-btn" data-promo-gender="femenino">👩 Mujer</button>
+              <button class="filter-btn" data-promo-gender="masculino">👨 Hombre</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="promo-grid" id="promoGrid"></div>
+    </section>
+  </div>
+
+  <!-- ============ CHECKOUT ============ -->
+  <div class="page" id="page-checkout">
+    <div class="checkout-wrapper">
+      <div class="checkout-container">
+        <div class="checkout-header">
+          <div class="section-eyebrow">Paso final</div>
+          <h2 class="checkout-title">Finalizar Pedido</h2>
+        </div>
+
+        <div id="checkout-empty-cart" style="text-align:center; padding:3rem 1rem; color: var(--text-muted);">
+          <div style="font-size:3rem; margin-bottom:1rem;">🛒</div>
+          <p style="font-size:1rem; margin-bottom:0.5rem; color: var(--text-secondary);">Tu carrito está vacío.</p>
+          <a href="#" onclick="navigateTo('catalogo')" style="color:var(--gold); font-weight:600;">Explorar el
+            catálogo</a>
+        </div>
+
+        <div id="checkout-form-wrapper" style="display:none;">
+          <form id="checkoutForm" onsubmit="return false;" autocomplete="on">
+            <div class="form-section-title">Datos de entrega</div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="chNombre">Nombre *</label>
+                <input type="text" id="chNombre" placeholder="Tu nombre" required autocomplete="given-name" />
+              </div>
+              <div class="form-group">
+                <label for="chApellido">Apellido *</label>
+                <input type="text" id="chApellido" placeholder="Tu apellido" required autocomplete="family-name" />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="chTelefono">Teléfono *</label>
+                <input type="tel" id="chTelefono" placeholder="+51 900 000 000" required autocomplete="tel" />
+              </div>
+              <div class="form-group">
+                <label for="chDNI">DNI *</label>
+                <input type="text" id="chDNI" placeholder="12345678" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="chDireccion">Dirección *</label>
+              <input type="text" id="chDireccion" placeholder="Av. Principal 123" required
+                autocomplete="street-address" />
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="chDistrito">Distrito *</label>
+                <input type="text" id="chDistrito" placeholder="Miraflores" required autocomplete="address-level2" />
+              </div>
+              <div class="form-group">
+                <label for="chReferencia">Referencia</label>
+                <input type="text" id="chReferencia" placeholder="Al costado del banco" />
+              </div>
+            </div>
+
+            <div class="checkout-summary">
+              <div class="form-section-title">Resumen del Pedido</div>
+              <div id="checkoutSummaryItems"></div>
+              <div class="checkout-summary-total">
+                <span>Total a Pagar</span>
+                <span id="checkoutTotal">S/ 0.00</span>
+              </div>
+            </div>
+
+            <button type="button" class="btn-whatsapp" onclick="confirmarWhatsApp()">
+              <i class="fab fa-whatsapp"></i>
+              <span>Confirmar por WhatsApp</span>
+            </button>
+            <p class="checkout-note">Al confirmar, serás redirigido a WhatsApp para coordinar el pago y envío.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ MODAL PRODUCTO ============ -->
+  <div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalName">
+    <div class="modal" id="modal">
+      <button class="modal-close" onclick="closeModal()" aria-label="Cerrar">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="modal-image" id="modalImage">
+        <img src="" alt="Perfume" />
+      </div>
+      <div class="modal-body">
+        <h2 id="modalName"></h2>
+        <div class="modal-brand" id="modalBrand"></div>
+        <div class="modal-notes" id="modalNotes"></div>
+        <div class="tab-switch" id="tabSwitch">
+          <button id="tabFull" class="active">Frasco Completo</button>
+          <button id="tabDecant">Decant</button>
+        </div>
+        <div class="size-options" id="modalSizes"></div>
+        <div class="modal-price-display" id="modalPrice"></div>
+        <button class="btn-add-large" id="modalAddBtn">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span>Añadir al Carrito</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ MODAL PACK ============ -->
+  <div class="modal-overlay" id="packModalOverlay" role="dialog" aria-modal="true" aria-labelledby="packModalTitle">
+    <div class="modal pack-modal" id="packModal">
+      <button class="modal-close" onclick="closePackModal()" aria-label="Cerrar">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="modal-body">
+        <h2 id="packModalTitle"></h2>
+        <p id="packModalDesc" class="pack-modal-desc"></p>
+        <!-- Selector de tamaño y cantidad (para grupos) -->
+        <div id="packGroupOptions" style="display:none; margin-bottom:1.5rem;">
+          <div class="pack-option-title">Tamaño del decant</div>
+          <div class="size-grid" id="packSizeGrid" style="justify-content:center; margin-bottom:1rem;"></div>
+          <div class="pack-option-title">Cantidad de perfumes</div>
+          <div class="size-grid" id="packQtyGrid" style="justify-content:center;"></div>
+          <div class="modal-price-display" id="packGroupPrice" style="margin-top:1rem;"></div>
+          <button class="btn btn-outline-dark btn-sm" id="packGroupContinue"
+            style="display:block; margin:1.5rem auto 0; width:auto; padding:.6rem 2rem;">
+            Seleccionar Perfumes <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+        <div class="pack-product-grid" id="packProductGrid"></div>
+        <div class="pack-counter-wrap">
+          <p id="packCounter" class="pack-counter"></p>
+        </div>
+        <button class="btn-add-large" id="packConfirmBtn" onclick="confirmPack()">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span>Añadir Pack al Carrito</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ CARRITO ============ -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <aside class="cart-sidebar" id="cartSidebar" role="complementary" aria-label="Carrito de compras">
+    <div class="cart-header">
+      <div class="cart-header-left">
+        <i class="fa-solid fa-bag-shopping cart-header-icon"></i>
+        <h3>Tu Carrito</h3>
+      </div>
+      <button class="cart-close" onclick="closeCart()" aria-label="Cerrar carrito">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <div class="cart-empty">
+        <div class="cart-empty-icon">🛍️</div>
+        <p>Tu carrito está vacío.</p>
+        <span>¡Explora nuestra colección!</span>
+      </div>
+    </div>
+    <div class="cart-footer" id="cartFooter" style="display:none;">
+      <div class="cart-total">
+        <span>Total</span>
+        <span id="cartTotal">S/ 0.00</span>
+      </div>
+      <button class="btn-checkout" onclick="goToCheckout()">
+        <span>Ir al Checkout</span>
+        <i class="fa-solid fa-arrow-right"></i>
+      </button>
+    </div>
+  </aside>
+
+  <!-- ============ TOAST ============ -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="logo.webp" alt="Paco Fragancias" class="footer-logo-img" />
+          <span class="footer-logo-name">PACO FRAGANCIAS</span>
+        </div>
+        <p class="footer-tagline">Decants premium de las mejores fragancias del mundo.</p>
+        <div class="social-links">
+          <a href="https://www.instagram.com/pacofragancias.pe/" target="_blank" rel="noopener noreferrer"
+            title="Instagram" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://www.tiktok.com/@pacofragancias.pe" target="_blank" rel="noopener noreferrer" title="TikTok"
+            aria-label="TikTok">
+            <i class="fab fa-tiktok"></i>
+          </a>
+          <a href="https://www.tiktok.com/@pacofraganciasdecants.pe" target="_blank" rel="noopener noreferrer"
+            title="TikTok Decants" aria-label="TikTok Decants">
+            <i class="fab fa-tiktok"></i>
+          </a>
+          <a href="https://wa.me/51903283353" target="_blank" rel="noopener noreferrer" title="WhatsApp"
+            aria-label="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Navegar</h4>
+        <a onclick="navigateTo('home')">Inicio</a>
+        <a onclick="navigateTo('catalogo')">Catálogo</a>
+        <a onclick="navigateTo('promos')">Promos</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Ayuda</h4>
+        <a href="#">FAQ</a>
+        <a href="#">Envíos</a>
+        <a href="#">Devoluciones</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <p><i class="fa-regular fa-envelope"
+            style="margin-right:0.4rem; color:var(--gold);"></i>pacofragancias14@gmail.com</p>
+        <p><i class="fa-solid fa-phone" style="margin-right:0.4rem; color:var(--gold);"></i>+51 903 283 353</p>
+        <p><i class="fa-solid fa-location-dot" style="margin-right:0.4rem; color:var(--gold);"></i>Lima, Perú</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 PACO Fragancias · Hecho con ❤️ en Perú</p>
+      <p class="footer-signature">
+        Diseñado y desarrollado por
+        <a href="https://abel-castill0.github.io/Portafolio/" target="_blank" rel="noopener noreferrer">Abel
+          Castillo</a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
 </html>
