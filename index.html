@@ -374,7 +374,7 @@
     </div>
   </div>
 
-  <!-- ============ MODAL PACK ============ -->
+    <!-- ============ MODAL PACK (rediseñado) ============ -->
   <div class="modal-overlay" id="packModalOverlay" role="dialog" aria-modal="true" aria-labelledby="packModalTitle">
     <div class="modal pack-modal" id="packModal">
       <button class="modal-close" onclick="closePackModal()" aria-label="Cerrar">
@@ -383,18 +383,17 @@
       <div class="modal-body">
         <h2 id="packModalTitle"></h2>
         <p id="packModalDesc" class="pack-modal-desc"></p>
-        <!-- Selector de tamaño y cantidad (para grupos) -->
-        <div id="packGroupOptions" style="display:none; margin-bottom:1.5rem;">
-          <div class="pack-option-title">Tamaño del decant</div>
-          <div class="size-grid" id="packSizeGrid" style="justify-content:center; margin-bottom:1rem;"></div>
-          <div class="pack-option-title">Cantidad de perfumes</div>
-          <div class="size-grid" id="packQtyGrid" style="justify-content:center;"></div>
-          <div class="modal-price-display" id="packGroupPrice" style="margin-top:1rem;"></div>
-          <button class="btn btn-outline-dark btn-sm" id="packGroupContinue"
-            style="display:block; margin:1.5rem auto 0; width:auto; padding:.6rem 2rem;">
-            Seleccionar Perfumes <i class="fa-solid fa-arrow-right"></i>
-          </button>
+
+        <!-- Selector de tamaño (siempre visible, compacto y elegante) -->
+        <div id="packGroupSizeSelector" style="display:none;">
+          <div class="pack-size-selector">
+            <span class="pack-size-label">Tamaño del decant</span>
+            <div class="size-options" id="packSizeGrid" style="justify-content:center;"></div>
+          </div>
+          <div class="modal-price-display" id="packGroupPrice" style="margin:0.8rem 0 1.2rem;"></div>
         </div>
+
+        <!-- Cuadrícula de perfumes (siempre visible para grupos, con contador) -->
         <div class="pack-product-grid" id="packProductGrid"></div>
         <div class="pack-counter-wrap">
           <p id="packCounter" class="pack-counter"></p>
@@ -505,5 +504,4 @@
 
   <script src="script.js"></script>
 </body>
-
 </html>

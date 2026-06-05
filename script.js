@@ -4750,64 +4750,69 @@
      MODAL — PACK
   ══════════════════════════════════════════════════════════════ */
   function openPackModal(promoId) {
-    const promo = promos.find((p) => p.id === promoId);
-    if (!promo) return;
+  const promo = promos.find((p) => p.id === promoId);
+  if (!promo) return;
 
-    currentPackPromo = promo;
-    currentPackIsGroup = (promo.type === "group");
-    selectedPackProducts = [];
-    currentPackGroupSize = null;
-    currentPackGroupQty = promo.quantity || null;
-    packGroupPrice = 0;
+  currentPackPromo = promo;
+  currentPackIsGroup = (promo.type === "group");
+  selectedPackProducts = [];
+  currentPackGroupSize = null;
+  currentPackGroupQty = promo.quantity || null;
+  packGroupPrice = 0;
 
-    document.getElementById("packModalTitle").textContent = promo.name;
-    document.getElementById("packModalDesc").textContent = promo.desc;
+  document.getElementById("packModalTitle").textContent = promo.name;
+  document.getElementById("packModalDesc").textContent = promo.desc;
 
-    const groupOptions = document.getElementById("packGroupOptions");
-    const productGrid = document.getElementById("packProductGrid");
-    const counterEl = document.getElementById("packCounter");
-    const confirmBtn = document.getElementById("packConfirmBtn");
-    const qtyGrid = document.getElementById("packQtyGrid");
-    const qtyTitle = qtyGrid.previousElementSibling;
+  const sizeSelector = document.getElementById("packGroupSizeSelector");
+  const productGrid = document.getElementById("packProductGrid");
+  const counterEl = document.getElementById("packCounter");
+  const confirmBtn = document.getElementById("packConfirmBtn");
+  const priceDisplay = document.getElementById("packGroupPrice");
 
-    if (currentPackIsGroup) {
-      // Limpiar residuos
-      currentPackPromo.size = undefined;
-      currentPackPromo.price = undefined;
+  if (currentPackIsGroup) {
+    // Mostrar selector de tamaño y grid juntos
+    sizeSelector.style.display = "block";
+    productGrid.style.display = "grid";
+    counterEl.style.display = "block";
+    confirmBtn.style.display = "flex";
+    priceDisplay.textContent = "";
 
-      groupOptions.style.display = "block";
-      productGrid.style.display = "none";
-      counterEl.style.display = "none";
-      confirmBtn.style.display = "none";
+    // Limpiar residuos
+    currentPackPromo.size = undefined;
+    currentPackPromo.price = undefined;
 
-      // Ocultar cantidad (viene fija en la promo)
-      qtyGrid.style.display = "none";
-      if (qtyTitle) qtyTitle.style.display = "none";
+    // Renderizar opciones de tamaño
+    renderPackSizeOptions();
 
-      renderPackSizeOptions();
-    } else {
-      groupOptions.style.display = "none";
-      productGrid.style.display = "grid";
-      counterEl.style.display = "block";
-      confirmBtn.style.display = "flex";
-      renderPackGrid();
-      updatePackCounter();
-    }
-
-    document.getElementById("packModalOverlay").classList.add("active");
-    document.body.style.overflow = "hidden";
+    // Renderizar grid de perfumes (vacío hasta que elija tamaño)
+    productGrid.innerHTML = '<p style="text-align:center;color:var(--text-muted);grid-column:1/-1;padding:1.5rem;">Selecciona un tamaño para ver los perfumes disponibles</p>';
+    counterEl.style.display = "none";
+    confirmBtn.style.display = "none";
+  } else {
+    // Promo normal (no usada actualmente, pero por si acaso)
+    sizeSelector.style.display = "none";
+    productGrid.style.display = "grid";
+    counterEl.style.display = "block";
+    confirmBtn.style.display = "flex";
+    renderPackGrid();
+    updatePackCounter();
   }
+
+  document.getElementById("packModalOverlay").classList.add("active");
+  document.body.style.overflow = "hidden";
+}
 
   function closePackModal() {
-    document.getElementById("packModalOverlay").classList.remove("active");
-    document.body.style.overflow = "";
-    currentPackPromo = null;
-    currentPackIsGroup = false;
-    currentPackGroupSize = null;
-    currentPackGroupQty = null;
-    selectedPackProducts = [];
-    document.getElementById("packGroupOptions").style.display = "none";
-  }
+  document.getElementById("packModalOverlay").classList.remove("active");
+  document.body.style.overflow = "";
+  currentPackPromo = null;
+  currentPackIsGroup = false;
+  currentPackGroupSize = null;
+  currentPackGroupQty = null;
+  selectedPackProducts = [];
+  document.getElementById("packGroupSizeSelector").style.display = "none";
+  document.getElementById("packGroupPrice").textContent = "";
+}
 
   function getEligibleProducts(promo) {
     let eligible = products.filter((p) => !p.tester);
@@ -4874,50 +4879,55 @@
   }
 
   function renderPackSizeOptions() {
-    if (!currentPackIsGroup || !currentPackPromo) return;
-    const sizes = currentPackPromo.options.map((opt) => opt.size);
-    const container = document.getElementById("packSizeGrid");
-    container.innerHTML = sizes
-      .map(
-        (size) =>
-          `<button class="size-option${size === currentPackGroupSize ? " selected" : ""}" data-size="${size}">${size}</button>`,
-      )
-      .join("");
+  if (!currentPackIsGroup || !currentPackPromo) return;
+  const sizes = currentPackPromo.options.map((opt) => opt.size);
+  const container = document.getElementById("packSizeGrid");
+  container.innerHTML = sizes
+    .map(
+      (size) =>
+        `<button class="size-option${size === currentPackGroupSize ? " selected" : ""}" data-size="${size}">${size}</button>`,
+    )
+    .join("");
+  document.getElementById("packGroupPrice").textContent = "";
+}
 
-    // Siempre ocultamos cantidad (ya está definida en la promo)
-    const qtyGrid = document.getElementById("packQtyGrid");
-    const qtyTitle = qtyGrid.previousElementSibling;
-    qtyGrid.innerHTML = "";
-    qtyGrid.style.display = "none";
-    if (qtyTitle) qtyTitle.style.display = "none";
+  function selectPackSize(size) {
+  currentPackGroupSize = size;
+  currentPackGroupQty = currentPackPromo.quantity;
+  packGroupPrice = 0;
 
+  // Remarcar botones de tamaño
+  document.querySelectorAll("#packSizeGrid .size-option").forEach((btn) => {
+    btn.classList.toggle("selected", btn.dataset.size === size);
+  });
+
+  // Calcular y mostrar precio
+  const option = currentPackPromo.options.find((o) => o.size === size);
+  if (option) {
+    packGroupPrice = option.price;
+    document.getElementById("packGroupPrice").textContent =
+      `Precio: ${formatPrice(packGroupPrice)}`;
+  } else {
     document.getElementById("packGroupPrice").textContent = "";
   }
 
-  function selectPackSize(size) {
-    currentPackGroupSize = size;
-    currentPackGroupQty = currentPackPromo.quantity;
-    packGroupPrice = 0;
+  // Mostrar grid de perfumes y habilitar selección
+  const productGrid = document.getElementById("packProductGrid");
+  const counterEl = document.getElementById("packCounter");
+  const confirmBtn = document.getElementById("packConfirmBtn");
 
-    document.querySelectorAll("#packSizeGrid .size-option").forEach((btn) => {
-      btn.classList.toggle("selected", btn.dataset.size === size);
-    });
+  productGrid.style.display = "grid";
+  counterEl.style.display = "block";
+  confirmBtn.style.display = "flex";
 
-    const qtyGrid = document.getElementById("packQtyGrid");
-    const qtyTitle = qtyGrid.previousElementSibling;
-    qtyGrid.innerHTML = "";
-    qtyGrid.style.display = "none";
-    if (qtyTitle) qtyTitle.style.display = "none";
+  // Asignar valores al promo actual
+  currentPackPromo.size = currentPackGroupSize;
+  currentPackPromo.price = packGroupPrice;
+  selectedPackProducts = [];
 
-    const option = currentPackPromo.options.find((o) => o.size === size);
-    if (option) {
-      packGroupPrice = option.price;
-      document.getElementById("packGroupPrice").textContent =
-        `Precio: ${formatPrice(packGroupPrice)}`;
-    } else {
-      document.getElementById("packGroupPrice").textContent = "";
-    }
-  }
+  renderPackGrid();
+  updatePackCounter();
+}
 
   // Listener para los botones de tamaño
   document.getElementById("packSizeGrid").addEventListener("click", function (e) {
@@ -4926,24 +4936,7 @@
     selectPackSize(btn.dataset.size);
   });
 
-  // Botón "Seleccionar Perfumes" dentro del grupo
-  document.getElementById("packGroupContinue").addEventListener("click", function () {
-    if (!currentPackGroupSize) {
-      showToast("⚠️ Selecciona un tamaño primero");
-      return;
-    }
-    document.getElementById("packGroupOptions").style.display = "none";
-    document.getElementById("packProductGrid").style.display = "grid";
-    document.getElementById("packCounter").style.display = "block";
-    document.getElementById("packConfirmBtn").style.display = "flex";
-
-    // Asignamos los valores escogidos
-    currentPackPromo.size = currentPackGroupSize;
-    currentPackPromo.price = packGroupPrice;
-    selectedPackProducts = [];
-    renderPackGrid();
-    updatePackCounter();
-  });
+  
 
   window.confirmPack = function () {
     const promo = currentPackPromo;
@@ -5116,59 +5109,78 @@
      RENDER — PROMOS
   ══════════════════════════════════════════════════════════════ */
   function renderPromos() {
-    const grid = document.getElementById("promoGrid");
-    let filtered = promos;
+  const grid = document.getElementById("promoGrid");
+  let filtered = promos;
 
-    if (activePromoFilter !== "all") {
-      filtered = filtered.filter((p) => p.category === activePromoFilter);
-    }
-    if (activePromoFilter === "arabe" && activePromoGender !== "all") {
-      filtered = filtered.filter((p) => {
-        if (!p.allowedGenders) return true;
-        return p.allowedGenders.includes(activePromoGender);
-      });
-    }
+  if (activePromoFilter !== "all") {
+    filtered = filtered.filter((p) => p.category === activePromoFilter);
+  }
+  if (activePromoFilter === "arabe" && activePromoGender !== "all") {
+    filtered = filtered.filter((p) => {
+      if (!p.allowedGenders) return true;
+      return p.allowedGenders.includes(activePromoGender);
+    });
+  }
 
-    if (filtered.length === 0) {
-      grid.innerHTML = '<p style="text-align:center;color:var(--text-muted);padding:2rem;">No hay promociones en esta categoría.</p>';
-      return;
-    }
+  if (filtered.length === 0) {
+    grid.innerHTML = '<p style="text-align:center;color:var(--text-muted);padding:2rem;">No hay promociones en esta categoría.</p>';
+    return;
+  }
 
-    grid.innerHTML = filtered
-      .map((promo) => {
-        let priceHtml = "";
-        let imageUrl = promo.image || "";
+  grid.innerHTML = filtered
+    .map((promo) => {
+      let priceHtml = "";
+      const imageUrl = promo.image || "";
 
-        if (promo.type === "group" && promo.options && promo.options.length) {
-          const allPrices = promo.options.map(opt => opt.price);
-          const minPrice = Math.min(...allPrices);
-          const maxPrice = Math.max(...allPrices);
-          priceHtml = minPrice === maxPrice ? formatPrice(minPrice) : `Desde ${formatPrice(minPrice)}`;
-        } else if (promo.price) {
-          priceHtml = formatPrice(promo.price);
-        } else {
-          priceHtml = "Consultar";
-        }
+      // Calcular precio
+      if (promo.type === "group" && promo.options && promo.options.length) {
+        const allPrices = promo.options.map(opt => opt.price);
+        const minPrice = Math.min(...allPrices);
+        const maxPrice = Math.max(...allPrices);
+        priceHtml = minPrice === maxPrice ? formatPrice(minPrice) : `Desde ${formatPrice(minPrice)}`;
+      } else if (promo.price) {
+        priceHtml = formatPrice(promo.price);
+      } else {
+        priceHtml = "Consultar";
+      }
 
-        const infoLine = promo.type === "group"
-          ? `📦 ${promo.quantity} perfume(s) · Elige tamaño`
-          : `📦 ${promo.quantity} perfume(s) · ${promo.size}`;
+      // Texto informativo debajo del título
+      const infoLine = promo.type === "group"
+        ? `${promo.quantity} perfumes · Elige tamaño`
+        : `${promo.quantity} perfume(s) · ${promo.size}`;
 
-        return `
-      <div class="promo-card reveal-item">
-        ${promo.badge ? `<div class="promo-badge">${promo.badge}</div>` : ""}
-        ${imageUrl ? `<img src="${imageUrl}" alt="${promo.name}" class="promo-img" loading="lazy" onerror="this.style.display='none'" />` : `<div class="promo-icon">${getCategoryIcon(promo.category)}</div>`}
+      // Badge
+      const badgeHtml = promo.badge
+        ? `<span class="promo-badge">${promo.badge}</span>`
+        : "";
+
+      // Imagen o icono (con fallback)
+      const mediaHtml = imageUrl
+        ? `<img src="${imageUrl}" alt="${promo.name}" class="promo-img" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />`
+        : "";
+
+      const iconHtml = !imageUrl
+        ? `<div class="promo-icon">${getCategoryIcon(promo.category)}</div>`
+        : `<div class="promo-icon" style="display:none;">${getCategoryIcon(promo.category)}</div>`;
+
+      return `
+      <div class="promo-card reveal-item" data-promo-id="${promo.id}">
+        ${badgeHtml}
+        ${mediaHtml}
+        ${iconHtml}
         <h3>${promo.name}</h3>
         <p class="promo-desc">${promo.desc}</p>
-        <p style="font-size:.78rem;color:var(--text-muted);margin-bottom:.3rem;">${infoLine}</p>
+        <p class="promo-meta">📦 ${infoLine}</p>
         <div class="promo-price">${priceHtml}</div>
-        <button class="btn-add" data-promo-id="${promo.id}">Seleccionar Perfumes</button>
+        <button class="btn-add" data-promo-id="${promo.id}">
+          Seleccionar Perfumes
+        </button>
       </div>`;
-      })
-      .join("");
+    })
+    .join("");
 
-    observeRevealElements();
-  }
+  observeRevealElements();
+}
 
   /* ══════════════════════════════════════════════════════════════
      RENDER — CHECKOUT
