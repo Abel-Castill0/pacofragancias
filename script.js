@@ -4815,42 +4815,51 @@
 }
 
   function getEligibleProducts(promo) {
-    let eligible = products.filter((p) => !p.tester);
-    if (promo.allowedCategories) {
-      eligible = eligible.filter((p) => promo.allowedCategories.includes(p.category));
-    }
-    if (promo.allowedGenders) {
-      eligible = eligible.filter((p) => promo.allowedGenders.includes(p.gender));
-    }
-    return eligible.filter((p) => p.cardImage && p.cardImage.trim() !== "");
+  let eligible = products.filter((p) => !p.tester);   // excluir testers
+
+  if (promo.allowedCategories) {
+    eligible = eligible.filter((p) =>
+      promo.allowedCategories.includes(p.category),
+    );
   }
+  if (promo.allowedGenders) {
+    eligible = eligible.filter((p) =>
+      promo.allowedGenders.includes(p.gender),
+    );
+  }
+
+  // No filtramos por cardImage; si falta, mostraremos un placeholder
+  return eligible;
+}
 
   function renderPackGrid() {
-    const promo = currentPackPromo;
-    if (!promo) return;
+  const promo = currentPackPromo;
+  if (!promo) return;
 
-    const eligible = getEligibleProducts(promo);
-    const grid = document.getElementById("packProductGrid");
+  const eligible = getEligibleProducts(promo);
+  const grid = document.getElementById("packProductGrid");
 
-    if (eligible.length === 0) {
-      grid.innerHTML = '<p style="text-align:center;color:var(--text-muted);">No hay perfumes disponibles para esta promoción.</p>';
-      return;
-    }
-
-    grid.innerHTML = eligible
-      .slice(0, 30)
-      .map((prod) => {
-        const isSelected = selectedPackProducts.includes(prod.id);
-        return `
-        <div class="pack-product-item ${isSelected ? "selected" : ""}" data-product-id="${prod.id}" onclick="togglePackProduct(${prod.id})">
-          <img src="${prod.cardImage}" alt="${prod.name}" loading="lazy"
-               onerror="this.src='img/perfumes/placeholder.webp';this.onerror=null;" />
-          <span class="pack-product-name">${prod.name}</span>
-          <span class="pack-product-brand">${prod.brand}</span>
-        </div>`;
-      })
-      .join("");
+  if (eligible.length === 0) {
+    grid.innerHTML =
+      '<p style="text-align:center;color:var(--text-muted);">No hay perfumes disponibles para esta promoción.</p>';
+    return;
   }
+
+  grid.innerHTML = eligible
+    .map((prod) => {
+      const isSelected = selectedPackProducts.includes(prod.id);
+      const imgSrc = prod.cardImage || "img/perfumes/placeholder.webp";
+      return `
+      <div class="pack-product-item ${isSelected ? "selected" : ""}"
+           data-product-id="${prod.id}" onclick="togglePackProduct(${prod.id})">
+        <img src="${imgSrc}" alt="${prod.name}" loading="lazy"
+             onerror="this.src='img/perfumes/placeholder.webp';" />
+        <span class="pack-product-name">${prod.name}</span>
+        <span class="pack-product-brand">${prod.brand}</span>
+      </div>`;
+    })
+    .join("");
+}
 
   window.togglePackProduct = function (productId) {
     const promo = currentPackPromo;
