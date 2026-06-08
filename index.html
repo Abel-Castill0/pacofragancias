@@ -1,46 +1,68 @@
 <!doctype html>
 <html lang="es">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0d0a06" />
   <meta name="description"
     content="Paco Fragancias · Decants premium de fragancias árabes, de diseñador y nicho. Lima, Perú." />
+  <meta property="og:title" content="Paco Fragancias · Decants de Lujo" />
+  <meta property="og:description"
+    content="Decants premium de fragancias árabes, de diseñador y nicho. Lima, Perú." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="logo.webp" />
   <title>Paco Fragancias · Decants de Lujo</title>
+
+  <!-- Preconnects -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+
+  <!-- Critical assets -->
+  <link rel="preload" as="image" href="logo.webp" />
+
+  <!-- Fonts -->
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500;600;700&display=swap" />
+  <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    media="print" onload="this.media='all'" />
+  <noscript>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500;600;700&display=swap" />
+  </noscript>
+
+  <!-- Font Awesome (non-blocking) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    media="print" onload="this.media='all'" />
+  <noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  </noscript>
+
   <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body>
-
   <!-- ============ HEADER ============ -->
   <header class="header" id="header">
     <div class="header-inner">
-      <a class="logo" onclick="navigateTo('home')">
-        <img src="logo.webp" alt="Paco Fragancias" class="logo-img" />
+      <a class="logo" role="button" tabindex="0" aria-label="Ir al inicio" onclick="navigateTo('home')">
+        <img src="logo.webp" alt="Paco Fragancias" class="logo-img" width="46" height="46" decoding="async" />
         <div class="logo-text">
           <span class="logo-name">PACO <span>FRAGANCIAS</span></span>
           <span class="logo-slogan">deja que la fragancia hable por ti</span>
         </div>
       </a>
-
-      <nav class="nav" id="nav">
+      <nav class="nav" id="nav" aria-label="Navegación principal">
         <a onclick="navigateTo('home')" class="active" data-page="home">Inicio</a>
         <a onclick="navigateTo('catalogo')" data-page="catalogo">Catálogo</a>
         <a onclick="navigateTo('promos')" data-page="promos">Promos</a>
       </nav>
-
       <div class="header-actions">
         <button class="btn-icon btn-cart" id="btnCart" title="Carrito" aria-label="Abrir carrito">
-          <i class="fa-solid fa-bag-shopping"></i>
+          <i class="fa-solid fa-bag-shopping" aria-hidden="true"></i>
           <span class="cart-count" id="cartCount">0</span>
         </button>
-        <button class="hamburger" id="hamburger" aria-label="Menú">
+        <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav">
           <span></span><span></span><span></span>
         </button>
       </div>
@@ -48,11 +70,12 @@
   </header>
 
   <!-- ============ PÁGINA HOME ============ -->
+  <main>
   <div class="page active" id="page-home">
-
     <!-- HERO -->
     <section class="hero">
-      <video class="hero-video" autoplay muted loop playsinline>
+      <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="inicio.webp"
+        aria-hidden="true">
         <source src="hero_video.mp4" type="video/mp4" />
       </video>
       <div class="hero-overlay"></div>
@@ -67,14 +90,14 @@
         <div class="hero-cta-group">
           <button class="btn btn-gold" onclick="navigateTo('catalogo')">
             <span>Explorar Catálogo</span>
-            <i class="fa-solid fa-arrow-right"></i>
+            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
           </button>
           <button class="btn btn-ghost" onclick="navigateTo('promos')">
             <span>Ver Promociones</span>
           </button>
         </div>
       </div>
-      <div class="hero-scroll-indicator">
+      <div class="hero-scroll-indicator" aria-hidden="true">
         <span>Scroll</span>
         <div class="hero-scroll-line"></div>
       </div>
@@ -115,14 +138,14 @@
       <div class="product-grid" id="featuredGrid"></div>
       <div class="section-cta">
         <button class="btn btn-outline-dark" onclick="navigateTo('catalogo')">
-          Ver Catálogo Completo <i class="fa-solid fa-arrow-right"></i>
+          Ver Catálogo Completo <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
         </button>
       </div>
     </section>
 
     <!-- TRUST SECTION -->
     <section class="section section-trust" id="confianza">
-      <div class="trust-bg-pattern"></div>
+      <div class="trust-bg-pattern" aria-hidden="true"></div>
       <div class="section-header">
         <div class="section-eyebrow">¿Por qué elegirnos?</div>
         <h2 class="section-title">Paco Fragancias es sinónimo de confianza</h2>
@@ -163,20 +186,20 @@
       </div>
       <div class="tiktok-grid">
         <div class="tiktok-card">
-          <iframe src="https://www.tiktok.com/embed/v2/7536339020603788549" allowfullscreen scrolling="no"
-            frameborder="0" allow="autoplay; encrypted-media"></iframe>
+          <iframe src="https://www.tiktok.com/embed/v2/7536339020603788549" title="TikTok Paco Fragancias"
+            loading="lazy" allowfullscreen scrolling="no" frameborder="0" allow="autoplay; encrypted-media"></iframe>
         </div>
         <div class="tiktok-card">
-          <iframe src="https://www.tiktok.com/embed/v2/7520732002643971333" allowfullscreen scrolling="no"
-            frameborder="0" allow="autoplay; encrypted-media"></iframe>
+          <iframe src="https://www.tiktok.com/embed/v2/7520732002643971333" title="TikTok Paco Fragancias"
+            loading="lazy" allowfullscreen scrolling="no" frameborder="0" allow="autoplay; encrypted-media"></iframe>
         </div>
         <div class="tiktok-card">
-          <iframe src="https://www.tiktok.com/embed/v2/7554748921386372359" allowfullscreen scrolling="no"
-            frameborder="0" allow="autoplay; encrypted-media"></iframe>
+          <iframe src="https://www.tiktok.com/embed/v2/7554748921386372359" title="TikTok Paco Fragancias"
+            loading="lazy" allowfullscreen scrolling="no" frameborder="0" allow="autoplay; encrypted-media"></iframe>
         </div>
         <div class="tiktok-card">
-          <iframe src="https://www.tiktok.com/embed/v2/7603741534445489416" allowfullscreen scrolling="no"
-            frameborder="0" allow="autoplay; encrypted-media"></iframe>
+          <iframe src="https://www.tiktok.com/embed/v2/7603741534445489416" title="TikTok Paco Fragancias"
+            loading="lazy" allowfullscreen scrolling="no" frameborder="0" allow="autoplay; encrypted-media"></iframe>
         </div>
       </div>
     </section>
@@ -185,7 +208,7 @@
   <!-- ============ CATÁLOGO ============ -->
   <div class="page" id="page-catalogo">
     <section class="page-hero catalog-hero">
-      <img src="inicio.webp" alt="Colección" class="page-hero-img" />
+      <img src="inicio.webp" alt="Colección Paco Fragancias" class="page-hero-img" loading="lazy" decoding="async" />
       <div class="page-hero-overlay"></div>
       <div class="page-hero-content">
         <div class="section-eyebrow" style="color: var(--gold-light);">Catálogo</div>
@@ -193,16 +216,15 @@
         <p class="section-subtitle" style="color: rgba(255,255,255,0.8);">Explora por tipo, género o busca tu fragancia
           favorita.</p>
         <div class="search-box-wrapper">
-          <div class="search-box" style="position:relative;">
-            <i class="fa-solid fa-magnifying-glass search-icon"></i>
-            <input type="text" id="searchInput" placeholder="Buscar perfume, marca, notas..." autocomplete="off"
-              oninput="handleSearchInput()" onfocus="handleSearchInput()" />
-            <div class="search-suggestions" id="searchSuggestions" style="display:none;"></div>
+          <div class="search-box">
+            <i class="fa-solid fa-magnifying-glass search-icon" aria-hidden="true"></i>
+            <input type="search" id="searchInput" placeholder="Buscar perfume, marca, notas..." autocomplete="off"
+              aria-label="Buscar perfume" oninput="handleSearchInput()" onfocus="handleSearchInput()" />
+            <div class="search-suggestions" id="searchSuggestions" role="listbox" style="display:none;"></div>
           </div>
         </div>
       </div>
     </section>
-
     <section class="section" style="padding-top: 2.5rem;">
       <div class="filters-wrapper">
         <div class="filters-row">
@@ -234,7 +256,8 @@
   <!-- ============ PROMOS ============ -->
   <div class="page" id="page-promos">
     <section class="page-hero promo-hero">
-      <img src="fondo_promos.webp" alt="Promociones" class="page-hero-img" />
+      <img src="fondo_promos.webp" alt="Promociones Paco Fragancias" class="page-hero-img" loading="lazy"
+        decoding="async" />
       <div class="page-hero-overlay"></div>
       <div class="page-hero-content">
         <div class="section-eyebrow" style="color: var(--gold-light);">Ofertas Especiales</div>
@@ -243,7 +266,6 @@
           a un precio especial.</p>
       </div>
     </section>
-
     <section class="section" style="padding-top: 2.5rem;">
       <div class="filters-wrapper">
         <div class="filters-row">
@@ -280,14 +302,12 @@
           <div class="section-eyebrow">Paso final</div>
           <h2 class="checkout-title">Finalizar Pedido</h2>
         </div>
-
         <div id="checkout-empty-cart" style="text-align:center; padding:3rem 1rem; color: var(--text-muted);">
           <div style="font-size:3rem; margin-bottom:1rem;">🛒</div>
           <p style="font-size:1rem; margin-bottom:0.5rem; color: var(--text-secondary);">Tu carrito está vacío.</p>
-          <a href="#" onclick="navigateTo('catalogo')" style="color:var(--gold); font-weight:600;">Explorar el
+          <a role="button" tabindex="0" onclick="navigateTo('catalogo')" style="color:var(--gold); font-weight:600;">Explorar el
             catálogo</a>
         </div>
-
         <div id="checkout-form-wrapper" style="display:none;">
           <form id="checkoutForm" onsubmit="return false;" autocomplete="on">
             <div class="form-section-title">Datos de entrega</div>
@@ -304,11 +324,12 @@
             <div class="form-row">
               <div class="form-group">
                 <label for="chTelefono">Teléfono *</label>
-                <input type="tel" id="chTelefono" placeholder="+51 900 000 000" required autocomplete="tel" />
+                <input type="tel" id="chTelefono" placeholder="+51 900 000 000" required autocomplete="tel"
+                  inputmode="tel" />
               </div>
               <div class="form-group">
                 <label for="chDNI">DNI *</label>
-                <input type="text" id="chDNI" placeholder="12345678" required />
+                <input type="text" id="chDNI" placeholder="12345678" required inputmode="numeric" maxlength="12" />
               </div>
             </div>
             <div class="form-group">
@@ -326,7 +347,6 @@
                 <input type="text" id="chReferencia" placeholder="Al costado del banco" />
               </div>
             </div>
-
             <div class="checkout-summary">
               <div class="form-section-title">Resumen del Pedido</div>
               <div id="checkoutSummaryItems"></div>
@@ -335,9 +355,8 @@
                 <span id="checkoutTotal">S/ 0.00</span>
               </div>
             </div>
-
             <button type="button" class="btn-whatsapp" onclick="confirmarWhatsApp()">
-              <i class="fab fa-whatsapp"></i>
+              <i class="fab fa-whatsapp" aria-hidden="true"></i>
               <span>Confirmar por WhatsApp</span>
             </button>
             <p class="checkout-note">Al confirmar, serás redirigido a WhatsApp para coordinar el pago y envío.</p>
@@ -346,15 +365,16 @@
       </div>
     </div>
   </div>
+  </main>
 
   <!-- ============ MODAL PRODUCTO ============ -->
   <div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalName">
     <div class="modal" id="modal">
       <button class="modal-close" onclick="closeModal()" aria-label="Cerrar">
-        <i class="fa-solid fa-xmark"></i>
+        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
       </button>
       <div class="modal-image" id="modalImage">
-        <img src="" alt="Perfume" />
+        <img src="" alt="Perfume" decoding="async" />
       </div>
       <div class="modal-body">
         <h2 id="modalName"></h2>
@@ -367,23 +387,22 @@
         <div class="size-options" id="modalSizes"></div>
         <div class="modal-price-display" id="modalPrice"></div>
         <button class="btn-add-large" id="modalAddBtn">
-          <i class="fa-solid fa-bag-shopping"></i>
+          <i class="fa-solid fa-bag-shopping" aria-hidden="true"></i>
           <span>Añadir al Carrito</span>
         </button>
       </div>
     </div>
   </div>
 
-    <!-- ============ MODAL PACK (rediseñado) ============ -->
+  <!-- ============ MODAL PACK (rediseñado) ============ -->
   <div class="modal-overlay" id="packModalOverlay" role="dialog" aria-modal="true" aria-labelledby="packModalTitle">
     <div class="modal pack-modal" id="packModal">
       <button class="modal-close" onclick="closePackModal()" aria-label="Cerrar">
-        <i class="fa-solid fa-xmark"></i>
+        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
       </button>
       <div class="modal-body">
         <h2 id="packModalTitle"></h2>
         <p id="packModalDesc" class="pack-modal-desc"></p>
-
         <!-- Selector de tamaño (siempre visible, compacto y elegante) -->
         <div id="packGroupSizeSelector" style="display:none;">
           <div class="pack-size-selector">
@@ -392,14 +411,13 @@
           </div>
           <div class="modal-price-display" id="packGroupPrice" style="margin:0.8rem 0 1.2rem;"></div>
         </div>
-
         <!-- Cuadrícula de perfumes (siempre visible para grupos, con contador) -->
         <div class="pack-product-grid" id="packProductGrid"></div>
         <div class="pack-counter-wrap">
           <p id="packCounter" class="pack-counter"></p>
         </div>
         <button class="btn-add-large" id="packConfirmBtn" onclick="confirmPack()">
-          <i class="fa-solid fa-bag-shopping"></i>
+          <i class="fa-solid fa-bag-shopping" aria-hidden="true"></i>
           <span>Añadir Pack al Carrito</span>
         </button>
       </div>
@@ -411,11 +429,11 @@
   <aside class="cart-sidebar" id="cartSidebar" role="complementary" aria-label="Carrito de compras">
     <div class="cart-header">
       <div class="cart-header-left">
-        <i class="fa-solid fa-bag-shopping cart-header-icon"></i>
+        <i class="fa-solid fa-bag-shopping cart-header-icon" aria-hidden="true"></i>
         <h3>Tu Carrito</h3>
       </div>
       <button class="cart-close" onclick="closeCart()" aria-label="Cerrar carrito">
-        <i class="fa-solid fa-xmark"></i>
+        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
       </button>
     </div>
     <div class="cart-items" id="cartItems">
@@ -432,7 +450,7 @@
       </div>
       <button class="btn-checkout" onclick="goToCheckout()">
         <span>Ir al Checkout</span>
-        <i class="fa-solid fa-arrow-right"></i>
+        <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
       </button>
     </div>
   </aside>
@@ -445,53 +463,50 @@
     <div class="footer-inner">
       <div class="footer-brand">
         <div class="footer-logo">
-          <img src="logo.webp" alt="Paco Fragancias" class="footer-logo-img" />
+          <img src="logo.webp" alt="Paco Fragancias" class="footer-logo-img" width="38" height="38" loading="lazy"
+            decoding="async" />
           <span class="footer-logo-name">PACO FRAGANCIAS</span>
         </div>
         <p class="footer-tagline">Decants premium de las mejores fragancias del mundo.</p>
         <div class="social-links">
           <a href="https://www.instagram.com/pacofragancias.pe/" target="_blank" rel="noopener noreferrer"
             title="Instagram" aria-label="Instagram">
-            <i class="fab fa-instagram"></i>
+            <i class="fab fa-instagram" aria-hidden="true"></i>
           </a>
           <a href="https://www.tiktok.com/@pacofragancias.pe" target="_blank" rel="noopener noreferrer" title="TikTok"
             aria-label="TikTok">
-            <i class="fab fa-tiktok"></i>
+            <i class="fab fa-tiktok" aria-hidden="true"></i>
           </a>
           <a href="https://www.tiktok.com/@pacofraganciasdecants.pe" target="_blank" rel="noopener noreferrer"
             title="TikTok Decants" aria-label="TikTok Decants">
-            <i class="fab fa-tiktok"></i>
+            <i class="fab fa-tiktok" aria-hidden="true"></i>
           </a>
           <a href="https://wa.me/51903283353" target="_blank" rel="noopener noreferrer" title="WhatsApp"
             aria-label="WhatsApp">
-            <i class="fab fa-whatsapp"></i>
+            <i class="fab fa-whatsapp" aria-hidden="true"></i>
           </a>
         </div>
       </div>
-
       <div class="footer-col">
         <h4>Navegar</h4>
-        <a onclick="navigateTo('home')">Inicio</a>
-        <a onclick="navigateTo('catalogo')">Catálogo</a>
-        <a onclick="navigateTo('promos')">Promos</a>
+        <a role="button" tabindex="0" onclick="navigateTo('home')">Inicio</a>
+        <a role="button" tabindex="0" onclick="navigateTo('catalogo')">Catálogo</a>
+        <a role="button" tabindex="0" onclick="navigateTo('promos')">Promos</a>
       </div>
-
       <div class="footer-col">
         <h4>Ayuda</h4>
         <a href="#">FAQ</a>
         <a href="#">Envíos</a>
         <a href="#">Devoluciones</a>
       </div>
-
       <div class="footer-col">
         <h4>Contacto</h4>
-        <p><i class="fa-regular fa-envelope"
+        <p><i class="fa-regular fa-envelope" aria-hidden="true"
             style="margin-right:0.4rem; color:var(--gold);"></i>pacofragancias14@gmail.com</p>
-        <p><i class="fa-solid fa-phone" style="margin-right:0.4rem; color:var(--gold);"></i>+51 903 283 353</p>
-        <p><i class="fa-solid fa-location-dot" style="margin-right:0.4rem; color:var(--gold);"></i>Lima, Perú</p>
+        <p><i class="fa-solid fa-phone" aria-hidden="true" style="margin-right:0.4rem; color:var(--gold);"></i>+51 903 283 353</p>
+        <p><i class="fa-solid fa-location-dot" aria-hidden="true" style="margin-right:0.4rem; color:var(--gold);"></i>Lima, Perú</p>
       </div>
     </div>
-
     <div class="footer-bottom">
       <p>&copy; 2026 PACO Fragancias · Hecho con ❤️ en Perú</p>
       <p class="footer-signature">
@@ -502,6 +517,6 @@
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 </html>
