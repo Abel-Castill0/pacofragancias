@@ -32,8 +32,8 @@
     { id: 26, name: "Hawas Fire", brand: "Rasasi", category: "arabe", gender: "masculino", notes: "Pimienta, Canela, Nuez Moscada, Cuero, Tabaco, Ámbar, Pachulí, Vainilla, Almizcle", description: "Cálido y ardiente. Especias intensas con tabaco y cuero sobre una base ambarada.", fullSizes: { "100ml": 195 }, decantSizes: { "2ml": 11.90, "3ml": 14.90, "5ml": 19.90, "10ml": 34.90, "30ml": 89.90 }, fullImage: "img/perfumes/hawas_fire.webp", decantImage: "img/perfumes/hawas_fire2.webp", cardImage: "img/perfumes/hawas_fire.webp", featured: false, badge: null, badgeText: "" },
     { id: 27, name: "Hawas Verde", brand: "Rasasi", category: "arabe", gender: "masculino", notes: "Hojas Verdes, Bergamota, Manzana, Violeta, Jazmín, Cedro, Musgo, Almizcle", description: "Fresco y natural. Notas verdes con manzana crujiente sobre un fondo de cedro.", fullSizes: { "100ml": 195 }, decantSizes: { "2ml": 11.90, "3ml": 14.90, "5ml": 19.90, "10ml": 34.90, "30ml": 89.90 }, fullImage: "img/perfumes/hawas_verde.webp", decantImage: "img/perfumes/hawas_verde2.webp", cardImage: "img/perfumes/hawas_verde.webp", featured: false, badge: null, badgeText: "" },
     { id: 28, name: "Hawas Atlantis", brand: "Rasasi", category: "arabe", gender: "masculino", notes: "Notas Marinas, Bergamota, Limón, Lavanda, Romero, Sándalo, Ámbar Gris, Almizcle", description: "Oceánico y profundo. Brisa marina con lavanda sobre un fondo de ámbar gris.", fullSizes: { "100ml": 195 }, decantSizes: { "2ml": 11.90, "3ml": 14.90, "5ml": 19.90, "10ml": 34.90, "30ml": 89.90 }, fullImage: "img/perfumes/hawas_atlantis.webp", decantImage: "img/perfumes/hawas_atlantis2.webp", cardImage: "img/perfumes/hawas_atlantis.webp", featured: false, badge: null, badgeText: "" },
-    { id: 29, name: "Supremacy Not Only Intense", brand: "Afnan", category: "nicho", gender: "masculino", notes: "Grosella Negra, Bergamota, Manzana, Lavanda, Pachulí, Musgo de Roble, Azafrán, Almizcle, Ámbar Gris", description: "Frutal y musgoso. Grosella negra y manzana con un corazón de lavanda sobre musgo de roble.", fullSizes: { "150ml": 225 }, decantSizes: { "2ml": 11.90, "3ml": 14.90, "5ml": 19.90, "10ml": 34.90, "30ml": 89.90 }, fullImage: "img/perfumes/supremacy_not_only_intense.webp", decantImage: "img/perfumes/supremacy_not_only_intense2.webp", cardImage: "img/perfumes/supremacy_not_only_intense.webp", featured: true, badge: "top", badgeText: "Top" },
-    { id: 30, name: "Supremacy Collector's Edition", brand: "Afnan", category: "nicho", gender: "masculino", notes: "Piña, Bergamota, Manzana, Flores Blancas, Flor de Azahar, Abedul, Ámbar, Musgo de Roble, Almizcle, Ámbar Gris", description: "Frutal y elegante. Piña jugosa con flores blancas sobre una base de musgo de roble.", fullSizes: { "100ml": 225 }, decantSizes: { "2ml": 11.90, "3ml": 14.90, "5ml": 19.90, "10ml": 34.90, "30ml": 89.90 }, fullImage: "img/perfumes/supremacy_collectors.webp", decantImage: "img/perfumes/supremacy_collectors2.webp", cardImage: "img/perfumes/supremacy_collectors.webp", featured: false, badge: null, badgeText: "" },
+    { id: 29, name: "Supremacy Not Only Intense", brand: "Afnan", category: "arabe", gender: "masculino", notes: "Grosella Negra, Bergamota, Manzana, Lavanda, Pachulí, Musgo de Roble, Azafrán, Almizcle, Ámbar Gris", description: "Frutal y musgoso. Grosella negra y manzana con un corazón de lavanda sobre musgo de roble.", fullSizes: { "150ml": 225 }, decantSizes: { "2ml": 11.90, "3ml": 14.90, "5ml": 19.90, "10ml": 34.90, "30ml": 89.90 }, fullImage: "img/perfumes/supremacy_not_only_intense.webp", decantImage: "img/perfumes/supremacy_not_only_intense2.webp", cardImage: "img/perfumes/supremacy_not_only_intense.webp", featured: true, badge: "top", badgeText: "Top" },
+    { id: 30, name: "Supremacy Collector's Edition", brand: "Afnan", category: "arabe", gender: "masculino", notes: "Piña, Bergamota, Manzana, Flores Blancas, Flor de Azahar, Abedul, Ámbar, Musgo de Roble, Almizcle, Ámbar Gris", description: "Frutal y elegante. Piña jugosa con flores blancas sobre una base de musgo de roble.", fullSizes: { "100ml": 225 }, decantSizes: { "2ml": 11.90, "3ml": 14.90, "5ml": 19.90, "10ml": 34.90, "30ml": 89.90 }, fullImage: "img/perfumes/supremacy_collectors.webp", decantImage: "img/perfumes/supremacy_collectors2.webp", cardImage: "img/perfumes/supremacy_collectors.webp", featured: false, badge: null, badgeText: "" },
     { id: 31, name: "Khamrah", brand: "Lattafa", category: "arabe", gender: "unisex", notes: "Canela, Nuez Moscada, Bergamota, Dátiles, Praliné, Tuberosa, Vainilla, Haba Tonka, Benjuí, Mirra", description: "Cálido y goloso. Canela y dátiles con praliné sobre una base de vainilla y benjuí.", fullSizes: { "100ml": 165 }, decantSizes: { "2ml": 11.90, "3ml": 14.90, "5ml": 19.90, "10ml": 34.90, "30ml": 89.90 }, fullImage: "img/perfumes/khamrah.webp", decantImage: "img/perfumes/khamrah2.webp", cardImage: "img/perfumes/khamrah.webp", featured: true, badge: "top", badgeText: "Top" },
     { id: 32, name: "Khamrah Qahwa", brand: "Lattafa", category: "arabe", gender: "unisex", notes: "Canela, Cardamomo, Jengibre, Praliné, Frutas Confitadas, Flores Blancas, Vainilla, Café, Haba Tonka, Benjuí, Almizcle", description: "Gourmand y adictivo. Café árabe con canela y cardamomo sobre praliné y vainilla.", fullSizes: { "100ml": 165 }, decantSizes: { "2ml": 11.90, "3ml": 14.90, "5ml": 19.90, "10ml": 34.90, "30ml": 89.90 }, fullImage: "img/perfumes/khamrah_qahwa.webp", decantImage: "img/perfumes/khamrah_qahwa2.webp", cardImage: "img/perfumes/khamrah_qahwa.webp", featured: false, badge: null, badgeText: "" },
     { id: 33, name: "Khamrah Dukhan", brand: "Lattafa", category: "arabe", gender: "unisex", notes: "Incienso, Canela, Dátiles, Praliné, Vainilla, Haba Tonka, Ámbar, Madera de Oud", description: "Ahumado y dulce. Incienso y dátiles con un toque de oud sobre vainilla.", fullSizes: { "100ml": 165 }, decantSizes: { "2ml": 11.90, "3ml": 14.90, "5ml": 19.90, "10ml": 34.90, "30ml": 89.90 }, fullImage: "img/perfumes/khamrah_dukhan.webp", decantImage: "img/perfumes/khamrah_dukhan2.webp", cardImage: "img/perfumes/khamrah_dukhan.webp", featured: false, badge: null, badgeText: "" },
@@ -46,11 +46,11 @@
     { id: 40, name: "Afeef", brand: "Lattafa", category: "arabe", gender: "unisex", notes: "Azafrán, Rosa, Oud, Ámbar, Sándalo, Almizcle, Vainilla", description: "Oriental y lujoso. Azafrán y rosa con oud sobre una base de sándalo y vainilla.", fullSizes: { "100ml": 185 }, decantSizes: { "2ml": 11.90, "3ml": 14.90, "5ml": 19.90, "10ml": 34.90, "30ml": 89.90 }, fullImage: "img/perfumes/afeef.webp", decantImage: "img/perfumes/afeef2.webp", cardImage: "img/perfumes/afeef.webp", featured: false, badge: null, badgeText: "" },
     { id: 41, name: "Vulcan Feu", brand: "French Avenue", category: "arabe", gender: "unisex", notes: "Pimienta Negra, Canela, Tabaco, Cuero, Vainilla, Ámbar, Pachulí, Almizcle", description: "Ardiente y magnético. Pimienta y canela con tabaco y cuero sobre vainilla.", fullSizes: { "100ml": 195 }, decantSizes: { "2ml": 11.90, "3ml": 14.90, "5ml": 19.90, "10ml": 34.90, "30ml": 89.90 }, fullImage: "img/perfumes/vulcan_feu.webp", decantImage: "img/perfumes/vulcan_feu2.webp", cardImage: "img/perfumes/vulcan_feu.webp", featured: false, badge: null, badgeText: "" },
     { id: 42, name: "Island", brand: "Khadlaj", category: "arabe", gender: "unisex", notes: "Coco, Piña, Notas Marinas, Jazmín, Vainilla, Sándalo, Almizcle", description: "Paraíso isleño. Coco y piña con brisa marina sobre un fondo amaderado.", fullSizes: { "100ml": 165 }, decantSizes: { "2ml": 11.90, "3ml": 14.90, "5ml": 19.90, "10ml": 34.90, "30ml": 89.90 }, fullImage: "img/perfumes/island.webp", decantImage: "img/perfumes/island2.webp", cardImage: "img/perfumes/island.webp", featured: false, badge: null, badgeText: "" },
-    { id: 43, name: "9 PM", brand: "Afnan", category: "nicho", gender: "masculino", notes: "Manzana, Canela, Lavanda, Bergamota, Flor de Azahar, Lirio del Valle, Vainilla, Haba Tonka, Ámbar, Pachulí", description: "Dulce y adictivo. Manzana y canela con un corazón floral sobre vainilla y ámbar.", fullSizes: { "100ml": 165 }, decantSizes: { "2ml": 11.90, "3ml": 14.90, "5ml": 19.90, "10ml": 34.90, "30ml": 89.90 }, fullImage: "img/perfumes/9_pm.webp", decantImage: "img/perfumes/9_pm2.webp", cardImage: "img/perfumes/9_pm.webp", featured: true, badge: "top", badgeText: "Top" },
-    { id: 44, name: "9 AM Dive", brand: "Afnan", category: "nicho", gender: "masculino", notes: "Cítricos, Manzana Verde, Notas Acuáticas, Lavanda, Geranio, Almizcle, Ámbar, Sándalo", description: "Fresco matutino. Cítricos y manzana verde con notas acuáticas sobre almizcle.", fullSizes: { "100ml": 165 }, decantSizes: { "2ml": 11.90, "3ml": 14.90, "5ml": 19.90, "10ml": 34.90, "30ml": 89.90 }, fullImage: "img/perfumes/9_am_dive.webp", decantImage: "img/perfumes/9_am_dive2.webp", cardImage: "img/perfumes/9_am_dive.webp", featured: false, badge: null, badgeText: "" },
-    { id: 45, name: "9 PM Rebel", brand: "Afnan", category: "nicho", gender: "unisex", notes: "Mandarina, Piña, Manzana Verde, Cedro, Musgo de Roble, Vainilla, Caramelo, Ámbar Gris, Almizcle", description: "Rebelde y frutal. Mandarina y piña con cedro sobre caramelo y ámbar.", fullSizes: { "100ml": 185 }, decantSizes: { "2ml": 11.90, "3ml": 14.90, "5ml": 19.90, "10ml": 34.90, "30ml": 89.90 }, fullImage: "img/perfumes/9_pm_rebel.webp", decantImage: "img/perfumes/9_pm_rebel2.webp", cardImage: "img/perfumes/9_pm_rebel.webp", featured: false, badge: null, badgeText: "" },
-    { id: 46, name: "9 PM Elixir", brand: "Afnan", category: "nicho", gender: "masculino", notes: "Nuez Moscada, Elemí, Cardamomo, Pimiento, Lavandín, Cuero, Ládano, Pachulí, Vainilla", description: "Intenso y especiado. Cardamomo y nuez moscada con cuero sobre ládano y vainilla.", fullSizes: { "100ml": 185 }, decantSizes: { "2ml": 11.90, "3ml": 14.90, "5ml": 19.90, "10ml": 34.90, "30ml": 89.90 }, fullImage: "img/perfumes/9_pm_elixir.webp", decantImage: "img/perfumes/9_pm_elixir2.webp", cardImage: "img/perfumes/9_pm_elixir.webp", featured: false, badge: null, badgeText: "" },
-    { id: 47, name: "9 PM Night Out", brand: "Afnan", category: "nicho", gender: "masculino", notes: "Bergamota, Pimienta Negra, Lavanda, Violeta, Vainilla, Ámbar, Pachulí, Almizcle", description: "Nocturno y seductor. Bergamota y pimienta con lavanda sobre un fondo oriental.", fullSizes: { "100ml": 205 }, decantSizes: { "2ml": 11.90, "3ml": 14.90, "5ml": 19.90, "10ml": 34.90, "30ml": 89.90 }, fullImage: "img/perfumes/9_pm_night_out.webp", decantImage: "img/perfumes/9_pm_night_out2.webp", cardImage: "img/perfumes/9_pm_night_out.webp", featured: false, badge: null, badgeText: "" },
+    { id: 43, name: "9 PM", brand: "Afnan", category: "arabe", gender: "masculino", notes: "Manzana, Canela, Lavanda, Bergamota, Flor de Azahar, Lirio del Valle, Vainilla, Haba Tonka, Ámbar, Pachulí", description: "Dulce y adictivo. Manzana y canela con un corazón floral sobre vainilla y ámbar.", fullSizes: { "100ml": 165 }, decantSizes: { "2ml": 11.90, "3ml": 14.90, "5ml": 19.90, "10ml": 34.90, "30ml": 89.90 }, fullImage: "img/perfumes/9_pm.webp", decantImage: "img/perfumes/9_pm2.webp", cardImage: "img/perfumes/9_pm.webp", featured: true, badge: "top", badgeText: "Top" },
+    { id: 44, name: "9 AM Dive", brand: "Afnan", category: "arabe", gender: "masculino", notes: "Cítricos, Manzana Verde, Notas Acuáticas, Lavanda, Geranio, Almizcle, Ámbar, Sándalo", description: "Fresco matutino. Cítricos y manzana verde con notas acuáticas sobre almizcle.", fullSizes: { "100ml": 165 }, decantSizes: { "2ml": 11.90, "3ml": 14.90, "5ml": 19.90, "10ml": 34.90, "30ml": 89.90 }, fullImage: "img/perfumes/9_am_dive.webp", decantImage: "img/perfumes/9_am_dive2.webp", cardImage: "img/perfumes/9_am_dive.webp", featured: false, badge: null, badgeText: "" },
+    { id: 45, name: "9 PM Rebel", brand: "Afnan", category: "arabe", gender: "unisex", notes: "Mandarina, Piña, Manzana Verde, Cedro, Musgo de Roble, Vainilla, Caramelo, Ámbar Gris, Almizcle", description: "Rebelde y frutal. Mandarina y piña con cedro sobre caramelo y ámbar.", fullSizes: { "100ml": 185 }, decantSizes: { "2ml": 11.90, "3ml": 14.90, "5ml": 19.90, "10ml": 34.90, "30ml": 89.90 }, fullImage: "img/perfumes/9_pm_rebel.webp", decantImage: "img/perfumes/9_pm_rebel2.webp", cardImage: "img/perfumes/9_pm_rebel.webp", featured: false, badge: null, badgeText: "" },
+    { id: 46, name: "9 PM Elixir", brand: "Afnan", category: "arabe", gender: "masculino", notes: "Nuez Moscada, Elemí, Cardamomo, Pimiento, Lavandín, Cuero, Ládano, Pachulí, Vainilla", description: "Intenso y especiado. Cardamomo y nuez moscada con cuero sobre ládano y vainilla.", fullSizes: { "100ml": 185 }, decantSizes: { "2ml": 11.90, "3ml": 14.90, "5ml": 19.90, "10ml": 34.90, "30ml": 89.90 }, fullImage: "img/perfumes/9_pm_elixir.webp", decantImage: "img/perfumes/9_pm_elixir2.webp", cardImage: "img/perfumes/9_pm_elixir.webp", featured: false, badge: null, badgeText: "" },
+    { id: 47, name: "9 PM Night Out", brand: "Afnan", category: "arabe", gender: "masculino", notes: "Bergamota, Pimienta Negra, Lavanda, Violeta, Vainilla, Ámbar, Pachulí, Almizcle", description: "Nocturno y seductor. Bergamota y pimienta con lavanda sobre un fondo oriental.", fullSizes: { "100ml": 205 }, decantSizes: { "2ml": 11.90, "3ml": 14.90, "5ml": 19.90, "10ml": 34.90, "30ml": 89.90 }, fullImage: "img/perfumes/9_pm_night_out.webp", decantImage: "img/perfumes/9_pm_night_out2.webp", cardImage: "img/perfumes/9_pm_night_out.webp", featured: false, badge: null, badgeText: "" },
     { id: 48, name: "Opulent Dubai", brand: "Lattafa", category: "arabe", gender: "unisex", notes: "Azafrán, Rosa, Oud, Ámbar, Sándalo, Almizcle, Vainilla, Pachulí", description: "Lujoso y opulento. Azafrán y rosa con oud sobre una base de sándalo.", fullSizes: { "100ml": 165 }, decantSizes: { "2ml": 11.90, "3ml": 14.90, "5ml": 19.90, "10ml": 34.90, "30ml": 89.90 }, fullImage: "img/perfumes/opulent_dubai.webp", decantImage: "img/perfumes/opulent_dubai2.webp", cardImage: "img/perfumes/opulent_dubai.webp", featured: false, badge: null, badgeText: "" },
     { id: 49, name: "Odyssey Mandarin Sky", brand: "Armaf", category: "arabe", gender: "unisex", notes: "Mandarina, Bergamota, Neroli, Jazmín, Vainilla, Almizcle, Ámbar", description: "Cítrico celestial. Mandarina jugosa con neroli sobre vainilla y almizcle.", fullSizes: { "100ml": 165 }, decantSizes: { "2ml": 11.90, "3ml": 14.90, "5ml": 19.90, "10ml": 34.90, "30ml": 89.90 }, fullImage: "img/perfumes/odyssey_mandarin_sky.webp", decantImage: "img/perfumes/odyssey_mandarin_sky2.webp", cardImage: "img/perfumes/odyssey_mandarin_sky.webp", featured: false, badge: null, badgeText: "" },
     { id: 50, name: "Odyssey Mandarin Sky Elixir", brand: "Armaf", category: "arabe", gender: "unisex", notes: "Mandarina, Bergamota, Cardamomo, Jazmín, Rosa, Vainilla, Ámbar, Almizcle, Oud", description: "Cítrico intenso. Mandarina y cardamomo con rosa sobre oud y vainilla.", fullSizes: { "100ml": 185 }, decantSizes: { "2ml": 11.90, "3ml": 14.90, "5ml": 19.90, "10ml": 34.90, "30ml": 89.90 }, fullImage: "img/perfumes/odyssey_mandarin_sky_elixir.webp", decantImage: "img/perfumes/odyssey_mandarin_sky_elixir2.webp", cardImage: "img/perfumes/odyssey_mandarin_sky_elixir.webp", featured: false, badge: null, badgeText: "" },
@@ -82,9 +82,9 @@
     { id: 76, name: "Bade'e Al Oud Amethyst", brand: "Lattafa", category: "arabe", gender: "unisex", notes: "Rosa, Jazmín, Azafrán, Oud, Ámbar, Vainilla, Almizcle", description: "Floral y oud. Rosa y jazmín con azafrán sobre oud aterciopelado.", fullSizes: { "100ml": 165 }, decantSizes: { "2ml": 11.90, "3ml": 14.90, "5ml": 19.90, "10ml": 34.90, "30ml": 89.90 }, fullImage: "img/perfumes/badee_al_oud_amethyst.webp", decantImage: "img/perfumes/badee_al_oud_amethyst2.webp", cardImage: "img/perfumes/badee_al_oud_amethyst.webp", featured: false, badge: null, badgeText: "" },
     { id: 77, name: "Bade'e Al Oud Honor & Glory", brand: "Lattafa", category: "arabe", gender: "unisex", notes: "Piña, Bergamota, Azafrán, Canela, Jazmín, Oud, Vainilla, Ámbar, Almizcle", description: "Glorioso y frutal. Piña y canela con azafrán sobre oud.", fullSizes: { "100ml": 165 }, decantSizes: { "2ml": 11.90, "3ml": 14.90, "5ml": 19.90, "10ml": 34.90, "30ml": 89.90 }, fullImage: "img/perfumes/badee_al_oud_honor_glory.webp", decantImage: "img/perfumes/badee_al_oud_honor_glory2.webp", cardImage: "img/perfumes/badee_al_oud_honor_glory.webp", featured: false, badge: null, badgeText: "" },
     { id: 78, name: "Glacier Le Noir", brand: "Maison Alhambra", category: "arabe", gender: "masculino", notes: "Bergamota, Cardamomo, Lavanda, Iris, Vainilla, Notas Orientales, Maderas", description: "Oscuro y elegante. Lavanda e iris con cardamomo sobre vainilla.", fullSizes: { "100ml": 165 }, decantSizes: { "2ml": 11.90, "3ml": 14.90, "5ml": 19.90, "10ml": 34.90, "30ml": 89.90 }, fullImage: "img/perfumes/glacier_le_noir.webp", decantImage: "img/perfumes/glacier_le_noir2.webp", cardImage: "img/perfumes/glacier_le_noir.webp", featured: false, badge: null, badgeText: "" },
-    { id: 79, name: "Amber Oud Aqua Dubai", brand: "Al Haramain", category: "nicho", gender: "unisex", notes: "Bergamota, Limón, Notas Acuáticas, Jazmín, Rosa, Ámbar, Almizcle, Sándalo", description: "Acuático y lujoso. Cítricos con notas acuáticas sobre ámbar y sándalo.", fullSizes: { "100ml": 265 }, decantSizes: { "2ml": 11.90, "3ml": 14.90, "5ml": 19.90, "10ml": 34.90, "30ml": 89.90 }, fullImage: "img/perfumes/amber_oud_aqua_dubai.webp", decantImage: "img/perfumes/amber_oud_aqua_dubai2.webp", cardImage: "img/perfumes/amber_oud_aqua_dubai.webp", featured: false, badge: null, badgeText: "" },
-    { id: 80, name: "Amber Oud Gold Edition", brand: "Al Haramain", category: "nicho", gender: "unisex", notes: "Bergamota, Melón, Piña, Jazmín, Rosa, Ámbar, Almizcle, Vainilla, Sándalo", description: "Dorado y afrutado. Melón y piña con rosa sobre ámbar dorado.", fullSizes: { "120ml": 250 }, decantSizes: { "2ml": 11.90, "3ml": 14.90, "5ml": 19.90, "10ml": 34.90, "30ml": 89.90 }, fullImage: "img/perfumes/amber_oud_gold_edition.webp", decantImage: "img/perfumes/amber_oud_gold_edition2.webp", cardImage: "img/perfumes/amber_oud_gold_edition.webp", featured: false, badge: null, badgeText: "" },
-    { id: 81, name: "Amber Oud Gold Edition Extreme", brand: "Al Haramain", category: "nicho", gender: "unisex", notes: "Bergamota, Melón, Piña, Jazmín, Rosa, Ámbar, Almizcle, Vainilla, Oud, Sándalo", description: "Extremo y lujoso. Versión intensificada con oud sobre ámbar dorado.", fullSizes: { "100ml": 295 }, decantSizes: { "2ml": 11.90, "3ml": 14.90, "5ml": 19.90, "10ml": 34.90, "30ml": 89.90 }, fullImage: "img/perfumes/amber_oud_gold_extreme.webp", decantImage: "img/perfumes/amber_oud_gold_extreme2.webp", cardImage: "img/perfumes/amber_oud_gold_extreme.webp", featured: false, badge: null, badgeText: "" },
+    { id: 79, name: "Amber Oud Aqua Dubai", brand: "Al Haramain", category: "arabe", gender: "unisex", notes: "Bergamota, Limón, Notas Acuáticas, Jazmín, Rosa, Ámbar, Almizcle, Sándalo", description: "Acuático y lujoso. Cítricos con notas acuáticas sobre ámbar y sándalo.", fullSizes: { "100ml": 265 }, decantSizes: { "2ml": 11.90, "3ml": 14.90, "5ml": 19.90, "10ml": 34.90, "30ml": 89.90 }, fullImage: "img/perfumes/amber_oud_aqua_dubai.webp", decantImage: "img/perfumes/amber_oud_aqua_dubai2.webp", cardImage: "img/perfumes/amber_oud_aqua_dubai.webp", featured: false, badge: null, badgeText: "" },
+    { id: 80, name: "Amber Oud Gold Edition", brand: "Al Haramain", category: "arabe", gender: "unisex", notes: "Bergamota, Melón, Piña, Jazmín, Rosa, Ámbar, Almizcle, Vainilla, Sándalo", description: "Dorado y afrutado. Melón y piña con rosa sobre ámbar dorado.", fullSizes: { "120ml": 250 }, decantSizes: { "2ml": 11.90, "3ml": 14.90, "5ml": 19.90, "10ml": 34.90, "30ml": 89.90 }, fullImage: "img/perfumes/amber_oud_gold_edition.webp", decantImage: "img/perfumes/amber_oud_gold_edition2.webp", cardImage: "img/perfumes/amber_oud_gold_edition.webp", featured: false, badge: null, badgeText: "" },
+    { id: 81, name: "Amber Oud Gold Edition Extreme", brand: "Al Haramain", category: "arabe", gender: "unisex", notes: "Bergamota, Melón, Piña, Jazmín, Rosa, Ámbar, Almizcle, Vainilla, Oud, Sándalo", description: "Extremo y lujoso. Versión intensificada con oud sobre ámbar dorado.", fullSizes: { "100ml": 295 }, decantSizes: { "2ml": 11.90, "3ml": 14.90, "5ml": 19.90, "10ml": 34.90, "30ml": 89.90 }, fullImage: "img/perfumes/amber_oud_gold_extreme.webp", decantImage: "img/perfumes/amber_oud_gold_extreme2.webp", cardImage: "img/perfumes/amber_oud_gold_extreme.webp", featured: false, badge: null, badgeText: "" },
     { id: 82, name: "Bharara King", brand: "Bharara", category: "arabe", gender: "masculino", notes: "Bergamota, Manzana, Canela, Jazmín, Rosa, Pachulí, Ámbar, Almizcle, Vainilla", description: "Majestuoso y oriental. Manzana y canela con rosa sobre pachulí.", fullSizes: { "100ml": 250 }, decantSizes: { "2ml": 11.90, "3ml": 14.90, "5ml": 19.90, "10ml": 34.90, "30ml": 89.90 }, fullImage: "img/perfumes/bharara_king.webp", decantImage: "img/perfumes/bharara_king2.webp", cardImage: "img/perfumes/bharara_king.webp", featured: false, badge: null, badgeText: "" },
     { id: 83, name: "Art of Universe", brand: "Lattafa", category: "arabe", gender: "unisex", notes: "Bergamota, Notas Verdes, Jazmín, Violeta, Cedro, Sándalo, Ámbar, Almizcle", description: "Cósmico y verde. Notas verdes con jazmín sobre cedro.", fullSizes: { "100ml": 225 }, decantSizes: { "2ml": 11.90, "3ml": 14.90, "5ml": 19.90, "10ml": 34.90, "30ml": 89.90 }, fullImage: "img/perfumes/art_of_universe.webp", decantImage: "img/perfumes/art_of_universe2.webp", cardImage: "img/perfumes/art_of_universe.webp", featured: false, badge: null, badgeText: "" },
     { id: 84, name: "Pisa", brand: "Lattafa", category: "arabe", gender: "unisex", notes: "Mandarina, Bergamota, Lavanda, Jazmín, Cedro, Vetiver, Ámbar, Almizcle", description: "Italiano y fresco. Mandarina con lavanda sobre vetiver.", fullSizes: { "100ml": 225 }, decantSizes: { "2ml": 11.90, "3ml": 14.90, "5ml": 19.90, "10ml": 34.90, "30ml": 89.90 }, fullImage: "img/perfumes/pisa.webp", decantImage: "img/perfumes/pisa2.webp", cardImage: "img/perfumes/pisa.webp", featured: false, badge: null, badgeText: "" },
@@ -98,20 +98,20 @@
     { id: 92, name: "Lovely Cherie", brand: "Maison Alhambra", category: "arabe", gender: "femenino", notes: "Cereza, Almendra, Rosa, Jazmín, Vainilla, Sándalo, Almizcle", description: "Dulce y encantador. Cereza y almendra con rosa sobre vainilla.", fullSizes: { "80ml": 165 }, decantSizes: { "2ml": 11.90, "3ml": 14.90, "5ml": 19.90, "10ml": 34.90, "30ml": 89.90 }, fullImage: "img/perfumes/lovely_cherie.webp", decantImage: "img/perfumes/lovely_cherie2.webp", cardImage: "img/perfumes/lovely_cherie.webp", featured: false, badge: null, badgeText: "" },
     { id: 93, name: "Qaed Al Fursan", brand: "Lattafa", category: "arabe", gender: "masculino", notes: "Piña, Bergamota, Jazmín, Cedro, Ámbar, Almizcle, Vainilla", description: "Legendario y frutal. Piña jugosa con jazmín sobre ámbar.", fullSizes: { "90ml": 165 }, decantSizes: { "2ml": 11.90, "3ml": 14.90, "5ml": 19.90, "10ml": 34.90, "30ml": 89.90 }, fullImage: "img/perfumes/qaed_al_fursan.webp", decantImage: "img/perfumes/qaed_al_fursan2.webp", cardImage: "img/perfumes/qaed_al_fursan.webp", featured: false, badge: null, badgeText: "" },
     { id: 94, name: "Fakhar Black", brand: "Lattafa", category: "arabe", gender: "masculino", notes: "Manzana, Bergamota, Lavanda, Geranio, Cedro, Haba Tonka, Ámbar, Almizcle", description: "Orgulloso y elegante. Manzana y lavanda sobre cedro y haba tonka.", fullSizes: { "100ml": 165 }, decantSizes: { "2ml": 11.90, "3ml": 14.90, "5ml": 19.90, "10ml": 34.90, "30ml": 89.90 }, fullImage: "img/perfumes/fakhar_black.webp", decantImage: "img/perfumes/fakhar_black2.webp", cardImage: "img/perfumes/fakhar_black.webp", featured: false, badge: null, badgeText: "" },
-    { id: 95, name: "Chapter I King of Kings", brand: "King of Kings", category: "arabe", gender: "masculino", notes: "Azafrán, Oud, Rosa, Ámbar, Sándalo, Almizcle, Pachulí", description: "Soberano y majestuoso. Azafrán y rosa con oud real sobre sándalo.", fullSizes: { "100ml": 259 }, decantSizes: { "2ml": 14.90, "3ml": 19.90, "5ml": 24.90, "10ml": 44.90, "30ml": 109.90 }, fullImage: "img/perfumes/chapter_i_king_of_kings.webp", decantImage: "img/perfumes/chapter_i_king_of_kings2.webp", cardImage: "img/perfumes/chapter_i_king_of_kings.webp", featured: false, badge: null, badgeText: "" },
-    { id: 96, name: "Chapter II King of Kings", brand: "King of Kings", category: "arabe", gender: "masculino", notes: "Bergamota, Canela, Cuero, Tabaco, Vainilla, Ámbar, Almizcle, Cedro", description: "Sucesor audaz. Canela y cuero con tabaco sobre vainilla.", fullSizes: { "100ml": 259 }, decantSizes: { "2ml": 14.90, "3ml": 19.90, "5ml": 24.90, "10ml": 44.90, "30ml": 109.90 }, fullImage: "img/perfumes/chapter_ii_king_of_kings.webp", decantImage: "img/perfumes/chapter_ii_king_of_kings2.webp", cardImage: "img/perfumes/chapter_ii_king_of_kings.webp", featured: false, badge: null, badgeText: "" },
-    { id: 97, name: "Royal Crown", brand: "King of Kings", category: "arabe", gender: "masculino", notes: "Azafrán, Bergamota, Jazmín, Oud, Ámbar, Sándalo, Almizcle, Vainilla", description: "Corona real. Azafrán y jazmín con oud sobre sándalo.", fullSizes: { "100ml": 259 }, decantSizes: { "2ml": 14.90, "3ml": 19.90, "5ml": 24.90, "10ml": 44.90, "30ml": 109.90 }, fullImage: "img/perfumes/royal_crown.webp", decantImage: "img/perfumes/royal_crown2.webp", cardImage: "img/perfumes/royal_crown.webp", featured: false, badge: null, badgeText: "" },
-    { id: 98, name: "Royal Amber", brand: "King of Kings", category: "arabe", gender: "masculino", notes: "Ámbar, Bergamota, Canela, Rosa, Pachulí, Cedro, Almizcle, Vainilla", description: "Ámbar soberano. Cálido y envolvente con canela y rosa sobre pachulí.", fullSizes: { "100ml": 259 }, decantSizes: { "2ml": 14.90, "3ml": 19.90, "5ml": 24.90, "10ml": 44.90, "30ml": 109.90 }, fullImage: "img/perfumes/royal_amber.webp", decantImage: "img/perfumes/royal_amber2.webp", cardImage: "img/perfumes/royal_amber.webp", featured: false, badge: null, badgeText: "" },
-    { id: 99, name: "Game of Spades Full House", brand: "Jo Milano Paris", category: "nicho", gender: "unisex", notes: "Bergamota, Manzana, Canela, Jazmín, Cedro, Ámbar, Almizcle, Vainilla", description: "Mano ganadora. Manzana y canela con jazmín sobre ámbar.", fullSizes: { "100ml": 299 }, decantSizes: { "2ml": 14.90, "3ml": 19.90, "5ml": 24.90, "10ml": 44.90, "30ml": 109.90 }, fullImage: "img/perfumes/game_of_spades_full_house.webp", decantImage: "img/perfumes/game_of_spades_full_house2.webp", cardImage: "img/perfumes/game_of_spades_full_house.webp", featured: false, badge: null, badgeText: "" },
-    { id: 100, name: "Game of Spades Royale", brand: "Jo Milano Paris", category: "nicho", gender: "unisex", notes: "Azafrán, Rosa, Oud, Ámbar, Sándalo, Almizcle, Vainilla, Pachulí", description: "As bajo la manga. Azafrán y rosa con oud sobre sándalo.", fullSizes: { "100ml": 299 }, decantSizes: { "2ml": 14.90, "3ml": 19.90, "5ml": 24.90, "10ml": 44.90, "30ml": 109.90 }, fullImage: "img/perfumes/game_of_spades_royale.webp", decantImage: "img/perfumes/game_of_spades_royale2.webp", cardImage: "img/perfumes/game_of_spades_royale.webp", featured: false, badge: null, badgeText: "" },
-    { id: 101, name: "Game of Spades Win", brand: "Jo Milano Paris", category: "nicho", gender: "unisex", notes: "Limón, Bergamota, Lavanda, Geranio, Cedro, Vetiver, Almizcle, Ámbar", description: "Triunfador fresco. Limón y lavanda sobre cedro y vetiver.", fullSizes: { "100ml": 299 }, decantSizes: { "2ml": 14.90, "3ml": 19.90, "5ml": 24.90, "10ml": 44.90, "30ml": 109.90 }, fullImage: "img/perfumes/game_of_spades_win.webp", decantImage: "img/perfumes/game_of_spades_win2.webp", cardImage: "img/perfumes/game_of_spades_win.webp", featured: false, badge: null, badgeText: "" },
-    { id: 102, name: "Game of Spades Wildcard", brand: "Jo Milano Paris", category: "nicho", gender: "unisex", notes: "Pimienta Negra, Bergamota, Canela, Cuero, Tabaco, Vainilla, Ámbar, Almizcle", description: "Comodín audaz. Pimienta y canela con cuero sobre vainilla.", fullSizes: { "100ml": 299 }, decantSizes: { "2ml": 14.90, "3ml": 19.90, "5ml": 24.90, "10ml": 44.90, "30ml": 109.90 }, fullImage: "img/perfumes/game_of_spades_wildcard.webp", decantImage: "img/perfumes/game_of_spades_wildcard2.webp", cardImage: "img/perfumes/game_of_spades_wildcard.webp", featured: false, badge: null, badgeText: "" },
-    { id: 103, name: "Game of Spades Double Bonus", brand: "Jo Milano Paris", category: "nicho", gender: "unisex", notes: "Manzana, Bergamota, Azafrán, Jazmín, Rosa, Ámbar, Oud, Almizcle", description: "Doble recompensa. Manzana y azafrán con rosa sobre oud.", fullSizes: { "100ml": 320 }, decantSizes: { "2ml": 14.90, "3ml": 19.90, "5ml": 24.90, "10ml": 44.90, "30ml": 109.90 }, fullImage: "img/perfumes/game_of_spades_double_bonus.webp", decantImage: "img/perfumes/game_of_spades_double_bonus2.webp", cardImage: "img/perfumes/game_of_spades_double_bonus.webp", featured: false, badge: null, badgeText: "" },
-    { id: 104, name: "Game of Spades Opal", brand: "Jo Milano Paris", category: "nicho", gender: "unisex", notes: "Coco, Piña, Bergamota, Jazmín, Vainilla, Sándalo, Almizcle, Ámbar", description: "Joya tropical. Coco y piña con jazmín sobre vainilla.", fullSizes: { "100ml": 320 }, decantSizes: { "2ml": 14.90, "3ml": 19.90, "5ml": 24.90, "10ml": 44.90, "30ml": 109.90 }, fullImage: "img/perfumes/game_of_spades_opal.webp", decantImage: "img/perfumes/game_of_spades_opal2.webp", cardImage: "img/perfumes/game_of_spades_opal.webp", featured: false, badge: null, badgeText: "" },
-    { id: 105, name: "Game of Spades Emerald", brand: "Jo Milano Paris", category: "nicho", gender: "unisex", notes: "Hojas Verdes, Bergamota, Violeta, Jazmín, Cedro, Musgo, Almizcle, Ámbar", description: "Esmeralda verde. Notas verdes con violeta sobre cedro.", fullSizes: { "100ml": 320 }, decantSizes: { "2ml": 14.90, "3ml": 19.90, "5ml": 24.90, "10ml": 44.90, "30ml": 109.90 }, fullImage: "img/perfumes/game_of_spades_emerald.webp", decantImage: "img/perfumes/game_of_spades_emerald2.webp", cardImage: "img/perfumes/game_of_spades_emerald.webp", featured: false, badge: null, badgeText: "" },
-    { id: 106, name: "Game of Spades Diamond", brand: "Jo Milano Paris", category: "nicho", gender: "unisex", notes: "Bergamota, Mandarina, Jazmín, Rosa, Pachulí, Ámbar, Almizcle, Vainilla", description: "Diamante puro. Mandarina y jazmín con rosa sobre pachulí.", fullSizes: { "100ml": 330 }, decantSizes: { "2ml": 14.90, "3ml": 19.90, "5ml": 24.90, "10ml": 44.90, "30ml": 109.90 }, fullImage: "img/perfumes/game_of_spades_diamond.webp", decantImage: "img/perfumes/game_of_spades_diamond2.webp", cardImage: "img/perfumes/game_of_spades_diamond.webp", featured: false, badge: null, badgeText: "" },
-    { id: 107, name: "Game of Spades Bonus", brand: "Jo Milano Paris", category: "nicho", gender: "unisex", notes: "Bergamota, Canela, Lavanda, Geranio, Cedro, Ámbar, Almizcle, Vainilla", description: "Bono aromático. Canela y lavanda sobre cedro y ámbar.", fullSizes: { "100ml": 320 }, decantSizes: { "2ml": 14.90, "3ml": 19.90, "5ml": 24.90, "10ml": 44.90, "30ml": 109.90 }, fullImage: "img/perfumes/game_of_spades_bonus.webp", decantImage: "img/perfumes/game_of_spades_bonus2.webp", cardImage: "img/perfumes/game_of_spades_bonus.webp", featured: false, badge: null, badgeText: "" },
-    { id: 108, name: "Game of Spades All In", brand: "Jo Milano Paris", category: "nicho", gender: "unisex", notes: "Azafrán, Oud, Rosa, Ámbar, Sándalo, Almizcle, Pachulí, Vainilla", description: "Apuesta total. Azafrán y oud con rosa sobre sándalo.", fullSizes: { "100ml": 320 }, decantSizes: { "2ml": 14.90, "3ml": 19.90, "5ml": 24.90, "10ml": 44.90, "30ml": 109.90 }, fullImage: "img/perfumes/game_of_spades_all_in.webp", decantImage: "img/perfumes/game_of_spades_all_in2.webp", cardImage: "img/perfumes/game_of_spades_all_in.webp", featured: false, badge: null, badgeText: "" },
+    { id: 95, name: "Chapter I King of Kings", brand: "King of Kings", category: "deluxe", gender: "masculino", notes: "Azafrán, Oud, Rosa, Ámbar, Sándalo, Almizcle, Pachulí", description: "Soberano y majestuoso. Azafrán y rosa con oud real sobre sándalo.", fullSizes: { "100ml": 259 }, decantSizes: { "2ml": 14.90, "3ml": 19.90, "5ml": 24.90, "10ml": 44.90, "30ml": 109.90 }, fullImage: "img/perfumes/chapter_i_king_of_kings.webp", decantImage: "img/perfumes/chapter_i_king_of_kings2.webp", cardImage: "img/perfumes/chapter_i_king_of_kings.webp", featured: false, badge: null, badgeText: "" },
+    { id: 96, name: "Chapter II King of Kings", brand: "King of Kings", category: "deluxe", gender: "masculino", notes: "Bergamota, Canela, Cuero, Tabaco, Vainilla, Ámbar, Almizcle, Cedro", description: "Sucesor audaz. Canela y cuero con tabaco sobre vainilla.", fullSizes: { "100ml": 259 }, decantSizes: { "2ml": 14.90, "3ml": 19.90, "5ml": 24.90, "10ml": 44.90, "30ml": 109.90 }, fullImage: "img/perfumes/chapter_ii_king_of_kings.webp", decantImage: "img/perfumes/chapter_ii_king_of_kings2.webp", cardImage: "img/perfumes/chapter_ii_king_of_kings.webp", featured: false, badge: null, badgeText: "" },
+    { id: 97, name: "Royal Crown", brand: "King of Kings", category: "deluxe", gender: "masculino", notes: "Azafrán, Bergamota, Jazmín, Oud, Ámbar, Sándalo, Almizcle, Vainilla", description: "Corona real. Azafrán y jazmín con oud sobre sándalo.", fullSizes: { "100ml": 259 }, decantSizes: { "2ml": 14.90, "3ml": 19.90, "5ml": 24.90, "10ml": 44.90, "30ml": 109.90 }, fullImage: "img/perfumes/royal_crown.webp", decantImage: "img/perfumes/royal_crown2.webp", cardImage: "img/perfumes/royal_crown.webp", featured: false, badge: null, badgeText: "" },
+    { id: 98, name: "Royal Amber", brand: "King of Kings", category: "deluxe", gender: "masculino", notes: "Ámbar, Bergamota, Canela, Rosa, Pachulí, Cedro, Almizcle, Vainilla", description: "Ámbar soberano. Cálido y envolvente con canela y rosa sobre pachulí.", fullSizes: { "100ml": 259 }, decantSizes: { "2ml": 14.90, "3ml": 19.90, "5ml": 24.90, "10ml": 44.90, "30ml": 109.90 }, fullImage: "img/perfumes/royal_amber.webp", decantImage: "img/perfumes/royal_amber2.webp", cardImage: "img/perfumes/royal_amber.webp", featured: false, badge: null, badgeText: "" },
+    { id: 99, name: "Game of Spades Full House", brand: "Jo Milano Paris", category: "deluxe", gender: "unisex", notes: "Bergamota, Manzana, Canela, Jazmín, Cedro, Ámbar, Almizcle, Vainilla", description: "Mano ganadora. Manzana y canela con jazmín sobre ámbar.", fullSizes: { "100ml": 299 }, decantSizes: { "2ml": 14.90, "3ml": 19.90, "5ml": 24.90, "10ml": 44.90, "30ml": 109.90 }, fullImage: "img/perfumes/game_of_spades_full_house.webp", decantImage: "img/perfumes/game_of_spades_full_house2.webp", cardImage: "img/perfumes/game_of_spades_full_house.webp", featured: false, badge: null, badgeText: "" },
+    { id: 100, name: "Game of Spades Royale", brand: "Jo Milano Paris", category: "deluxe", gender: "unisex", notes: "Azafrán, Rosa, Oud, Ámbar, Sándalo, Almizcle, Vainilla, Pachulí", description: "As bajo la manga. Azafrán y rosa con oud sobre sándalo.", fullSizes: { "100ml": 299 }, decantSizes: { "2ml": 14.90, "3ml": 19.90, "5ml": 24.90, "10ml": 44.90, "30ml": 109.90 }, fullImage: "img/perfumes/game_of_spades_royale.webp", decantImage: "img/perfumes/game_of_spades_royale2.webp", cardImage: "img/perfumes/game_of_spades_royale.webp", featured: false, badge: null, badgeText: "" },
+    { id: 101, name: "Game of Spades Win", brand: "Jo Milano Paris", category: "deluxe", gender: "unisex", notes: "Limón, Bergamota, Lavanda, Geranio, Cedro, Vetiver, Almizcle, Ámbar", description: "Triunfador fresco. Limón y lavanda sobre cedro y vetiver.", fullSizes: { "100ml": 299 }, decantSizes: { "2ml": 14.90, "3ml": 19.90, "5ml": 24.90, "10ml": 44.90, "30ml": 109.90 }, fullImage: "img/perfumes/game_of_spades_win.webp", decantImage: "img/perfumes/game_of_spades_win2.webp", cardImage: "img/perfumes/game_of_spades_win.webp", featured: false, badge: null, badgeText: "" },
+    { id: 102, name: "Game of Spades Wildcard", brand: "Jo Milano Paris", category: "deluxe", gender: "unisex", notes: "Pimienta Negra, Bergamota, Canela, Cuero, Tabaco, Vainilla, Ámbar, Almizcle", description: "Comodín audaz. Pimienta y canela con cuero sobre vainilla.", fullSizes: { "100ml": 299 }, decantSizes: { "2ml": 14.90, "3ml": 19.90, "5ml": 24.90, "10ml": 44.90, "30ml": 109.90 }, fullImage: "img/perfumes/game_of_spades_wildcard.webp", decantImage: "img/perfumes/game_of_spades_wildcard2.webp", cardImage: "img/perfumes/game_of_spades_wildcard.webp", featured: false, badge: null, badgeText: "" },
+    { id: 103, name: "Game of Spades Double Bonus", brand: "Jo Milano Paris", category: "deluxe", gender: "unisex", notes: "Manzana, Bergamota, Azafrán, Jazmín, Rosa, Ámbar, Oud, Almizcle", description: "Doble recompensa. Manzana y azafrán con rosa sobre oud.", fullSizes: { "100ml": 320 }, decantSizes: { "2ml": 14.90, "3ml": 19.90, "5ml": 24.90, "10ml": 44.90, "30ml": 109.90 }, fullImage: "img/perfumes/game_of_spades_double_bonus.webp", decantImage: "img/perfumes/game_of_spades_double_bonus2.webp", cardImage: "img/perfumes/game_of_spades_double_bonus.webp", featured: false, badge: null, badgeText: "" },
+    { id: 104, name: "Game of Spades Opal", brand: "Jo Milano Paris", category: "deluxe", gender: "unisex", notes: "Coco, Piña, Bergamota, Jazmín, Vainilla, Sándalo, Almizcle, Ámbar", description: "Joya tropical. Coco y piña con jazmín sobre vainilla.", fullSizes: { "100ml": 320 }, decantSizes: { "2ml": 14.90, "3ml": 19.90, "5ml": 24.90, "10ml": 44.90, "30ml": 109.90 }, fullImage: "img/perfumes/game_of_spades_opal.webp", decantImage: "img/perfumes/game_of_spades_opal2.webp", cardImage: "img/perfumes/game_of_spades_opal.webp", featured: false, badge: null, badgeText: "" },
+    { id: 105, name: "Game of Spades Emerald", brand: "Jo Milano Paris", category: "deluxe", gender: "unisex", notes: "Hojas Verdes, Bergamota, Violeta, Jazmín, Cedro, Musgo, Almizcle, Ámbar", description: "Esmeralda verde. Notas verdes con violeta sobre cedro.", fullSizes: { "100ml": 320 }, decantSizes: { "2ml": 14.90, "3ml": 19.90, "5ml": 24.90, "10ml": 44.90, "30ml": 109.90 }, fullImage: "img/perfumes/game_of_spades_emerald.webp", decantImage: "img/perfumes/game_of_spades_emerald2.webp", cardImage: "img/perfumes/game_of_spades_emerald.webp", featured: false, badge: null, badgeText: "" },
+    { id: 106, name: "Game of Spades Diamond", brand: "Jo Milano Paris", category: "deluxe", gender: "unisex", notes: "Bergamota, Mandarina, Jazmín, Rosa, Pachulí, Ámbar, Almizcle, Vainilla", description: "Diamante puro. Mandarina y jazmín con rosa sobre pachulí.", fullSizes: { "100ml": 330 }, decantSizes: { "2ml": 14.90, "3ml": 19.90, "5ml": 24.90, "10ml": 44.90, "30ml": 109.90 }, fullImage: "img/perfumes/game_of_spades_diamond.webp", decantImage: "img/perfumes/game_of_spades_diamond2.webp", cardImage: "img/perfumes/game_of_spades_diamond.webp", featured: false, badge: null, badgeText: "" },
+    { id: 107, name: "Game of Spades Bonus", brand: "Jo Milano Paris", category: "deluxe", gender: "unisex", notes: "Bergamota, Canela, Lavanda, Geranio, Cedro, Ámbar, Almizcle, Vainilla", description: "Bono aromático. Canela y lavanda sobre cedro y ámbar.", fullSizes: { "100ml": 320 }, decantSizes: { "2ml": 14.90, "3ml": 19.90, "5ml": 24.90, "10ml": 44.90, "30ml": 109.90 }, fullImage: "img/perfumes/game_of_spades_bonus.webp", decantImage: "img/perfumes/game_of_spades_bonus2.webp", cardImage: "img/perfumes/game_of_spades_bonus.webp", featured: false, badge: null, badgeText: "" },
+    { id: 108, name: "Game of Spades All In", brand: "Jo Milano Paris", category: "deluxe", gender: "unisex", notes: "Azafrán, Oud, Rosa, Ámbar, Sándalo, Almizcle, Pachulí, Vainilla", description: "Apuesta total. Azafrán y oud con rosa sobre sándalo.", fullSizes: { "100ml": 320 }, decantSizes: { "2ml": 14.90, "3ml": 19.90, "5ml": 24.90, "10ml": 44.90, "30ml": 109.90 }, fullImage: "img/perfumes/game_of_spades_all_in.webp", decantImage: "img/perfumes/game_of_spades_all_in2.webp", cardImage: "img/perfumes/game_of_spades_all_in.webp", featured: false, badge: null, badgeText: "" },
     { id: 109, name: "Yara", brand: "Lattafa", category: "arabe", gender: "femenino", notes: "Orquídea, Heliotropo, Vainilla, Sándalo, Almizcle, Frutos Rojos", description: "Dulce y empolvado. Orquídea y vainilla con un toque de frutos rojos sobre sándalo.", fullSizes: { "100ml": 165 }, decantSizes: { "2ml": 11.90, "3ml": 14.90, "5ml": 19.90, "10ml": 34.90, "30ml": 89.90 }, fullImage: "img/perfumes/yara.webp", decantImage: "img/perfumes/yara2.webp", cardImage: "img/perfumes/yara.webp", featured: false, badge: null, badgeText: "" },
     { id: 110, name: "Yara Candy", brand: "Lattafa", category: "arabe", gender: "femenino", notes: "Caramelo, Fresas, Vainilla, Almizcle, Praliné, Sándalo", description: "Golosina irresistible. Caramelo y fresas con un fondo de praliné.", fullSizes: { "100ml": 165 }, decantSizes: { "2ml": 11.90, "3ml": 14.90, "5ml": 19.90, "10ml": 34.90, "30ml": 89.90 }, fullImage: "img/perfumes/yara_candy.webp", decantImage: "img/perfumes/yara_candy2.webp", cardImage: "img/perfumes/yara_candy.webp", featured: false, badge: null, badgeText: "" },
     { id: 111, name: "Yara Tous", brand: "Lattafa", category: "arabe", gender: "femenino", notes: "Bergamota, Mandarina, Jazmín, Rosa, Vainilla, Almizcle", description: "Cítrico floral. Mandarina y bergamota con un corazón de jazmín y rosa.", fullSizes: { "100ml": 165 }, decantSizes: { "2ml": 11.90, "3ml": 14.90, "5ml": 19.90, "10ml": 34.90, "30ml": 89.90 }, fullImage: "img/perfumes/yara_tous.webp", decantImage: "img/perfumes/yara_tous2.webp", cardImage: "img/perfumes/yara_tous.webp", featured: false, badge: null, badgeText: "" },
@@ -128,12 +128,12 @@
     { id: 122, name: "Fakhar Rose", brand: "Lattafa", category: "arabe", gender: "femenino", notes: "Rosa, Jazmín, Vainilla, Sándalo, Almizcle, Ámbar", description: "Orgullo floral. Rosa y jazmín exquisitos sobre un lecho de vainilla.", fullSizes: { "100ml": 165 }, decantSizes: { "2ml": 11.90, "3ml": 14.90, "5ml": 19.90, "10ml": 34.90, "30ml": 89.90 }, fullImage: "img/perfumes/fakhar_rose.webp", decantImage: "img/perfumes/fakhar_rose2.webp", cardImage: "img/perfumes/fakhar_rose.webp", featured: false, badge: null, badgeText: "" },
     { id: 123, name: "Kismet Magic", brand: "Maison Alhambra", category: "arabe", gender: "femenino", notes: "Pimienta Rosa, Jazmín, Vainilla, Pachulí, Ámbar, Almizcle", description: "Magia oriental. Jazmín y pimienta rosa sobre pachulí ambarado.", fullSizes: { "100ml": 165 }, decantSizes: { "2ml": 11.90, "3ml": 14.90, "5ml": 19.90, "10ml": 34.90, "30ml": 89.90 }, fullImage: "img/perfumes/kismet_magic.webp", decantImage: "img/perfumes/kismet_magic2.webp", cardImage: "img/perfumes/kismet_magic.webp", featured: false, badge: null, badgeText: "" },
     { id: 124, name: "Odyssey Candee", brand: "Armaf", category: "arabe", gender: "femenino", notes: "Caramelo, Mandarina, Jazmín, Vainilla, Sándalo, Almizcle", description: "Dulce y vibrante. Caramelo con mandarina sobre un fondo amaderado.", fullSizes: { "100ml": 165 }, decantSizes: { "2ml": 11.90, "3ml": 14.90, "5ml": 19.90, "10ml": 34.90, "30ml": 89.90 }, fullImage: "img/perfumes/odyssey_candee.webp", decantImage: "img/perfumes/odyssey_candee2.webp", cardImage: "img/perfumes/odyssey_candee.webp", featured: false, badge: null, badgeText: "" },
-    { id: 125, name: "Qaed Al Fursan Unlimited", brand: "Lattafa", category: "arabe", gender: "unisex", notes: "Piña, Bergamota, Jazmín, Cedro, Ámbar, Almizcle", description: "Frescor infinito. Piña jugosa con bergamota sobre cedro.", fullSizes: { "90ml": 165 }, decantSizes: { "2ml": 11.90, "3ml": 14.90, "5ml": 19.90, "10ml": 34.90, "30ml": 89.90 }, fullImage: "img/perfumes/qaed_al_fursan_unlimited.webp", decantImage: "img/perfumes/qaed_al_fursan_unlimited2.webp", cardImage: "img/perfumes/qaed_al_fursan_unlimited.webp", featured: false, badge: null, badgeText: "" },
+    { id: 125, name: "Qaed Al Fursan Unlimited", brand: "Lattafa", category: "arabe", gender: "femenino", notes: "Piña, Bergamota, Jazmín, Cedro, Ámbar, Almizcle", description: "Frescor infinito. Piña jugosa con bergamota sobre cedro.", fullSizes: { "90ml": 165 }, decantSizes: { "2ml": 11.90, "3ml": 14.90, "5ml": 19.90, "10ml": 34.90, "30ml": 89.90 }, fullImage: "img/perfumes/qaed_al_fursan_unlimited.webp", decantImage: "img/perfumes/qaed_al_fursan_unlimited2.webp", cardImage: "img/perfumes/qaed_al_fursan_unlimited.webp", featured: false, badge: null, badgeText: "" },
     { id: 126, name: "Noble Blush", brand: "Lattafa", category: "arabe", gender: "femenino", notes: "Pimienta Rosa, Rosa, Jazmín, Vainilla, Almizcle, Ámbar", description: "Rubor noble. Rosa y pimienta rosa con un velo de vainilla.", fullSizes: { "100ml": 165 }, decantSizes: { "2ml": 11.90, "3ml": 14.90, "5ml": 19.90, "10ml": 34.90, "30ml": 89.90 }, fullImage: "img/perfumes/noble_blush.webp", decantImage: "img/perfumes/noble_blush2.webp", cardImage: "img/perfumes/noble_blush.webp", featured: false, badge: null, badgeText: "" },
     { id: 127, name: "Hawas Pink", brand: "Rasasi", category: "arabe", gender: "femenino", notes: "Frutas Tropicales, Jazmín, Vainilla, Sándalo, Almizcle, Ámbar", description: "Diversión rosa. Frutas tropicales con jazmín sobre una base golosa.", fullSizes: { "100ml": 205 }, decantSizes: { "2ml": 11.90, "3ml": 14.90, "5ml": 19.90, "10ml": 34.90, "30ml": 89.90 }, fullImage: "img/perfumes/hawas_pink.webp", decantImage: "img/perfumes/hawas_pink2.webp", cardImage: "img/perfumes/hawas_pink.webp", featured: false, badge: null, badgeText: "" },
     { id: 128, name: "Hawas Diva", brand: "Rasasi", category: "arabe", gender: "femenino", notes: "Bergamota, Mandarina, Jazmín, Rosa, Pachulí, Ámbar, Almizcle", description: "Diva radiante. Cítricos y rosas con un toque de pachulí.", fullSizes: { "100ml": 205 }, decantSizes: { "2ml": 11.90, "3ml": 14.90, "5ml": 19.90, "10ml": 34.90, "30ml": 89.90 }, fullImage: "img/perfumes/hawas_diva.webp", decantImage: "img/perfumes/hawas_diva2.webp", cardImage: "img/perfumes/hawas_diva.webp", featured: false, badge: null, badgeText: "" },
     { id: 129, name: "Delilah", brand: "Maison Alhambra", category: "arabe", gender: "femenino", notes: "Pimienta Rosa, Jazmín, Vainilla, Cedro, Almizcle, Ámbar", description: "Feminidad misteriosa. Jazmín y pimienta rosa sobre cedro.", fullSizes: { "100ml": 165 }, decantSizes: { "2ml": 11.90, "3ml": 14.90, "5ml": 19.90, "10ml": 34.90, "30ml": 89.90 }, fullImage: "img/perfumes/delilah.webp", decantImage: "img/perfumes/delilah2.webp", cardImage: "img/perfumes/delilah.webp", featured: false, badge: null, badgeText: "" },
-    { id: 130, name: "9AM Pour Femme", brand: "Afnan", category: "nicho", gender: "femenino", notes: "Bergamota, Mandarina, Jazmín, Rosa, Vainilla, Almizcle, Ámbar", description: "Frescura matutina femenina. Cítricos brillantes con un corazón floral.", fullSizes: { "100ml": 165 }, decantSizes: { "2ml": 11.90, "3ml": 14.90, "5ml": 19.90, "10ml": 34.90, "30ml": 89.90 }, fullImage: "img/perfumes/9am_pour_femme.webp", decantImage: "img/perfumes/9am_pour_femme2.webp", cardImage: "img/perfumes/9am_pour_femme.webp", featured: false, badge: null, badgeText: "" },
+    { id: 130, name: "9AM Pour Femme", brand: "Afnan", category: "arabe", gender: "femenino", notes: "Bergamota, Mandarina, Jazmín, Rosa, Vainilla, Almizcle, Ámbar", description: "Frescura matutina femenina. Cítricos brillantes con un corazón floral.", fullSizes: { "100ml": 165 }, decantSizes: { "2ml": 11.90, "3ml": 14.90, "5ml": 19.90, "10ml": 34.90, "30ml": 89.90 }, fullImage: "img/perfumes/9am_pour_femme.webp", decantImage: "img/perfumes/9am_pour_femme2.webp", cardImage: "img/perfumes/9am_pour_femme.webp", featured: false, badge: null, badgeText: "" },
     { id: 131, name: "Rome Yum Yum", brand: "Bharara Mast", category: "arabe", gender: "femenino", notes: "Frutos Rojos, Caramelo, Jazmín, Vainilla, Sándalo, Almizcle", description: "Delicia golosa. Frutos rojos y caramelo con un fondo de vainilla.", fullSizes: { "100ml": 175 }, decantSizes: { "2ml": 11.90, "3ml": 14.90, "5ml": 19.90, "10ml": 34.90, "30ml": 89.90 }, fullImage: "img/perfumes/rome_yum_yum.webp", decantImage: "img/perfumes/rome_yum_yum2.webp", cardImage: "img/perfumes/rome_yum_yum.webp", featured: false, badge: null, badgeText: "" },
     { id: 132, name: "Rome Pour Femme", brand: "Bharara Mast", category: "arabe", gender: "femenino", notes: "Mandarina, Bergamota, Jazmín, Rosa, Vainilla, Almizcle, Ámbar", description: "Elegancia romana femenina. Cítricos y flores blancas con un toque de ámbar.", fullSizes: { "100ml": 175 }, decantSizes: { "2ml": 11.90, "3ml": 14.90, "5ml": 19.90, "10ml": 34.90, "30ml": 89.90 }, fullImage: "img/perfumes/rome_pour_femme.webp", decantImage: "img/perfumes/rome_pour_femme2.webp", cardImage: "img/perfumes/rome_pour_femme.webp", featured: false, badge: null, badgeText: "" },
     { id: 133, name: "Club de Nuit Woman", brand: "Armaf", category: "arabe", gender: "femenino", notes: "Bergamota, Geranio, Rosa, Jazmín, Vainilla, Pachulí, Almizcle", description: "La mujer icónica. Rosa y geranio con pachulí sobre vainilla.", fullSizes: { "105ml": 175 }, decantSizes: { "2ml": 11.90, "3ml": 14.90, "5ml": 19.90, "10ml": 34.90, "30ml": 89.90 }, fullImage: "img/perfumes/club_de_nuit_woman.webp", decantImage: "img/perfumes/club_de_nuit_woman2.webp", cardImage: "img/perfumes/club_de_nuit_woman.webp", featured: false, badge: null, badgeText: "" },
@@ -141,9 +141,9 @@
     { id: 135, name: "Vulcan Baie", brand: "French Avenue", category: "arabe", gender: "unisex", notes: "Grosella Negra, Bergamota, Jazmín, Vainilla, Ámbar, Almizcle", description: "Bayas volcánicas. Grosella negra y bergamota con jazmín.", fullSizes: { "100ml": 185 }, decantSizes: { "2ml": 11.90, "3ml": 14.90, "5ml": 19.90, "10ml": 34.90, "30ml": 89.90 }, fullImage: "img/perfumes/vulcan_baie.webp", decantImage: "img/perfumes/vulcan_baie2.webp", cardImage: "img/perfumes/vulcan_baie.webp", featured: false, badge: null, badgeText: "" },
     { id: 136, name: "Yum Yum", brand: "Armaf", category: "arabe", gender: "femenino", notes: "Melocotón, Caramelo, Jazmín, Vainilla, Sándalo, Almizcle", description: "Dulzura tentadora. Melocotón y caramelo sobre un fondo de vainilla.", fullSizes: { "100ml": 199 }, decantSizes: { "2ml": 11.90, "3ml": 14.90, "5ml": 19.90, "10ml": 34.90, "30ml": 89.90 }, fullImage: "img/perfumes/yum_yum.webp", decantImage: "img/perfumes/yum_yum2.webp", cardImage: "img/perfumes/yum_yum.webp", featured: false, badge: null, badgeText: "" },
     { id: 137, name: "Atheeri", brand: "Lattafa", category: "arabe", gender: "femenino", notes: "Azafrán, Rosa, Ámbar, Vainilla, Sándalo, Almizcle", description: "Misterio oriental. Azafrán y rosa sobre un fondo cálido de sándalo.", fullSizes: { "100ml": 199 }, decantSizes: { "2ml": 11.90, "3ml": 14.90, "5ml": 19.90, "10ml": 34.90, "30ml": 89.90 }, fullImage: "img/perfumes/atheeri.webp", decantImage: "img/perfumes/atheeri2.webp", cardImage: "img/perfumes/atheeri.webp", featured: false, badge: null, badgeText: "" },
-    { id: 138, name: "Winners Trophy Gold", brand: "Lattafa", category: "arabe", gender: "unisex", notes: "Piña, Bergamota, Jazmín, Cedro, Ámbar, Almizcle", description: "Triunfo dorado. Piña y bergamota con un toque amaderado.", fullSizes: { "100ml": 175 }, decantSizes: { "2ml": 11.90, "3ml": 14.90, "5ml": 19.90, "10ml": 34.90, "30ml": 89.90 }, fullImage: "img/perfumes/winners_trophy_gold.webp", decantImage: "img/perfumes/winners_trophy_gold2.webp", cardImage: "img/perfumes/winners_trophy_gold.webp", featured: false, badge: null, badgeText: "" },
-    { id: 139, name: "Eclaire Pistache", brand: "Lattafa", category: "arabe", gender: "unisex", notes: "Pistacho, Bergamota, Jazmín, Vainilla, Haba Tonka, Almizcle", description: "Dulzura verde. Pistacho cremoso con bergamota y haba tonka.", fullSizes: { "100ml": 195 }, decantSizes: { "2ml": 11.90, "3ml": 14.90, "5ml": 19.90, "10ml": 34.90, "30ml": 89.90 }, fullImage: "img/perfumes/eclaire_pistache.webp", decantImage: "img/perfumes/eclaire_pistache2.webp", cardImage: "img/perfumes/eclaire_pistache.webp", featured: false, badge: null, badgeText: "" },
-    { id: 140, name: "Eclaire Banoffi", brand: "Lattafa", category: "arabe", gender: "unisex", notes: "Plátano, Caramelo, Vainilla, Cacao, Ámbar, Almizcle", description: "Postre goloso. Plátano caramelizado con cacao y vainilla.", fullSizes: { "100ml": 195 }, decantSizes: { "2ml": 11.90, "3ml": 14.90, "5ml": 19.90, "10ml": 34.90, "30ml": 89.90 }, fullImage: "img/perfumes/eclaire_banoffi.webp", decantImage: "img/perfumes/eclaire_banoffi2.webp", cardImage: "img/perfumes/eclaire_banoffi.webp", featured: false, badge: null, badgeText: "" },
+    { id: 138, name: "Winners Trophy Gold", brand: "Lattafa", category: "arabe", gender: "femenino", notes: "Piña, Bergamota, Jazmín, Cedro, Ámbar, Almizcle", description: "Triunfo dorado. Piña y bergamota con un toque amaderado.", fullSizes: { "100ml": 175 }, decantSizes: { "2ml": 11.90, "3ml": 14.90, "5ml": 19.90, "10ml": 34.90, "30ml": 89.90 }, fullImage: "img/perfumes/winners_trophy_gold.webp", decantImage: "img/perfumes/winners_trophy_gold2.webp", cardImage: "img/perfumes/winners_trophy_gold.webp", featured: false, badge: null, badgeText: "" },
+    { id: 139, name: "Eclaire Pistache", brand: "Lattafa", category: "arabe", gender: "femenino", notes: "Pistacho, Bergamota, Jazmín, Vainilla, Haba Tonka, Almizcle", description: "Dulzura verde. Pistacho cremoso con bergamota y haba tonka.", fullSizes: { "100ml": 195 }, decantSizes: { "2ml": 11.90, "3ml": 14.90, "5ml": 19.90, "10ml": 34.90, "30ml": 89.90 }, fullImage: "img/perfumes/eclaire_pistache.webp", decantImage: "img/perfumes/eclaire_pistache2.webp", cardImage: "img/perfumes/eclaire_pistache.webp", featured: false, badge: null, badgeText: "" },
+    { id: 140, name: "Eclaire Banoffi", brand: "Lattafa", category: "arabe", gender: "femenino", notes: "Plátano, Caramelo, Vainilla, Cacao, Ámbar, Almizcle", description: "Postre goloso. Plátano caramelizado con cacao y vainilla.", fullSizes: { "100ml": 195 }, decantSizes: { "2ml": 11.90, "3ml": 14.90, "5ml": 19.90, "10ml": 34.90, "30ml": 89.90 }, fullImage: "img/perfumes/eclaire_banoffi.webp", decantImage: "img/perfumes/eclaire_banoffi2.webp", cardImage: "img/perfumes/eclaire_banoffi.webp", featured: false, badge: null, badgeText: "" },
     { id: 141, name: "The Most Wanted Parfum", brand: "Azzaro", category: "disenador", gender: "masculino", notes: "Jengibre, Vainilla Bourbon, Maderas", description: "Intenso y seductor con dulzura especiada.", fullSizes: { "100ml": 345 }, decantSizes: { "2ml": 19.90, "3ml": 29.90, "5ml": 39.90, "10ml": 74.90, "30ml": 199.90 }, fullImage: "img/perfumes/the_most_wanted_parfum.webp", decantImage: "img/perfumes/the_most_wanted_parfum2.webp", cardImage: "img/perfumes/the_most_wanted_parfum.webp", featured: false, badge: null, badgeText: "" },
     { id: 142, name: "The Most Wanted Intense", brand: "Azzaro", category: "disenador", gender: "masculino", notes: "Toffee, Cardamomo, Ámbar", description: "Dulce, potente y nocturno.", fullSizes: { "100ml": 345 }, decantSizes: { "2ml": 19.90, "3ml": 29.90, "5ml": 39.90, "10ml": 74.90, "30ml": 199.90 }, fullImage: "img/perfumes/the_most_wanted_intense.webp", decantImage: "img/perfumes/the_most_wanted_intense2.webp", cardImage: "img/perfumes/the_most_wanted_intense.webp", featured: false, badge: null, badgeText: "" },
     { id: 143, name: "Stronger With You Intensely", brand: "Armani", category: "disenador", gender: "masculino", notes: "Vainilla, Canela, Caramelo", description: "Muy dulce, cálido y envolvente.", fullSizes: { "100ml": 445 }, decantSizes: { "2ml": 19.90, "3ml": 29.90, "5ml": 39.90, "10ml": 74.90, "30ml": 199.90 }, fullImage: "img/perfumes/swy_intensely.webp", decantImage: "img/perfumes/swy_intensely2.webp", cardImage: "img/perfumes/swy_intensely.webp", featured: false, badge: null, badgeText: "" },
@@ -180,7 +180,7 @@
     { id: 172, name: "MYSLF Le Parfum", brand: "Yves Saint Laurent", category: "disenador", gender: "masculino", notes: "Vainilla Bourbon, Cuero, Salvia, Azahar, Almizcle Blanco", description: "El refinamiento contemporáneo llevado al extremo. La riqueza de la vainilla bourbon y el cuero suave se fusionan con la frescura de la salvia y un toque luminoso de azahar, creando una firma elegante y profunda.", fullSizes: { "100ml": 495 }, decantSizes: { "2ml": 19.90, "3ml": 29.90, "5ml": 39.90, "10ml": 74.90, "30ml": 199.90 }, fullImage: "img/perfumes/myslf_le_parfum.webp", decantImage: "img/perfumes/myslf_le_parfum2.webp", cardImage: "img/perfumes/myslf_le_parfum.webp", featured: false, badge: null, badgeText: "" },
     { id: 173, name: "Naxos (XJ1861)", brand: "Xerjoff", category: "nicho", gender: "unisex", notes: "Bergamota, Limón, Lavanda, Miel, Canela, Haba Tonka, Tabaco, Vainilla", description: "Una obra maestra de la perfumería de lujo. La frescura cítrica y la lavanda se envuelven en la dulzura embriagadora de la miel y la canela, culminando con un fondo profundamente adictivo de tabaco, haba tonka y vainilla.", fullSizes: { "100ml": 900 }, decantSizes: { "2ml": 29.90, "3ml": 39.90, "5ml": 69.90, "10ml": 129.90 }, fullImage: "img/perfumes/naxos_xerjoff.webp", decantImage: "img/perfumes/naxos_xerjoff2.webp", cardImage: "img/perfumes/naxos_xerjoff.webp", featured: false, badge: null, badgeText: "" },
     { id: 174, name: "Arabians Tonka", brand: "Montale", category: "nicho", gender: "unisex", notes: "Bergamota, Azafrán, Rosa de Damasco, Haba Tonka, Cuero, Ámbar, Almizcle", description: "Exótico y opulento. El azafrán y la rosa se entrelazan con una dosis generosa de haba tonka cremosa, sobre una base cálida de cuero y ámbar, creando un aroma embriagador y oriental.", fullSizes: { "100ml": 550 }, decantSizes: { "2ml": 19.90, "3ml": 29.90, "5ml": 44.90, "10ml": 89.90 }, fullImage: "img/perfumes/arabians_tonka.webp", decantImage: "img/perfumes/arabians_tonka2.webp", cardImage: "img/perfumes/arabians_tonka.webp", featured: false, badge: null, badgeText: "" },
-    { id: 175, name: "Island Bliss", brand: "Armaf", category: "arabe", gender: "unisex", notes: "Piña, Coco, Bergamota, Jazmín, Notas Marinas, Vainilla, Sándalo, Almizcle", description: "Un paraíso tropical embotellado. La jugosidad de la piña y el coco se sumerge en una brisa marina fresca, adornada con jazmín y suavizada por un fondo de vainilla y sándalo.", fullSizes: { "100ml": 195 }, decantSizes: { "2ml": 11.90, "3ml": 14.90, "5ml": 19.90, "10ml": 34.90, "30ml": 89.90 }, fullImage: "img/perfumes/island_bliss.webp", decantImage: "img/perfumes/island_bliss2.webp", cardImage: "img/perfumes/island_bliss.webp", featured: false, badge: null, badgeText: "" },
+    { id: 175, name: "Island Bliss", brand: "Armaf", category: "arabe", gender: "femenino", notes: "Piña, Coco, Bergamota, Jazmín, Notas Marinas, Vainilla, Sándalo, Almizcle", description: "Un paraíso tropical embotellado. La jugosidad de la piña y el coco se sumerge en una brisa marina fresca, adornada con jazmín y suavizada por un fondo de vainilla y sándalo.", fullSizes: { "100ml": 195 }, decantSizes: { "2ml": 11.90, "3ml": 14.90, "5ml": 19.90, "10ml": 34.90, "30ml": 89.90 }, fullImage: "img/perfumes/island_bliss.webp", decantImage: "img/perfumes/island_bliss2.webp", cardImage: "img/perfumes/island_bliss.webp", featured: false, badge: null, badgeText: "" },
     { id: 178, name: "Erba Gold", brand: "Xerjoff", category: "nicho", gender: "unisex", notes: "Mandarina, Bergamota, Flor de Naranjo, Té Verde, Almizcle, Vainilla, Ámbar", description: "Lujo dorado y luminoso. Cítricos chispeantes y flor de naranjo sobre un fondo cremoso de almizcle y vainilla.", fullSizes: { "100ml": 850 }, decantSizes: { "2ml": 24.90, "3ml": 34.90, "5ml": 64.90, "10ml": 119.90 }, fullImage: "img/perfumes/erba_gold.webp", decantImage: "img/perfumes/erba_gold2.webp", cardImage: "img/perfumes/erba_gold.webp", featured: false, badge: "nicho", badgeText: "NICHO" },
     { id: 179, name: "Liquid Brun Limited Edition", brand: "French Avenue", category: "arabe", gender: "unisex", notes: "Canela, Cardamomo, Flor de Azahar, Vainilla Bourbon, Praliné, Ambroxan, Almizcle", description: "Edición limitada del gourmand favorito. Más profundo, más cremoso y con una estela aún más adictiva.", fullSizes: { "150ml": 225 }, decantSizes: { "2ml": 11.90, "3ml": 14.90, "5ml": 19.90, "10ml": 34.90, "30ml": 89.90 }, fullImage: "img/perfumes/liquid_brun_limited.webp", decantImage: "img/perfumes/liquid_brun_limited2.webp", cardImage: "img/perfumes/liquid_brun_limited.webp", featured: false, badge: "new", badgeText: "Nuevo" },
     { id: 180, name: "Club de Nuit Urban Man", brand: "Armaf", category: "arabe", gender: "masculino", notes: "Bergamota, Limón, Lavanda, Jengibre, Vetiver, Cedro, Almizcle, Ámbar", description: "Frescura urbana y elegante. Cítricos vibrantes con lavanda y jengibre sobre un fondo amaderado y limpio.", fullSizes: { "105ml": 175 }, decantSizes: { "2ml": 11.90, "3ml": 14.90, "5ml": 19.90, "10ml": 34.90, "30ml": 89.90 }, fullImage: "img/perfumes/club_de_nuit_urban_man.webp", decantImage: "img/perfumes/club_de_nuit_urban_man2.webp", cardImage: "img/perfumes/club_de_nuit_urban_man.webp", featured: false, badge: "new", badgeText: "Nuevo" },
@@ -198,9 +198,9 @@
     { id: "group-arabe-mas-3u", type: "group", category: "arabe", name: "3 Decants Árabes Hombre", desc: "Elige el tamaño y 3 perfumes árabes masculinos.", icon: "🕌", image: "img/promos/arabes_mas_3u.webp", allowedCategories: ["arabe"], allowedGenders: ["masculino"], quantity: 3, options: [ { size: "2ml", price: 29.90 }, { size: "3ml", price: 39.90 }, { size: "5ml", price: 49.90 }, { size: "10ml", price: 89.90 } ] },
     { id: "group-arabe-mas-5u", type: "group", category: "arabe", name: "5 Decants Árabes Hombre", desc: "Elige el tamaño y 5 perfumes árabes masculinos.", icon: "🕌", image: "img/promos/arabes_mas_5u.webp", allowedCategories: ["arabe"], allowedGenders: ["masculino"], quantity: 5, options: [ { size: "2ml", price: 44.90 }, { size: "3ml", price: 59.90 }, { size: "5ml", price: 74.90 }, { size: "10ml", price: 134.90 } ] },
     { id: "group-arabe-mas-10u", type: "group", category: "arabe", name: "10 Decants Árabes Hombre", desc: "Elige el tamaño y 10 perfumes árabes masculinos.", icon: "🕌", image: "img/promos/arabes_mas_5u.webp", allowedCategories: ["arabe"], allowedGenders: ["masculino"], quantity: 10, options: [ { size: "2ml", price: 79.90 }, { size: "3ml", price: 99.90 }, { size: "5ml", price: 139.90 }, { size: "10ml", price: 249.90 } ] },
-    { id: "group-nicho-3u", type: "group", category: "nicho", name: "3 Decants Árabes Deluxe", desc: "Elige el tamaño y 3 perfumes Game of Spades o King of Kings.", icon: "💎", image: "img/promos/deluxe_3u.webp", allowedBrands: ["Jo Milano Paris", "King of Kings"], quantity: 3, options: [ { size: "2ml", price: 39.90 }, { size: "3ml", price: 49.90 }, { size: "5ml", price: 74.90 }, { size: "10ml", price: 119.90 } ] },
-    { id: "group-nicho-5u", type: "group", category: "nicho", name: "5 Decants Árabes Deluxe", desc: "Elige el tamaño y 5 perfumes Game of Spades o King of Kings.", icon: "💎", image: "img/promos/deluxe_4u.webp", allowedBrands: ["Jo Milano Paris", "King of Kings"], quantity: 5, options: [ { size: "2ml", price: 54.90 }, { size: "3ml", price: 69.90 }, { size: "5ml", price: 114.90 }, { size: "10ml", price: 184.90 } ] },
-    { id: "group-nicho-10u", type: "group", category: "nicho", name: "10 Decants Árabes Deluxe", desc: "Elige el tamaño y 10 perfumes Game of Spades o King of Kings.", icon: "💎", image: "img/promos/deluxe_3u.webp", allowedBrands: ["Jo Milano Paris", "King of Kings"], quantity: 10, options: [ { size: "2ml", price: 99.90 }, { size: "3ml", price: 109.90 }, { size: "5ml", price: 199.90 }, { size: "10ml", price: 349.90 } ] },
+    { id: "group-nicho-3u", type: "group", category: "deluxe", name: "3 Decants Árabes Deluxe", desc: "Elige el tamaño y 3 perfumes Game of Spades o King of Kings.", icon: "💎", image: "img/promos/deluxe_3u.webp", allowedCategories: ["deluxe"], quantity: 3, options: [ { size: "2ml", price: 39.90 }, { size: "3ml", price: 49.90 }, { size: "5ml", price: 74.90 }, { size: "10ml", price: 119.90 } ] },
+    { id: "group-nicho-5u", type: "group", category: "deluxe", name: "5 Decants Árabes Deluxe", desc: "Elige el tamaño y 5 perfumes Game of Spades o King of Kings.", icon: "💎", image: "img/promos/deluxe_4u.webp", allowedCategories: ["deluxe"], quantity: 5, options: [ { size: "2ml", price: 54.90 }, { size: "3ml", price: 69.90 }, { size: "5ml", price: 114.90 }, { size: "10ml", price: 184.90 } ] },
+    { id: "group-nicho-10u", type: "group", category: "deluxe", name: "10 Decants Árabes Deluxe", desc: "Elige el tamaño y 10 perfumes Game of Spades o King of Kings.", icon: "💎", image: "img/promos/deluxe_3u.webp", allowedCategories: ["deluxe"], quantity: 10, options: [ { size: "2ml", price: 99.90 }, { size: "3ml", price: 109.90 }, { size: "5ml", price: 199.90 }, { size: "10ml", price: 349.90 } ] },
   ];
 
   /* ══════════════════════════════════════════════════════════════
@@ -208,6 +208,25 @@
   ══════════════════════════════════════════════════════════════ */
   const PLACEHOLDER_IMG = "img/perfumes/placeholder.webp";
   const WHATSAPP_NUMBER = "51903283353";
+  // Modo desarrollo (solo localhost): habilita logs de diagnóstico.
+  const IS_DEV = /^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname);
+
+  /* Optimización de imágenes:
+     Pon esto en `true` SOLO después de ejecutar `node tools/optimize-images.js`,
+     que genera las versiones de 400px en img/perfumes_optimized/.
+     Mientras esté en `false`, se usa el original de siempre (sin romper nada). */
+  const IMG_OPTIMIZED = false;
+  const OPTIMIZED_DIR = "img/perfumes_optimized/";
+  const IMG_SIZES = "(max-width: 640px) 160px, (max-width: 1024px) 200px, 260px";
+
+  // Devuelve los atributos srcset/sizes para una imagen de producto.
+  // Si IMG_OPTIMIZED está desactivado, devuelve cadena vacía (solo se usa src).
+  function imgSrcsetAttrs(src) {
+    if (!IMG_OPTIMIZED || !src) return "";
+    const file = src.split("/").pop();
+    const small = OPTIMIZED_DIR + file;
+    return ` srcset="${esc(small)} 400w, ${esc(src)} 2048w" sizes="${IMG_SIZES}"`;
+  }
 
   /* ══════════════════════════════════════════════════════════════
      STATE
@@ -264,13 +283,26 @@
       .replace(/"/g, "&quot;")
       .replace(/'/g, "&#39;");
   }
-  function showToast(msg) {
+  // Detecta el tipo de toast a partir del emoji inicial del mensaje (retrocompatible).
+  function detectToastType(msg) {
+    if (/^[⚠️❌🚫]/u.test(msg) || msg.startsWith("⚠")) return "error";
+    if (/^[🛒🛍️📲ℹ️]/u.test(msg) || msg.startsWith("🛒") || msg.startsWith("🛍")) return "info";
+    return "success";
+  }
+  const TOAST_ICONS = { success: "✓", error: "✗", info: "ℹ" };
+  function showToast(msg, type) {
     const t = $("toast");
     if (!t) return;
-    t.textContent = msg;
+    const kind = type || detectToastType(String(msg));
+    t.className = "toast toast-" + kind;
+    t.innerHTML =
+      `<span class="toast-icon" aria-hidden="true">${TOAST_ICONS[kind] || "✓"}</span>` +
+      `<span class="toast-msg">${esc(msg)}</span>`;
+    // reinicia la animación de entrada
+    void t.offsetWidth;
     t.classList.add("show");
     clearTimeout(t._timeout);
-    t._timeout = setTimeout(() => t.classList.remove("show"), 2300);
+    t._timeout = setTimeout(() => t.classList.remove("show"), 2600);
   }
   function pulseCartCount() {
     const el = $("cartCount");
@@ -278,6 +310,37 @@
     el.classList.remove("pulse");
     void el.offsetWidth;
     el.classList.add("pulse");
+  }
+  // Animación: una miniatura "vuela" desde el origen hasta el ícono del carrito.
+  function flyToCart(imgSrc, originEl) {
+    if (!imgSrc || !originEl) return;
+    const cartBtn = $("btnCart");
+    if (!cartBtn) return;
+    const reduce =
+      window.matchMedia &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduce) return;
+    const o = originEl.getBoundingClientRect();
+    const c = cartBtn.getBoundingClientRect();
+    const startX = o.left + o.width / 2;
+    const startY = o.top + o.height / 2;
+    const endX = c.left + c.width / 2;
+    const endY = c.top + c.height / 2;
+    const fly = document.createElement("img");
+    fly.src = imgSrc;
+    fly.className = "fly-to-cart";
+    fly.alt = "";
+    fly.setAttribute("aria-hidden", "true");
+    fly.style.left = startX - 28 + "px";
+    fly.style.top = startY - 28 + "px";
+    fly.onerror = () => fly.remove();
+    document.body.appendChild(fly);
+    requestAnimationFrame(() => {
+      fly.style.transform =
+        `translate(${endX - startX}px, ${endY - startY}px) scale(.18)`;
+      fly.style.opacity = "0.25";
+    });
+    setTimeout(() => fly.remove(), 650);
   }
   function getCategoryIcon(cat) {
     const icons = {
@@ -355,9 +418,12 @@
     if (cart.length === 0) {
       container.innerHTML = `
         <div class="cart-empty">
-          <div class="cart-empty-icon">🛍️</div>
+          <div class="cart-empty-icon">🛒</div>
           <p>Tu carrito está vacío.</p>
-          <span>¡Explora nuestra colección!</span>
+          <span>¡Explora nuestra colección y encuentra tu próxima fragancia!</span>
+          <button type="button" class="btn-empty-action" data-action="keep-shopping">
+            <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Seguir comprando
+          </button>
         </div>`;
       return;
     }
@@ -443,6 +509,7 @@
       const index = parseInt(btn.dataset.index, 10);
       if (action === "qty") updateCartQty(index, parseInt(btn.dataset.delta, 10));
       else if (action === "remove") removeFromCart(index);
+      else if (action === "keep-shopping") closeCart();
     });
   }
 
@@ -548,6 +615,11 @@
       showToast("⚠️ Selecciona un tamaño");
       return;
     }
+    const flyImg =
+      currentModalView === "full"
+        ? currentModalProduct.fullImage
+        : currentModalProduct.decantImage;
+    flyToCart(flyImg, this);
     addToCart(currentModalProduct.id, currentModalView, currentModalSize);
     closeModal();
     openCart();
@@ -624,6 +696,12 @@
     if (promo.allowedBrands) {
       eligible = eligible.filter((p) =>
         promo.allowedBrands.includes(p.brand),
+      );
+    }
+    if (IS_DEV) {
+      console.log(
+        `[promo] "${promo.name}" → ${eligible.length} perfumes`,
+        { allowedCategories: promo.allowedCategories, allowedGenders: promo.allowedGenders, allowedBrands: promo.allowedBrands },
       );
     }
     return eligible;
@@ -777,6 +855,8 @@
         price: 0,
       };
     }
+    const packBtn = $("packConfirmBtn");
+    if (mainImage && packBtn) flyToCart(mainImage, packBtn);
     cart.push(packItem);
     saveCart();
     updateCartUI();
@@ -822,17 +902,31 @@
   function createProductCard(product) {
     const decantSizes = Object.keys(product.decantSizes);
     const minPrice = decantSizes.length > 0 ? Math.min(...Object.values(product.decantSizes)) : null;
-    const badgeHTML = product.badge
-      ? `<span class="product-badge ${esc(product.badge)}">${esc(product.badgeText)}</span>`
+    const BADGE_TOOLTIPS = {
+      new: "Producto recién agregado",
+      top: "Más vendido",
+      tester: "Versión de prueba",
+      nicho: "Fragancia nicho",
+      deluxe: "Colección Deluxe de alta gama",
+    };
+    // Los perfumes Deluxe muestran siempre su badge dorado "Deluxe".
+    const effectiveBadge = product.category === "deluxe" ? "deluxe" : product.badge;
+    const effectiveBadgeText = product.category === "deluxe" ? "Deluxe" : product.badgeText;
+    const badgeTip = effectiveBadge ? BADGE_TOOLTIPS[effectiveBadge] : "";
+    const badgeHTML = effectiveBadge
+      ? `<span class="product-badge ${esc(effectiveBadge)}"${badgeTip ? ` data-tooltip="${esc(badgeTip)}"` : ""}>${esc(effectiveBadgeText)}</span>`
       : "";
     const priceText = minPrice ? `Desde ${formatPrice(minPrice)}` : "Consultar";
     const catLabel =
-      product.category === "nicho" ? "Nicho" : product.category === "arabe" ? "Árabe" : "Diseñador";
+      product.category === "nicho" ? "Nicho"
+      : product.category === "arabe" ? "Árabe"
+      : product.category === "deluxe" ? "Deluxe"
+      : "Diseñador";
     return `
       <div class="product-card reveal-item" data-product-id="${product.id}">
         <div class="img-wrapper">
           ${badgeHTML}
-          <img src="${esc(product.cardImage)}" alt="${esc(product.name)} - ${esc(product.brand)}" loading="lazy" decoding="async" onerror="this.style.display='none';" />
+          <img src="${esc(product.cardImage)}"${imgSrcsetAttrs(product.cardImage)} alt="${esc(product.name)} - ${esc(product.brand)}" loading="lazy" decoding="async" onload="this.classList.add('img-loaded'); this.closest('.img-wrapper').classList.add('skeleton-done');" onerror="this.style.display='none'; this.closest('.img-wrapper').classList.add('skeleton-done');" />
         </div>
         <div class="product-info">
           <div class="product-category">${catLabel} · ${esc(product.gender)}</div>
@@ -884,9 +978,19 @@
           p.notes.toLowerCase().includes(term),
       );
     }
-    grid.innerHTML = filtered.length
-      ? filtered.map(createProductCard).join("")
-      : `<p style="text-align:center;color:var(--text-muted);grid-column:1/-1;padding:2rem;">No se encontraron perfumes.</p>`;
+    if (filtered.length) {
+      grid.innerHTML = filtered.map(createProductCard).join("");
+    } else {
+      const isSearch = !!currentSearchTerm;
+      grid.innerHTML = `
+        <div class="empty-state">
+          <div class="empty-state-icon">${isSearch ? "✖️" : "🔍"}</div>
+          <h3 class="empty-state-title">${isSearch ? "Sin resultados para tu búsqueda" : "No encontramos productos"}</h3>
+          <p class="empty-state-text">${isSearch
+            ? "No hay perfumes que coincidan con tu búsqueda. Prueba con otro nombre, marca o nota."
+            : "No hay perfumes con esos filtros. Prueba con otras opciones."}</p>
+        </div>`;
+    }
     observeRevealElements();
   }
 
@@ -910,7 +1014,12 @@
     }
 
     if (filtered.length === 0) {
-      grid.innerHTML = `<p style="text-align:center;color:var(--text-muted);padding:2rem;grid-column:1/-1;">No hay promociones en esta categoría.</p>`;
+      grid.innerHTML = `
+        <div class="empty-state">
+          <div class="empty-state-icon">🎁</div>
+          <h3 class="empty-state-title">Sin promociones aquí</h3>
+          <p class="empty-state-text">No hay packs en esta categoría por ahora. Prueba con otra opción del filtro.</p>
+        </div>`;
       return;
     }
 
@@ -943,7 +1052,7 @@
 
         // Imagen o icono (con fallback)
         const mediaHtml = imageUrl
-          ? `<img src="${esc(imageUrl)}" alt="${esc(promo.name)}" class="promo-img" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />`
+          ? `<img src="${esc(imageUrl)}"${imgSrcsetAttrs(imageUrl)} alt="${esc(promo.name)}" class="promo-img" loading="lazy" decoding="async" onload="this.classList.add('img-loaded');" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />`
           : "";
 
         const iconHtml = !imageUrl
@@ -1122,6 +1231,9 @@
       if (!btn) return;
       activePromoFilter = btn.dataset.promoFilter;
       activePromoGender = "all";
+      btn.classList.remove("chip-pop");
+      void btn.offsetWidth;
+      btn.classList.add("chip-pop");
       updatePromoFilterButtons();
       renderPromos();
     });
@@ -1298,6 +1410,18 @@
     document.querySelectorAll(".reveal-item:not(.visible)").forEach((el) => {
       revealObserver.observe(el);
     });
+    hydrateLoadedImages();
+  }
+  // Red de seguridad para skeletons: marca como cargadas las imágenes que ya
+  // estaban completas en caché antes de adjuntar el handler onload inline.
+  function hydrateLoadedImages() {
+    document.querySelectorAll(".img-wrapper img:not(.img-loaded), .promo-img:not(.img-loaded)").forEach((img) => {
+      if (img.complete && img.naturalWidth > 0) {
+        img.classList.add("img-loaded");
+        const wrap = img.closest(".img-wrapper");
+        if (wrap) wrap.classList.add("skeleton-done");
+      }
+    });
   }
 
   /* ══════════════════════════════════════════════════════════════
@@ -1334,7 +1458,170 @@
   window.addEventListener("scroll", () => {
     const header = $("header");
     if (header) header.classList.toggle("scrolled", window.scrollY > 50);
+    const btt = $("backToTop");
+    if (btt) btt.classList.toggle("visible", window.scrollY > 500);
   }, { passive: true });
+
+  /* ══════════════════════════════════════════════════════════════
+     BOTÓN "VOLVER ARRIBA"
+  ══════════════════════════════════════════════════════════════ */
+  function setupBackToTop() {
+    const btt = $("backToTop");
+    if (!btt) return;
+    btt.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+    // estado inicial correcto (p. ej. si se recarga con scroll)
+    btt.classList.toggle("visible", window.scrollY > 500);
+  }
+
+  /* ══════════════════════════════════════════════════════════════
+     TOGGLE DE TEMA (claro / oscuro) — persistente en localStorage
+  ══════════════════════════════════════════════════════════════ */
+  function setupThemeToggle() {
+    const btn = $("themeToggle");
+    if (!btn) return;
+    const icon = btn.querySelector(".theme-icon");
+    let usedOnce = false;
+
+    function syncUI() {
+      const dark = document.documentElement.getAttribute("data-theme") === "dark";
+      if (icon) icon.textContent = dark ? "☀️" : "🌙";
+      btn.setAttribute("aria-pressed", String(dark));
+      // El tooltip indica la acción que realizará el botón
+      btn.setAttribute("data-tooltip", dark ? "Modo claro" : "Modo oscuro");
+    }
+    syncUI();
+
+    btn.addEventListener("click", () => {
+      const dark = document.documentElement.getAttribute("data-theme") === "dark";
+      const next = dark ? "light" : "dark";
+      document.documentElement.setAttribute("data-theme", next);
+      try { localStorage.setItem("paco_theme", next); } catch (e) { /* storage no disponible */ }
+      // Animación de rotación del ícono
+      btn.classList.remove("rotating");
+      void btn.offsetWidth;
+      btn.classList.add("rotating");
+      // Pulso sutil la primera vez que se usa
+      if (!usedOnce) {
+        usedOnce = true;
+        btn.classList.add("pulse");
+        setTimeout(() => btn.classList.remove("pulse"), 650);
+      }
+      syncUI();
+    });
+  }
+
+  /* ══════════════════════════════════════════════════════════════
+     PARALLAX SUTIL DEL HERO (solo desktop, respeta reduced-motion)
+  ══════════════════════════════════════════════════════════════ */
+  function setupHeroParallax() {
+    const video = document.querySelector(".hero-video");
+    if (!video) return;
+    const desktop = window.matchMedia("(min-width: 768px)");
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
+    let ticking = false;
+    function update() {
+      ticking = false;
+      if (!desktop.matches || reduce.matches) {
+        video.style.removeProperty("--hero-parallax");
+        return;
+      }
+      const y = Math.min(window.scrollY * 0.1, 45); // cap 45px (gap-free con scale)
+      video.style.setProperty("--hero-parallax", -y + "px");
+    }
+    window.addEventListener(
+      "scroll",
+      () => {
+        if (!ticking) {
+          ticking = true;
+          requestAnimationFrame(update);
+        }
+      },
+      { passive: true },
+    );
+    update();
+  }
+
+  /* ══════════════════════════════════════════════════════════════
+     RUTEO POR HASH (deep-links: #catalogo, #promos)
+  ══════════════════════════════════════════════════════════════ */
+  function applyHashRoute() {
+    const hash = (window.location.hash || "").replace("#", "");
+    const valid = ["home", "catalogo", "promos"];
+    if (valid.includes(hash)) navigateTo(hash);
+  }
+
+  /* ══════════════════════════════════════════════════════════════
+     VALIDACIÓN EN TIEMPO REAL — CHECKOUT
+     (capa visual aditiva; NO altera confirmarWhatsApp)
+  ══════════════════════════════════════════════════════════════ */
+  function setupCheckoutValidation() {
+    const rules = {
+      chNombre: (v) => v.trim().length >= 3,
+      chApellido: (v) => v.trim().length >= 3,
+      chTelefono: (v) => /^9\d{8}$/.test(v.trim()),
+      chDNI: (v) => /^\d{8}$/.test(v.trim()),
+      chDireccion: (v) => v.trim().length >= 3,
+      chDistrito: (v) => v.trim().length >= 3,
+    };
+    const ids = Object.keys(rules);
+    const fields = ids.map((id) => $(id)).filter(Boolean);
+    if (fields.length === 0) return;
+    const confirmBtn = document.querySelector(".btn-whatsapp");
+
+    function validateField(input, showState) {
+      const valid = rules[input.id](input.value);
+      const group = input.closest(".form-group");
+      if (group && showState) {
+        group.classList.toggle("field-valid", valid);
+        group.classList.toggle("field-invalid", !valid);
+      }
+      return valid;
+    }
+    function allValid() {
+      return ids.every((id) => {
+        const el = $(id);
+        return el && rules[id](el.value);
+      });
+    }
+    function refreshButton() {
+      if (!confirmBtn) return;
+      const ok = allValid();
+      confirmBtn.classList.toggle("is-disabled", !ok);
+      confirmBtn.setAttribute("aria-disabled", String(!ok));
+    }
+
+    fields.forEach((input) => {
+      // Asegura contenedor de ícono de estado
+      const group = input.closest(".form-group");
+      if (group && !group.querySelector(".field-status")) {
+        const span = document.createElement("span");
+        span.className = "field-status";
+        span.setAttribute("aria-hidden", "true");
+        group.appendChild(span);
+      }
+      input.addEventListener("input", () => {
+        // mientras escribe: solo marca verde si ya es válido (evita rojo prematuro)
+        const valid = rules[input.id](input.value);
+        const g = input.closest(".form-group");
+        if (g) {
+          if (valid) {
+            g.classList.add("field-valid");
+            g.classList.remove("field-invalid");
+          } else {
+            g.classList.remove("field-valid");
+          }
+        }
+        refreshButton();
+      });
+      input.addEventListener("blur", () => {
+        if (input.value.trim() !== "") validateField(input, true);
+        refreshButton();
+      });
+    });
+    refreshButton();
+  }
 
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") {
@@ -1354,7 +1641,13 @@
     updateCartUI();
     updateCatalogFilterButtons();
     updatePromoFilterButtons();
+    setupBackToTop();
+    setupCheckoutValidation();
+    setupHeroParallax();
+    setupThemeToggle();
     navigateTo("home");
+    applyHashRoute();
+    window.addEventListener("hashchange", applyHashRoute);
 
     // Trust cards reveal (they're static, not rendered dynamically)
     setTimeout(() => observeRevealElements(), 100);
