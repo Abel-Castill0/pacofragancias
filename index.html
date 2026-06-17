@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
@@ -52,6 +52,17 @@
     ]
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://pacofragancias.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Catálogo", "item": "https://pacofragancias.com/#catalogo" },
+      { "@type": "ListItem", "position": 3, "name": "Promociones", "item": "https://pacofragancias.com/#promos" }
+    ]
+  }
+  </script>
 
   <!-- Preconnects -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -61,6 +72,9 @@
   <!-- Favicon (reutiliza el logo, evita 404 de favicon.ico) -->
   <link rel="icon" type="image/webp" href="logo.webp" />
   <link rel="apple-touch-icon" href="logo.webp" />
+
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.webmanifest" />
 
   <!-- Critical assets -->
   <link rel="preload" as="image" href="logo.webp" />
@@ -140,6 +154,10 @@
         <source src="hero_video.mp4" type="video/mp4" />
       </video>
       <div class="hero-overlay"></div>
+      <div class="hero-particles" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
       <div class="hero-content">
         <div class="hero-eyebrow">
           <span class="hero-line"></span>
@@ -204,6 +222,23 @@
       </div>
     </section>
 
+    <!-- RECOMENDADOR — CUESTIONARIO -->
+    <section class="section section-reco" id="recomendaciones">
+      <div class="section-header">
+        <div class="section-eyebrow">Tu fragancia, a tu medida</div>
+        <h2 class="section-title">Encuentra tu Fragancia Ideal</h2>
+        <p class="section-subtitle">Responde 4 preguntas rápidas y te mostramos perfumes pensados para ti.</p>
+      </div>
+      <div class="quiz">
+        <div class="quiz-progress" id="quizProgress" aria-hidden="true"></div>
+        <div class="quiz-step" id="quizStep"></div>
+        <div class="reco-grid" id="recoGrid" aria-live="polite"></div>
+        <div class="quiz-restart" id="quizRestart" style="display:none;">
+          <button class="reco-chip" id="quizRestartBtn" type="button">↺ Volver a empezar</button>
+        </div>
+      </div>
+    </section>
+
     <!-- TRUST SECTION -->
     <section class="section section-trust" id="confianza">
       <div class="trust-bg-pattern" aria-hidden="true"></div>
@@ -237,6 +272,61 @@
       </div>
     </section>
 
+    <!-- RESEÑAS / TESTIMONIOS -->
+    <section class="section section-reviews" id="resenas">
+      <div class="section-header">
+        <div class="section-eyebrow">Lo que dicen nuestros clientes</div>
+        <h2 class="section-title">Reseñas Reales</h2>
+        <p class="section-subtitle">Más de 1000 clientes confían en Paco Fragancias. Esto es lo que opinan.</p>
+      </div>
+      <div class="reviews-carousel">
+        <button class="rev-arrow rev-prev" id="revPrev" type="button" aria-label="Anterior">‹</button>
+        <div class="reviews-grid" id="reviewsTrack">
+          <article class="review-card">
+            <div class="review-stars" aria-label="5 de 5 estrellas">★★★★★</div>
+            <p class="review-text">“Los decants son increíbles, llegaron rápido y bien empacados. Ahora compro siempre aquí.”</p>
+            <div class="review-author">
+              <span class="review-avatar" aria-hidden="true">MG</span>
+              <span class="review-meta"><strong>María G.</strong><span class="review-bought">Yara · Lattafa</span></span>
+            </div>
+          </article>
+          <article class="review-card">
+            <div class="review-stars" aria-label="5 de 5 estrellas">★★★★★</div>
+            <p class="review-text">“La calidad de los perfumes árabes es impresionante. Muy buena atención por WhatsApp.”</p>
+            <div class="review-author">
+              <span class="review-avatar" aria-hidden="true">CR</span>
+              <span class="review-meta"><strong>Carlos R.</strong><span class="review-bought">9 PM · Afnan</span></span>
+            </div>
+          </article>
+          <article class="review-card">
+            <div class="review-stars" aria-label="5 de 5 estrellas">★★★★★</div>
+            <p class="review-text">“Pedí el pack de 3 diseñador y quedé encantado. Recomiendo 100%.”</p>
+            <div class="review-author">
+              <span class="review-avatar" aria-hidden="true">LM</span>
+              <span class="review-meta"><strong>Luis M.</strong><span class="review-bought">Stronger With You Intensely</span></span>
+            </div>
+          </article>
+          <article class="review-card">
+            <div class="review-stars" aria-label="5 de 5 estrellas">★★★★★</div>
+            <p class="review-text">“Me asesoraron por WhatsApp para elegir y acertaron. Servicio excelente.”</p>
+            <div class="review-author">
+              <span class="review-avatar" aria-hidden="true">AP</span>
+              <span class="review-meta"><strong>Ana P.</strong><span class="review-bought">Khamrah · Lattafa</span></span>
+            </div>
+          </article>
+          <article class="review-card">
+            <div class="review-stars" aria-label="5 de 5 estrellas">★★★★★</div>
+            <p class="review-text">“Los Game of Spades son otro nivel. Entrega rapidísima a provincia.”</p>
+            <div class="review-author">
+              <span class="review-avatar" aria-hidden="true">DS</span>
+              <span class="review-meta"><strong>Diego S.</strong><span class="review-bought">Game of Spades Royale</span></span>
+            </div>
+          </article>
+        </div>
+        <button class="rev-arrow rev-next" id="revNext" type="button" aria-label="Siguiente">›</button>
+      </div>
+    </section>
+
     <!-- TIKTOK SECTION -->
     <section class="section" id="contenido">
       <div class="section-header">
@@ -245,30 +335,34 @@
         <p class="section-subtitle">Mira nuestros últimos videos de TikTok y adéntrate en el mundo de las fragancias.
         </p>
       </div>
-      <div class="tiktok-grid">
+      <div class="tiktok-grid" id="tiktokGrid">
         <div class="tiktok-card">
+          <div class="tiktok-skeleton" aria-hidden="true"><i class="fab fa-tiktok"></i></div>
           <iframe src="https://www.tiktok.com/embed/v2/7536339020603788549" title="TikTok Paco Fragancias"
             loading="lazy" allowfullscreen scrolling="no" frameborder="0"
             allow="autoplay; encrypted-media; accelerometer; gyroscope; magnetometer; picture-in-picture"
-            referrerpolicy="strict-origin-when-cross-origin"></iframe>
+            referrerpolicy="strict-origin-when-cross-origin" onload="this.classList.add('loaded')"></iframe>
         </div>
         <div class="tiktok-card">
+          <div class="tiktok-skeleton" aria-hidden="true"><i class="fab fa-tiktok"></i></div>
           <iframe src="https://www.tiktok.com/embed/v2/7520732002643971333" title="TikTok Paco Fragancias"
             loading="lazy" allowfullscreen scrolling="no" frameborder="0"
             allow="autoplay; encrypted-media; accelerometer; gyroscope; magnetometer; picture-in-picture"
-            referrerpolicy="strict-origin-when-cross-origin"></iframe>
+            referrerpolicy="strict-origin-when-cross-origin" onload="this.classList.add('loaded')"></iframe>
         </div>
         <div class="tiktok-card">
+          <div class="tiktok-skeleton" aria-hidden="true"><i class="fab fa-tiktok"></i></div>
           <iframe src="https://www.tiktok.com/embed/v2/7554748921386372359" title="TikTok Paco Fragancias"
             loading="lazy" allowfullscreen scrolling="no" frameborder="0"
             allow="autoplay; encrypted-media; accelerometer; gyroscope; magnetometer; picture-in-picture"
-            referrerpolicy="strict-origin-when-cross-origin"></iframe>
+            referrerpolicy="strict-origin-when-cross-origin" onload="this.classList.add('loaded')"></iframe>
         </div>
         <div class="tiktok-card">
+          <div class="tiktok-skeleton" aria-hidden="true"><i class="fab fa-tiktok"></i></div>
           <iframe src="https://www.tiktok.com/embed/v2/7603741534445489416" title="TikTok Paco Fragancias"
             loading="lazy" allowfullscreen scrolling="no" frameborder="0"
             allow="autoplay; encrypted-media; accelerometer; gyroscope; magnetometer; picture-in-picture"
-            referrerpolicy="strict-origin-when-cross-origin"></iframe>
+            referrerpolicy="strict-origin-when-cross-origin" onload="this.classList.add('loaded')"></iframe>
         </div>
       </div>
     </section>
@@ -299,16 +393,28 @@
         <div class="filters-row">
           <div class="filter-group">
             <span class="filter-group-label">Categoría</span>
-            <div class="filter-chips" id="filtersCategory">
-              <button class="filter-btn active" data-filter="all">Todos</button>
-              <button class="filter-btn" data-filter="nicho">✨ Nicho</button>
-              <button class="filter-btn" data-filter="arabe">🕌 Árabe</button>
-              <button class="filter-btn" data-filter="deluxe">💎 Deluxe</button>
-              <button class="filter-btn" data-filter="disenador">⭐ Diseñador</button>
-              <button class="filter-btn" data-filter="tester">🧪 Tester</button>
+            <div class="filter-pills" id="filtersCategory">
+              <button class="filter-btn filter-pill pill-all active" data-filter="all" data-cat="all" aria-label="Todos">
+                <span class="pill-bg" aria-hidden="true"><span class="pill-icon">✦</span></span>
+                <span class="pill-label">Todos</span>
+              </button>
+              <button class="filter-btn filter-pill" data-filter="nicho" data-cat="nicho" aria-label="Nicho">
+                <span class="pill-bg"><img src="img/filtros/nicho.webp" alt="Nicho" width="600" height="800" loading="eager" fetchpriority="high" decoding="async" onload="this.classList.add('img-loaded')" onerror="this.remove()" /><span class="pill-icon" aria-hidden="true">✨</span></span>
+              </button>
+              <button class="filter-btn filter-pill" data-filter="arabe" data-cat="arabe" aria-label="Árabe">
+                <span class="pill-bg"><img src="img/filtros/arabe.webp" alt="Árabe" width="600" height="800" loading="eager" fetchpriority="high" decoding="async" onload="this.classList.add('img-loaded')" onerror="this.remove()" /><span class="pill-icon" aria-hidden="true">🕌</span></span>
+              </button>
+              <button class="filter-btn filter-pill" data-filter="deluxe" data-cat="deluxe" aria-label="Deluxe">
+                <span class="pill-bg"><img src="img/filtros/deluxe.webp" alt="Deluxe" width="600" height="800" loading="eager" fetchpriority="high" decoding="async" onload="this.classList.add('img-loaded')" onerror="this.remove()" /><span class="pill-icon" aria-hidden="true">💎</span></span>
+              </button>
+              <button class="filter-btn filter-pill" data-filter="disenador" data-cat="disenador" aria-label="Diseñador">
+                <span class="pill-bg"><img src="img/filtros/disenador.webp" alt="Diseñador" width="600" height="800" loading="eager" fetchpriority="high" decoding="async" onload="this.classList.add('img-loaded')" onerror="this.remove()" /><span class="pill-icon" aria-hidden="true">⭐</span></span>
+              </button>
+              <button class="filter-btn filter-pill" data-filter="tester" data-cat="tester" aria-label="Tester">
+                <span class="pill-bg"><img src="img/filtros/tester.webp" alt="Tester" width="600" height="800" loading="eager" fetchpriority="high" decoding="async" onload="this.classList.add('img-loaded')" onerror="this.remove()" /><span class="pill-icon" aria-hidden="true">🧪</span></span>
+              </button>
             </div>
           </div>
-          <div class="filter-separator"></div>
           <div class="filter-group">
             <span class="filter-group-label">Género</span>
             <div class="filter-chips" id="filtersGender">
@@ -341,11 +447,20 @@
         <div class="filters-row">
           <div class="filter-group">
             <span class="filter-group-label">Tipo de Promoción</span>
-            <div class="filter-chips" id="promoFilters">
-              <button class="filter-btn active" data-promo-filter="all">🔥 Lo Más Solicitado</button>
-              <button class="filter-btn" data-promo-filter="disenador">⭐ Diseñador</button>
-              <button class="filter-btn" data-promo-filter="arabe">🕌 Árabes</button>
-              <button class="filter-btn" data-promo-filter="deluxe">💎 Deluxe</button>
+            <div class="filter-pills" id="promoFilters">
+              <button class="filter-btn filter-pill pill-all active" data-promo-filter="all" aria-label="Lo Más Solicitado">
+                <span class="pill-bg" aria-hidden="true"><span class="pill-icon">🔥</span></span>
+                <span class="pill-label">Lo Más Solicitado</span>
+              </button>
+              <button class="filter-btn filter-pill" data-promo-filter="disenador" aria-label="Diseñador">
+                <span class="pill-bg"><img src="img/filtros/disenador.webp" alt="Diseñador" width="600" height="800" loading="eager" fetchpriority="high" decoding="async" onload="this.classList.add('img-loaded')" onerror="this.remove()" /><span class="pill-icon" aria-hidden="true">⭐</span></span>
+              </button>
+              <button class="filter-btn filter-pill" data-promo-filter="arabe" aria-label="Árabes">
+                <span class="pill-bg"><img src="img/filtros/arabe.webp" alt="Árabes" width="600" height="800" loading="eager" fetchpriority="high" decoding="async" onload="this.classList.add('img-loaded')" onerror="this.remove()" /><span class="pill-icon" aria-hidden="true">🕌</span></span>
+              </button>
+              <button class="filter-btn filter-pill" data-promo-filter="deluxe" aria-label="Deluxe">
+                <span class="pill-bg"><img src="img/filtros/deluxe.webp" alt="Deluxe" width="600" height="800" loading="eager" fetchpriority="high" decoding="async" onload="this.classList.add('img-loaded')" onerror="this.remove()" /><span class="pill-icon" aria-hidden="true">💎</span></span>
+              </button>
             </div>
           </div>
           <div class="filter-separator" id="promoGenderSep" style="display:none;"></div>
@@ -500,6 +615,7 @@
       <div class="cart-header-left">
         <i class="fa-solid fa-bag-shopping cart-header-icon" aria-hidden="true"></i>
         <h3>Tu Carrito</h3>
+        <span class="cart-header-count" id="cartHeaderCount" aria-hidden="true">0</span>
       </div>
       <button class="cart-close" onclick="closeCart()" aria-label="Cerrar carrito">
         <i class="fa-solid fa-xmark" aria-hidden="true"></i>
@@ -531,6 +647,12 @@
   <button id="backToTop" class="back-to-top" aria-label="Volver arriba" title="Volver arriba">
     <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
   </button>
+
+  <!-- ============ INSTAGRAM FLOTANTE ============ -->
+  <a id="igFab" class="ig-fab" href="https://www.instagram.com/pacofragancias.pe/" target="_blank"
+    rel="noopener noreferrer" aria-label="Síguenos en Instagram" data-tooltip="Síguenos en Instagram">
+    <i class="fab fa-instagram" aria-hidden="true"></i>
+  </a>
 
   <!-- ============ FOOTER ============ -->
   <footer class="footer">
@@ -587,6 +709,7 @@
         Diseñado y desarrollado por
         <a href="https://abel-castill0.github.io/Portafolio/" target="_blank" rel="noopener noreferrer">Abel
           Castillo</a>
+        <a href="admin.html" class="footer-admin" aria-label="Panel de administración" title="Administración">⚙️</a>
       </p>
     </div>
   </footer>

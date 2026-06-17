@@ -1,0 +1,17 @@
+{
+  "name": "Paco Fragancias · Decants de Lujo",
+  "short_name": "Paco Fragancias",
+  "description": "Decants premium de perfumes árabes, de diseñador y nicho en Lima, Perú.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#1a120c",
+  "theme_color": "#0d0a06",
+  "lang": "es-PE",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

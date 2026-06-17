@@ -189,18 +189,18 @@
       DATA — PROMOCIONES
    ══════════════════════════════════════════════════════════════ */
   const promos = [
-    { id: "group-disenador-3u", type: "group", category: "disenador", name: "3 Decants Diseñador", desc: "Elige el tamaño y 3 perfumes de diseñador.", icon: "⭐", image: "img/promos/diseñador3.webp", allowedCategories: ["disenador"], quantity: 3, options: [ { size: "2ml", price: 49.90 }, { size: "3ml", price: 79.90 }, { size: "5ml", price: 99.90 }, { size: "10ml", price: 189.90 } ] },
-    { id: "group-disenador-5u", type: "group", category: "disenador", name: "5 Decants Diseñador", desc: "Elige el tamaño y 5 perfumes de diseñador.", icon: "⭐", image: "img/promos/diseñador2.webp", allowedCategories: ["disenador"], quantity: 5, options: [ { size: "2ml", price: 89.90 }, { size: "3ml", price: 129.90 }, { size: "5ml", price: 159.90 }, { size: "10ml", price: 289.90 } ] },
-    { id: "group-disenador-10u", type: "group", category: "disenador", name: "10 Decants Diseñador", desc: "Elige el tamaño y 10 perfumes de diseñador.", icon: "⭐", image: "img/promos/diseñador3.webp", allowedCategories: ["disenador"], quantity: 10, options: [ { size: "2ml", price: 149.90 }, { size: "3ml", price: 229.90 }, { size: "5ml", price: 299.90 }, { size: "10ml", price: 549.90 } ] },
-    { id: "group-arabe-fem-3u", type: "group", category: "arabe", name: "3 Decants Árabes Mujer", desc: "Elige el tamaño y 3 perfumes árabes femeninos.", icon: "🕌", image: "img/promos/arabes_fem_3u.webp", allowedCategories: ["arabe"], allowedGenders: ["femenino"], quantity: 3, options: [ { size: "2ml", price: 29.90 }, { size: "3ml", price: 39.90 }, { size: "5ml", price: 49.90 }, { size: "10ml", price: 89.90 } ] },
-    { id: "group-arabe-fem-5u", type: "group", category: "arabe", name: "5 Decants Árabes Mujer", desc: "Elige el tamaño y 5 perfumes árabes femeninos.", icon: "🕌", image: "img/promos/arabes_fem_5u.webp", allowedCategories: ["arabe"], allowedGenders: ["femenino"], quantity: 5, options: [ { size: "2ml", price: 44.90 }, { size: "3ml", price: 59.90 }, { size: "5ml", price: 74.90 }, { size: "10ml", price: 134.90 } ] },
-    { id: "group-arabe-fem-10u", type: "group", category: "arabe", name: "10 Decants Árabes Mujer", desc: "Elige el tamaño y 10 perfumes árabes femeninos.", icon: "🕌", image: "img/promos/arabes_fem_5u.webp", allowedCategories: ["arabe"], allowedGenders: ["femenino"], quantity: 10, options: [ { size: "2ml", price: 79.90 }, { size: "3ml", price: 99.90 }, { size: "5ml", price: 139.90 }, { size: "10ml", price: 249.90 } ] },
-    { id: "group-arabe-mas-3u", type: "group", category: "arabe", name: "3 Decants Árabes Hombre", desc: "Elige el tamaño y 3 perfumes árabes masculinos.", icon: "🕌", image: "img/promos/arabes_mas_3u.webp", allowedCategories: ["arabe"], allowedGenders: ["masculino"], quantity: 3, options: [ { size: "2ml", price: 29.90 }, { size: "3ml", price: 39.90 }, { size: "5ml", price: 49.90 }, { size: "10ml", price: 89.90 } ] },
-    { id: "group-arabe-mas-5u", type: "group", category: "arabe", name: "5 Decants Árabes Hombre", desc: "Elige el tamaño y 5 perfumes árabes masculinos.", icon: "🕌", image: "img/promos/arabes_mas_5u.webp", allowedCategories: ["arabe"], allowedGenders: ["masculino"], quantity: 5, options: [ { size: "2ml", price: 44.90 }, { size: "3ml", price: 59.90 }, { size: "5ml", price: 74.90 }, { size: "10ml", price: 134.90 } ] },
-    { id: "group-arabe-mas-10u", type: "group", category: "arabe", name: "10 Decants Árabes Hombre", desc: "Elige el tamaño y 10 perfumes árabes masculinos.", icon: "🕌", image: "img/promos/arabes_mas_5u.webp", allowedCategories: ["arabe"], allowedGenders: ["masculino"], quantity: 10, options: [ { size: "2ml", price: 79.90 }, { size: "3ml", price: 99.90 }, { size: "5ml", price: 139.90 }, { size: "10ml", price: 249.90 } ] },
+    { id: "group-disenador-3u", type: "group", category: "disenador", name: "3 Decants Diseñador", desc: "Elige el tamaño y 3 perfumes de diseñador.", icon: "⭐", image: "img/promos/disenador_3u.webp", allowedCategories: ["disenador"], quantity: 3, options: [ { size: "2ml", price: 49.90 }, { size: "3ml", price: 79.90 }, { size: "5ml", price: 99.90 }, { size: "10ml", price: 189.90 } ] },
+    { id: "group-disenador-5u", type: "group", category: "disenador", name: "5 Decants Diseñador", desc: "Elige el tamaño y 5 perfumes de diseñador.", icon: "⭐", image: "img/promos/disenador_5u.webp", allowedCategories: ["disenador"], quantity: 5, options: [ { size: "2ml", price: 89.90 }, { size: "3ml", price: 129.90 }, { size: "5ml", price: 159.90 }, { size: "10ml", price: 289.90 } ] },
+    { id: "group-disenador-10u", type: "group", category: "disenador", name: "10 Decants Diseñador", desc: "Elige el tamaño y 10 perfumes de diseñador.", icon: "⭐", image: "img/promos/disenador_10u.webp", allowedCategories: ["disenador"], quantity: 10, options: [ { size: "2ml", price: 149.90 }, { size: "3ml", price: 229.90 }, { size: "5ml", price: 299.90 }, { size: "10ml", price: 549.90 } ] },
+    { id: "group-arabe-fem-3u", type: "group", category: "arabe", name: "3 Decants Árabes Mujer", desc: "Elige el tamaño y 3 perfumes árabes femeninos.", icon: "🕌", image: "img/promos/arabe_fem_3u.webp", allowedCategories: ["arabe"], allowedGenders: ["femenino"], quantity: 3, options: [ { size: "2ml", price: 29.90 }, { size: "3ml", price: 39.90 }, { size: "5ml", price: 49.90 }, { size: "10ml", price: 89.90 } ] },
+    { id: "group-arabe-fem-5u", type: "group", category: "arabe", name: "5 Decants Árabes Mujer", desc: "Elige el tamaño y 5 perfumes árabes femeninos.", icon: "🕌", image: "img/promos/arabe_fem_5u.webp", allowedCategories: ["arabe"], allowedGenders: ["femenino"], quantity: 5, options: [ { size: "2ml", price: 44.90 }, { size: "3ml", price: 59.90 }, { size: "5ml", price: 74.90 }, { size: "10ml", price: 134.90 } ] },
+    { id: "group-arabe-fem-10u", type: "group", category: "arabe", name: "10 Decants Árabes Mujer", desc: "Elige el tamaño y 10 perfumes árabes femeninos.", icon: "🕌", image: "img/promos/arabe_fem_10u.webp", allowedCategories: ["arabe"], allowedGenders: ["femenino"], quantity: 10, options: [ { size: "2ml", price: 79.90 }, { size: "3ml", price: 99.90 }, { size: "5ml", price: 139.90 }, { size: "10ml", price: 249.90 } ] },
+    { id: "group-arabe-mas-3u", type: "group", category: "arabe", name: "3 Decants Árabes Hombre", desc: "Elige el tamaño y 3 perfumes árabes masculinos.", icon: "🕌", image: "img/promos/arabe_mas_3u.webp", allowedCategories: ["arabe"], allowedGenders: ["masculino"], quantity: 3, options: [ { size: "2ml", price: 29.90 }, { size: "3ml", price: 39.90 }, { size: "5ml", price: 49.90 }, { size: "10ml", price: 89.90 } ] },
+    { id: "group-arabe-mas-5u", type: "group", category: "arabe", name: "5 Decants Árabes Hombre", desc: "Elige el tamaño y 5 perfumes árabes masculinos.", icon: "🕌", image: "img/promos/arabe_mas_5u.webp", allowedCategories: ["arabe"], allowedGenders: ["masculino"], quantity: 5, options: [ { size: "2ml", price: 44.90 }, { size: "3ml", price: 59.90 }, { size: "5ml", price: 74.90 }, { size: "10ml", price: 134.90 } ] },
+    { id: "group-arabe-mas-10u", type: "group", category: "arabe", name: "10 Decants Árabes Hombre", desc: "Elige el tamaño y 10 perfumes árabes masculinos.", icon: "🕌", image: "img/promos/arabe_mas_10u.webp", allowedCategories: ["arabe"], allowedGenders: ["masculino"], quantity: 10, options: [ { size: "2ml", price: 79.90 }, { size: "3ml", price: 99.90 }, { size: "5ml", price: 139.90 }, { size: "10ml", price: 249.90 } ] },
     { id: "group-nicho-3u", type: "group", category: "deluxe", name: "3 Decants Árabes Deluxe", desc: "Elige el tamaño y 3 perfumes Game of Spades o King of Kings.", icon: "💎", image: "img/promos/deluxe_3u.webp", allowedCategories: ["deluxe"], quantity: 3, options: [ { size: "2ml", price: 39.90 }, { size: "3ml", price: 49.90 }, { size: "5ml", price: 74.90 }, { size: "10ml", price: 119.90 } ] },
-    { id: "group-nicho-5u", type: "group", category: "deluxe", name: "5 Decants Árabes Deluxe", desc: "Elige el tamaño y 5 perfumes Game of Spades o King of Kings.", icon: "💎", image: "img/promos/deluxe_4u.webp", allowedCategories: ["deluxe"], quantity: 5, options: [ { size: "2ml", price: 54.90 }, { size: "3ml", price: 69.90 }, { size: "5ml", price: 114.90 }, { size: "10ml", price: 184.90 } ] },
-    { id: "group-nicho-10u", type: "group", category: "deluxe", name: "10 Decants Árabes Deluxe", desc: "Elige el tamaño y 10 perfumes Game of Spades o King of Kings.", icon: "💎", image: "img/promos/deluxe_3u.webp", allowedCategories: ["deluxe"], quantity: 10, options: [ { size: "2ml", price: 99.90 }, { size: "3ml", price: 109.90 }, { size: "5ml", price: 199.90 }, { size: "10ml", price: 349.90 } ] },
+    { id: "group-nicho-5u", type: "group", category: "deluxe", name: "5 Decants Árabes Deluxe", desc: "Elige el tamaño y 5 perfumes Game of Spades o King of Kings.", icon: "💎", image: "img/promos/deluxe_5u.webp", allowedCategories: ["deluxe"], quantity: 5, options: [ { size: "2ml", price: 54.90 }, { size: "3ml", price: 69.90 }, { size: "5ml", price: 114.90 }, { size: "10ml", price: 184.90 } ] },
+    { id: "group-nicho-10u", type: "group", category: "deluxe", name: "10 Decants Árabes Deluxe", desc: "Elige el tamaño y 10 perfumes Game of Spades o King of Kings.", icon: "💎", image: "img/promos/deluxe_10u.webp", allowedCategories: ["deluxe"], quantity: 10, options: [ { size: "2ml", price: 99.90 }, { size: "3ml", price: 109.90 }, { size: "5ml", price: 199.90 }, { size: "10ml", price: 349.90 } ] },
   ];
 
   /* ══════════════════════════════════════════════════════════════
@@ -404,6 +404,12 @@
   function updateCartUI() {
     const countEl = $("cartCount");
     if (countEl) countEl.textContent = getCartCount();
+    const headerCount = $("cartHeaderCount");
+    if (headerCount) {
+      const c = getCartCount();
+      headerCount.textContent = c;
+      headerCount.style.display = c > 0 ? "inline-flex" : "none";
+    }
     renderCartItems();
     updateCartFooter();
     if (currentPage === "checkout") renderCheckoutPage();
@@ -508,8 +514,51 @@
       const action = btn.dataset.action;
       const index = parseInt(btn.dataset.index, 10);
       if (action === "qty") updateCartQty(index, parseInt(btn.dataset.delta, 10));
-      else if (action === "remove") removeFromCart(index);
-      else if (action === "keep-shopping") closeCart();
+      else if (action === "remove") {
+        const row = btn.closest(".cart-item");
+        if (row && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+          row.classList.add("removing");
+          setTimeout(() => removeFromCart(index), 240);
+        } else {
+          removeFromCart(index);
+        }
+      } else if (action === "keep-shopping") closeCart();
+    });
+
+    // Swipe-to-delete en móvil: deslizar el item a la izquierda lo elimina.
+    let swipeRow = null, startX = 0, startY = 0, dx = 0, locked = null;
+    cartItemsEl.addEventListener("touchstart", function (e) {
+      const row = e.target.closest(".cart-item");
+      if (!row || e.touches.length !== 1) return;
+      swipeRow = row; startX = e.touches[0].clientX; startY = e.touches[0].clientY;
+      dx = 0; locked = null;
+      row.classList.add("swiping");
+    }, { passive: true });
+    cartItemsEl.addEventListener("touchmove", function (e) {
+      if (!swipeRow) return;
+      dx = e.touches[0].clientX - startX;
+      const dy = e.touches[0].clientY - startY;
+      if (locked === null) locked = Math.abs(dx) > Math.abs(dy) ? "x" : "y";
+      if (locked !== "x") return;
+      const t = Math.min(0, dx); // solo hacia la izquierda
+      swipeRow.style.transform = `translateX(${t}px)`;
+      swipeRow.style.background = t < -40 ? "rgba(210,75,75,.12)" : "";
+    }, { passive: true });
+    cartItemsEl.addEventListener("touchend", function () {
+      if (!swipeRow) return;
+      const row = swipeRow; swipeRow = null;
+      row.classList.remove("swiping");
+      row.style.background = "";
+      if (locked === "x" && dx < -80) {
+        const btn = row.querySelector('[data-action="remove"]');
+        const idx = btn ? parseInt(btn.dataset.index, 10) : -1;
+        row.classList.add("removing");
+        setTimeout(() => { if (idx >= 0) removeFromCart(idx); }, 240);
+      } else {
+        row.classList.add("swipe-reset");
+        row.style.transform = "";
+        setTimeout(() => row.classList.remove("swipe-reset"), 260);
+      }
     });
   }
 
@@ -539,7 +588,7 @@
   /* ══════════════════════════════════════════════════════════════
      MODAL — PRODUCT
   ══════════════════════════════════════════════════════════════ */
-  function openModal(productId) {
+  function openModal(productId, skipHistory) {
     const product = getProductById(productId);
     if (!product) return;
     currentModalProduct = product;
@@ -549,11 +598,18 @@
     updateModalContent();
     $("modalOverlay").classList.add("active");
     document.body.style.overflow = "hidden";
+    // URL compartible: ?producto=ID
+    if (!skipHistory) {
+      try { history.pushState({ producto: productId }, "", "?producto=" + productId); } catch (e) { /* noop */ }
+    }
   }
-  function closeModal() {
+  function closeModal(skipHistory) {
     $("modalOverlay").classList.remove("active");
     document.body.style.overflow = "";
     currentModalProduct = null;
+    if (!skipHistory && /[?&]producto=/.test(location.search)) {
+      try { history.pushState({}, "", location.pathname); } catch (e) { /* noop */ }
+    }
   }
   function updateModalContent() {
     const product = currentModalProduct;
@@ -592,8 +648,8 @@
       )
       .join("");
     const price = currentModalSize ? sizes[currentModalSize] : null;
-    $("modalPrice").textContent = price
-      ? formatPrice(price) + " · " + currentModalSize
+    $("modalPrice").innerHTML = price
+      ? `${esc(formatPrice(price))} <span class="price-size-badge">${esc(currentModalSize)}</span>`
       : "Selecciona tamaño";
   }
   $("tabFull").addEventListener("click", function () {
@@ -621,8 +677,14 @@
         : currentModalProduct.decantImage;
     flyToCart(flyImg, this);
     addToCart(currentModalProduct.id, currentModalView, currentModalSize);
-    closeModal();
-    openCart();
+    // micro-check ✓ antes de cerrar
+    const btn = this;
+    btn.classList.add("added");
+    setTimeout(() => {
+      btn.classList.remove("added");
+      closeModal();
+      openCart();
+    }, 550);
   });
   $("modalOverlay").addEventListener("click", function (e) {
     if (e.target === this) closeModal();
@@ -754,6 +816,7 @@
     if (promo && counter) {
       const qty = promo.quantity;
       counter.textContent = `Seleccionados: ${selectedPackProducts.length} de ${qty}`;
+      counter.classList.toggle("complete", selectedPackProducts.length === qty);
     }
   }
   function renderPackSizeOptions() {
@@ -776,11 +839,15 @@
       btn.classList.toggle("selected", btn.dataset.size === size);
     });
     const option = currentPackPromo.options.find((o) => o.size === size);
+    const priceEl = $("packGroupPrice");
     if (option) {
       packGroupPrice = option.price;
-      $("packGroupPrice").textContent = `Precio: ${formatPrice(packGroupPrice)}`;
+      priceEl.textContent = `Precio: ${formatPrice(packGroupPrice)}`;
+      priceEl.classList.remove("price-anim");
+      void priceEl.offsetWidth;
+      priceEl.classList.add("price-anim");
     } else {
-      $("packGroupPrice").textContent = "";
+      priceEl.textContent = "";
     }
     const productGrid = $("packProductGrid");
     const counterEl = $("packCounter");
@@ -865,8 +932,12 @@
       : "✅ ¡Pack añadido al carrito!";
     showToast(mensaje);
     pulseCartCount();
-    closePackModal();
-    openCart();
+    if (packBtn) packBtn.classList.add("added");
+    setTimeout(() => {
+      if (packBtn) packBtn.classList.remove("added");
+      closePackModal();
+      openCart();
+    }, 550);
   }
   window.confirmPack = confirmPack;
   $("packModalOverlay").addEventListener("click", function (e) {
@@ -922,6 +993,7 @@
       : product.category === "arabe" ? "Árabe"
       : product.category === "deluxe" ? "Deluxe"
       : "Diseñador";
+    const stockHTML = product.tester ? "" : `<span class="stock-chip">${stockLabel(product.id)}</span>`;
     return `
       <div class="product-card reveal-item" data-product-id="${product.id}">
         <div class="img-wrapper">
@@ -932,10 +1004,18 @@
           <div class="product-category">${catLabel} · ${esc(product.gender)}</div>
           <div class="product-name">${esc(product.name)}</div>
           <div class="product-brand">${esc(product.brand)}</div>
-          <div class="product-price">${priceText}</div>
+          <div class="product-price-row">
+            <span class="product-price">${priceText}</span>
+            ${stockHTML}
+          </div>
           <button class="btn-add" data-add-id="${product.id}">Ver y Comprar</button>
         </div>
       </div>`;
+  }
+  // Stock simulado, determinista por id (no cambia al recargar).
+  function stockLabel(id) {
+    const opts = ["Quedan 2", "Quedan 3", "Quedan 5", "Quedan 8", "Últimas unidades"];
+    return opts[id % opts.length];
   }
 
   /* ══════════════════════════════════════════════════════════════
@@ -1045,32 +1125,41 @@
           ? `${promo.quantity} perfumes · Elige tamaño`
           : `${promo.quantity} perfume(s) · ${promo.size}`;
 
-        // Badge
+        // Badge (flota sobre la banda de imagen)
         const badgeHtml = promo.badge
           ? `<span class="promo-badge">${esc(promo.badge)}</span>`
           : "";
 
-        // Imagen o icono (con fallback)
-        const mediaHtml = imageUrl
-          ? `<img src="${esc(imageUrl)}"${imgSrcsetAttrs(imageUrl)} alt="${esc(promo.name)}" class="promo-img" loading="lazy" decoding="async" onload="this.classList.add('img-loaded');" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />`
+        // Banda de imagen (40% superior). El placeholder dorado con icono + cantidad
+        // queda detrás; si la imagen real carga, la cubre; si falta (404), se elimina
+        // y se ve el placeholder. Cuando subas la foto real a esa ruta, aparece sola.
+        const promoIcon = promo.icon || getCategoryIcon(promo.category);
+        const countLabel = promo.quantity
+          ? `${promo.quantity} decants`
+          : "Pack";
+        const imgHtml = imageUrl
+          ? `<img src="${esc(imageUrl)}"${imgSrcsetAttrs(imageUrl)} alt="${esc(promo.name)}" class="promo-img" loading="lazy" decoding="async" onload="this.classList.add('img-loaded')" onerror="this.remove()" />`
           : "";
-
-        const iconHtml = !imageUrl
-          ? `<div class="promo-icon">${getCategoryIcon(promo.category)}</div>`
-          : `<div class="promo-icon" style="display:none;">${getCategoryIcon(promo.category)}</div>`;
 
         return `
           <div class="promo-card reveal-item" data-promo-id="${esc(promo.id)}">
-            ${badgeHtml}
-            ${mediaHtml}
-            ${iconHtml}
-            <h3>${esc(promo.name)}</h3>
-            <p class="promo-desc">${esc(promo.desc)}</p>
-            <p class="promo-meta">📦 ${infoLine}</p>
-            <div class="promo-price">${priceHtml}</div>
-            <button class="btn-add" data-promo-id="${esc(promo.id)}" aria-label="Seleccionar perfumes para ${esc(promo.name)}">
-              Seleccionar Perfumes
-            </button>
+            <div class="promo-media" data-cat="${esc(promo.category)}">
+              <div class="promo-media-fallback" aria-hidden="true">
+                <span class="promo-media-icon">${promoIcon}</span>
+                <span class="promo-media-count">${esc(countLabel)}</span>
+              </div>
+              ${imgHtml}
+              ${badgeHtml}
+            </div>
+            <div class="promo-body">
+              <h3>${esc(promo.name)}</h3>
+              <p class="promo-desc">${esc(promo.desc)}</p>
+              <p class="promo-meta">📦 ${infoLine}</p>
+              <div class="promo-price">${priceHtml}</div>
+              <button class="btn-add" data-promo-id="${esc(promo.id)}" aria-label="Seleccionar perfumes para ${esc(promo.name)}">
+                Seleccionar Perfumes
+              </button>
+            </div>
           </div>`;
       })
       .join("");
@@ -1388,8 +1477,68 @@
       `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(mensaje)}`,
       "_blank",
     );
+    // Guardar el pedido para el panel de administración
+    saveOrderRecord({ nombre, apellido, telefono, dni, direccion, distrito, referencia });
     showToast("📲 Redirigiendo a WhatsApp...");
+    notifyOrderSent();
+    // Página de agradecimiento post-compra (tras abrir WhatsApp)
+    setTimeout(() => { window.location.href = "gracias.html"; }, 1600);
   };
+
+  // Guarda el pedido en localStorage (paco_pedidos) para el panel admin.
+  function saveOrderRecord(datos) {
+    try {
+      const now = new Date();
+      const pad = (n) => String(n).padStart(2, "0");
+      const stamp = `${now.getFullYear()}${pad(now.getMonth() + 1)}${pad(now.getDate())}-${pad(now.getHours())}${pad(now.getMinutes())}${pad(now.getSeconds())}`;
+      const fecha = `${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())} ${pad(now.getHours())}:${pad(now.getMinutes())}`;
+      const productos = cart.map((item) => ({
+        nombre: item.name,
+        cantidad: item.qty,
+        precio: item.price,
+        size: item.size || "",
+      }));
+      const pedido = {
+        id: "pedido-" + stamp,
+        fecha,
+        nombre: datos.nombre,
+        apellido: datos.apellido,
+        telefono: datos.telefono,
+        dni: datos.dni,
+        direccion: datos.direccion,
+        distrito: datos.distrito,
+        referencia: datos.referencia,
+        productos,
+        total: getCartTotal(),
+        estado: "Pendiente",
+      };
+      let arr = [];
+      try { arr = JSON.parse(localStorage.getItem("paco_pedidos")) || []; } catch (e) { arr = []; }
+      if (!Array.isArray(arr)) arr = [];
+      arr.unshift(pedido);
+      localStorage.setItem("paco_pedidos", JSON.stringify(arr));
+    } catch (e) { /* almacenamiento no disponible */ }
+  }
+
+  // Notificación del navegador tras enviar el pedido. Pide permiso en la
+  // primera compra exitosa; en las siguientes muestra la notificación si está concedido.
+  function notifyOrderSent() {
+    if (!("Notification" in window)) return;
+    const show = () => {
+      try {
+        new Notification("Paco Fragancias", {
+          body: "✅ Pedido enviado a WhatsApp. Te contactaremos pronto.",
+          icon: "logo.webp",
+          badge: "logo.webp",
+        });
+      } catch (e) { /* algunos navegadores requieren SW para notificar */ }
+    };
+    if (Notification.permission === "granted") {
+      show();
+    } else if (Notification.permission === "default") {
+      Notification.requestPermission().then((p) => { if (p === "granted") show(); });
+    }
+  }
 
   /* ══════════════════════════════════════════════════════════════
      SCROLL REVEAL
@@ -1415,7 +1564,7 @@
   // Red de seguridad para skeletons: marca como cargadas las imágenes que ya
   // estaban completas en caché antes de adjuntar el handler onload inline.
   function hydrateLoadedImages() {
-    document.querySelectorAll(".img-wrapper img:not(.img-loaded), .promo-img:not(.img-loaded)").forEach((img) => {
+    document.querySelectorAll(".img-wrapper img:not(.img-loaded), .promo-img:not(.img-loaded), .pill-bg img:not(.img-loaded)").forEach((img) => {
       if (img.complete && img.naturalWidth > 0) {
         img.classList.add("img-loaded");
         const wrap = img.closest(".img-wrapper");
@@ -1632,6 +1781,260 @@
   });
 
   /* ══════════════════════════════════════════════════════════════
+     EFECTOS 3D / MICROINTERACCIONES
+  ══════════════════════════════════════════════════════════════ */
+  /* Recomendador inteligente: clasifica por las notas reales del perfume */
+  const NOTE_KEYWORDS = {
+    fresco: ["limón", "limon", "bergamota", "menta", "acuátic", "acuatic", "marin", "pomelo", "mandarina", "cítric", "citric", "neroli", "verde", "hoja"],
+    dulce: ["vainilla", "caramelo", "miel", "pralin", "chocolate", "toffee", "coco", "dátil", "datil", "azúcar", "frutas", "fruto", "cereza", "mango"],
+    amaderado: ["cedro", "sándalo", "sandalo", "oud", "pachulí", "pachuli", "cuero", "canela", "pimienta", "tabaco", "ámbar", "ambar", "incienso", "vetiver", "haba tonka"],
+    floral: ["rosa", "jazmín", "jazmin", "lavanda", "iris", "violeta", "azahar", "flor", "tuberosa", "ylang"],
+  };
+  function classifyFamilies(p) {
+    const notes = ((p.notes || "") + " " + (p.description || "")).toLowerCase();
+    const fams = new Set();
+    for (const fam in NOTE_KEYWORDS) {
+      if (NOTE_KEYWORDS[fam].some((k) => notes.includes(k))) fams.add(fam);
+    }
+    return fams;
+  }
+  function shuffle(arr) {
+    const a = arr.slice();
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  }
+  /* Cuestionario interactivo de 4 pasos */
+  const QUIZ_STEPS = [
+    { key: "genero", q: "¿Para quién es?", opts: [{ v: "masculino", l: "👨 Hombre" }, { v: "femenino", l: "👩 Mujer" }, { v: "unisex", l: "🧑 Unisex" }] },
+    { key: "ocasion", q: "¿Para qué ocasión?", opts: [{ v: "diario", l: "☀️ Uso diario" }, { v: "trabajo", l: "💼 Trabajo / Oficina" }, { v: "noche", l: "🌙 Noche / Fiestas" }, { v: "cita", l: "❤️ Citas románticas" }] },
+    { key: "tipo", q: "¿Qué tipo de fragancia prefieres?", opts: [{ v: "fresco", l: "🍋 Fresca / Cítrica" }, { v: "dulce", l: "🍭 Dulce / Golosa" }, { v: "amaderado", l: "🌲 Amaderada / Especiada" }, { v: "floral", l: "🌸 Floral" }] },
+    { key: "intensidad", q: "¿Qué intensidad buscas?", opts: [{ v: "ligera", l: "🌤️ Ligera / Discreta" }, { v: "moderada", l: "⚡ Moderada / Versátil" }, { v: "intensa", l: "🔥 Intensa / Duradera" }] },
+  ];
+  const OCA_FAM = { diario: ["fresco", "floral"], trabajo: ["fresco", "amaderado"], noche: ["amaderado", "dulce"], cita: ["dulce", "floral", "amaderado"] };
+  const INT_FAM = { ligera: ["fresco", "floral"], moderada: ["fresco", "floral", "dulce", "amaderado"], intensa: ["amaderado", "dulce"] };
+  let quizIndex = 0;
+  const quizAnswers = {};
+
+  function renderQuizProgress() {
+    const p = $("quizProgress");
+    if (!p) return;
+    const done = quizAnswers.__done;
+    p.innerHTML = QUIZ_STEPS.map((_, i) =>
+      `<span class="quiz-dot${(done || i <= quizIndex) ? " filled" : ""}${(!done && i === quizIndex) ? " current" : ""}"></span>`,
+    ).join("");
+  }
+  function renderQuizStep() {
+    const stepEl = $("quizStep");
+    const grid = $("recoGrid");
+    const restart = $("quizRestart");
+    if (!stepEl) return;
+    quizAnswers.__done = false;
+    if (grid) grid.innerHTML = "";
+    if (restart) restart.style.display = "none";
+    renderQuizProgress();
+    const step = QUIZ_STEPS[quizIndex];
+    stepEl.classList.remove("quiz-in"); void stepEl.offsetWidth; stepEl.classList.add("quiz-in");
+    stepEl.innerHTML =
+      `<h3 class="quiz-q">${esc(step.q)}</h3>` +
+      `<div class="quiz-opts">` +
+      step.opts.map((o) => `<button class="quiz-opt" data-v="${esc(o.v)}" type="button">${esc(o.l)}</button>`).join("") +
+      `</div>`;
+  }
+  function answerQuiz(v) {
+    const step = QUIZ_STEPS[quizIndex];
+    quizAnswers[step.key] = v;
+    const btn = $("quizStep").querySelector('.quiz-opt[data-v="' + v + '"]');
+    if (btn) btn.classList.add("selected");
+    setTimeout(() => {
+      if (quizIndex < QUIZ_STEPS.length - 1) { quizIndex++; renderQuizStep(); }
+      else showQuizResults();
+    }, 340);
+  }
+  function scoreProduct(p, a) {
+    const fams = classifyFamilies(p);
+    let s = 0;
+    if (a.tipo && fams.has(a.tipo)) s += 2;
+    if (a.ocasion && (OCA_FAM[a.ocasion] || []).some((f) => fams.has(f))) s += 1;
+    if (a.intensidad && (INT_FAM[a.intensidad] || []).some((f) => fams.has(f))) s += 1;
+    if (p.featured) s += 1;
+    return s;
+  }
+  function showQuizResults() {
+    quizAnswers.__done = true;
+    renderQuizProgress();
+    const stepEl = $("quizStep");
+    const grid = $("recoGrid");
+    const restart = $("quizRestart");
+    const a = quizAnswers;
+    const genderMap = { masculino: ["masculino", "unisex"], femenino: ["femenino", "unisex"], unisex: ["unisex"] };
+    const allow = genderMap[a.genero] || ["masculino", "femenino", "unisex"];
+    let pool = products.filter((p) => !p.tester && Object.keys(p.decantSizes || {}).length && allow.includes(p.gender));
+    if (pool.length < 6) pool = products.filter((p) => !p.tester && Object.keys(p.decantSizes || {}).length);
+    const ranked = shuffle(pool).map((p) => ({ p, s: scoreProduct(p, a) })).sort((x, y) => y.s - x.s);
+    const items = ranked.slice(0, 6).map((r) => r.p);
+    if (stepEl) stepEl.innerHTML = `<h3 class="quiz-q quiz-result-title">✨ Tus fragancias ideales</h3>`;
+    grid.classList.remove("reco-fade-in"); void grid.offsetWidth;
+    grid.innerHTML = items.map((p, i) => {
+      const sizes = Object.values(p.decantSizes || {});
+      const min = sizes.length ? Math.min(...sizes) : null;
+      const price = min ? `Desde ${formatPrice(min)}` : "Consultar";
+      return `
+        <div class="reco-card" data-product-id="${p.id}" role="button" tabindex="0" aria-label="Ver ${esc(p.name)}" style="animation-delay:${(i * 0.05).toFixed(2)}s">
+          <div class="reco-img"><img src="${esc(p.cardImage)}" alt="${esc(p.name)}" loading="lazy" decoding="async" onerror="this.style.display='none'" /></div>
+          <div class="reco-info">
+            <div class="reco-name">${esc(p.name)}</div>
+            <div class="reco-brand">${esc(p.brand)}</div>
+            <div class="reco-price">${price}</div>
+          </div>
+        </div>`;
+    }).join("");
+    grid.classList.add("reco-fade-in");
+    if (restart) restart.style.display = "block";
+  }
+  function setupRecommender() {
+    const stepEl = $("quizStep");
+    if (!stepEl) return;
+    stepEl.addEventListener("click", (e) => {
+      const b = e.target.closest(".quiz-opt");
+      if (b) answerQuiz(b.dataset.v);
+    });
+    const grid = $("recoGrid");
+    const open = (el) => { const id = parseInt(el.dataset.productId, 10); if (id) openModal(id); };
+    grid.addEventListener("click", (e) => { const c = e.target.closest(".reco-card"); if (c) open(c); });
+    grid.addEventListener("keydown", (e) => {
+      if (e.key !== "Enter" && e.key !== " ") return;
+      const c = e.target.closest(".reco-card"); if (c) { e.preventDefault(); open(c); }
+    });
+    const rb = $("quizRestartBtn");
+    if (rb) rb.addEventListener("click", () => { quizIndex = 0; Object.keys(quizAnswers).forEach((k) => delete quizAnswers[k]); renderQuizStep(); });
+    renderQuizStep();
+  }
+
+  /* Carrusel de reseñas (flechas) */
+  function setupReviewsCarousel() {
+    const track = $("reviewsTrack");
+    const prev = $("revPrev");
+    const next = $("revNext");
+    if (!track || !prev || !next) return;
+    const step = () => {
+      const card = track.querySelector(".review-card");
+      return card ? card.getBoundingClientRect().width + 21 : 320;
+    };
+    function updateArrows() {
+      const maxScroll = track.scrollWidth - track.clientWidth - 2;
+      prev.hidden = track.scrollLeft <= 2;
+      next.hidden = track.scrollLeft >= maxScroll;
+    }
+    prev.addEventListener("click", () => track.scrollBy({ left: -step(), behavior: "smooth" }));
+    next.addEventListener("click", () => track.scrollBy({ left: step(), behavior: "smooth" }));
+    track.addEventListener("scroll", updateArrows, { passive: true });
+    window.addEventListener("resize", updateArrows);
+    updateArrows();
+  }
+
+  /* Deep-link de producto: ?producto=ID abre el modal */
+  function applyProductRoute(skipHistory) {
+    const id = new URLSearchParams(location.search).get("producto");
+    if (id) {
+      const pid = parseInt(id, 10);
+      if (getProductById(pid)) openModal(pid, skipHistory !== false);
+    }
+  }
+
+  /* Recordatorio de carrito abandonado (una vez por sesión) */
+  function showCartReminder() {
+    const t = $("toast");
+    if (!t || cart.length === 0) return;
+    const count = getCartCount();
+    t.className = "toast toast-info toast-cart";
+    t.innerHTML =
+      `<span class="toast-emoji" aria-hidden="true">🛒</span>` +
+      `<span class="toast-msg">Tienes ${count} producto${count > 1 ? "s" : ""} en tu carrito. ¿Finalizar tu pedido?</span>` +
+      `<button class="toast-action" type="button">Ir al carrito</button>`;
+    void t.offsetWidth;
+    t.classList.add("show");
+    const btn = t.querySelector(".toast-action");
+    if (btn) btn.addEventListener("click", () => { t.classList.remove("show"); openCart(); });
+    clearTimeout(t._timeout);
+    t._timeout = setTimeout(() => t.classList.remove("show"), 6500);
+  }
+  function maybeRemindCart() {
+    try {
+      if (cart.length > 0 && !sessionStorage.getItem("paco_cart_reminded")) {
+        sessionStorage.setItem("paco_cart_reminded", "1");
+        setTimeout(showCartReminder, 1600);
+      }
+    } catch (e) { /* sessionStorage no disponible */ }
+  }
+
+  /* Botón flotante de Instagram (fade-in tras 2s) */
+  function setupInstagramFab() {
+    const fab = $("igFab");
+    if (!fab) return;
+    setTimeout(() => fab.classList.add("visible"), 2000);
+  }
+
+  /* Avisos de conexión (online / offline) */
+  function setupConnectivityToasts() {
+    window.addEventListener("offline", () =>
+      showToast("📡 Sin conexión. Los productos ya visitados siguen disponibles.", "info"));
+    window.addEventListener("online", () =>
+      showToast("✅ Conexión restablecida.", "success"));
+  }
+
+  // Ripple dorado desde el punto de clic
+  function setupRipple() {
+    const SEL = ".btn, .btn-add, .btn-add-large, .btn-checkout, .btn-whatsapp, .btn-empty-action, .btn-outline-dark";
+    document.addEventListener("click", (e) => {
+      const btn = e.target.closest(SEL);
+      if (!btn) return;
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+      const r = btn.getBoundingClientRect();
+      const size = Math.max(r.width, r.height);
+      const ink = document.createElement("span");
+      ink.className = "ripple-ink";
+      ink.style.width = ink.style.height = size + "px";
+      ink.style.left = e.clientX - r.left - size / 2 + "px";
+      ink.style.top = e.clientY - r.top - size / 2 + "px";
+      btn.appendChild(ink);
+      setTimeout(() => ink.remove(), 600);
+    });
+  }
+
+  // Datos estructurados ItemList de los destacados (SEO)
+  function injectItemList() {
+    const featured = products.filter((p) => p.featured).slice(0, 12);
+    if (!featured.length) return;
+    const data = {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      name: "Fragancias Destacadas · Paco Fragancias",
+      itemListElement: featured.map((p, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        name: p.name,
+        item: { "@type": "Product", name: p.name, brand: p.brand, image: p.cardImage },
+      })),
+    };
+    const s = document.createElement("script");
+    s.type = "application/ld+json";
+    s.textContent = JSON.stringify(data);
+    document.head.appendChild(s);
+  }
+
+  // Registro del Service Worker (PWA)
+  function registerSW() {
+    if (!("serviceWorker" in navigator)) return;
+    if (location.protocol !== "https:" && location.hostname !== "localhost" && location.hostname !== "127.0.0.1") return;
+    window.addEventListener("load", () => {
+      navigator.serviceWorker.register("sw.js").catch((e) => { if (IS_DEV) console.warn("SW:", e); });
+    });
+  }
+
+  /* ══════════════════════════════════════════════════════════════
      INIT
   ══════════════════════════════════════════════════════════════ */
   function init() {
@@ -1645,9 +2048,27 @@
     setupCheckoutValidation();
     setupHeroParallax();
     setupThemeToggle();
+    setupRipple();
+    setupRecommender();
+    setupReviewsCarousel();
+    setupConnectivityToasts();
+    setupInstagramFab();
+    maybeRemindCart();
+    injectItemList();
+    registerSW();
     navigateTo("home");
     applyHashRoute();
     window.addEventListener("hashchange", applyHashRoute);
+    // Deep-link de producto al cargar + navegación con back/forward
+    applyProductRoute(false);
+    window.addEventListener("popstate", () => {
+      const id = new URLSearchParams(location.search).get("producto");
+      if (id && getProductById(parseInt(id, 10))) {
+        openModal(parseInt(id, 10), true);
+      } else if ($("modalOverlay").classList.contains("active")) {
+        closeModal(true);
+      }
+    });
 
     // Trust cards reveal (they're static, not rendered dynamically)
     setTimeout(() => observeRevealElements(), 100);

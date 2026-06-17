@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0d0a06" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Admin · Paco Fragancias</title>
+  <link rel="icon" type="image/webp" href="logo.webp" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Jost:wght@300;400;500;600;700&display=swap" />
+  <script>
+    (function () {
+      try { var t = localStorage.getItem("paco_theme") || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"); document.documentElement.setAttribute("data-theme", t); }
+      catch (e) { document.documentElement.setAttribute("data-theme", "light"); }
+    })();
+  </script>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .adm-wrap { max-width: 1100px; margin: 0 auto; padding: 2.5rem 1.2rem 4rem; }
+    .adm-head { display: flex; align-items: center; gap: .8rem; margin-bottom: 1.6rem; flex-wrap: wrap; }
+    .adm-head img { width: 44px; height: 44px; }
+    .adm-head h1 { font-family: var(--font-display); font-weight: 500; font-size: 1.7rem; color: var(--text-primary); }
+    .adm-head .adm-spacer { flex: 1; }
+    /* Login */
+    .adm-login { max-width: 380px; margin: 8vh auto; background: var(--surface); border: 1px solid var(--border-light); border-radius: var(--r-lg); padding: 2.4rem 2rem; box-shadow: var(--shadow-lg); text-align: center; }
+    .adm-login img { width: 60px; height: 60px; margin-bottom: 1rem; }
+    .adm-login h2 { font-family: var(--font-display); font-weight: 500; font-size: 1.6rem; color: var(--text-primary); margin-bottom: .3rem; }
+    .adm-login p { color: var(--text-muted); font-size: .85rem; margin-bottom: 1.4rem; }
+    .adm-login input { width: 100%; padding: .85rem 1rem; border-radius: var(--r-sm); border: 1.5px solid var(--border); background: var(--surface-warm); color: var(--text-primary); font-size: .95rem; margin-bottom: 1rem; font-family: var(--font-body); }
+    .adm-login input:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 4px rgba(184,146,74,.12); }
+    .adm-err { color: #d24b4b; font-size: .8rem; margin-top: -.5rem; margin-bottom: .8rem; min-height: 1em; }
+    /* Toolbar */
+    .adm-toolbar { display: flex; gap: .6rem; flex-wrap: wrap; align-items: center; margin-bottom: 1.4rem; }
+    .adm-toolbar select, .adm-toolbar button { font-family: var(--font-body); font-size: .82rem; }
+    .adm-toolbar select { padding: .55rem .8rem; border-radius: var(--r-pill); border: 1.5px solid var(--border); background: var(--surface-warm); color: var(--text-primary); }
+    .adm-btn { padding: .55rem 1.1rem; border-radius: var(--r-pill); border: 1.5px solid var(--gold); background: transparent; color: var(--gold-deep); font-weight: 600; cursor: pointer; transition: all .3s ease; }
+    .adm-btn:hover { background: var(--gold); color: #fff; }
+    .adm-count { color: var(--text-muted); font-size: .82rem; margin-left: auto; }
+    /* Orders */
+    .adm-orders { display: flex; flex-direction: column; gap: 1rem; }
+    .adm-order { background: var(--surface); border: 1px solid var(--border-light); border-radius: var(--r-md); padding: 1.2rem 1.3rem; box-shadow: var(--shadow-xs); }
+    .adm-order-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; flex-wrap: wrap; margin-bottom: .7rem; }
+    .adm-order-cliente { font-weight: 700; color: var(--text-primary); font-size: 1rem; }
+    .adm-order-sub { color: var(--text-muted); font-size: .76rem; margin-top: .15rem; }
+    .adm-order-prods { font-size: .82rem; color: var(--text-secondary); line-height: 1.7; border-top: 1px dashed var(--border); padding-top: .6rem; margin-top: .2rem; }
+    .adm-order-foot { display: flex; justify-content: space-between; align-items: center; margin-top: .7rem; gap: 1rem; flex-wrap: wrap; }
+    .adm-total { font-family: var(--font-display); font-size: 1.2rem; font-weight: 700; color: var(--gold-deep); }
+    .adm-estado { padding: .3rem .8rem; border-radius: var(--r-pill); font-size: .72rem; font-weight: 700; border: 1.5px solid; cursor: pointer; background: var(--surface-warm); font-family: var(--font-body); }
+    .adm-estado[data-e="Pendiente"] { color: #b8860b; border-color: #e0c060; }
+    .adm-estado[data-e="Enviado"] { color: #2563a8; border-color: #8fb4e0; }
+    .adm-estado[data-e="Entregado"] { color: #2e7d4f; border-color: #8fd0aa; }
+    .adm-empty { text-align: center; color: var(--text-muted); padding: 3rem 1rem; }
+    @media (max-width: 560px) { .adm-count { margin-left: 0; width: 100%; } }
+  </style>
+</head>
+<body>
+  <!-- LOGIN -->
+  <div id="loginView">
+    <form class="adm-login" id="loginForm" autocomplete="off">
+      <img src="logo.webp" alt="Paco Fragancias" width="60" height="60" />
+      <h2>Panel de Administración</h2>
+      <p>Ingresa la contraseña para ver los pedidos.</p>
+      <input type="password" id="admPass" placeholder="Contraseña" aria-label="Contraseña" />
+      <div class="adm-err" id="admErr"></div>
+      <button type="submit" class="btn btn-gold" style="width:100%;"><span>Ingresar</span></button>
+    </form>
+  </div>
+
+  <!-- PANEL -->
+  <div id="panelView" class="adm-wrap" style="display:none;">
+    <div class="adm-head">
+      <img src="logo.webp" alt="" />
+      <h1>Pedidos</h1>
+      <span class="adm-spacer"></span>
+      <a class="adm-btn" href="index.html" style="text-decoration:none;">← Volver a la tienda</a>
+      <button class="adm-btn" id="logoutBtn">Cerrar sesión</button>
+    </div>
+    <div class="adm-toolbar">
+      <label>Estado:
+        <select id="fEstado">
+          <option value="all">Todos</option>
+          <option value="Pendiente">Pendiente</option>
+          <option value="Enviado">Enviado</option>
+          <option value="Entregado">Entregado</option>
+        </select>
+      </label>
+      <label>Fecha:
+        <select id="fFecha">
+          <option value="all">Todas</option>
+          <option value="hoy">Hoy</option>
+          <option value="semana">Esta semana</option>
+          <option value="mes">Este mes</option>
+        </select>
+      </label>
+      <button class="adm-btn" id="copyBtn">📋 Copiar</button>
+      <button class="adm-btn" id="downloadBtn">⬇️ Descargar .txt</button>
+      <span class="adm-count" id="admCount"></span>
+    </div>
+    <div class="adm-orders" id="ordersList"></div>
+  </div>
+
+  <script>
+    (function () {
+      "use strict";
+      var PASS = "paco2024";
+      var KEY = "paco_pedidos";
+      var $ = function (id) { return document.getElementById(id); };
+
+      function pad(n) { return String(n).padStart(2, "0"); }
+      function demoSeed() {
+        var now = new Date(), D = 86400000;
+        function f(ms) { var d = new Date(now.getTime() - ms); return d.getFullYear() + "-" + pad(d.getMonth() + 1) + "-" + pad(d.getDate()) + " " + pad(d.getHours()) + ":" + pad(d.getMinutes()); }
+        function mk(ms, nombre, apellido, tel, dni, dir, dist, ref, prods, estado) {
+          var total = prods.reduce(function (s, p) { return s + p.precio * p.cantidad; }, 0);
+          return { id: "demo-" + ms, fecha: f(ms), nombre: nombre, apellido: apellido, telefono: tel, dni: dni, direccion: dir, distrito: dist, referencia: ref, productos: prods, total: total, estado: estado };
+        }
+        return [
+          mk(2 * 3600000, "María", "García", "987654321", "45612378", "Av. Larco 120", "Miraflores", "Frente al parque", [{ nombre: "Yara", cantidad: 1, precio: 19.90, size: "5ml" }, { nombre: "Khamrah", cantidad: 1, precio: 34.90, size: "10ml" }], "Pendiente"),
+          mk(6 * 3600000, "Carlos", "Rojas", "912345678", "40998877", "Calle Las Begonias 450", "San Isidro", "", [{ nombre: "9 PM", cantidad: 1, precio: 44.90, size: "10ml" }], "Enviado"),
+          mk(1 * D, "Luis", "Mendoza", "999111222", "71234560", "Av. Caminos del Inca 800", "Surco", "Edificio azul", [{ nombre: "Pack 3 Diseñador", cantidad: 1, precio: 99.90, size: "3 × 5ml" }], "Pendiente"),
+          mk(2 * D, "Ana", "Paredes", "977888999", "09887766", "Av. La Fontana 1200", "La Molina", "", [{ nombre: "Stronger With You Intensely", cantidad: 1, precio: 39.90, size: "5ml" }, { nombre: "Le Male Elixir", cantidad: 1, precio: 29.90, size: "3ml" }], "Entregado"),
+          mk(4 * D, "Diego", "Salas", "933444555", "47711223", "Jr. Pizarro 230", "Trujillo", "Cerca a la plaza", [{ nombre: "Game of Spades Royale", cantidad: 2, precio: 24.90, size: "5ml" }], "Enviado"),
+          mk(9 * D, "Rosa", "Núñez", "955666777", "29554433", "Calle Mercaderes 50", "Arequipa", "", [{ nombre: "Yara Candy", cantidad: 1, precio: 19.90, size: "5ml" }, { nombre: "Mayar", cantidad: 1, precio: 14.90, size: "3ml" }], "Entregado"),
+          mk(20 * D, "Jorge", "Ramírez", "944333222", "16778899", "Av. Balta 600", "Chiclayo", "", [{ nombre: "Club de Nuit Intense Man", cantidad: 1, precio: 34.90, size: "10ml" }], "Entregado")
+        ];
+      }
+      function getOrders() {
+        var arr = null;
+        try { arr = JSON.parse(localStorage.getItem(KEY)); } catch (e) {}
+        if (Array.isArray(arr) && arr.length) return arr;
+        return demoSeed(); // demo solo si no hay pedidos reales (no se persiste)
+      }
+      function saveOrders(o) { try { localStorage.setItem(KEY, JSON.stringify(o)); } catch (e) {} }
+
+      var orders = getOrders();
+
+      function fmt(p) { return "S/ " + Number(p).toFixed(2); }
+      function parseFecha(s) {
+        // "YYYY-MM-DD HH:MM" → Date
+        var m = /^(\d{4})-(\d{2})-(\d{2})[ T](\d{2}):(\d{2})/.exec(s || "");
+        return m ? new Date(+m[1], +m[2] - 1, +m[3], +m[4], +m[5]) : new Date(s);
+      }
+      function fmtDate(s) {
+        var d = parseFecha(s);
+        return d.toLocaleDateString("es-PE", { day: "2-digit", month: "short", year: "numeric" }) +
+          " · " + d.toLocaleTimeString("es-PE", { hour: "2-digit", minute: "2-digit" });
+      }
+      function inRange(s, range) {
+        if (range === "all") return true;
+        var now = new Date(), d = parseFecha(s);
+        if (range === "hoy") return d.toDateString() === now.toDateString();
+        if (range === "semana") return (now - d) <= 7 * 86400000;
+        if (range === "mes") return d.getMonth() === now.getMonth() && d.getFullYear() === now.getFullYear();
+        return true;
+      }
+      function filtered() {
+        var e = $("fEstado").value, f = $("fFecha").value;
+        return orders.filter(function (o) { return (e === "all" || o.estado === e) && inRange(o.fecha, f); });
+      }
+      var ESTADOS = ["Pendiente", "Enviado", "Entregado"];
+      function esc(s) { return String(s == null ? "" : s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"); }
+      function render() {
+        var list = filtered();
+        $("admCount").textContent = list.length + " pedido(s)";
+        if (!list.length) { $("ordersList").innerHTML = '<div class="adm-empty">No hay pedidos con esos filtros.</div>'; return; }
+        $("ordersList").innerHTML = list.map(function (o) {
+          var prods = (o.productos || []).map(function (pr) { return "• " + esc(pr.nombre) + (pr.size ? " (" + esc(pr.size) + ")" : "") + " × " + pr.cantidad + " — " + fmt(pr.precio * pr.cantidad); }).join("<br>");
+          var ref = o.referencia ? " · 📝 " + esc(o.referencia) : "";
+          var dni = o.dni ? " · 🪪 " + esc(o.dni) : "";
+          return '<div class="adm-order">' +
+            '<div class="adm-order-top"><div><div class="adm-order-cliente">' + esc(o.nombre) + " " + esc(o.apellido || "") + '</div>' +
+            '<div class="adm-order-sub">📞 ' + esc(o.telefono) + dni + ' · 🕒 ' + fmtDate(o.fecha) + '</div>' +
+            '<div class="adm-order-sub">📍 ' + esc(o.direccion || "") + " · " + esc(o.distrito) + ref + '</div></div>' +
+            '<button class="adm-estado" data-e="' + o.estado + '" data-id="' + esc(o.id) + '">' + o.estado + '</button></div>' +
+            '<div class="adm-order-prods">' + prods + '</div>' +
+            '<div class="adm-order-foot"><span class="adm-total">' + fmt(o.total) + '</span></div></div>';
+        }).join("");
+      }
+      function asText() {
+        return filtered().map(function (o) {
+          return fmtDate(o.fecha) + " | " + o.nombre + " " + (o.apellido || "") + " | " + o.telefono + " | " + (o.direccion || "") + ", " + o.distrito +
+            "\n" + (o.productos || []).map(function (pr) { return "  - " + pr.nombre + (pr.size ? " (" + pr.size + ")" : "") + " x" + pr.cantidad + " " + fmt(pr.precio * pr.cantidad); }).join("\n") +
+            "\n  TOTAL: " + fmt(o.total) + " | Estado: " + o.estado;
+        }).join("\n\n");
+      }
+
+      // Login
+      $("loginForm").addEventListener("submit", function (e) {
+        e.preventDefault();
+        if ($("admPass").value === PASS) {
+          sessionStorage.setItem("paco_admin", "1");
+          showPanel();
+        } else {
+          $("admErr").textContent = "Contraseña incorrecta.";
+        }
+      });
+      function showPanel() {
+        $("loginView").style.display = "none";
+        $("panelView").style.display = "block";
+        render();
+      }
+      $("logoutBtn").addEventListener("click", function () { sessionStorage.removeItem("paco_admin"); location.reload(); });
+      $("fEstado").addEventListener("change", render);
+      $("fFecha").addEventListener("change", render);
+      // Cambiar estado al hacer clic (cicla Pendiente→Enviado→Entregado)
+      $("ordersList").addEventListener("click", function (e) {
+        var b = e.target.closest(".adm-estado"); if (!b) return;
+        var id = b.dataset.id;
+        var o = orders.filter(function (x) { return x.id === id; })[0];
+        if (!o) return;
+        var cur = ESTADOS.indexOf(o.estado);
+        o.estado = ESTADOS[(cur + 1) % ESTADOS.length];
+        saveOrders(orders); render();
+      });
+      // Live update: si llega un pedido nuevo en otra pestaña
+      window.addEventListener("storage", function (e) {
+        if (e.key === KEY) { orders = getOrders(); render(); }
+      });
+      $("copyBtn").addEventListener("click", function () {
+        var txt = asText();
+        if (navigator.clipboard) navigator.clipboard.writeText(txt).then(function () { $("copyBtn").textContent = "✓ Copiado"; setTimeout(function () { $("copyBtn").textContent = "📋 Copiar"; }, 1500); });
+      });
+      $("downloadBtn").addEventListener("click", function () {
+        var blob = new Blob([asText()], { type: "text/plain;charset=utf-8" });
+        var a = document.createElement("a");
+        a.href = URL.createObjectURL(blob); a.download = "pedidos_paco.txt"; a.click();
+        URL.revokeObjectURL(a.href);
+      });
+
+      if (sessionStorage.getItem("paco_admin") === "1") showPanel();
+    })();
+  </script>
+</body>
+</html>

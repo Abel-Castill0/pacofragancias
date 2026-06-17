@@ -1,18 +1,18 @@
 /*
- * optimize-images.js — Genera versiones pequeñas (400px) de los webp de producto.
+ * optimize-images.js — Optimiza los webp del sitio.
  *
- * Las cards muestran las imágenes a ~260px, pero los archivos originales son de
- * ~2048px (~1MB c/u). Este script crea copias de 400px de ancho y calidad 80,
- * que el sitio usará automáticamente vía `srcset` cuando actives el flag
- * IMG_OPTIMIZED en script.js.
+ * Jobs:
+ *  1) img/perfumes  → img/perfumes_optimized (400px, q80) — NO destructivo.
+ *     Se usa vía srcset cuando activas IMG_OPTIMIZED = true en script.js.
+ *  2) img/filtros   → SOBRESCRIBE en sitio (800px, q80).
+ *  3) img/promos    → SOBRESCRIBE en sitio (1200px, q80).
  *
- * USO (ejecútalo tú manualmente):
+ * USO:
  *   1) npm install sharp
  *   2) node tools/optimize-images.js
- *   3) En script.js, cambia  const IMG_OPTIMIZED = false;  ->  true
  *
- * Salida: img/perfumes_optimized/<mismo_nombre>.webp
- * No modifica ni borra los originales.
+ * Flags:
+ *   --only=filtros,promos   procesa solo esos jobs (coma-separado: perfumes|filtros|promos)
  */
 "use strict";
 
@@ -30,65 +30,75 @@ try {
 }
 
 const ROOT = path.resolve(__dirname, "..");
-const SRC_DIR = path.join(ROOT, "img", "perfumes");
-const OUT_DIR = path.join(ROOT, "img", "perfumes_optimized");
-
-const TARGET_WIDTH = 400;
 const QUALITY = 80;
 
-async function run() {
-  if (!fs.existsSync(SRC_DIR)) {
-    console.error("❌ No existe la carpeta de origen:", SRC_DIR);
-    process.exit(1);
+// Definición de trabajos. `inPlace: true` sobrescribe los originales.
+const JOBS = [
+  { name: "perfumes", src: "img/perfumes", out: "img/perfumes_optimized", width: 400, inPlace: false },
+  { name: "filtros", src: "img/filtros", out: "img/filtros", width: 800, inPlace: true },
+  { name: "promos", src: "img/promos", out: "img/promos", width: 1200, inPlace: true },
+];
+
+const onlyArg = (process.argv.find((a) => a.startsWith("--only=")) || "").split("=")[1];
+const onlySet = onlyArg ? new Set(onlyArg.split(",").map((s) => s.trim())) : null;
+
+async function processFile(inPath, outPath, width, inPlace) {
+  // Para sobrescribir, sharp no puede leer y escribir el mismo archivo a la vez:
+  // escribimos a un temporal y luego reemplazamos.
+  const target = inPlace ? outPath + ".tmp" : outPath;
+  const meta = await sharp(inPath).metadata();
+  const w = meta.width && meta.width < width ? meta.width : width;
+  await sharp(inPath)
+    .resize({ width: w, withoutEnlargement: true })
+    .webp({ quality: QUALITY })
+    .toFile(target);
+  if (inPlace) {
+    fs.renameSync(target, outPath);
   }
-  if (!fs.existsSync(OUT_DIR)) {
-    fs.mkdirSync(OUT_DIR, { recursive: true });
+}
+
+async function runJob(job) {
+  const srcDir = path.join(ROOT, job.src);
+  const outDir = path.join(ROOT, job.out);
+  if (!fs.existsSync(srcDir)) {
+    console.log(`⏭️  [${job.name}] no existe ${job.src}, omitido.`);
+    return { ok: 0, failed: 0, saved: 0 };
   }
+  if (!fs.existsSync(outDir)) fs.mkdirSync(outDir, { recursive: true });
 
-  const files = fs
-    .readdirSync(SRC_DIR)
-    .filter((f) => f.toLowerCase().endsWith(".webp"));
+  const files = fs.readdirSync(srcDir).filter((f) => f.toLowerCase().endsWith(".webp"));
+  console.log(`\n🔧 [${job.name}] ${files.length} imágenes → ${job.width}px (q${QUALITY})${job.inPlace ? " · sobrescribe" : " · copia a " + job.out}`);
 
-  if (files.length === 0) {
-    console.log("⚠️  No se encontraron .webp en", SRC_DIR);
-    return;
-  }
-
-  console.log(`🔧 Optimizando ${files.length} imágenes a ${TARGET_WIDTH}px (q${QUALITY})...\n`);
-
-  let ok = 0;
-  let skipped = 0;
-  let failed = 0;
-
+  let ok = 0, failed = 0, before = 0, after = 0;
   for (const file of files) {
-    const inPath = path.join(SRC_DIR, file);
-    const outPath = path.join(OUT_DIR, file);
+    const inPath = path.join(srcDir, file);
+    const outPath = path.join(outDir, file);
     try {
-      const meta = await sharp(inPath).metadata();
-      // No agrandar imágenes que ya son pequeñas.
-      const width = meta.width && meta.width < TARGET_WIDTH ? meta.width : TARGET_WIDTH;
-      await sharp(inPath)
-        .resize({ width, withoutEnlargement: true })
-        .webp({ quality: QUALITY })
-        .toFile(outPath);
+      const sizeBefore = fs.statSync(inPath).size;
+      await processFile(inPath, outPath, job.width, job.inPlace);
+      const sizeAfter = fs.statSync(outPath).size;
+      before += sizeBefore; after += sizeAfter;
       ok++;
-      process.stdout.write(`  ✓ ${file}\n`);
+      console.log(`  ✓ ${file}  ${(sizeBefore / 1024).toFixed(0)}KB → ${(sizeAfter / 1024).toFixed(0)}KB`);
     } catch (err) {
       failed++;
       console.error(`  ✗ ${file} — ${err.message}`);
     }
   }
-
-  console.log(
-    `\n✅ Listo. Generadas: ${ok} · Omitidas: ${skipped} · Fallidas: ${failed}`,
-  );
-  console.log(`📁 Carpeta de salida: ${OUT_DIR}`);
-  console.log(
-    "\n👉 Ahora activa el flag en script.js:  const IMG_OPTIMIZED = true;\n",
-  );
+  return { ok, failed, saved: before - after };
 }
 
-run().catch((e) => {
-  console.error(e);
-  process.exit(1);
-});
+async function run() {
+  const jobs = JOBS.filter((j) => !onlySet || onlySet.has(j.name));
+  let totalSaved = 0, totalOk = 0, totalFail = 0;
+  for (const job of jobs) {
+    const r = await runJob(job);
+    totalOk += r.ok; totalFail += r.failed; totalSaved += r.saved;
+  }
+  console.log(`\n✅ Listo. Optimizadas: ${totalOk} · Fallidas: ${totalFail} · Ahorro: ${(totalSaved / 1024 / 1024).toFixed(2)} MB`);
+  if (JOBS.some((j) => j.name === "perfumes" && (!onlySet || onlySet.has("perfumes")))) {
+    console.log("👉 Para usar las versiones de perfumes, pon IMG_OPTIMIZED = true en script.js.");
+  }
+}
+
+run().catch((e) => { console.error(e); process.exit(1); });

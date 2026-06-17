@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0d0a06" />
+  <meta name="robots" content="noindex, follow" />
+  <title>¡Pedido Confirmado! · Paco Fragancias</title>
+  <link rel="icon" type="image/webp" href="logo.webp" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" />
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("paco_theme") || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+        document.documentElement.setAttribute("data-theme", t);
+      } catch (e) { document.documentElement.setAttribute("data-theme", "light"); }
+    })();
+  </script>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .ty-wrap { max-width: 920px; margin: 0 auto; padding: 4rem 1.5rem 5rem; text-align: center; }
+    .ty-logo { width: 72px; height: 72px; margin: 0 auto 1.6rem; filter: drop-shadow(0 8px 22px rgba(184,146,74,.28)); }
+    .ty-check {
+      width: 76px; height: 76px; margin: 0 auto 1.4rem; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center; font-size: 2.4rem; color: #fff;
+      background: linear-gradient(135deg, var(--gold-light), var(--gold-deep));
+      box-shadow: 0 12px 30px rgba(184,146,74,.4); animation: tyPop .5s cubic-bezier(.28,.84,.42,1.2) both;
+    }
+    @keyframes tyPop { 0% { transform: scale(.5); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
+    .ty-title { font-family: var(--font-display); font-weight: 500; font-size: clamp(2rem, 6vw, 3.2rem); color: var(--gold-deep); line-height: 1.1; margin-bottom: .8rem; }
+    .ty-sub { color: var(--text-secondary); font-size: 1.02rem; max-width: 540px; margin: 0 auto 2.6rem; line-height: 1.75; }
+    .ty-rec-title { font-family: var(--font-display); font-size: 1.5rem; color: var(--text-primary); margin-bottom: 1.4rem; font-weight: 500; }
+    .ty-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; margin-bottom: 2.8rem; }
+    .ty-card { background: var(--surface); border: 1px solid var(--border-light); border-radius: var(--r-lg); overflow: hidden; box-shadow: var(--shadow-xs); transition: transform var(--t-base), box-shadow var(--t-base); }
+    .ty-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-gold); }
+    .ty-card .ty-img { aspect-ratio: 1; background: radial-gradient(circle at 50% 38%, #fff, var(--cream-1)); display: flex; align-items: center; justify-content: center; }
+    .ty-card img { width: 100%; height: 100%; object-fit: contain; padding: 1rem; }
+    .ty-card .ty-info { padding: .85rem 1rem 1.1rem; }
+    .ty-card .ty-name { font-family: var(--font-display); font-size: 1.05rem; color: var(--text-primary); }
+    .ty-card .ty-brand { font-size: .74rem; color: var(--text-muted); margin: .1rem 0 .4rem; }
+    .ty-card .ty-price { font-size: .92rem; font-weight: 700; color: var(--gold-deep); }
+    .ty-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    @media (max-width: 560px) { .ty-grid { grid-template-columns: 1fr 1fr; } .ty-grid .ty-card:last-child { grid-column: 1 / -1; max-width: 60%; margin: 0 auto; } }
+  </style>
+</head>
+<body>
+  <main class="ty-wrap">
+    <img src="logo.webp" alt="Paco Fragancias" class="ty-logo" width="72" height="72" decoding="async" />
+    <div class="ty-check" aria-hidden="true">✓</div>
+    <h1 class="ty-title">¡Pedido Confirmado!</h1>
+    <p class="ty-sub">Te contactaremos por WhatsApp para coordinar el pago y envío. Gracias por confiar en nosotros.</p>
+
+    <h2 class="ty-rec-title">También te puede gustar</h2>
+    <div class="ty-grid">
+      <article class="ty-card">
+        <div class="ty-img"><img src="img/perfumes/khamrah.webp" alt="Khamrah" loading="lazy" decoding="async" onerror="this.style.display='none'" /></div>
+        <div class="ty-info"><div class="ty-name">Khamrah</div><div class="ty-brand">Lattafa</div><div class="ty-price">Desde S/ 11.90</div></div>
+      </article>
+      <article class="ty-card">
+        <div class="ty-img"><img src="img/perfumes/9_pm.webp" alt="9 PM" loading="lazy" decoding="async" onerror="this.style.display='none'" /></div>
+        <div class="ty-info"><div class="ty-name">9 PM</div><div class="ty-brand">Afnan</div><div class="ty-price">Desde S/ 11.90</div></div>
+      </article>
+      <article class="ty-card">
+        <div class="ty-img"><img src="img/perfumes/hawas_for_him.webp" alt="Hawas for Him" loading="lazy" decoding="async" onerror="this.style.display='none'" /></div>
+        <div class="ty-info"><div class="ty-name">Hawas for Him</div><div class="ty-brand">Rasasi</div><div class="ty-price">Desde S/ 11.90</div></div>
+      </article>
+    </div>
+
+    <div class="ty-actions">
+      <a class="btn btn-gold" href="index.html">
+        <span>Volver al Catálogo →</span>
+      </a>
+      <a class="btn btn-ghost" href="https://wa.me/51903283353" target="_blank" rel="noopener noreferrer"
+        style="background: var(--whatsapp); border-color: var(--whatsapp); color: #fff;">
+        <span>Seguir en WhatsApp</span>
+      </a>
+    </div>
+  </main>
+</body>
+</html>
