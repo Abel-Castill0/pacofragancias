@@ -192,12 +192,12 @@
     { id: "group-disenador-3u", type: "group", category: "disenador", name: "3 Decants Diseñador", desc: "Elige el tamaño y 3 perfumes de diseñador.", icon: "⭐", image: "img/promos/disenador_3u.webp", allowedCategories: ["disenador"], quantity: 3, options: [ { size: "2ml", price: 49.90 }, { size: "3ml", price: 79.90 }, { size: "5ml", price: 99.90 }, { size: "10ml", price: 189.90 } ] },
     { id: "group-disenador-5u", type: "group", category: "disenador", name: "5 Decants Diseñador", desc: "Elige el tamaño y 5 perfumes de diseñador.", icon: "⭐", image: "img/promos/disenador_5u.webp", allowedCategories: ["disenador"], quantity: 5, options: [ { size: "2ml", price: 89.90 }, { size: "3ml", price: 129.90 }, { size: "5ml", price: 159.90 }, { size: "10ml", price: 289.90 } ] },
     { id: "group-disenador-10u", type: "group", category: "disenador", name: "10 Decants Diseñador", desc: "Elige el tamaño y 10 perfumes de diseñador.", icon: "⭐", image: "img/promos/disenador_10u.webp", allowedCategories: ["disenador"], quantity: 10, options: [ { size: "2ml", price: 149.90 }, { size: "3ml", price: 229.90 }, { size: "5ml", price: 299.90 }, { size: "10ml", price: 549.90 } ] },
-    { id: "group-arabe-fem-3u", type: "group", category: "arabe", name: "3 Decants Árabes Mujer", desc: "Elige el tamaño y 3 perfumes árabes femeninos.", icon: "🕌", image: "img/promos/arabe_fem_3u.webp", allowedCategories: ["arabe"], allowedGenders: ["femenino"], quantity: 3, options: [ { size: "2ml", price: 29.90 }, { size: "3ml", price: 39.90 }, { size: "5ml", price: 49.90 }, { size: "10ml", price: 89.90 } ] },
-    { id: "group-arabe-fem-5u", type: "group", category: "arabe", name: "5 Decants Árabes Mujer", desc: "Elige el tamaño y 5 perfumes árabes femeninos.", icon: "🕌", image: "img/promos/arabe_fem_5u.webp", allowedCategories: ["arabe"], allowedGenders: ["femenino"], quantity: 5, options: [ { size: "2ml", price: 44.90 }, { size: "3ml", price: 59.90 }, { size: "5ml", price: 74.90 }, { size: "10ml", price: 134.90 } ] },
-    { id: "group-arabe-fem-10u", type: "group", category: "arabe", name: "10 Decants Árabes Mujer", desc: "Elige el tamaño y 10 perfumes árabes femeninos.", icon: "🕌", image: "img/promos/arabe_fem_10u.webp", allowedCategories: ["arabe"], allowedGenders: ["femenino"], quantity: 10, options: [ { size: "2ml", price: 79.90 }, { size: "3ml", price: 99.90 }, { size: "5ml", price: 139.90 }, { size: "10ml", price: 249.90 } ] },
-    { id: "group-arabe-mas-3u", type: "group", category: "arabe", name: "3 Decants Árabes Hombre", desc: "Elige el tamaño y 3 perfumes árabes masculinos.", icon: "🕌", image: "img/promos/arabe_mas_3u.webp", allowedCategories: ["arabe"], allowedGenders: ["masculino"], quantity: 3, options: [ { size: "2ml", price: 29.90 }, { size: "3ml", price: 39.90 }, { size: "5ml", price: 49.90 }, { size: "10ml", price: 89.90 } ] },
-    { id: "group-arabe-mas-5u", type: "group", category: "arabe", name: "5 Decants Árabes Hombre", desc: "Elige el tamaño y 5 perfumes árabes masculinos.", icon: "🕌", image: "img/promos/arabe_mas_5u.webp", allowedCategories: ["arabe"], allowedGenders: ["masculino"], quantity: 5, options: [ { size: "2ml", price: 44.90 }, { size: "3ml", price: 59.90 }, { size: "5ml", price: 74.90 }, { size: "10ml", price: 134.90 } ] },
-    { id: "group-arabe-mas-10u", type: "group", category: "arabe", name: "10 Decants Árabes Hombre", desc: "Elige el tamaño y 10 perfumes árabes masculinos.", icon: "🕌", image: "img/promos/arabe_mas_10u.webp", allowedCategories: ["arabe"], allowedGenders: ["masculino"], quantity: 10, options: [ { size: "2ml", price: 79.90 }, { size: "3ml", price: 99.90 }, { size: "5ml", price: 139.90 }, { size: "10ml", price: 249.90 } ] },
+    { id: "group-arabe-fem-3u", type: "group", category: "arabe", name: "3 Decants Árabes Mujer", desc: "Elige el tamaño y 3 perfumes árabes femeninos.", icon: "🕌", image: "img/promos/arabe_fem_3u.webp", allowedCategories: ["arabe"], allowedGenders: ["femenino"], eligibleGenders: ["femenino", "unisex"], quantity: 3, options: [ { size: "2ml", price: 29.90 }, { size: "3ml", price: 39.90 }, { size: "5ml", price: 49.90 }, { size: "10ml", price: 89.90 } ] },
+    { id: "group-arabe-fem-5u", type: "group", category: "arabe", name: "5 Decants Árabes Mujer", desc: "Elige el tamaño y 5 perfumes árabes femeninos.", icon: "🕌", image: "img/promos/arabe_fem_5u.webp", allowedCategories: ["arabe"], allowedGenders: ["femenino"], eligibleGenders: ["femenino", "unisex"], quantity: 5, options: [ { size: "2ml", price: 44.90 }, { size: "3ml", price: 59.90 }, { size: "5ml", price: 74.90 }, { size: "10ml", price: 134.90 } ] },
+    { id: "group-arabe-fem-10u", type: "group", category: "arabe", name: "10 Decants Árabes Mujer", desc: "Elige el tamaño y 10 perfumes árabes femeninos.", icon: "🕌", image: "img/promos/arabe_fem_10u.webp", allowedCategories: ["arabe"], allowedGenders: ["femenino"], eligibleGenders: ["femenino", "unisex"], quantity: 10, options: [ { size: "2ml", price: 79.90 }, { size: "3ml", price: 99.90 }, { size: "5ml", price: 139.90 }, { size: "10ml", price: 249.90 } ] },
+    { id: "group-arabe-mas-3u", type: "group", category: "arabe", name: "3 Decants Árabes Hombre", desc: "Elige el tamaño y 3 perfumes árabes masculinos.", icon: "🕌", image: "img/promos/arabe_mas_3u.webp", allowedCategories: ["arabe"], allowedGenders: ["masculino"], eligibleGenders: ["masculino", "unisex"], quantity: 3, options: [ { size: "2ml", price: 29.90 }, { size: "3ml", price: 39.90 }, { size: "5ml", price: 49.90 }, { size: "10ml", price: 89.90 } ] },
+    { id: "group-arabe-mas-5u", type: "group", category: "arabe", name: "5 Decants Árabes Hombre", desc: "Elige el tamaño y 5 perfumes árabes masculinos.", icon: "🕌", image: "img/promos/arabe_mas_5u.webp", allowedCategories: ["arabe"], allowedGenders: ["masculino"], eligibleGenders: ["masculino", "unisex"], quantity: 5, options: [ { size: "2ml", price: 44.90 }, { size: "3ml", price: 59.90 }, { size: "5ml", price: 74.90 }, { size: "10ml", price: 134.90 } ] },
+    { id: "group-arabe-mas-10u", type: "group", category: "arabe", name: "10 Decants Árabes Hombre", desc: "Elige el tamaño y 10 perfumes árabes masculinos.", icon: "🕌", image: "img/promos/arabe_mas_10u.webp", allowedCategories: ["arabe"], allowedGenders: ["masculino"], eligibleGenders: ["masculino", "unisex"], quantity: 10, options: [ { size: "2ml", price: 79.90 }, { size: "3ml", price: 99.90 }, { size: "5ml", price: 139.90 }, { size: "10ml", price: 249.90 } ] },
     { id: "group-nicho-3u", type: "group", category: "deluxe", name: "3 Decants Árabes Deluxe", desc: "Elige el tamaño y 3 perfumes Game of Spades o King of Kings.", icon: "💎", image: "img/promos/deluxe_3u.webp", allowedCategories: ["deluxe"], quantity: 3, options: [ { size: "2ml", price: 39.90 }, { size: "3ml", price: 49.90 }, { size: "5ml", price: 74.90 }, { size: "10ml", price: 119.90 } ] },
     { id: "group-nicho-5u", type: "group", category: "deluxe", name: "5 Decants Árabes Deluxe", desc: "Elige el tamaño y 5 perfumes Game of Spades o King of Kings.", icon: "💎", image: "img/promos/deluxe_5u.webp", allowedCategories: ["deluxe"], quantity: 5, options: [ { size: "2ml", price: 54.90 }, { size: "3ml", price: 69.90 }, { size: "5ml", price: 114.90 }, { size: "10ml", price: 184.90 } ] },
     { id: "group-nicho-10u", type: "group", category: "deluxe", name: "10 Decants Árabes Deluxe", desc: "Elige el tamaño y 10 perfumes Game of Spades o King of Kings.", icon: "💎", image: "img/promos/deluxe_10u.webp", allowedCategories: ["deluxe"], quantity: 10, options: [ { size: "2ml", price: 99.90 }, { size: "3ml", price: 109.90 }, { size: "5ml", price: 199.90 }, { size: "10ml", price: 349.90 } ] },
@@ -208,8 +208,62 @@
   ══════════════════════════════════════════════════════════════ */
   const PLACEHOLDER_IMG = "img/perfumes/placeholder.webp";
   const WHATSAPP_NUMBER = "51903283353";
+  const SITE_URL = "https://pacofragancias.com/";
   // Modo desarrollo (solo localhost): habilita logs de diagnóstico.
   const IS_DEV = /^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname);
+
+  /* ── Google Analytics: envío seguro de eventos (no falla sin ID) ── */
+  function track(name, params) {
+    try {
+      if (typeof window.gtag === "function") window.gtag("event", name, params || {});
+    } catch (e) { /* noop */ }
+  }
+
+  /* ── SEO dinámico por producto (meta tags al compartir ?producto=ID) ── */
+  const META = {};
+  function metaEl(sel) { return document.querySelector(sel); }
+  function snapshotMeta() {
+    META.title = document.title;
+    META.desc = metaEl('meta[name="description"]')?.content || "";
+    META.ogTitle = metaEl('meta[property="og:title"]')?.content || "";
+    META.ogDesc = metaEl('meta[property="og:description"]')?.content || "";
+    META.ogImage = metaEl('meta[property="og:image"]')?.content || "";
+    META.ogUrl = metaEl('meta[property="og:url"]')?.content || "";
+    META.canonical = metaEl('link[rel="canonical"]')?.href || SITE_URL;
+  }
+  function setMeta(map) {
+    if (map.title != null) document.title = map.title;
+    const set = (sel, attr, val) => { const el = metaEl(sel); if (el && val != null) el.setAttribute(attr, val); };
+    set('meta[name="description"]', "content", map.desc);
+    set('meta[property="og:title"]', "content", map.ogTitle);
+    set('meta[property="og:description"]', "content", map.ogDesc);
+    set('meta[property="og:image"]', "content", map.ogImage);
+    set('meta[name="twitter:image"]', "content", map.ogImage);
+    set('meta[property="og:url"]', "content", map.ogUrl);
+    set('link[rel="canonical"]', "href", map.canonical);
+  }
+  function setProductMeta(product) {
+    const sizes = Object.values(product.decantSizes || {});
+    const min = sizes.length ? Math.min(...sizes) : (Object.values(product.fullSizes || {})[0] || null);
+    const desde = min ? `Desde ${formatPrice(min)}. ` : "";
+    const img = product.cardImage ? SITE_URL + product.cardImage : META.ogImage;
+    const url = SITE_URL + "?producto=" + product.id;
+    setMeta({
+      title: `${product.name} · Paco Fragancias`,
+      desc: `Compra ${product.name} de ${product.brand} en decant. ${desde}Envíos a todo el Perú.`,
+      ogTitle: `${product.name} · ${product.brand}`,
+      ogDesc: `${product.name} de ${product.brand} en decant. ${desde}Paco Fragancias.`,
+      ogImage: img,
+      ogUrl: url,
+      canonical: url,
+    });
+  }
+  function restoreMeta() {
+    setMeta({
+      title: META.title, desc: META.desc, ogTitle: META.ogTitle, ogDesc: META.ogDesc,
+      ogImage: META.ogImage, ogUrl: META.ogUrl, canonical: META.canonical,
+    });
+  }
 
   /* Optimización de imágenes:
      Pon esto en `true` SOLO después de ejecutar `node tools/optimize-images.js`,
@@ -232,9 +286,9 @@
      STATE
   ══════════════════════════════════════════════════════════════ */
   let cart = [];
-  let activeFilters = { category: "all", gender: "all" };
-  let activePromoFilter = "all";
-  let activePromoGender = "all";
+  let activeFilters = { category: null, gender: null };
+  let activePromoFilter = null;
+  let activePromoGender = null;
   let currentModalProduct = null;
   let currentModalView = "full";
   let currentModalSize = null;
@@ -389,6 +443,7 @@
     updateCartUI();
     showToast("✅ ¡Añadido al carrito!");
     pulseCartCount();
+    track("add_to_cart", { currency: "PEN", value: price * qty, items: [{ item_id: productId, item_name: product.name, item_brand: product.brand, price: price, quantity: qty }] });
   }
   function removeFromCart(index) {
     cart.splice(index, 1);
@@ -581,6 +636,7 @@
       showToast("🛒 Tu carrito está vacío");
       return;
     }
+    track("begin_checkout", { currency: "PEN", value: getCartTotal() });
     closeCart();
     navigateTo("checkout");
   }
@@ -598,6 +654,9 @@
     updateModalContent();
     $("modalOverlay").classList.add("active");
     document.body.style.overflow = "hidden";
+    // SEO dinámico + analítica
+    setProductMeta(product);
+    track("view_item", { item_id: product.id, item_name: product.name, item_brand: product.brand, item_category: product.category });
     // URL compartible: ?producto=ID
     if (!skipHistory) {
       try { history.pushState({ producto: productId }, "", "?producto=" + productId); } catch (e) { /* noop */ }
@@ -607,6 +666,7 @@
     $("modalOverlay").classList.remove("active");
     document.body.style.overflow = "";
     currentModalProduct = null;
+    restoreMeta();
     if (!skipHistory && /[?&]producto=/.test(location.search)) {
       try { history.pushState({}, "", location.pathname); } catch (e) { /* noop */ }
     }
@@ -750,10 +810,9 @@
         promo.allowedCategories.includes(p.category),
       );
     }
-    if (promo.allowedGenders) {
-      eligible = eligible.filter((p) =>
-        promo.allowedGenders.includes(p.gender),
-      );
+    const genderRules = promo.eligibleGenders || promo.allowedGenders;
+    if (genderRules) {
+      eligible = eligible.filter((p) => genderRules.includes(p.gender));
     }
     if (promo.allowedBrands) {
       eligible = eligible.filter((p) =>
@@ -955,10 +1014,23 @@
     document.querySelectorAll(".nav a").forEach((a) => a.classList.remove("active"));
     const navLink = document.querySelector(`.nav a[data-page="${page}"]`);
     if (navLink) navLink.classList.add("active");
-    if (page === "catalogo") renderCatalog();
-    if (page === "promos") renderPromos();
+    if (page === "catalogo") {
+      activeFilters = { category: null, gender: null };
+      currentSearchTerm = "";
+      const si = $("searchInput");
+      if (si) si.value = "";
+      updateCatalogFilterButtons();
+      renderCatalog();
+    }
+    if (page === "promos") {
+      activePromoFilter = null;
+      activePromoGender = null;
+      updatePromoFilterButtons();
+      renderPromos();
+    }
     if (page === "checkout") renderCheckoutPage();
     if (page === "home") renderFeatured();
+    track("page_view", { page_title: "Paco Fragancias · " + page, page_path: "/" + (page === "home" ? "" : page) });
     const nav = $("nav");
     nav.classList.remove("open");
     const hb = $("hamburger");
@@ -1037,18 +1109,20 @@
   function renderCatalog() {
     const grid = $("catalogGrid");
     if (!grid) return;
+
+    // Sin categoría y sin búsqueda: estado de selección (grid vacío)
+    if (!activeFilters.category && !currentSearchTerm) {
+      grid.innerHTML = activeFilters.gender
+        ? `<div class="catalog-hint">
+             <div class="catalog-hint-icon">👆</div>
+             <p class="catalog-hint-text">Primero elige una categoría para descubrir fragancias.</p>
+           </div>`
+        : "";
+      return;
+    }
+
     let filtered = products;
-    if (activeFilters.category === "tester") {
-      filtered = filtered.filter((p) => p.tester === true);
-    } else {
-      filtered = filtered.filter((p) => !p.tester);
-      if (activeFilters.category !== "all") {
-        filtered = filtered.filter((p) => p.category === activeFilters.category);
-      }
-    }
-    if (activeFilters.gender !== "all") {
-      filtered = filtered.filter((p) => p.gender === activeFilters.gender);
-    }
+
     if (currentSearchTerm) {
       const term = currentSearchTerm;
       filtered = filtered.filter(
@@ -1057,7 +1131,18 @@
           p.brand.toLowerCase().includes(term) ||
           p.notes.toLowerCase().includes(term),
       );
+    } else {
+      if (activeFilters.category === "tester") {
+        filtered = filtered.filter((p) => p.tester === true);
+      } else {
+        filtered = filtered.filter((p) => !p.tester);
+        filtered = filtered.filter((p) => p.category === activeFilters.category);
+      }
+      if (activeFilters.gender) {
+        filtered = filtered.filter((p) => p.gender === activeFilters.gender);
+      }
     }
+
     if (filtered.length) {
       grid.innerHTML = filtered.map(createProductCard).join("");
     } else {
@@ -1081,12 +1166,14 @@
     const grid = $("promoGrid");
     if (!grid) return;
 
-    let filtered = [...promos];
-
-    if (activePromoFilter !== "all") {
-      filtered = filtered.filter((p) => p.category === activePromoFilter);
+    if (!activePromoFilter) {
+      grid.innerHTML = "";
+      return;
     }
-    if (activePromoFilter === "arabe" && activePromoGender !== "all") {
+
+    let filtered = promos.filter((p) => p.category === activePromoFilter);
+
+    if (activePromoFilter === "arabe" && activePromoGender) {
       filtered = filtered.filter((p) => {
         if (!p.allowedGenders) return true;
         return p.allowedGenders.includes(activePromoGender);
@@ -1255,10 +1342,16 @@
   ══════════════════════════════════════════════════════════════ */
   function updateCatalogFilterButtons() {
     document.querySelectorAll("#filtersCategory .filter-btn").forEach((btn) => {
-      btn.classList.toggle("active", activeFilters.category === btn.dataset.filter);
+      const active = activeFilters.category === btn.dataset.filter;
+      btn.classList.toggle("active", active);
+      btn.setAttribute("aria-pressed", String(active));
     });
+    const genderGroup = $("catalogGenderGroup");
+    if (genderGroup) genderGroup.style.display = activeFilters.category ? "flex" : "none";
     document.querySelectorAll("#filtersGender .filter-btn").forEach((btn) => {
-      btn.classList.toggle("active", activeFilters.gender === btn.dataset.filter);
+      const active = activeFilters.gender === btn.dataset.filter;
+      btn.classList.toggle("active", active);
+      btn.setAttribute("aria-pressed", String(active));
     });
   }
 
@@ -1267,8 +1360,8 @@
     filtersCat.addEventListener("click", function (e) {
       const btn = e.target.closest(".filter-btn");
       if (!btn) return;
-      const val = btn.dataset.filter;
-      activeFilters.category = activeFilters.category === val ? "all" : val;
+      activeFilters.category = btn.dataset.filter;
+      activeFilters.gender = null;
       updateCatalogFilterButtons();
       renderCatalog();
     });
@@ -1280,7 +1373,7 @@
       const btn = e.target.closest(".filter-btn");
       if (!btn) return;
       const val = btn.dataset.filter;
-      activeFilters.gender = activeFilters.gender === val ? "all" : val;
+      activeFilters.gender = activeFilters.gender === val ? null : val;
       updateCatalogFilterButtons();
       renderCatalog();
     });
@@ -1291,25 +1384,25 @@
   ══════════════════════════════════════════════════════════════ */
   function updatePromoFilterButtons() {
     document.querySelectorAll("#promoFilters .filter-btn").forEach((btn) => {
-      btn.classList.toggle("active", btn.dataset.promoFilter === activePromoFilter);
+      const active = btn.dataset.promoFilter === activePromoFilter;
+      btn.classList.toggle("active", active);
+      btn.setAttribute("aria-pressed", String(active));
     });
 
     const genderGroup = $("promoGenderGroup");
-    const genderSep = $("promoGenderSep");
-
     if (genderGroup) {
       if (activePromoFilter === "arabe") {
         genderGroup.style.display = "flex";
-        if (genderSep) genderSep.style.display = "block";
       } else {
         genderGroup.style.display = "none";
-        if (genderSep) genderSep.style.display = "none";
-        activePromoGender = "all";
+        activePromoGender = null;
       }
     }
 
     document.querySelectorAll("#promoGenderFilters .filter-btn").forEach((btn) => {
-      btn.classList.toggle("active", btn.dataset.promoGender === activePromoGender);
+      const active = btn.dataset.promoGender === activePromoGender;
+      btn.classList.toggle("active", active);
+      btn.setAttribute("aria-pressed", String(active));
     });
   }
 
@@ -1319,7 +1412,7 @@
       const btn = e.target.closest(".filter-btn");
       if (!btn) return;
       activePromoFilter = btn.dataset.promoFilter;
-      activePromoGender = "all";
+      activePromoGender = null;
       btn.classList.remove("chip-pop");
       void btn.offsetWidth;
       btn.classList.add("chip-pop");
@@ -1333,7 +1426,8 @@
     promoGenderFilters.addEventListener("click", function (e) {
       const btn = e.target.closest(".filter-btn");
       if (!btn) return;
-      activePromoGender = btn.dataset.promoGender;
+      const val = btn.dataset.promoGender;
+      activePromoGender = activePromoGender === val ? null : val;
       updatePromoFilterButtons();
       renderPromos();
     });
@@ -1479,6 +1573,12 @@
     );
     // Guardar el pedido para el panel de administración
     saveOrderRecord({ nombre, apellido, telefono, dni, direccion, distrito, referencia });
+    track("purchase", {
+      transaction_id: "T-" + Date.now(),
+      currency: "PEN",
+      value: getCartTotal(),
+      items: cart.map((it) => ({ item_id: it.productId, item_name: it.name, price: it.price, quantity: it.qty })),
+    });
     showToast("📲 Redirigiendo a WhatsApp...");
     notifyOrderSent();
     // Página de agradecimiento post-compra (tras abrir WhatsApp)
@@ -1970,6 +2070,22 @@
     } catch (e) { /* sessionStorage no disponible */ }
   }
 
+  /* En móvil no se descarga el video del hero: solo se muestra el poster */
+  function setupHeroMobile() {
+    const video = document.querySelector(".hero-video");
+    if (!video) return;
+    if (window.matchMedia("(max-width: 768px)").matches) {
+      try {
+        video.pause();
+        video.removeAttribute("autoplay");
+        // quita las fuentes para evitar la descarga del .mp4 en móvil
+        video.querySelectorAll("source").forEach((s) => s.remove());
+        video.removeAttribute("src");
+        video.load();
+      } catch (e) { /* noop */ }
+    }
+  }
+
   /* Botón flotante de Instagram (fade-in tras 2s) */
   function setupInstagramFab() {
     const fab = $("igFab");
@@ -2038,12 +2154,10 @@
      INIT
   ══════════════════════════════════════════════════════════════ */
   function init() {
+    snapshotMeta();
+    setupHeroMobile();
     renderFeatured();
-    renderCatalog();
-    renderPromos();
     updateCartUI();
-    updateCatalogFilterButtons();
-    updatePromoFilterButtons();
     setupBackToTop();
     setupCheckoutValidation();
     setupHeroParallax();

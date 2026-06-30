@@ -17,7 +17,10 @@
     content="Decants premium de perfumes árabes, de diseñador y nicho. Prueba fragancias de lujo desde 2ml con envíos seguros a todo el Perú." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://pacofragancias.com/" />
-  <meta property="og:image" content="https://pacofragancias.com/logo.webp" />
+  <meta property="og:image" content="https://pacofragancias.com/img/og-cover.webp" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Paco Fragancias · Decants premium de fragancias árabes, de diseñador y nicho en Lima, Perú." />
   <meta property="og:locale" content="es_PE" />
 
   <!-- Twitter -->
@@ -25,7 +28,8 @@
   <meta name="twitter:title" content="Paco Fragancias · Decants de Lujo en Lima, Perú" />
   <meta name="twitter:description"
     content="Decants premium de perfumes árabes, de diseñador y nicho. Prueba fragancias de lujo desde 2ml con envíos seguros a todo el Perú." />
-  <meta name="twitter:image" content="https://pacofragancias.com/logo.webp" />
+  <meta name="twitter:image" content="https://pacofragancias.com/img/og-cover.webp" />
+  <meta name="twitter:image:alt" content="Paco Fragancias · Decants premium de fragancias." />
 
   <title>Paco Fragancias · Decants de Lujo en Lima, Perú</title>
 
@@ -64,10 +68,30 @@
   }
   </script>
 
+  <!-- ════════ GOOGLE ANALYTICS 4 ════════
+       👉 REEMPLAZA "G-XXXXXXXXXX" por tu ID de medición real (Admin → Flujos de datos).
+       Mientras esté el placeholder, GA NO se carga (sin errores ni peticiones). -->
+  <script>
+    window.GA_MEASUREMENT_ID = "G-XXXXXXXXXX"; /* ← REEMPLAZA AQUÍ */
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    (function () {
+      var id = window.GA_MEASUREMENT_ID;
+      if (!id || /XXXXXX/.test(id)) return; // sin ID real: no inicializa GA
+      var s = document.createElement("script");
+      s.async = true;
+      s.src = "https://www.googletagmanager.com/gtag/js?id=" + id;
+      document.head.appendChild(s);
+      gtag("js", new Date());
+      gtag("config", id);
+    })();
+  </script>
+
   <!-- Preconnects -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
 
   <!-- Favicon (reutiliza el logo, evita 404 de favicon.ico) -->
   <link rel="icon" type="image/webp" href="logo.webp" />
@@ -392,35 +416,36 @@
       <div class="filters-wrapper">
         <div class="filters-row">
           <div class="filter-group">
-            <span class="filter-group-label">Categoría</span>
+            <span class="filter-group-label">Elige una categoría</span>
             <div class="filter-pills" id="filtersCategory">
-              <button class="filter-btn filter-pill pill-all active" data-filter="all" data-cat="all" aria-label="Todos">
-                <span class="pill-bg" aria-hidden="true"><span class="pill-icon">✦</span></span>
-                <span class="pill-label">Todos</span>
-              </button>
-              <button class="filter-btn filter-pill" data-filter="nicho" data-cat="nicho" aria-label="Nicho">
+              <button class="filter-btn filter-pill" data-filter="nicho" data-cat="nicho" aria-label="Nicho" aria-pressed="false">
                 <span class="pill-bg"><img src="img/filtros/nicho.webp" alt="Nicho" width="600" height="800" loading="eager" fetchpriority="high" decoding="async" onload="this.classList.add('img-loaded')" onerror="this.remove()" /><span class="pill-icon" aria-hidden="true">✨</span></span>
+                <span class="pill-label">Nicho</span>
               </button>
-              <button class="filter-btn filter-pill" data-filter="arabe" data-cat="arabe" aria-label="Árabe">
+              <button class="filter-btn filter-pill" data-filter="arabe" data-cat="arabe" aria-label="Árabe" aria-pressed="false">
                 <span class="pill-bg"><img src="img/filtros/arabe.webp" alt="Árabe" width="600" height="800" loading="eager" fetchpriority="high" decoding="async" onload="this.classList.add('img-loaded')" onerror="this.remove()" /><span class="pill-icon" aria-hidden="true">🕌</span></span>
+                <span class="pill-label">Árabe</span>
               </button>
-              <button class="filter-btn filter-pill" data-filter="deluxe" data-cat="deluxe" aria-label="Deluxe">
+              <button class="filter-btn filter-pill" data-filter="deluxe" data-cat="deluxe" aria-label="Deluxe" aria-pressed="false">
                 <span class="pill-bg"><img src="img/filtros/deluxe.webp" alt="Deluxe" width="600" height="800" loading="eager" fetchpriority="high" decoding="async" onload="this.classList.add('img-loaded')" onerror="this.remove()" /><span class="pill-icon" aria-hidden="true">💎</span></span>
+                <span class="pill-label">Deluxe</span>
               </button>
-              <button class="filter-btn filter-pill" data-filter="disenador" data-cat="disenador" aria-label="Diseñador">
+              <button class="filter-btn filter-pill" data-filter="disenador" data-cat="disenador" aria-label="Diseñador" aria-pressed="false">
                 <span class="pill-bg"><img src="img/filtros/disenador.webp" alt="Diseñador" width="600" height="800" loading="eager" fetchpriority="high" decoding="async" onload="this.classList.add('img-loaded')" onerror="this.remove()" /><span class="pill-icon" aria-hidden="true">⭐</span></span>
+                <span class="pill-label">Diseñador</span>
               </button>
-              <button class="filter-btn filter-pill" data-filter="tester" data-cat="tester" aria-label="Tester">
+              <button class="filter-btn filter-pill" data-filter="tester" data-cat="tester" aria-label="Tester" aria-pressed="false">
                 <span class="pill-bg"><img src="img/filtros/tester.webp" alt="Tester" width="600" height="800" loading="eager" fetchpriority="high" decoding="async" onload="this.classList.add('img-loaded')" onerror="this.remove()" /><span class="pill-icon" aria-hidden="true">🧪</span></span>
+                <span class="pill-label">Tester</span>
               </button>
             </div>
           </div>
-          <div class="filter-group">
+          <div class="filter-group" id="catalogGenderGroup" style="display:none;">
             <span class="filter-group-label">Género</span>
             <div class="filter-chips" id="filtersGender">
-              <button class="filter-btn" data-filter="masculino">👨 Masculino</button>
-              <button class="filter-btn" data-filter="femenino">👩 Femenino</button>
-              <button class="filter-btn" data-filter="unisex">🧑 Unisex</button>
+              <button class="filter-btn" data-filter="masculino" aria-pressed="false">👨 Masculino</button>
+              <button class="filter-btn" data-filter="femenino" aria-pressed="false">👩 Femenino</button>
+              <button class="filter-btn" data-filter="unisex" aria-pressed="false">🧑 Unisex</button>
             </div>
           </div>
         </div>
@@ -446,20 +471,19 @@
       <div class="filters-wrapper">
         <div class="filters-row">
           <div class="filter-group">
-            <span class="filter-group-label">Tipo de Promoción</span>
+            <span class="filter-group-label">Elige un tipo de pack</span>
             <div class="filter-pills" id="promoFilters">
-              <button class="filter-btn filter-pill pill-all active" data-promo-filter="all" aria-label="Lo Más Solicitado">
-                <span class="pill-bg" aria-hidden="true"><span class="pill-icon">🔥</span></span>
-                <span class="pill-label">Lo Más Solicitado</span>
-              </button>
-              <button class="filter-btn filter-pill" data-promo-filter="disenador" aria-label="Diseñador">
+              <button class="filter-btn filter-pill" data-promo-filter="disenador" aria-label="Diseñador" aria-pressed="false">
                 <span class="pill-bg"><img src="img/filtros/disenador.webp" alt="Diseñador" width="600" height="800" loading="eager" fetchpriority="high" decoding="async" onload="this.classList.add('img-loaded')" onerror="this.remove()" /><span class="pill-icon" aria-hidden="true">⭐</span></span>
+                <span class="pill-label">Diseñador</span>
               </button>
-              <button class="filter-btn filter-pill" data-promo-filter="arabe" aria-label="Árabes">
+              <button class="filter-btn filter-pill" data-promo-filter="arabe" aria-label="Árabes" aria-pressed="false">
                 <span class="pill-bg"><img src="img/filtros/arabe.webp" alt="Árabes" width="600" height="800" loading="eager" fetchpriority="high" decoding="async" onload="this.classList.add('img-loaded')" onerror="this.remove()" /><span class="pill-icon" aria-hidden="true">🕌</span></span>
+                <span class="pill-label">Árabe</span>
               </button>
-              <button class="filter-btn filter-pill" data-promo-filter="deluxe" aria-label="Deluxe">
+              <button class="filter-btn filter-pill" data-promo-filter="deluxe" aria-label="Deluxe" aria-pressed="false">
                 <span class="pill-bg"><img src="img/filtros/deluxe.webp" alt="Deluxe" width="600" height="800" loading="eager" fetchpriority="high" decoding="async" onload="this.classList.add('img-loaded')" onerror="this.remove()" /><span class="pill-icon" aria-hidden="true">💎</span></span>
+                <span class="pill-label">Deluxe</span>
               </button>
             </div>
           </div>
@@ -467,9 +491,8 @@
           <div class="filter-group" id="promoGenderGroup" style="display:none;">
             <span class="filter-group-label">Género</span>
             <div class="filter-chips" id="promoGenderFilters">
-              <button class="filter-btn active" data-promo-gender="all">Todos</button>
-              <button class="filter-btn" data-promo-gender="femenino">👩 Mujer</button>
-              <button class="filter-btn" data-promo-gender="masculino">👨 Hombre</button>
+              <button class="filter-btn" data-promo-gender="femenino" aria-pressed="false">👩 Mujer</button>
+              <button class="filter-btn" data-promo-gender="masculino" aria-pressed="false">👨 Hombre</button>
             </div>
           </div>
         </div>
@@ -714,6 +737,11 @@
     </div>
   </footer>
 
+  <!-- Animation libraries (orden importa: GSAP → ScrollTrigger → Lenis → app → animations) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js" defer></script>
   <script src="script.js" defer></script>
+  <script src="animations.js" defer></script>
 </body>
 </html>

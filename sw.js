@@ -3,7 +3,7 @@
  * - Stale-while-revalidate: imágenes
  * - Network-first con fallback a offline.html: navegación
  */
-const VERSION = "paco-v2";
+const VERSION = "paco-v6";
 const CORE_CACHE = `core-${VERSION}`;
 const IMG_CACHE = `img-${VERSION}`;
 const FONT_CACHE = `font-${VERSION}`;
@@ -14,6 +14,7 @@ const CORE_ASSETS = [
   "index.html",
   "styles.css",
   "script.js",
+  "animations.js",
   "offline.html",
   "logo.webp",
   "inicio.webp",
