@@ -126,7 +126,7 @@
     (function () {
       try {
         var saved = localStorage.getItem("paco_theme");
-        var theme = saved || (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+        var theme = saved || "light"; /* default siempre claro — el usuario elige oscuro con el toggle */
         document.documentElement.setAttribute("data-theme", theme);
       } catch (e) {
         document.documentElement.setAttribute("data-theme", "light");
@@ -360,33 +360,17 @@
         </p>
       </div>
       <div class="tiktok-grid" id="tiktokGrid">
-        <div class="tiktok-card">
+        <div class="tiktok-card" data-video-id="7536339020603788549" data-video-url="https://www.tiktok.com/@pacofragancias.pe/video/7536339020603788549">
           <div class="tiktok-skeleton" aria-hidden="true"><i class="fab fa-tiktok"></i></div>
-          <iframe src="https://www.tiktok.com/embed/v2/7536339020603788549" title="TikTok Paco Fragancias"
-            loading="lazy" allowfullscreen scrolling="no" frameborder="0"
-            allow="autoplay; encrypted-media; accelerometer; gyroscope; magnetometer; picture-in-picture"
-            referrerpolicy="strict-origin-when-cross-origin" onload="this.classList.add('loaded')"></iframe>
         </div>
-        <div class="tiktok-card">
+        <div class="tiktok-card" data-video-id="7520732002643971333" data-video-url="https://www.tiktok.com/@pacofragancias.pe/video/7520732002643971333">
           <div class="tiktok-skeleton" aria-hidden="true"><i class="fab fa-tiktok"></i></div>
-          <iframe src="https://www.tiktok.com/embed/v2/7520732002643971333" title="TikTok Paco Fragancias"
-            loading="lazy" allowfullscreen scrolling="no" frameborder="0"
-            allow="autoplay; encrypted-media; accelerometer; gyroscope; magnetometer; picture-in-picture"
-            referrerpolicy="strict-origin-when-cross-origin" onload="this.classList.add('loaded')"></iframe>
         </div>
-        <div class="tiktok-card">
+        <div class="tiktok-card" data-video-id="7554748921386372359" data-video-url="https://www.tiktok.com/@pacofragancias.pe/video/7554748921386372359">
           <div class="tiktok-skeleton" aria-hidden="true"><i class="fab fa-tiktok"></i></div>
-          <iframe src="https://www.tiktok.com/embed/v2/7554748921386372359" title="TikTok Paco Fragancias"
-            loading="lazy" allowfullscreen scrolling="no" frameborder="0"
-            allow="autoplay; encrypted-media; accelerometer; gyroscope; magnetometer; picture-in-picture"
-            referrerpolicy="strict-origin-when-cross-origin" onload="this.classList.add('loaded')"></iframe>
         </div>
-        <div class="tiktok-card">
+        <div class="tiktok-card" data-video-id="7603741534445489416" data-video-url="https://www.tiktok.com/@pacofragancias.pe/video/7603741534445489416">
           <div class="tiktok-skeleton" aria-hidden="true"><i class="fab fa-tiktok"></i></div>
-          <iframe src="https://www.tiktok.com/embed/v2/7603741534445489416" title="TikTok Paco Fragancias"
-            loading="lazy" allowfullscreen scrolling="no" frameborder="0"
-            allow="autoplay; encrypted-media; accelerometer; gyroscope; magnetometer; picture-in-picture"
-            referrerpolicy="strict-origin-when-cross-origin" onload="this.classList.add('loaded')"></iframe>
         </div>
       </div>
     </section>
@@ -400,21 +384,13 @@
       <div class="page-hero-content">
         <div class="section-eyebrow page-hero-eyebrow">Catálogo</div>
         <h2 class="section-title page-hero-title">Toda Nuestra Colección</h2>
-        <p class="section-subtitle page-hero-subtitle">Explora por tipo, género o busca tu fragancia favorita.</p>
-        <div class="search-box-wrapper">
-          <div class="search-box">
-            <i class="fa-solid fa-magnifying-glass search-icon" aria-hidden="true"></i>
-            <input type="search" id="searchInput" placeholder="Buscar perfume, marca, notas..." autocomplete="off"
-              aria-label="Buscar perfume" oninput="handleSearchInput()" onfocus="handleSearchInput()" />
-            <div class="search-suggestions" id="searchSuggestions" role="listbox" style="display:none;"></div>
-          </div>
-        </div>
+        <p class="section-subtitle page-hero-subtitle">Selecciona una categoría y descubre nuestras fragancias.</p>
       </div>
     </section>
     <section class="cat-section">
       <!-- Category showcase: tarjetas editoriales grandes -->
       <div class="cat-showcase" id="filtersCategory">
-        <button class="filter-btn cat-tile" data-filter="nicho" data-cat="nicho" aria-label="Nicho" aria-pressed="false">
+        <button class="filter-btn cat-tile cat-tile--nicho" data-filter="nicho" data-cat="nicho" aria-label="Nicho" aria-pressed="false">
           <span class="cat-tile__img">
             <img src="img/filtros/nicho.webp" alt="" width="600" height="800" loading="eager" fetchpriority="high" decoding="async" onload="this.classList.add('img-loaded')" onerror="this.closest('.cat-tile__img').classList.add('img-error')">
           </span>
@@ -424,7 +400,7 @@
             <span class="cat-tile__sub">Exclusivas &amp; Únicas</span>
           </span>
         </button>
-        <button class="filter-btn cat-tile" data-filter="arabe" data-cat="arabe" aria-label="Árabe" aria-pressed="false">
+        <button class="filter-btn cat-tile cat-tile--arabe" data-filter="arabe" data-cat="arabe" aria-label="Árabe" aria-pressed="false">
           <span class="cat-tile__img">
             <img src="img/filtros/arabe.webp" alt="" width="600" height="800" loading="eager" fetchpriority="high" decoding="async" onload="this.classList.add('img-loaded')" onerror="this.closest('.cat-tile__img').classList.add('img-error')">
           </span>
@@ -434,7 +410,7 @@
             <span class="cat-tile__sub">Opulencia Oriental</span>
           </span>
         </button>
-        <button class="filter-btn cat-tile" data-filter="deluxe" data-cat="deluxe" aria-label="Deluxe" aria-pressed="false">
+        <button class="filter-btn cat-tile cat-tile--deluxe" data-filter="deluxe" data-cat="deluxe" aria-label="Deluxe" aria-pressed="false">
           <span class="cat-tile__img">
             <img src="img/filtros/deluxe.webp" alt="" width="600" height="800" loading="eager" fetchpriority="high" decoding="async" onload="this.classList.add('img-loaded')" onerror="this.closest('.cat-tile__img').classList.add('img-error')">
           </span>
@@ -444,7 +420,7 @@
             <span class="cat-tile__sub">Game of Spades &amp; más</span>
           </span>
         </button>
-        <button class="filter-btn cat-tile" data-filter="disenador" data-cat="disenador" aria-label="Diseñador" aria-pressed="false">
+        <button class="filter-btn cat-tile cat-tile--disenador" data-filter="disenador" data-cat="disenador" aria-label="Diseñador" aria-pressed="false">
           <span class="cat-tile__img">
             <img src="img/filtros/disenador.webp" alt="" width="600" height="800" loading="eager" fetchpriority="high" decoding="async" onload="this.classList.add('img-loaded')" onerror="this.closest('.cat-tile__img').classList.add('img-error')">
           </span>
@@ -454,7 +430,7 @@
             <span class="cat-tile__sub">Marcas Premium</span>
           </span>
         </button>
-        <button class="filter-btn cat-tile" data-filter="tester" data-cat="tester" aria-label="Tester" aria-pressed="false">
+        <button class="filter-btn cat-tile cat-tile--tester" data-filter="tester" data-cat="tester" aria-label="Tester" aria-pressed="false">
           <span class="cat-tile__img">
             <img src="img/filtros/tester.webp" alt="" width="600" height="800" loading="eager" fetchpriority="high" decoding="async" onload="this.classList.add('img-loaded')" onerror="this.closest('.cat-tile__img').classList.add('img-error')">
           </span>
@@ -496,7 +472,7 @@
     <section class="cat-section">
       <!-- Promo showcase: tarjetas editoriales de packs -->
       <div class="cat-showcase cat-showcase--promos" id="promoFilters">
-        <button class="filter-btn cat-tile" data-promo-filter="disenador" aria-label="Diseñador" aria-pressed="false">
+        <button class="filter-btn cat-tile cat-tile--disenador" data-promo-filter="disenador" aria-label="Diseñador" aria-pressed="false">
           <span class="cat-tile__img">
             <img src="img/filtros/disenador.webp" alt="" width="600" height="800" loading="eager" fetchpriority="high" decoding="async" onload="this.classList.add('img-loaded')" onerror="this.closest('.cat-tile__img').classList.add('img-error')">
           </span>
@@ -506,7 +482,7 @@
             <span class="cat-tile__sub">Decants Premium</span>
           </span>
         </button>
-        <button class="filter-btn cat-tile" data-promo-filter="arabe" aria-label="Árabes" aria-pressed="false">
+        <button class="filter-btn cat-tile cat-tile--arabe" data-promo-filter="arabe" aria-label="Árabes" aria-pressed="false">
           <span class="cat-tile__img">
             <img src="img/filtros/arabe.webp" alt="" width="600" height="800" loading="eager" fetchpriority="high" decoding="async" onload="this.classList.add('img-loaded')" onerror="this.closest('.cat-tile__img').classList.add('img-error')">
           </span>
@@ -516,7 +492,7 @@
             <span class="cat-tile__sub">Colección Oriental</span>
           </span>
         </button>
-        <button class="filter-btn cat-tile" data-promo-filter="deluxe" aria-label="Deluxe" aria-pressed="false">
+        <button class="filter-btn cat-tile cat-tile--deluxe" data-promo-filter="deluxe" aria-label="Deluxe" aria-pressed="false">
           <span class="cat-tile__img">
             <img src="img/filtros/deluxe.webp" alt="" width="600" height="800" loading="eager" fetchpriority="high" decoding="async" onload="this.classList.add('img-loaded')" onerror="this.closest('.cat-tile__img').classList.add('img-error')">
           </span>

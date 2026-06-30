@@ -2708,3 +2708,279 @@ body {
   .page-hero { min-height: 50vh !important; }
   .gender-bar { margin-top: 1.2rem !important; }
 }
+
+/* ══════════════════════════════════════════════════════════════
+   FIXES v10 — Todas las correcciones del ciclo actual
+   ══════════════════════════════════════════════════════════════ */
+
+/* ── A. IMÁGENES POR CATEGORÍA — object-position específico ── */
+/* Ajuste fino de encuadre para que cada fragancia se vea bien */
+.cat-tile--nicho     .cat-tile__img img { object-position: center 15%; }
+.cat-tile--arabe     .cat-tile__img img { object-position: center 10%; }
+.cat-tile--deluxe    .cat-tile__img img { object-position: center 20%; }
+.cat-tile--disenador .cat-tile__img img { object-position: center 12%; }
+.cat-tile--tester    .cat-tile__img img { object-position: center 18%; }
+
+/* Tiles grandes (fila 1 del catálogo) — más acercamiento vertical */
+.cat-showcase:not(.cat-showcase--promos) .cat-tile:nth-child(1) .cat-tile__img img { object-position: center 8%; }
+.cat-showcase:not(.cat-showcase--promos) .cat-tile:nth-child(2) .cat-tile__img img { object-position: center 12%; }
+
+/* ── B. SEPARACIÓN ENTRE FILTROS Y GRID DE RESULTADOS ─────── */
+/* Aire profesional entre los filtros de cat-tile/gender y el grid */
+#catalogGrid,
+#promoGrid {
+  margin-top: clamp(2rem, 4vw, 3.5rem);
+  min-height: 2px; /* evita colapso de margen cuando está vacío */
+}
+
+/* ── C. RESPONSIVE 1024px — corregir scoping `:not` ──────── */
+@media (max-width: 1024px) {
+  .cat-showcase:not(.cat-showcase--promos) .cat-tile:nth-child(1) { grid-column: 1 / 3; }
+  .cat-showcase:not(.cat-showcase--promos) .cat-tile:nth-child(2) { grid-column: 3 / 5; }
+  .cat-showcase:not(.cat-showcase--promos) .cat-tile:nth-child(3) { grid-column: 1 / 2; }
+  .cat-showcase:not(.cat-showcase--promos) .cat-tile:nth-child(4) { grid-column: 2 / 3; }
+  .cat-showcase:not(.cat-showcase--promos) .cat-tile:nth-child(5) { grid-column: 3 / 5; }
+  /* Override las reglas sin :not que quedaron del bloque anterior */
+  .cat-showcase .cat-tile:nth-child(1) { grid-column: unset; }
+  .cat-showcase .cat-tile:nth-child(2) { grid-column: unset; }
+  .cat-showcase .cat-tile:nth-child(3) { grid-column: unset; }
+  .cat-showcase .cat-tile:nth-child(4) { grid-column: unset; }
+  .cat-showcase .cat-tile:nth-child(5) { grid-column: unset; }
+  .cat-showcase:not(.cat-showcase--promos) { grid-template-columns: repeat(4, 1fr); grid-template-rows: 340px 260px; }
+  .cat-showcase--promos { grid-template-columns: repeat(3, 1fr); grid-template-rows: 360px; }
+}
+
+/* ── D. TIKTOK FALLBACK — tarjeta elegante cuando no carga ── */
+.tiktok-card--fallback {
+  background: #0d0d0d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.tiktok-fallback {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: .75rem;
+  color: #fff;
+  text-decoration: none;
+  padding: 2rem;
+  width: 100%; height: 100%;
+  transition: background .3s ease;
+}
+.tiktok-fallback:hover { background: rgba(255,255,255,.05); }
+.tiktok-fallback__icon {
+  width: 64px; height: 64px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.1);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.8rem;
+  border: 1px solid rgba(255,255,255,.14);
+  transition: transform .3s ease;
+}
+.tiktok-fallback:hover .tiktok-fallback__icon { transform: scale(1.08); }
+.tiktok-fallback__text {
+  font-size: .9rem;
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.9);
+}
+.tiktok-fallback__brand {
+  font-size: .75rem;
+  color: rgba(255,255,255,.42);
+  letter-spacing: .04em;
+}
+
+/* ── E. RESPONSIVE FIJO 768px — cat-showcase ──────────────── */
+@media (max-width: 768px) {
+  /* Layout 2 columnas: Nicho full-width, pares en dos columnas */
+  .cat-showcase:not(.cat-showcase--promos) { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+  .cat-showcase:not(.cat-showcase--promos) .cat-tile:nth-child(1) { grid-column: 1 / 3; grid-row: auto; height: 230px; }
+  .cat-showcase:not(.cat-showcase--promos) .cat-tile:nth-child(2) { grid-column: 1 / 2; grid-row: auto; }
+  .cat-showcase:not(.cat-showcase--promos) .cat-tile:nth-child(3) { grid-column: 2 / 3; grid-row: auto; }
+  .cat-showcase:not(.cat-showcase--promos) .cat-tile:nth-child(4) { grid-column: 1 / 2; grid-row: auto; }
+  .cat-showcase:not(.cat-showcase--promos) .cat-tile:nth-child(5) { grid-column: 2 / 3; grid-row: auto; }
+
+  .cat-showcase--promos { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+  .cat-showcase--promos .cat-tile { grid-column: span 1; grid-row: auto; height: 200px; }
+  /* Tercer tile de promos: ancho completo en 768px */
+  .cat-showcase--promos .cat-tile:last-child:nth-child(3) { grid-column: 1 / 3; }
+}
+
+/* ── F. OVERLAY MÁS SUAVE en tiles pequeños (fila 2) ───────── */
+.cat-showcase:not(.cat-showcase--promos) .cat-tile:nth-child(3) .cat-tile__img::after,
+.cat-showcase:not(.cat-showcase--promos) .cat-tile:nth-child(4) .cat-tile__img::after,
+.cat-showcase:not(.cat-showcase--promos) .cat-tile:nth-child(5) .cat-tile__img::after {
+  background: linear-gradient(to top, rgba(0,0,0,.85) 0%, rgba(0,0,0,.35) 50%, rgba(0,0,0,.08) 100%);
+}
+
+/* ── G. PAGE-HERO texto blanco garantizado ──────────────────── */
+.page-hero .section-eyebrow,
+.page-hero .page-hero-eyebrow {
+  color: rgba(255,255,255,.65) !important;
+}
+.page-hero .section-title,
+.page-hero .page-hero-title {
+  color: #fff !important;
+}
+.page-hero .section-subtitle,
+.page-hero .page-hero-subtitle {
+  color: rgba(255,255,255,.55) !important;
+}
+
+/* ── H. CATALOG/PROMO GRID — ancho máximo y centrado ────────── */
+#catalogGrid,
+#promoGrid {
+  max-width: 100%;
+}
+
+/* ── I. PERFORMANCE — reducir blur/shadow en mobile ────────── */
+@media (max-width: 768px) {
+  .cat-tile { will-change: auto; }
+  .cat-tile__img img { will-change: auto; }
+  .hero-video { filter: brightness(.4) saturate(.8); } /* menos filtros = más rápido */
+}
+
+/* ── J. TIKTOK SKELETON — beige en lugar de gold para modo claro */
+.tiktok-skeleton { background: #ece9e4; }
+[data-theme="dark"] .tiktok-skeleton { background: #1a1a1a; }
+
+/* ── K. SEARCH CSS — neutralizado (elementos eliminados del HTML) */
+.search-box-wrapper,
+.search-box,
+.search-suggestions,
+.search-suggestion-item,
+.search-no-results { display: none !important; }
+
+/* ── L. PRODUCT/PROMO GRID ENTRY — animación suave ─────────── */
+#catalogGrid .product-card,
+#promoGrid .promo-card {
+  animation: cardIn .35s var(--ease-premium) both;
+}
+@keyframes cardIn {
+  from { opacity: 0; transform: translateY(18px) scale(.98); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+@media (prefers-reduced-motion: reduce) {
+  #catalogGrid .product-card,
+  #promoGrid .promo-card { animation: none; }
+}
+
+/* ── M. RESPONSIVE 480px — promos en columna única ─────────── */
+@media (max-width: 480px) {
+  .cat-showcase--promos { grid-template-columns: 1fr; }
+  .cat-showcase--promos .cat-tile { grid-column: 1; height: 190px; }
+  .cat-showcase--promos .cat-tile:last-child:nth-child(3) { grid-column: 1; }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   FIXES v11 — TikTok embed oficial, separación de promos,
+   responsive real y encuadre de imágenes (ciclo 2)
+   ══════════════════════════════════════════════════════════════ */
+
+/* ── N. TIKTOK — blockquote oficial forzado a llenar la card ──
+   TikTok inyecta su propio iframe con min-width/max-width fijos
+   (~325-605px). Forzamos que blockquote + section + iframe se
+   adapten al tamaño real de la card (aspect-ratio 9/16) para que
+   nunca desborde el grid ni quede con huecos. */
+.tiktok-card .tiktok-embed {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  height: 100% !important;
+  margin: 0 !important;
+  border: 0 !important;
+  position: relative;
+  z-index: 1;
+}
+.tiktok-card .tiktok-embed section,
+.tiktok-card .tiktok-embed iframe {
+  width: 100% !important;
+  height: 100% !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  max-width: 100% !important;
+  border: 0;
+  display: block;
+}
+.tiktok-card .tiktok-embed iframe { opacity: 0; transition: opacity .3s ease; }
+.tiktok-card.tiktok-loaded .tiktok-embed iframe { opacity: 1; }
+.tiktok-card.tiktok-loaded .tiktok-skeleton {
+  opacity: 0; transition: opacity .3s ease; animation: none; pointer-events: none;
+}
+
+/* Grid de TikTok: nunca queda vacío ni desborda — 1/2/3-4 columnas reales */
+.tiktok-grid { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+@media (max-width: 480px) {
+  .tiktok-grid { grid-template-columns: 1fr; gap: 1.2rem; }
+  .tiktok-card { max-width: 340px; margin-inline: auto; width: 100%; }
+}
+
+/* ── O. PROMOS/CATÁLOGO — separación profesional bajo los filtros ──
+   Reemplaza la separación corta del bloque B: ahora con aire real,
+   línea divisoria sutil y solo cuando el grid tiene contenido. */
+#catalogGrid:not(:empty),
+#promoGrid:not(:empty) {
+  margin-top: clamp(3rem, 6vw, 5.5rem) !important;
+  padding-top: clamp(1.5rem, 3vw, 2.5rem);
+  border-top: 1px solid rgba(0,0,0,.08);
+}
+[data-theme="dark"] #catalogGrid:not(:empty),
+[data-theme="dark"] #promoGrid:not(:empty) {
+  border-top-color: rgba(255,255,255,.08);
+}
+@media (max-width: 600px) {
+  #catalogGrid:not(:empty),
+  #promoGrid:not(:empty) {
+    margin-top: clamp(2.25rem, 8vw, 3rem) !important;
+    padding-top: 1.25rem;
+  }
+}
+
+/* ── P. ENCUADRE DE IMÁGENES — ajuste fino por categoría (ciclo 2) ── */
+.cat-tile--arabe     .cat-tile__img img { object-position: center center; }
+.cat-tile--disenador .cat-tile__img img { object-position: center 45%; }
+.cat-tile--tester    .cat-tile__img img { object-position: center 60%; }
+.cat-tile--deluxe    .cat-tile__img img { object-position: center 25%; }
+.cat-tile--nicho     .cat-tile__img img { object-position: center 15%; }
+
+/* ── Q. ANTI-OVERFLOW HORIZONTAL — salvaguarda global ──────── */
+html, body { overflow-x: hidden; max-width: 100vw; }
+.tiktok-card, .cat-tile, .product-card, .promo-card { max-width: 100%; }
+
+/* ── S. BUG REAL — menú hamburguesa móvil con texto blanco
+   sobre fondo blanco (ilegible). La regla ".nav a" del bloque
+   "HEADER negro refinado" (color blanco, pensada para el header
+   de escritorio con fondo negro) tiene la misma especificidad que
+   la regla mobile y, por venir después en el archivo, la pisaba
+   en el dropdown ≤900px (fondo claro). Restauramos el color
+   correcto del tema para el menú abierto en mobile/tablet. ── */
+@media (max-width: 900px) {
+  .nav a { color: var(--text-secondary); }
+  .nav a:hover, .nav a.active { color: var(--gold); }
+}
+
+/* ── T. BUG REAL — FAB de Instagram tapa el botón "Ir al
+   Checkout" en mobile cuando el carrito está abierto (mismo
+   z-index alto + posición fixed inferior-izquierda). Lo ocultamos
+   mientras el carrito está activo para no bloquear el tap-target. */
+body:has(#cartSidebar.active) #igFab { display: none; }
+
+/* ── R. TIKTOK FALLBACK — botón premium blanco/negro ───────── */
+.tiktok-fallback__text { text-transform: none; font-size: .95rem; letter-spacing: 0; }
+.tiktok-fallback__btn {
+  display: inline-block;
+  padding: .6rem 1.4rem;
+  border: 1px solid #fff;
+  border-radius: 999px;
+  font-size: .75rem;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: #0d0d0d;
+  background: #fff;
+  transition: background .25s ease, color .25s ease;
+}
+.tiktok-fallback:hover .tiktok-fallback__btn { background: transparent; color: #fff; }

@@ -299,7 +299,7 @@
   let currentPackGroupSize = null;
   let currentPackGroupQty = null;
   let packGroupPrice = 0;
-  let currentSearchTerm = "";
+  /* currentSearchTerm eliminado — búsqueda removida */
 
   try {
     const saved = localStorage.getItem("paco_cart_v4");
@@ -1016,9 +1016,6 @@
     if (navLink) navLink.classList.add("active");
     if (page === "catalogo") {
       activeFilters = { category: null, gender: null };
-      currentSearchTerm = "";
-      const si = $("searchInput");
-      if (si) si.value = "";
       updateCatalogFilterButtons();
       renderCatalog();
     }
@@ -1111,8 +1108,8 @@
     const grid = $("catalogGrid");
     if (!grid) return;
 
-    // Sin categoría y sin búsqueda: estado de selección (grid vacío)
-    if (!activeFilters.category && !currentSearchTerm) {
+    // Sin categoría seleccionada: grid vacío
+    if (!activeFilters.category) {
       grid.innerHTML = activeFilters.gender
         ? `<div class="catalog-hint">
              <div class="catalog-hint-icon">👆</div>
@@ -1124,37 +1121,24 @@
 
     let filtered = products;
 
-    if (currentSearchTerm) {
-      const term = currentSearchTerm;
-      filtered = filtered.filter(
-        (p) =>
-          p.name.toLowerCase().includes(term) ||
-          p.brand.toLowerCase().includes(term) ||
-          p.notes.toLowerCase().includes(term),
-      );
+    if (activeFilters.category === "tester") {
+      filtered = filtered.filter((p) => p.tester === true);
     } else {
-      if (activeFilters.category === "tester") {
-        filtered = filtered.filter((p) => p.tester === true);
-      } else {
-        filtered = filtered.filter((p) => !p.tester);
-        filtered = filtered.filter((p) => p.category === activeFilters.category);
-      }
-      if (activeFilters.gender) {
-        filtered = filtered.filter((p) => p.gender === activeFilters.gender);
-      }
+      filtered = filtered.filter((p) => !p.tester);
+      filtered = filtered.filter((p) => p.category === activeFilters.category);
+    }
+    if (activeFilters.gender) {
+      filtered = filtered.filter((p) => p.gender === activeFilters.gender);
     }
 
     if (filtered.length) {
       grid.innerHTML = filtered.map(createProductCard).join("");
     } else {
-      const isSearch = !!currentSearchTerm;
       grid.innerHTML = `
         <div class="empty-state">
-          <div class="empty-state-icon">${isSearch ? "✖️" : "🔍"}</div>
-          <h3 class="empty-state-title">${isSearch ? "Sin resultados para tu búsqueda" : "No encontramos productos"}</h3>
-          <p class="empty-state-text">${isSearch
-            ? "No hay perfumes que coincidan con tu búsqueda. Prueba con otro nombre, marca o nota."
-            : "No hay perfumes con esos filtros. Prueba con otras opciones."}</p>
+          <div class="empty-state-icon">🔍</div>
+          <h3 class="empty-state-title">No encontramos productos</h3>
+          <p class="empty-state-text">No hay perfumes con esos filtros. Prueba con otras opciones.</p>
         </div>`;
     }
     observeRevealElements();
@@ -1436,63 +1420,7 @@
     });
   }
 
-  /* ══════════════════════════════════════════════════════════════
-     SEARCH
-  ══════════════════════════════════════════════════════════════ */
-  function handleSearchInput() {
-    const input = $("searchInput");
-    if (!input) return;
-    const term = input.value.trim().toLowerCase();
-    currentSearchTerm = term;
-    const suggestionsContainer = $("searchSuggestions");
-
-    if (term.length === 0) {
-      if (suggestionsContainer) suggestionsContainer.style.display = "none";
-      renderCatalog();
-      return;
-    }
-
-    const filtered = products
-      .filter(
-        (p) =>
-          p.name.toLowerCase().includes(term) ||
-          p.brand.toLowerCase().includes(term) ||
-          p.notes.toLowerCase().includes(term),
-      )
-      .slice(0, 8);
-
-    if (suggestionsContainer) {
-      if (filtered.length === 0) {
-        suggestionsContainer.innerHTML = '<div class="search-no-results">No se encontraron perfumes.</div>';
-      } else {
-        suggestionsContainer.innerHTML = filtered
-          .map(
-            (p) => `
-          <div class="search-suggestion-item" tabindex="0" role="option"
-               onclick="openModal(${p.id}); document.getElementById('searchSuggestions').style.display='none';">
-            <img src="${esc(p.cardImage)}" alt="${esc(p.name)}" loading="lazy" decoding="async" onerror="this.style.display='none'" />
-            <span class="sug-name">${esc(p.name)}</span>
-            <span class="sug-brand">${esc(p.brand)}</span>
-          </div>`,
-          )
-          .join("");
-      }
-      suggestionsContainer.style.display = "block";
-    }
-
-    renderCatalog();
-  }
-  window.handleSearchInput = handleSearchInput;
-
-  // Close suggestions on outside click
-  document.addEventListener("click", function (e) {
-    const suggestions = $("searchSuggestions");
-    const input = $("searchInput");
-    if (!input || !suggestions) return;
-    if (!input.contains(e.target) && !suggestions.contains(e.target)) {
-      suggestions.style.display = "none";
-    }
-  });
+  /* búsqueda eliminada — catálogo filtra solo por categoría y género */
 
   /* ══════════════════════════════════════════════════════════════
      GLOBAL CLICK DELEGATION (cards, add buttons, promo buttons)
@@ -2154,6 +2082,101 @@
   }
 
   /* ══════════════════════════════════════════════════════════════
+     TIKTOK — embed oficial (blockquote + embed.js) con lazy load
+     y fallback elegante.
+     Por qué blockquote+embed.js y no <iframe src="tiktok.com/embed/v2/...">:
+     TikTok rechaza en silencio (sin error de red, sin 404, página en
+     blanco) el hotlink directo del iframe cuando no reconoce el
+     origen/referrer. El embed oficial es el único método soportado
+     de forma fiable cross-browser.
+  ══════════════════════════════════════════════════════════════ */
+  function setupTikTok() {
+    const cards = document.querySelectorAll(".tiktok-card");
+    if (!cards.length) return;
+
+    const TIKTOK_SCRIPT_SRC = "https://www.tiktok.com/embed.js";
+    let scriptEl = document.querySelector(`script[src="${TIKTOK_SCRIPT_SRC}"]`);
+
+    function ensureTikTokScript(forceReload) {
+      if (forceReload && scriptEl) {
+        scriptEl.remove();
+        scriptEl = null;
+      }
+      if (scriptEl) return;
+      scriptEl = document.createElement("script");
+      scriptEl.src = TIKTOK_SCRIPT_SRC;
+      scriptEl.async = true;
+      document.body.appendChild(scriptEl);
+    }
+
+    function showTikTokFallback(card) {
+      if (card.classList.contains("tiktok-card--fallback")) return;
+      const url = card.dataset.videoUrl || "https://www.tiktok.com/@pacofragancias.pe";
+      card.classList.add("tiktok-card--fallback");
+      card.innerHTML = `
+        <a class="tiktok-fallback" href="${url}" target="_blank" rel="noopener noreferrer" aria-label="Ver video en TikTok">
+          <div class="tiktok-fallback__icon"><i class="fab fa-tiktok" aria-hidden="true"></i></div>
+          <div class="tiktok-fallback__text">Mira este video en TikTok</div>
+          <span class="tiktok-fallback__btn">Ver en TikTok</span>
+          <div class="tiktok-fallback__brand">@pacofragancias.pe</div>
+        </a>`;
+    }
+
+    function activateCard(card) {
+      if (card.dataset.activated) return;
+      card.dataset.activated = "1";
+
+      const videoId = card.dataset.videoId;
+      const videoUrl = card.dataset.videoUrl;
+      const bq = document.createElement("blockquote");
+      bq.className = "tiktok-embed";
+      bq.setAttribute("cite", videoUrl);
+      bq.setAttribute("data-video-id", videoId);
+      bq.appendChild(document.createElement("section"));
+      card.appendChild(bq);
+
+      ensureTikTokScript(false);
+
+      // Si a los 3s el script ya estaba cargado de antes pero no
+      // procesó este blockquote nuevo, forzamos una recarga del script
+      // (TikTok re-escanea el documento completo al cargar).
+      const retryTimer = setTimeout(() => {
+        if (!card.querySelector("iframe")) ensureTikTokScript(true);
+      }, 3000);
+
+      // Si en 8s definitivamente no hay iframe renderizado, fallback.
+      const fallbackTimer = setTimeout(() => {
+        if (!card.querySelector("iframe")) showTikTokFallback(card);
+      }, 8000);
+
+      const mo = new MutationObserver(() => {
+        if (card.querySelector("iframe")) {
+          card.classList.add("tiktok-loaded");
+          clearTimeout(retryTimer);
+          clearTimeout(fallbackTimer);
+          mo.disconnect();
+        }
+      });
+      mo.observe(card, { childList: true, subtree: true });
+    }
+
+    // Activar solo cuando la card entra al viewport
+    if ("IntersectionObserver" in window) {
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            activateCard(entry.target);
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { rootMargin: "200px" });
+      cards.forEach((c) => obs.observe(c));
+    } else {
+      cards.forEach(activateCard);
+    }
+  }
+
+  /* ══════════════════════════════════════════════════════════════
      INIT
   ══════════════════════════════════════════════════════════════ */
   function init() {
@@ -2170,6 +2193,7 @@
     setupReviewsCarousel();
     setupConnectivityToasts();
     setupInstagramFab();
+    setupTikTok();
     maybeRemindCart();
     injectItemList();
     registerSW();
