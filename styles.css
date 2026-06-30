@@ -1829,3 +1829,882 @@ body, .product-card, .promo-card, .trust-card, .modal, .pack-modal,
 @media (max-width: 768px) {
   .marquee-track { animation-duration: 18s; }
 }
+
+/* ╔══════════════════════════════════════════════════════════════╗
+   ║  REDESIGN v2 — PALETA BLANCO/NEGRO PREMIUM                  ║
+   ║  Todos los overrides posteriores al CSS original.            ║
+   ║  Las variables CSS de :root posteriores sobreescriben        ║
+   ║  las anteriores, los selectores de clase mantienen           ║
+   ║  la misma especificidad o la aumentan.                        ║
+   ╚══════════════════════════════════════════════════════════════╝ */
+
+/* ── 1. NUEVAS VARIABLES DE DISEÑO ─────────────────────────── */
+:root {
+  /* Paleta base: blanco dominante, negro elegante */
+  --cream-0:        #ffffff;
+  --cream-1:        #f8f8f6;
+  --cream-2:        #f1f1ee;
+  --cream-3:        #e4e4e1;
+  --brown-0:        #0b0b0b;
+  --brown-1:        #141414;
+  --brown-2:        #2a2a2a;
+  --brown-3:        #555555;
+
+  /* Acento: champagne/greige muy sutil — máx 5% de uso */
+  --gold-deep:      #1a1a1a;
+  --gold:           #b0a898;
+  --gold-light:     #cec9be;
+  --gold-pale:      #f2f0ec;
+  --gold-glow:      rgba(0,0,0,.06);
+
+  /* Superficies */
+  --surface:        #ffffff;
+  --surface-warm:   #fafaf8;
+  --surface-alt:    #f5f5f2;
+
+  /* Texto */
+  --text-primary:   #0b0b0b;
+  --text-secondary: #333333;
+  --text-muted:     #767676;
+  --text-light:     #aaaaaa;
+
+  /* Bordes */
+  --border:         rgba(11,11,11,.09);
+  --border-light:   rgba(11,11,11,.05);
+
+  /* Sombras — más suaves, sin tinte dorado */
+  --shadow-xs:      0 2px 8px rgba(0,0,0,.05);
+  --shadow-sm:      0 4px 18px rgba(0,0,0,.08);
+  --shadow-md:      0 12px 40px rgba(0,0,0,.10);
+  --shadow-lg:      0 28px 80px rgba(0,0,0,.14);
+  --shadow-gold:    0 16px 50px rgba(0,0,0,.11);
+  --shadow-gold-lg: 0 24px 70px rgba(0,0,0,.17);
+
+  /* Radios */
+  --r-xs:  6px;  --r-sm: 10px; --r-md: 16px;
+  --r-lg:  22px; --r-xl: 32px; --r-pill: 9999px;
+
+  /* Tipografía */
+  --font-body: 'Manrope', 'Segoe UI', Helvetica, sans-serif;
+
+  /* Easing premium */
+  --ease-premium:      cubic-bezier(.16,1,.3,1);
+  --t-fast:   .18s var(--ease-premium);
+  --t-base:   .32s var(--ease-premium);
+  --t-spring: .5s  cubic-bezier(.34,1.56,.64,1);
+
+  /* Tokens semánticos adicionales */
+  --color-bg:          #ffffff;
+  --color-bg-soft:     #f8f8f6;
+  --color-surface:     #ffffff;
+  --color-text:        #0b0b0b;
+  --color-text-soft:   #444444;
+  --color-text-muted:  #767676;
+  --color-black:       #050505;
+  --color-white:       #ffffff;
+  --color-border:      rgba(5,5,5,.08);
+  --color-border-strong: rgba(5,5,5,.16);
+  --color-accent:      #cec9be;
+  --color-accent-soft: #f2f0ec;
+}
+
+/* ── 2. BASE ────────────────────────────────────────────────── */
+body {
+  background: var(--color-bg);
+  background-image: none; /* elimina radiales dorados anteriores */
+}
+
+/* ── 3. HEADER — negro refinado, sin tinte marrón ─────────── */
+.header {
+  background: var(--color-black);
+  border-bottom: 1px solid rgba(255,255,255,.07);
+}
+.header.scrolled { box-shadow: 0 4px 32px rgba(0,0,0,.4); }
+.logo-slogan { color: rgba(255,255,255,.45); }
+.logo-name span { color: rgba(255,255,255,.9); font-weight: 600; }
+.nav a { color: rgba(255,255,255,.65); font-size: .79rem; letter-spacing: .1em; }
+.nav a:hover, .nav a.active { color: #fff; }
+.nav a::after { background: #fff; }
+
+/* ── 4. BOTONES ─────────────────────────────────────────────── */
+/* btn-gold: blanco en hero (fondo oscuro) */
+.hero .btn-gold,
+.page-hero .btn-gold {
+  background: #ffffff;
+  color: #050505;
+  box-shadow: 0 8px 28px rgba(0,0,0,.18);
+}
+.hero .btn-gold:hover,
+.page-hero .btn-gold:hover {
+  background: rgba(255,255,255,.92);
+  box-shadow: 0 16px 44px rgba(0,0,0,.26);
+  transform: translateY(-3px);
+}
+/* btn-gold en fondo claro */
+.btn-gold {
+  background: var(--color-black);
+  color: #fff;
+  box-shadow: 0 8px 28px rgba(0,0,0,.16);
+}
+.btn-gold:hover { box-shadow: 0 16px 44px rgba(0,0,0,.24); }
+
+/* btn-outline-dark */
+.btn-outline-dark {
+  background: transparent;
+  color: var(--color-black);
+  border: 1.5px solid rgba(5,5,5,.25);
+  font-size: .78rem; font-weight: 600; letter-spacing: .05em;
+}
+.btn-outline-dark:hover {
+  background: var(--color-black);
+  color: #fff;
+  border-color: var(--color-black);
+  box-shadow: var(--shadow-md);
+}
+
+/* ── 5. HERO ────────────────────────────────────────────────── */
+.hero { background: #080808; }
+.hero h1 em { color: rgba(255,255,255,.78); font-style: italic; }
+.hero-eyebrow { color: rgba(255,255,255,.55); }
+.hero-line { background: rgba(255,255,255,.25); }
+
+/* ── 6. PAGE HERO (catálogo/promos) ─────────────────────────── */
+/* Especificidad: .page-hero .selector tiene (0,2,0) > .section-* (0,1,0) */
+.page-hero .section-eyebrow,
+.page-hero-eyebrow {
+  color: rgba(255,255,255,.6);
+  display: inline-flex; align-items: center; gap: .55rem;
+  font-size: .68rem; letter-spacing: .22em; text-transform: uppercase; font-weight: 600;
+  margin-bottom: .6rem;
+}
+.page-hero .section-eyebrow::before, .page-hero .section-eyebrow::after,
+.page-hero-eyebrow::before, .page-hero-eyebrow::after {
+  content: ''; width: 16px; height: 1px; background: rgba(255,255,255,.35);
+}
+.page-hero .section-title,
+.page-hero-title { color: #fff; }
+.page-hero .section-subtitle,
+.page-hero-subtitle { color: rgba(255,255,255,.72); }
+
+/* ── 7. STATS BAR ───────────────────────────────────────────── */
+.stats-bar {
+  background: #050505;
+  border-bottom: 1px solid rgba(255,255,255,.06);
+}
+.stat-number {
+  font-family: var(--font-display);
+  font-size: 1.7rem;
+  color: #ffffff;
+}
+.stat-label { color: rgba(255,255,255,.45); letter-spacing: .1em; }
+.stat-divider { background: rgba(255,255,255,.1); }
+
+/* ── 8. SECCIÓN — tipografía ─────────────────────────────────── */
+.section-eyebrow { color: var(--text-muted); }
+.section-eyebrow::before, .section-eyebrow::after { background: var(--color-accent); }
+.section-title { color: var(--color-text); }
+
+/* ── 9. PRODUCT CARDS ───────────────────────────────────────── */
+.product-card {
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-xs);
+  background: var(--color-surface);
+}
+.product-card:hover {
+  border-color: rgba(5,5,5,.18);
+  box-shadow: 0 20px 60px rgba(0,0,0,.12);
+}
+.product-card::before {
+  background: linear-gradient(90deg, #050505, #555, #050505);
+}
+.product-category { color: var(--text-muted); font-size: .65rem; }
+.product-name { color: var(--color-text); }
+.product-price { color: var(--color-text); font-size: 1rem; font-weight: 700; }
+.product-badge {
+  background: var(--color-black);
+  color: #fff;
+  font-size: .62rem; letter-spacing: .06em;
+  box-shadow: 0 2px 8px rgba(0,0,0,.18);
+}
+.product-badge.new { background: #2d6a4f; }
+.product-badge.tester { background: #333; }
+.product-badge.nicho { background: #050505; }
+.img-wrapper {
+  background: radial-gradient(circle at 50% 38%, #fafafa, var(--cream-1));
+}
+.btn-add {
+  border-color: rgba(5,5,5,.16);
+  color: var(--color-text);
+  font-size: .74rem; letter-spacing: .04em;
+  padding: .62rem;
+}
+.btn-add:hover {
+  background: var(--color-black);
+  border-color: var(--color-black);
+  color: #fff;
+  box-shadow: 0 6px 20px rgba(0,0,0,.16);
+}
+
+/* ── 10. PROMO CARDS ────────────────────────────────────────── */
+.promo-card {
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-xs);
+}
+.promo-card:hover {
+  border-color: rgba(5,5,5,.18);
+  box-shadow: 0 20px 60px rgba(0,0,0,.12);
+}
+.promo-card::before {
+  background: linear-gradient(90deg, #050505, #666, #050505);
+}
+.promo-price {
+  color: var(--color-text);
+  font-weight: 700;
+}
+.promo-card .btn-add {
+  border-color: rgba(5,5,5,.22);
+  color: var(--color-text);
+}
+.promo-card .btn-add:hover {
+  background: var(--color-black);
+  border-color: var(--color-black);
+  color: #fff;
+}
+.promo-media-fallback {
+  background:
+    radial-gradient(circle at 28% 22%, rgba(255,255,255,.4), transparent 52%),
+    linear-gradient(135deg, #2a2a2a 0%, #0b0b0b 100%);
+}
+.promo-badge { background: #1a1a1a; }
+
+/* ── 11. TRUST CARDS ────────────────────────────────────────── */
+.trust-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-xs);
+}
+.trust-card::after { background: linear-gradient(90deg, #050505, #555); }
+.trust-card:hover { box-shadow: var(--shadow-md); border-color: rgba(5,5,5,.15); }
+.trust-icon-wrap { background: var(--color-bg-soft); }
+.trust-card:hover .trust-icon-wrap { background: var(--color-black); }
+
+/* ── 12. REVIEWS ────────────────────────────────────────────── */
+.review-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+}
+.review-stars { color: var(--color-text); }
+.review-avatar {
+  background: var(--color-black);
+  color: #fff;
+}
+
+/* ── 13. FILTROS EXISTENTES — desactivar estilos pill viejos ── */
+/* Los cat-tile reemplazan a .filter-pill; ocultamos estilos legacy */
+.filter-pill { all: unset; } /* reset limpio */
+.pill-bg, .pill-icon, .pill-label { display: none; } /* eliminar pill markup si existe */
+.filters-wrapper { display: none; } /* panel viejo oculto */
+
+/* ── 14. CAT-SECTION — contenedor general de catálogo/promos ─ */
+.cat-section {
+  padding: 3.5rem 0 5rem;
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding-inline: 2rem;
+}
+@media (max-width: 640px) { .cat-section { padding-inline: 1rem; padding-top: 2.5rem; } }
+
+/* ── 15. CAT-SHOWCASE — grid editorial de categorías ──────────
+   Desktop: Fila 1 → Nicho (2/3) + Árabe (1/3)
+            Fila 2 → Deluxe + Diseñador + Tester
+   Inspiración: editorial de lujo, Louvi Parfums style.
+   NO se copian imágenes ni textos. Solo la estructura.
+   ─────────────────────────────────────────────────────────── */
+.cat-showcase {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: 400px 300px;
+  gap: 1rem;
+  margin-bottom: 0;
+}
+/* Posición editorial — SOLO el showcase de catálogo (no el de promos) */
+.cat-showcase:not(.cat-showcase--promos) .cat-tile:nth-child(1) { grid-column: 1 / 4; grid-row: 1; }
+.cat-showcase:not(.cat-showcase--promos) .cat-tile:nth-child(2) { grid-column: 4 / 7; grid-row: 1; }
+.cat-showcase:not(.cat-showcase--promos) .cat-tile:nth-child(3) { grid-column: 1 / 3; grid-row: 2; }
+.cat-showcase:not(.cat-showcase--promos) .cat-tile:nth-child(4) { grid-column: 3 / 5; grid-row: 2; }
+.cat-showcase:not(.cat-showcase--promos) .cat-tile:nth-child(5) { grid-column: 5 / 7; grid-row: 2; }
+
+/* Promos: 3 columnas iguales, auto-placement */
+.cat-showcase--promos {
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 460px;
+}
+.cat-showcase--promos .cat-tile {
+  grid-column: auto;
+  grid-row: 1;
+  height: 460px;
+}
+
+/* ── 16. CAT-TILE — tarjeta editorial de categoría ────────── */
+.cat-tile {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--r-lg);
+  cursor: pointer;
+  border: none;
+  background: #111;
+  padding: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-align: left;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  /* Entrada inicial (para GSAP) */
+  opacity: 1;
+  transform: none;
+}
+
+/* Imagen de fondo */
+.cat-tile__img {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+.cat-tile__img img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+  transition: transform .8s var(--ease-premium), filter .6s ease;
+  filter: brightness(.62) saturate(.85);
+  display: block;
+  opacity: 0; /* fade in al cargar */
+}
+.cat-tile__img img.img-loaded { opacity: 1; transition: opacity .4s ease, transform .8s var(--ease-premium), filter .6s ease; }
+.cat-tile__img.img-error { background: #1a1a1a; }
+
+/* Overlay gradiente */
+.cat-tile__img::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      to top,
+      rgba(0,0,0,.78) 0%,
+      rgba(0,0,0,.28) 45%,
+      rgba(0,0,0,.06) 100%
+    );
+  transition: opacity .4s ease;
+}
+
+/* Hover */
+.cat-tile:hover .cat-tile__img img {
+  transform: scale(1.06);
+  filter: brightness(.72) saturate(1);
+}
+.cat-tile:hover .cat-tile__img::after { opacity: .85; }
+
+/* Cuerpo de texto (sobre la imagen) */
+.cat-tile__body {
+  position: absolute;
+  bottom: 0;
+  left: 0; right: 0;
+  padding: 1.8rem 1.6rem 1.6rem;
+  color: #fff;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: .25rem;
+  transition: transform .4s var(--ease-premium);
+}
+.cat-tile:hover .cat-tile__body { transform: translateY(-4px); }
+
+.cat-tile__eyebrow {
+  font-size: .62rem;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.5);
+  font-weight: 600;
+  font-family: var(--font-body);
+  display: block;
+}
+.cat-tile__name {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-weight: 400;
+  letter-spacing: .015em;
+  line-height: 1.05;
+  color: #fff;
+  display: block;
+}
+.cat-tile__sub {
+  font-size: .72rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.48);
+  font-weight: 500;
+  font-family: var(--font-body);
+  display: block;
+  transition: color .3s ease;
+}
+.cat-tile:hover .cat-tile__sub { color: rgba(255,255,255,.72); }
+
+/* Estado activo */
+.cat-tile.active,
+.cat-tile[aria-pressed="true"] {
+  box-shadow: 0 0 0 3px #fff, 0 0 0 5px rgba(255,255,255,.3);
+}
+.cat-tile[aria-pressed="true"] .cat-tile__img::after {
+  background:
+    linear-gradient(
+      to top,
+      rgba(5,5,5,.88) 0%,
+      rgba(5,5,5,.4) 50%,
+      rgba(5,5,5,.1) 100%
+    );
+}
+.cat-tile[aria-pressed="true"] .cat-tile__name { color: #fff; }
+
+/* Focus visible accesible */
+.cat-tile:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+}
+
+/* ── 17. GENDER BAR — chips de género ───────────────────────── */
+.gender-bar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 1.4rem 0;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  margin: 1.4rem 0 2rem;
+  animation: pageIn .3s var(--ease-premium) both;
+}
+.gender-bar__label {
+  font-size: .65rem;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  font-weight: 600;
+  white-space: nowrap;
+}
+.gender-bar__chips { display: flex; gap: .5rem; flex-wrap: wrap; }
+.gender-chip {
+  padding: .45rem 1.1rem;
+  border-radius: var(--r-pill);
+  border: 1px solid var(--color-border-strong);
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: .76rem;
+  font-weight: 500;
+  letter-spacing: .03em;
+  font-family: var(--font-body);
+  cursor: pointer;
+  transition: all .22s var(--ease-premium);
+}
+.gender-chip:hover {
+  border-color: var(--color-black);
+  background: var(--color-bg-soft);
+  color: var(--color-black);
+}
+.gender-chip.active,
+.gender-chip[aria-pressed="true"] {
+  background: var(--color-black);
+  border-color: var(--color-black);
+  color: #fff;
+}
+.gender-chip:focus-visible {
+  outline: 2px solid var(--color-black);
+  outline-offset: 2px;
+}
+
+/* ── 18. CATALOG HINT — sin categoría + género activo ───────── */
+.catalog-hint {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 4rem 2rem 5rem;
+  animation: pageIn .35s var(--ease-premium) both;
+}
+.catalog-hint-icon { font-size: 2rem; margin-bottom: 1rem; opacity: .4; animation: floatUpDown 2.8s ease-in-out infinite; }
+.catalog-hint-text { color: var(--text-muted); font-size: .9rem; max-width: 320px; margin: 0 auto; }
+
+/* ── 19. EMPTY STATE mejorado ─────────────────────────────────── */
+.empty-state {
+  grid-column: 1 / -1;
+  padding: 5rem 2rem;
+  text-align: center;
+  animation: pageIn .35s var(--ease-premium) both;
+}
+.empty-state-icon { font-size: 2.4rem; opacity: .28; margin-bottom: 1.2rem; }
+.empty-state-title {
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  font-weight: 400;
+  color: var(--color-text);
+  margin-bottom: .55rem;
+}
+.empty-state-text { color: var(--text-muted); font-size: .88rem; max-width: 360px; margin: 0 auto; line-height: 1.75; }
+
+/* ── 20. FOOTER ─────────────────────────────────────────────── */
+.footer {
+  background: var(--color-black);
+  border-top: 1px solid rgba(255,255,255,.06);
+}
+.footer-logo-name, .footer-tagline, .footer-col h4, .footer-col p, .footer-bottom p { color: rgba(255,255,255,.7); }
+.footer-col h4 { color: rgba(255,255,255,.9); font-weight: 600; letter-spacing: .04em; margin-bottom: .9rem; }
+.footer-bottom { border-color: rgba(255,255,255,.07); }
+.footer-signature a { color: rgba(255,255,255,.5); }
+.footer-signature a:hover { color: #fff; }
+.social-links a { color: rgba(255,255,255,.45); border-color: rgba(255,255,255,.12); }
+.social-links a:hover { color: #fff; border-color: rgba(255,255,255,.4); background: rgba(255,255,255,.08); }
+
+/* ── 21. MODAL — entrada premium ──────────────────────────────── */
+.modal-overlay { background: rgba(5,5,5,.68); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+.modal {
+  background: var(--color-surface);
+  border-radius: var(--r-xl);
+  box-shadow: 0 40px 100px rgba(0,0,0,.28);
+  border: 1px solid var(--color-border);
+}
+.modal-close {
+  background: rgba(5,5,5,.06);
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  border-radius: 50%;
+  width: 36px; height: 36px;
+  display: flex; align-items: center; justify-content: center;
+  transition: all .2s ease;
+}
+.modal-close:hover { background: var(--color-black); color: #fff; border-color: var(--color-black); }
+.btn-add-large {
+  background: var(--color-black);
+  border: none;
+  color: #fff;
+  border-radius: var(--r-pill);
+  font-weight: 600;
+}
+.btn-add-large:hover { background: #222; box-shadow: var(--shadow-md); }
+
+/* ── 22. CART SIDEBAR ───────────────────────────────────────── */
+.cart-sidebar {
+  background: var(--color-surface);
+  border-left: 1px solid var(--color-border);
+  box-shadow: -20px 0 60px rgba(0,0,0,.12);
+}
+.cart-header { border-bottom: 1px solid var(--color-border); }
+.cart-header-icon { color: var(--color-text); }
+.btn-whatsapp {
+  background: #25d366;
+  border-radius: var(--r-pill);
+  font-weight: 700;
+  letter-spacing: .03em;
+}
+
+/* ── 23. SEARCH INPUT ───────────────────────────────────────── */
+.search-box input:focus {
+  border-color: rgba(255,255,255,.55);
+  background: rgba(255,255,255,.18);
+  box-shadow: 0 0 0 5px rgba(255,255,255,.08);
+}
+.search-suggestions {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--r-md);
+  box-shadow: var(--shadow-lg);
+}
+.search-suggestion-item:hover { background: var(--color-bg-soft); }
+
+/* ── 24. BACK TO TOP ─────────────────────────────────────────── */
+.back-to-top {
+  background: var(--color-black);
+  color: #fff;
+  border: none;
+  box-shadow: var(--shadow-md);
+}
+.back-to-top:hover { background: #222; transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+
+/* ── 25. IG FAB ─────────────────────────────────────────────── */
+.ig-fab {
+  background: var(--color-black);
+  box-shadow: 0 8px 26px rgba(0,0,0,.25);
+}
+.ig-fab:hover { background: #222; box-shadow: 0 12px 36px rgba(0,0,0,.35); }
+
+/* ── 26. DARK MODE — ajustes sobre nueva paleta ─────────────── */
+[data-theme="dark"] {
+  --cream-0:        #161616;
+  --cream-1:        #111111;
+  --cream-2:        #1e1e1e;
+  --cream-3:        #252525;
+  --surface:        #1a1a1a;
+  --surface-warm:   #141414;
+  --surface-alt:    #121212;
+  --text-primary:   #f0f0ee;
+  --text-secondary: #d0d0ce;
+  --text-muted:     #888888;
+  --text-light:     #606060;
+  --border:         rgba(255,255,255,.08);
+  --border-light:   rgba(255,255,255,.04);
+  --gold-pale:      #1e1e1e;
+  --color-bg:       #111111;
+  --color-bg-soft:  #161616;
+  --color-surface:  #1a1a1a;
+  --color-text:     #f0f0ee;
+  --color-border:   rgba(255,255,255,.08);
+  --color-border-strong: rgba(255,255,255,.14);
+  --shadow-xs:      0 2px 8px rgba(0,0,0,.5);
+  --shadow-sm:      0 4px 18px rgba(0,0,0,.55);
+  --shadow-md:      0 12px 40px rgba(0,0,0,.6);
+}
+[data-theme="dark"] body {
+  background: var(--color-bg);
+  background-image: none;
+}
+[data-theme="dark"] .cat-tile { background: #0a0a0a; }
+[data-theme="dark"] .gender-chip {
+  border-color: rgba(255,255,255,.12);
+  color: rgba(255,255,255,.7);
+}
+[data-theme="dark"] .gender-chip:hover {
+  background: rgba(255,255,255,.08);
+  border-color: rgba(255,255,255,.3);
+  color: #fff;
+}
+[data-theme="dark"] .gender-chip.active,
+[data-theme="dark"] .gender-chip[aria-pressed="true"] {
+  background: #fff;
+  border-color: #fff;
+  color: #050505;
+}
+[data-theme="dark"] .gender-bar {
+  border-color: rgba(255,255,255,.07);
+}
+[data-theme="dark"] .img-wrapper {
+  background: radial-gradient(circle at 50% 38%, #1e1e1e, #111);
+}
+[data-theme="dark"] .filters-wrapper { display: none; }
+
+/* ── 27. RESPONSIVE — CAT SHOWCASE ───────────────────────────── */
+@media (max-width: 1024px) {
+  .cat-showcase {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 360px 280px;
+  }
+  .cat-showcase .cat-tile:nth-child(1) { grid-column: 1 / 3; }
+  .cat-showcase .cat-tile:nth-child(2) { grid-column: 3 / 5; }
+  .cat-showcase .cat-tile:nth-child(3) { grid-column: 1 / 2; }
+  .cat-showcase .cat-tile:nth-child(4) { grid-column: 2 / 3; }
+  .cat-showcase .cat-tile:nth-child(5) { grid-column: 3 / 5; }
+  .cat-showcase--promos {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 380px;
+  }
+}
+
+@media (max-width: 768px) {
+  .cat-showcase {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    gap: .65rem;
+  }
+  .cat-showcase .cat-tile { height: 200px; }
+  /* Nicho: fila completa (protagonista) */
+  .cat-showcase .cat-tile:nth-child(1) { grid-column: 1 / 3; grid-row: auto; height: 230px; }
+  .cat-showcase .cat-tile:nth-child(2) { grid-column: 1 / 2; grid-row: auto; }
+  .cat-showcase .cat-tile:nth-child(3) { grid-column: 2 / 3; grid-row: auto; }
+  .cat-showcase .cat-tile:nth-child(4) { grid-column: 1 / 2; grid-row: auto; }
+  .cat-showcase .cat-tile:nth-child(5) { grid-column: 2 / 3; grid-row: auto; }
+
+  .cat-showcase--promos {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+  .cat-showcase--promos .cat-tile { grid-column: auto; height: 220px; }
+
+  .cat-tile__name { font-size: 1.5rem; }
+  .cat-tile__body { padding: 1.2rem 1rem 1rem; }
+
+  .gender-bar { flex-direction: column; align-items: flex-start; padding: 1.2rem 0; gap: .75rem; }
+}
+
+@media (max-width: 480px) {
+  .cat-showcase .cat-tile { height: 170px; }
+  .cat-showcase .cat-tile:nth-child(1) { height: 200px; }
+}
+
+/* ── 28. REVEAL — clases de animación para GSAP ──────────────── */
+.js-reveal { opacity: 0; transform: translateY(30px); }
+.js-reveal.is-visible {
+  opacity: 1; transform: translateY(0);
+  transition: opacity .7s var(--ease-premium), transform .7s var(--ease-premium);
+}
+
+/* ── 29. REDUCED MOTION ──────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .cat-tile__img img,
+  .cat-tile__body,
+  .cat-tile:hover .cat-tile__img img,
+  .cat-tile:hover .cat-tile__body { transition: none; transform: none; }
+  .js-reveal, .js-reveal.is-visible { opacity: 1; transform: none; transition: none; }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   AUTOCRÍTICA v1 — 20 mejoras visuales/UX post-audit
+   Director de diseño senior: refinamiento del resultado.
+   ══════════════════════════════════════════════════════════════ */
+
+/* 1. Page-hero más impactante: altura de 56vh → 65vh */
+.page-hero { min-height: 65vh !important; }
+
+/* 2. Page hero overlay más profundo para mejor legibilidad */
+.page-hero-overlay {
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,.70) 0%,
+    rgba(0,0,0,.30) 50%,
+    rgba(0,0,0,.08) 100%
+  ) !important;
+}
+
+/* 3. Section eyebrows: warmth sutil con champagne en lugar de gris plano */
+.section-eyebrow { color: var(--gold) !important; }          /* #b0a898 champagne */
+.section-eyebrow::before, .section-eyebrow::after { background: var(--gold) !important; }
+
+/* 4. Cat-tile: nombre más grande en tiles grandes (fila 1) */
+.cat-showcase:not(.cat-showcase--promos) .cat-tile:nth-child(1) .cat-tile__name,
+.cat-showcase:not(.cat-showcase--promos) .cat-tile:nth-child(2) .cat-tile__name {
+  font-size: clamp(2rem, 3.5vw, 3rem);
+}
+
+/* 5. Cat-tile estado activo: anillo de selección más visible */
+.cat-tile[aria-pressed="true"] {
+  box-shadow: 0 0 0 3px rgba(255,255,255,.9),
+              0 0 0 6px rgba(255,255,255,.22),
+              var(--shadow-lg) !important;
+}
+
+/* 6. Gender bar: separador superior más elegante */
+.gender-bar {
+  border-top: 1px solid var(--color-border) !important;
+  margin-top: 2rem !important;
+  padding-top: 1.5rem !important;
+}
+
+/* 7. Gender chip seleccionado: transición más visible */
+.gender-chip.active,
+.gender-chip[aria-pressed="true"] {
+  background: var(--color-black) !important;
+  color: #fff !important;
+  border-color: var(--color-black) !important;
+  box-shadow: 0 4px 14px rgba(0,0,0,.18) !important;
+  transform: translateY(-1px);
+}
+
+/* 8. Product card: hover más dramático */
+.product-card:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 24px 70px rgba(0,0,0,.13) !important;
+}
+
+/* 9. Btn-add: letra más espaciada, más premium */
+.btn-add {
+  letter-spacing: .06em !important;
+  font-weight: 600 !important;
+  font-size: .73rem !important;
+  text-transform: uppercase !important;
+}
+
+/* 10. Product badge deluxe: color champagne distinguido */
+.product-badge.deluxe {
+  background: #8a7d6e !important;
+  letter-spacing: .08em !important;
+}
+
+/* 11. Cat-showcase: gap un poco más generoso en desktop */
+@media (min-width: 1024px) {
+  .cat-showcase { gap: 1.2rem !important; }
+}
+
+/* 12. Page-hero content: padding inferior para que el texto no toque el borde */
+.page-hero-content {
+  padding-bottom: 3rem !important;
+  width: 100% !important;
+  max-width: 680px !important;
+}
+
+/* 13. Promo-card hover consistente con product-card */
+.promo-card:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 24px 70px rgba(0,0,0,.13) !important;
+}
+
+/* 14. Footer links: espaciado de línea más cómodo */
+.footer-col p { line-height: 1.85 !important; }
+.footer-link, .footer-col a { letter-spacing: .02em !important; }
+
+/* 15. Stats bar: números más grandes y elegantes */
+.stat-number { font-size: 2rem !important; letter-spacing: -.01em !important; }
+
+/* 16. Hero principal: padding inferior para evitar q el texto quede muy abajo */
+.hero-content { padding-bottom: 5rem !important; }
+
+/* 17. Botón outline-dark en hero: definición más clara */
+.btn-outline-dark {
+  border: 1.5px solid rgba(255,255,255,.38) !important;
+  color: rgba(255,255,255,.88) !important;
+}
+.btn-outline-dark:hover {
+  background: rgba(255,255,255,.12) !important;
+  border-color: rgba(255,255,255,.7) !important;
+  color: #fff !important;
+}
+
+/* 18. Cat-tile en promos: texto más centrado verticalmente */
+.cat-showcase--promos .cat-tile__body {
+  padding: 2.2rem 2rem 2rem !important;
+  justify-content: flex-end !important;
+}
+
+/* 19. Catalog/promos section: más aire encima del showcase */
+.cat-section { padding-top: 2.5rem !important; }
+
+/* 20. Trust-card icon wrap: hover transition más suave */
+.trust-icon-wrap {
+  transition: background .3s var(--ease-premium), transform .3s var(--ease-premium) !important;
+}
+.trust-card:hover .trust-icon-wrap {
+  transform: scale(1.08) !important;
+}
+
+/* ── DARK MODE ajustes para autocrítica ─────────────────────── */
+[data-theme="dark"] .section-eyebrow { color: var(--gold) !important; }
+[data-theme="dark"] .section-eyebrow::before,
+[data-theme="dark"] .section-eyebrow::after { background: var(--gold) !important; }
+[data-theme="dark"] .gender-chip.active,
+[data-theme="dark"] .gender-chip[aria-pressed="true"] {
+  background: #fff !important;
+  color: #050505 !important;
+  border-color: #fff !important;
+}
+[data-theme="dark"] .btn-outline-dark {
+  border-color: rgba(255,255,255,.3) !important;
+  color: rgba(255,255,255,.8) !important;
+}
+
+/* ── RESPONSIVE FIXES adicionales ───────────────────────────── */
+@media (max-width: 768px) {
+  .page-hero { min-height: 55vh !important; }
+  .page-hero-content { padding-bottom: 2rem !important; max-width: 100% !important; }
+  .stat-number { font-size: 1.6rem !important; }
+  .cat-section { padding-top: 1.5rem !important; }
+  .cat-showcase--promos .cat-tile__body { padding: 1.5rem 1.2rem 1.2rem !important; }
+}
+
+@media (max-width: 480px) {
+  .page-hero { min-height: 50vh !important; }
+  .gender-bar { margin-top: 1.2rem !important; }
+}

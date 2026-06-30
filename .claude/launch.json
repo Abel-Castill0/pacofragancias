@@ -4,8 +4,8 @@
     {
       "name": "paco-fragancias",
       "runtimeExecutable": "npx",
-      "runtimeArgs": ["-y", "http-server", "-p", "8133", "-c-1"],
-      "port": 8133
+      "runtimeArgs": ["-y", "http-server", "-p", "8134", "-c-1"],
+      "port": 8134
     }
   ]
 }

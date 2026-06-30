@@ -3,7 +3,7 @@
  * - Stale-while-revalidate: imágenes
  * - Network-first con fallback a offline.html: navegación
  */
-const VERSION = "paco-v6";
+const VERSION = "paco-v8";
 const CORE_CACHE = `core-${VERSION}`;
 const IMG_CACHE = `img-${VERSION}`;
 const FONT_CACHE = `font-${VERSION}`;

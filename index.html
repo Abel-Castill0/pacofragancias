@@ -105,13 +105,13 @@
 
   <!-- Fonts -->
   <link rel="preload" as="style"
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500;600;700&display=swap" />
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Manrope:wght@300;400;500;600;700;800&display=swap" />
   <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Manrope:wght@300;400;500;600;700;800&display=swap"
     media="print" onload="this.media='all'" />
   <noscript>
     <link rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500;600;700&display=swap" />
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Manrope:wght@300;400;500;600;700;800&display=swap" />
   </noscript>
 
   <!-- Font Awesome (non-blocking) -->
@@ -398,10 +398,9 @@
       <img src="inicio.webp" alt="Colección Paco Fragancias" class="page-hero-img" loading="lazy" decoding="async" />
       <div class="page-hero-overlay"></div>
       <div class="page-hero-content">
-        <div class="section-eyebrow" style="color: var(--gold-light);">Catálogo</div>
-        <h2 class="section-title" style="color: #fff;">Toda Nuestra Colección</h2>
-        <p class="section-subtitle" style="color: rgba(255,255,255,0.8);">Explora por tipo, género o busca tu fragancia
-          favorita.</p>
+        <div class="section-eyebrow page-hero-eyebrow">Catálogo</div>
+        <h2 class="section-title page-hero-title">Toda Nuestra Colección</h2>
+        <p class="section-subtitle page-hero-subtitle">Explora por tipo, género o busca tu fragancia favorita.</p>
         <div class="search-box-wrapper">
           <div class="search-box">
             <i class="fa-solid fa-magnifying-glass search-icon" aria-hidden="true"></i>
@@ -412,44 +411,72 @@
         </div>
       </div>
     </section>
-    <section class="section" style="padding-top: 2.5rem;">
-      <div class="filters-wrapper">
-        <div class="filters-row">
-          <div class="filter-group">
-            <span class="filter-group-label">Elige una categoría</span>
-            <div class="filter-pills" id="filtersCategory">
-              <button class="filter-btn filter-pill" data-filter="nicho" data-cat="nicho" aria-label="Nicho" aria-pressed="false">
-                <span class="pill-bg"><img src="img/filtros/nicho.webp" alt="Nicho" width="600" height="800" loading="eager" fetchpriority="high" decoding="async" onload="this.classList.add('img-loaded')" onerror="this.remove()" /><span class="pill-icon" aria-hidden="true">✨</span></span>
-                <span class="pill-label">Nicho</span>
-              </button>
-              <button class="filter-btn filter-pill" data-filter="arabe" data-cat="arabe" aria-label="Árabe" aria-pressed="false">
-                <span class="pill-bg"><img src="img/filtros/arabe.webp" alt="Árabe" width="600" height="800" loading="eager" fetchpriority="high" decoding="async" onload="this.classList.add('img-loaded')" onerror="this.remove()" /><span class="pill-icon" aria-hidden="true">🕌</span></span>
-                <span class="pill-label">Árabe</span>
-              </button>
-              <button class="filter-btn filter-pill" data-filter="deluxe" data-cat="deluxe" aria-label="Deluxe" aria-pressed="false">
-                <span class="pill-bg"><img src="img/filtros/deluxe.webp" alt="Deluxe" width="600" height="800" loading="eager" fetchpriority="high" decoding="async" onload="this.classList.add('img-loaded')" onerror="this.remove()" /><span class="pill-icon" aria-hidden="true">💎</span></span>
-                <span class="pill-label">Deluxe</span>
-              </button>
-              <button class="filter-btn filter-pill" data-filter="disenador" data-cat="disenador" aria-label="Diseñador" aria-pressed="false">
-                <span class="pill-bg"><img src="img/filtros/disenador.webp" alt="Diseñador" width="600" height="800" loading="eager" fetchpriority="high" decoding="async" onload="this.classList.add('img-loaded')" onerror="this.remove()" /><span class="pill-icon" aria-hidden="true">⭐</span></span>
-                <span class="pill-label">Diseñador</span>
-              </button>
-              <button class="filter-btn filter-pill" data-filter="tester" data-cat="tester" aria-label="Tester" aria-pressed="false">
-                <span class="pill-bg"><img src="img/filtros/tester.webp" alt="Tester" width="600" height="800" loading="eager" fetchpriority="high" decoding="async" onload="this.classList.add('img-loaded')" onerror="this.remove()" /><span class="pill-icon" aria-hidden="true">🧪</span></span>
-                <span class="pill-label">Tester</span>
-              </button>
-            </div>
-          </div>
-          <div class="filter-group" id="catalogGenderGroup" style="display:none;">
-            <span class="filter-group-label">Género</span>
-            <div class="filter-chips" id="filtersGender">
-              <button class="filter-btn" data-filter="masculino" aria-pressed="false">👨 Masculino</button>
-              <button class="filter-btn" data-filter="femenino" aria-pressed="false">👩 Femenino</button>
-              <button class="filter-btn" data-filter="unisex" aria-pressed="false">🧑 Unisex</button>
-            </div>
-          </div>
+    <section class="cat-section">
+      <!-- Category showcase: tarjetas editoriales grandes -->
+      <div class="cat-showcase" id="filtersCategory">
+        <button class="filter-btn cat-tile" data-filter="nicho" data-cat="nicho" aria-label="Nicho" aria-pressed="false">
+          <span class="cat-tile__img">
+            <img src="img/filtros/nicho.webp" alt="" width="600" height="800" loading="eager" fetchpriority="high" decoding="async" onload="this.classList.add('img-loaded')" onerror="this.closest('.cat-tile__img').classList.add('img-error')">
+          </span>
+          <span class="cat-tile__body">
+            <span class="cat-tile__eyebrow">Colección</span>
+            <span class="cat-tile__name">Nicho</span>
+            <span class="cat-tile__sub">Exclusivas &amp; Únicas</span>
+          </span>
+        </button>
+        <button class="filter-btn cat-tile" data-filter="arabe" data-cat="arabe" aria-label="Árabe" aria-pressed="false">
+          <span class="cat-tile__img">
+            <img src="img/filtros/arabe.webp" alt="" width="600" height="800" loading="eager" fetchpriority="high" decoding="async" onload="this.classList.add('img-loaded')" onerror="this.closest('.cat-tile__img').classList.add('img-error')">
+          </span>
+          <span class="cat-tile__body">
+            <span class="cat-tile__eyebrow">Colección</span>
+            <span class="cat-tile__name">Árabe</span>
+            <span class="cat-tile__sub">Opulencia Oriental</span>
+          </span>
+        </button>
+        <button class="filter-btn cat-tile" data-filter="deluxe" data-cat="deluxe" aria-label="Deluxe" aria-pressed="false">
+          <span class="cat-tile__img">
+            <img src="img/filtros/deluxe.webp" alt="" width="600" height="800" loading="eager" fetchpriority="high" decoding="async" onload="this.classList.add('img-loaded')" onerror="this.closest('.cat-tile__img').classList.add('img-error')">
+          </span>
+          <span class="cat-tile__body">
+            <span class="cat-tile__eyebrow">Colección</span>
+            <span class="cat-tile__name">Deluxe</span>
+            <span class="cat-tile__sub">Game of Spades &amp; más</span>
+          </span>
+        </button>
+        <button class="filter-btn cat-tile" data-filter="disenador" data-cat="disenador" aria-label="Diseñador" aria-pressed="false">
+          <span class="cat-tile__img">
+            <img src="img/filtros/disenador.webp" alt="" width="600" height="800" loading="eager" fetchpriority="high" decoding="async" onload="this.classList.add('img-loaded')" onerror="this.closest('.cat-tile__img').classList.add('img-error')">
+          </span>
+          <span class="cat-tile__body">
+            <span class="cat-tile__eyebrow">Colección</span>
+            <span class="cat-tile__name">Diseñador</span>
+            <span class="cat-tile__sub">Marcas Premium</span>
+          </span>
+        </button>
+        <button class="filter-btn cat-tile" data-filter="tester" data-cat="tester" aria-label="Tester" aria-pressed="false">
+          <span class="cat-tile__img">
+            <img src="img/filtros/tester.webp" alt="" width="600" height="800" loading="eager" fetchpriority="high" decoding="async" onload="this.classList.add('img-loaded')" onerror="this.closest('.cat-tile__img').classList.add('img-error')">
+          </span>
+          <span class="cat-tile__body">
+            <span class="cat-tile__eyebrow">Oferta</span>
+            <span class="cat-tile__name">Tester</span>
+            <span class="cat-tile__sub">Al mejor precio</span>
+          </span>
+        </button>
+      </div>
+
+      <!-- Filtros de género (aparecen solo al seleccionar categoría) -->
+      <div class="gender-bar" id="catalogGenderGroup" style="display:none;">
+        <span class="gender-bar__label">Filtrar por género</span>
+        <div class="gender-bar__chips" id="filtersGender">
+          <button class="filter-btn gender-chip" data-filter="masculino" aria-pressed="false">Masculino</button>
+          <button class="filter-btn gender-chip" data-filter="femenino" aria-pressed="false">Femenino</button>
+          <button class="filter-btn gender-chip" data-filter="unisex" aria-pressed="false">Unisex</button>
         </div>
       </div>
+
+      <!-- Grid de productos (vacío hasta que se elija categoría) -->
       <div class="product-grid" id="catalogGrid"></div>
     </section>
   </div>
@@ -461,42 +488,56 @@
         decoding="async" />
       <div class="page-hero-overlay"></div>
       <div class="page-hero-content">
-        <div class="section-eyebrow" style="color: var(--gold-light);">Ofertas Especiales</div>
-        <h2 class="section-title" style="color: #fff;">Packs &amp; Promociones</h2>
-        <p class="section-subtitle" style="color: rgba(255,255,255,0.8);">La mejor forma de descubrir nuevas fragancias
-          a un precio especial.</p>
+        <div class="section-eyebrow page-hero-eyebrow">Ofertas Especiales</div>
+        <h2 class="section-title page-hero-title">Packs &amp; Promociones</h2>
+        <p class="section-subtitle page-hero-subtitle">La mejor forma de descubrir nuevas fragancias a un precio especial.</p>
       </div>
     </section>
-    <section class="section" style="padding-top: 2.5rem;">
-      <div class="filters-wrapper">
-        <div class="filters-row">
-          <div class="filter-group">
-            <span class="filter-group-label">Elige un tipo de pack</span>
-            <div class="filter-pills" id="promoFilters">
-              <button class="filter-btn filter-pill" data-promo-filter="disenador" aria-label="Diseñador" aria-pressed="false">
-                <span class="pill-bg"><img src="img/filtros/disenador.webp" alt="Diseñador" width="600" height="800" loading="eager" fetchpriority="high" decoding="async" onload="this.classList.add('img-loaded')" onerror="this.remove()" /><span class="pill-icon" aria-hidden="true">⭐</span></span>
-                <span class="pill-label">Diseñador</span>
-              </button>
-              <button class="filter-btn filter-pill" data-promo-filter="arabe" aria-label="Árabes" aria-pressed="false">
-                <span class="pill-bg"><img src="img/filtros/arabe.webp" alt="Árabes" width="600" height="800" loading="eager" fetchpriority="high" decoding="async" onload="this.classList.add('img-loaded')" onerror="this.remove()" /><span class="pill-icon" aria-hidden="true">🕌</span></span>
-                <span class="pill-label">Árabe</span>
-              </button>
-              <button class="filter-btn filter-pill" data-promo-filter="deluxe" aria-label="Deluxe" aria-pressed="false">
-                <span class="pill-bg"><img src="img/filtros/deluxe.webp" alt="Deluxe" width="600" height="800" loading="eager" fetchpriority="high" decoding="async" onload="this.classList.add('img-loaded')" onerror="this.remove()" /><span class="pill-icon" aria-hidden="true">💎</span></span>
-                <span class="pill-label">Deluxe</span>
-              </button>
-            </div>
-          </div>
-          <div class="filter-separator" id="promoGenderSep" style="display:none;"></div>
-          <div class="filter-group" id="promoGenderGroup" style="display:none;">
-            <span class="filter-group-label">Género</span>
-            <div class="filter-chips" id="promoGenderFilters">
-              <button class="filter-btn" data-promo-gender="femenino" aria-pressed="false">👩 Mujer</button>
-              <button class="filter-btn" data-promo-gender="masculino" aria-pressed="false">👨 Hombre</button>
-            </div>
-          </div>
+    <section class="cat-section">
+      <!-- Promo showcase: tarjetas editoriales de packs -->
+      <div class="cat-showcase cat-showcase--promos" id="promoFilters">
+        <button class="filter-btn cat-tile" data-promo-filter="disenador" aria-label="Diseñador" aria-pressed="false">
+          <span class="cat-tile__img">
+            <img src="img/filtros/disenador.webp" alt="" width="600" height="800" loading="eager" fetchpriority="high" decoding="async" onload="this.classList.add('img-loaded')" onerror="this.closest('.cat-tile__img').classList.add('img-error')">
+          </span>
+          <span class="cat-tile__body">
+            <span class="cat-tile__eyebrow">Pack</span>
+            <span class="cat-tile__name">Diseñador</span>
+            <span class="cat-tile__sub">Decants Premium</span>
+          </span>
+        </button>
+        <button class="filter-btn cat-tile" data-promo-filter="arabe" aria-label="Árabes" aria-pressed="false">
+          <span class="cat-tile__img">
+            <img src="img/filtros/arabe.webp" alt="" width="600" height="800" loading="eager" fetchpriority="high" decoding="async" onload="this.classList.add('img-loaded')" onerror="this.closest('.cat-tile__img').classList.add('img-error')">
+          </span>
+          <span class="cat-tile__body">
+            <span class="cat-tile__eyebrow">Pack</span>
+            <span class="cat-tile__name">Árabe</span>
+            <span class="cat-tile__sub">Colección Oriental</span>
+          </span>
+        </button>
+        <button class="filter-btn cat-tile" data-promo-filter="deluxe" aria-label="Deluxe" aria-pressed="false">
+          <span class="cat-tile__img">
+            <img src="img/filtros/deluxe.webp" alt="" width="600" height="800" loading="eager" fetchpriority="high" decoding="async" onload="this.classList.add('img-loaded')" onerror="this.closest('.cat-tile__img').classList.add('img-error')">
+          </span>
+          <span class="cat-tile__body">
+            <span class="cat-tile__eyebrow">Pack</span>
+            <span class="cat-tile__name">Deluxe</span>
+            <span class="cat-tile__sub">Fragancias Únicas</span>
+          </span>
+        </button>
+      </div>
+
+      <!-- Filtros de género (solo para packs Árabe) -->
+      <div class="gender-bar" id="promoGenderGroup" style="display:none;">
+        <span class="gender-bar__label">Filtrar por género</span>
+        <div class="gender-bar__chips" id="promoGenderFilters">
+          <button class="filter-btn gender-chip" data-promo-gender="femenino" aria-pressed="false">Mujer</button>
+          <button class="filter-btn gender-chip" data-promo-gender="masculino" aria-pressed="false">Hombre</button>
         </div>
       </div>
+
+      <!-- Grid de promos (vacío hasta que se elija pack) -->
       <div class="promo-grid" id="promoGrid"></div>
     </section>
   </div>

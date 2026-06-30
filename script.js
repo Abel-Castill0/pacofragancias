@@ -1101,6 +1101,7 @@
       .map(createProductCard)
       .join("");
     observeRevealElements();
+    window.PacoAnimations?.refresh?.();
   }
 
   /* ══════════════════════════════════════════════════════════════
@@ -1157,6 +1158,7 @@
         </div>`;
     }
     observeRevealElements();
+    window.PacoAnimations?.refresh?.();
   }
 
    /* ══════════════════════════════════════════════════════════════
@@ -1252,6 +1254,7 @@
       .join("");
 
     observeRevealElements();
+    window.PacoAnimations?.refresh?.();
   }
 
   /* ══════════════════════════════════════════════════════════════
